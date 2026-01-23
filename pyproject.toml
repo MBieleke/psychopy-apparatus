@@ -38,36 +38,35 @@ tests = [
 [project.entry-points."psychopy.experiment.components"]
 # if you want a Component to appear in the "Components" panel, add its class here
 # ExampleComponent = "psychopy_plugin_template.components.exampleComponent:ExampleComponent"
-ApparatusLED = "psychopy_apparatus.components.apparatusLED:ApparatusLED"
+ApparatusLEDComponent = "psychopy_apparatus.components.ApparatusLEDComponent:ApparatusLEDComponent"
 
-[project.entry-points."psychopy.experiment.routines"]
+# [project.entry-points."psychopy.experiment.routines"]
 # if you want a Standalone Routine to appear in the "Components" panel, add its class here
 # ExampleStandaloneRoutine = "psychopy_plugin_template.routines.exampleStandaloneRoutine:ExampleStandaloneRoutine"
 
-[project.entry-points."psychopy.visual"]
+# [project.entry-points."psychopy.visual"]
 # if you want something to be importable from psychopy.visual, add it here
 # ExampleVisualStim = "psychopy_plugin_template.visual.exampleVisualStim:ExampleVisualStim"
 
 [project.entry-points."psychopy.hardware"]
 # if you want something to be importable from psychopy.hardware, add it here
-ExampleDevice = "psychopy_plugin_template.hardware.exampleDevice:ExampleDevice"
-ExampleResponseDevice = "psychopy_plugin_template.hardware.exampleResponseDevice:ExampleResponseDevice"
+ApparatusDevice = "psychopy_apparatus.hardware.ApparatusDevice:ApparatusDevice"
 
-[project.entry-points."psychopy.app.builder"]
+# [project.entry-points."psychopy.app.builder"]
 # if you want to add a section to the PsychoPy Builder ribbon, add it here
-ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+# ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
 
-[project.entry-points."psychopy.app.coder"]
+# [project.entry-points."psychopy.app.coder"]
 # if you want to add a section to the PsychoPy Coder ribbon, add it here
-ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+# ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
 
-[project.entry-points."psychopy.app.runner"]
+# [project.entry-points."psychopy.app.runner"]
 # if you want to add a section to the PsychoPy Runner ribbon, add it here
-ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+# ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
 
-[project.entry-points."psychopy.app.themes.icons"]
+# [project.entry-points."psychopy.app.themes.icons"]
 # if you want to add icons to the PsychoPy app, add them here
-example = "psychopy_plugin_template.icons.example"
+# example = "psychopy_plugin_template.icons.example"
 
 [tool.setuptools.package-data]
 # any resources you want including in the package, add their file extensions here (e.g. "*.wav" if you want audio files)
