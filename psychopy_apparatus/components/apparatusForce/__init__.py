@@ -1,12 +1,12 @@
 from psychopy.experiment.components import BaseComponent, Param, getInitVals
 from pathlib import Path
 
-class ExampleComponent(BaseComponent):
+class ApparatusForceComponent(BaseComponent):
     """
     Example Component to show you how to make and document one.
     """
     # mark it as coming from this plugin
-    plugin = "psychopy-example-plugin"
+    plugin = "psychopy-apparatus"
     # specify what libraries it has code for - PsychoPy and/or PsychoJS
     targets = ["PsychoPy"]
     # specify what category (or categories) to list this Component under in Builder
@@ -155,5 +155,6 @@ class ExampleComponent(BaseComponent):
         )
         buff.writeIndentedLines(code % params)
 
-        
+# Register device backend for this component
+ApparatusForceComponent.registerBackend(ApparatusDeviceBackend)
 

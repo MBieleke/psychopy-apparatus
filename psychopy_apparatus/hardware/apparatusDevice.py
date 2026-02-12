@@ -1,7 +1,7 @@
 from psychopy.hardware.base import BaseResponseDevice, BaseResponse
 
 
-class ExampleResponse(BaseResponse):
+class ApparatusResponse(BaseResponse):
     """ 
     Blank hardware response object to showcase how to make a new type of hardware response for a ResponseDevice.
 
@@ -13,7 +13,7 @@ class ExampleResponse(BaseResponse):
         Value received (e.g. the key on a keyboard)
     """
 
-class ExampleResponseDevice(BaseResponseDevice):
+class ApparatusResponseDevice(BaseResponseDevice):
     """
     Blank hardware object to showcase how to make a new type of hardware object for a response device.
     
@@ -23,9 +23,9 @@ class ExampleResponseDevice(BaseResponseDevice):
     ----------
     listeners : list[psychopy.hardware.listeners.BaseListener]
         List of listeners to send responses to
-    responses : list[ExampleResponse]
+    responses : list[ApparatusResponse]
         List of responses received by this device object
     muteOutsidePsychopy : bool
         If True, then mute any responses gathered when the PsychoPy window is not in focus
     """
-    responseClass = ExampleResponse
+    responseClass = ApparatusResponse
