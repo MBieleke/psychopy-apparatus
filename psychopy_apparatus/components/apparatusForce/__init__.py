@@ -1,7 +1,9 @@
-from psychopy.experiment.components import BaseComponent, Param, getInitVals
+from psychopy.experiment.components import BaseDeviceComponent, Param, getInitVals
 from pathlib import Path
 
-class ApparatusForceComponent(BaseComponent):
+from psychopy_apparatus.components.apparatusDeviceBackend import ApparatusDeviceBackend
+
+class ApparatusForceComponent(BaseDeviceComponent):
     """
     Example Component to show you how to make and document one.
     """
@@ -26,9 +28,11 @@ class ApparatusForceComponent(BaseComponent):
         name="",
         # appearance
         exampleAttribute="red",
+        # device
+        deviceLabel="",
     ):
         # initialise the base component class
-        BaseComponent.__init__(self, exp, parentName, name=name)
+        BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         # --- Params ---
@@ -157,4 +161,3 @@ class ApparatusForceComponent(BaseComponent):
 
 # Register device backend for this component
 ApparatusForceComponent.registerBackend(ApparatusDeviceBackend)
-

@@ -1,3 +1,8 @@
+import time
+import psychopy
+from serial import Serial
+from serial.threaded import ReaderThread, Protocol
+from psychopy import logging
 from psychopy.hardware.base import BaseResponseDevice, BaseResponse
 
 
@@ -13,7 +18,7 @@ class ApparatusResponse(BaseResponse):
         Value received (e.g. the key on a keyboard)
     """
 
-class ApparatusResponseDevice(BaseResponseDevice):
+class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     """
     Blank hardware object to showcase how to make a new type of hardware object for a response device.
     
@@ -29,3 +34,29 @@ class ApparatusResponseDevice(BaseResponseDevice):
         If True, then mute any responses gathered when the PsychoPy window is not in focus
     """
     responseClass = ApparatusResponse
+
+    def __init__(self, port, baudrate=115200, simulate=False, debug=False, **kwargs):
+        """
+        Initialize the ApparatusDevice.
+
+        Parameters
+        ----------
+        port : str
+            Serial port to which the apparatus is connected.
+        simulate : bool
+            If True, simulate the device without actual hardware connection.
+        debug : bool
+            If True, enable debug logging.
+        """
+        super().__init__(**kwargs)
+        self._port = port
+        self._baudrate = baudrate
+        self._simulate = simulate
+        self._debug = debug
+ 
+    @staticmethod
+    def getAvailableDevices():
+        return [{
+            'deviceName': "Apparatus Device",
+            'deviceClass': "psychopy.hardware.ApparatusDevice",
+        }]

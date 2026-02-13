@@ -50,7 +50,7 @@ ApparatusForceComponent = "psychopy_apparatus.components.apparatusForce:Apparatu
 
 [project.entry-points."psychopy.hardware"]
 # if you want something to be importable from psychopy.hardware, add it here
-ApparatusDevice = "psychopy_apparatus.hardware.ApparatusDevice:ApparatusDevice"
+ApparatusDevice = "psychopy_apparatus.hardware.apparatusDevice:ApparatusDevice"
 
 # [project.entry-points."psychopy.app.builder"]
 # if you want to add a section to the PsychoPy Builder ribbon, add it here
