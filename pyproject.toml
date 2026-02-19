@@ -37,7 +37,7 @@ tests = [
 
 [project.entry-points."psychopy.experiment.components"]
 # if you want a Component to appear in the "Components" panel, add its class here
-ExampleComponent = "psychopy_apparatus.components.apparatusLED:ApparatusLEDComponent"
+ApparatusLEDComponent = "psychopy_apparatus.components.apparatusLED:ApparatusLEDComponent"
 
 # [project.entry-points."psychopy.experiment.routines"]
 # # if you want a Standalone Routine to appear in the "Components" panel, add its class here
