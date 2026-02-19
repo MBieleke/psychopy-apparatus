@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: psychopy-apparatus
+Version: 0.0.0
+Summary: PsychoPy plugin to control the "Apparatus," a custom device for measuring and manipulating physical and cognitive effort.
+Author-email: Maik Bieleke <maik.bieleke@uni-konstanz.de>
+License: MIT
+Project-URL: homepage, https://github.com/psychopy/psychopy-apparatus
+Project-URL: changelog, https://github.com/psychopy/psychopy-apparatus/blob/main/CHANGELOG.md
+Description-Content-Type: text/markdown
+Provides-Extra: docs
+Requires-Dist: psychopy; extra == "docs"
+Requires-Dist: psychopy-sphinx-theme; extra == "docs"
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: furo; extra == "docs"
+Provides-Extra: tests
+Requires-Dist: psychopy; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
+
+# psychopy-apparatus
+PsychoPy plugin to control the "Apparatus," a custom device for measuring and manipulating physical and cognitive effort.

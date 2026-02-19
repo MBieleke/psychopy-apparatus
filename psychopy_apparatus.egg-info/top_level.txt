@@ -1,0 +1,3 @@
+firmware
+psychopy_apparatus
+venv

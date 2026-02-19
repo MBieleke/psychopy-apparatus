@@ -1,0 +1,5 @@
+[psychopy.experiment.components]
+ExampleComponent = psychopy_apparatus.components.apparatusLED:ApparatusLEDComponent
+
+[psychopy.hardware]
+ApparatusDevice = psychopy_apparatus.hardware.apparatusDevice:ApparatusDevice
