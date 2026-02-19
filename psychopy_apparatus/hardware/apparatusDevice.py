@@ -496,6 +496,6 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     @staticmethod
     def getAvailableDevices():
         return [{
-            'deviceName': "Apparatus Device",
+            'deviceName': "Apparatus",
             'deviceClass': "psychopy.hardware.ApparatusDevice",
         }]
