@@ -1,0 +1,77 @@
+[project]
+# the name of your plugin (required)
+name = "psychopy-plugin-template"
+# the current version of the plugin (required)
+version = "0.0.5" 
+# a brief description of what your plugin does
+description = "Tutorial on how to create a plugin component for both PsychoPy and PsychoJS"
+# link to the README.md file for a longer description of the project
+readme = "README.md"
+# contact information for yourself and anyone else who worked on the plugin 
+authors = [
+  { name = "OST Science Team", email = "science@opensceincetools.org" },
+]
+# a license tells other people how to use your code and protects you from stealing
+license = { text = "MIT" }
+# add any packages which your plugin needs in order to run
+dependencies = []
+
+[project.urls]
+# some handy links to help people find your plugin's documentation
+homepage = "https://github.com/psychopy/psychopy-plugin-template"
+changelog = "https://github.com/psychopy/psychopy-plugin-template/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+# dependencies for building the docs
+docs = [
+  "psychopy",
+  "psychopy-sphinx-theme",
+  "sphinx",
+  "furo",
+]
+# dependencies for running the test suite
+tests = [
+  "psychopy",
+  "pytest",
+]
+
+[project.entry-points."psychopy.experiment.components"]
+# if you want a Component to appear in the "Components" panel, add its class here
+ExampleComponent = "psychopy_plugin_template.components.exampleComponent:ExampleComponent"
+
+[project.entry-points."psychopy.experiment.routines"]
+# if you want a Standalone Routine to appear in the "Components" panel, add its class here
+ExampleStandaloneRoutine = "psychopy_plugin_template.routines.exampleStandaloneRoutine:ExampleStandaloneRoutine"
+
+[project.entry-points."psychopy.visual"]
+# if you want something to be importable from psychopy.visual, add it here
+ExampleVisualStim = "psychopy_plugin_template.visual.exampleVisualStim:ExampleVisualStim"
+
+[project.entry-points."psychopy.hardware"]
+# if you want something to be importable from psychopy.hardware, add it here
+ExampleDevice = "psychopy_plugin_template.hardware.exampleDevice:ExampleDevice"
+ExampleResponseDevice = "psychopy_plugin_template.hardware.exampleResponseDevice:ExampleResponseDevice"
+
+[project.entry-points."psychopy.app.builder"]
+# if you want to add a section to the PsychoPy Builder ribbon, add it here
+ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+
+[project.entry-points."psychopy.app.coder"]
+# if you want to add a section to the PsychoPy Coder ribbon, add it here
+ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+
+[project.entry-points."psychopy.app.runner"]
+# if you want to add a section to the PsychoPy Runner ribbon, add it here
+ExamplePluginRibbonSection = "psychopy_plugin_template.app.ribbon:ExamplePluginRibbonSection"
+
+[project.entry-points."psychopy.app.themes.icons"]
+# if you want to add icons to the PsychoPy app, add them here
+example = "psychopy_plugin_template.icons.example"
+
+[tool.setuptools.package-data]
+# any resources you want including in the package, add their file extensions here (e.g. "*.wav" if you want audio files)
+"*" = ["*.png"] 
+
+[tool.setuptools.packages.find]
+# any folders to ignore when building the Python package for this plugin
+exclude = ["docs*", "docs_src*", "tests*"]
