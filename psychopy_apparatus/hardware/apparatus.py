@@ -7,6 +7,44 @@ import time
 
 from psychopy_apparatus.hardware.apparatusDevice import ApparatusResponse
 
+
+def _parse_holes(holes_spec):
+    """
+    Convert hole specification to list of hole indices (internal helper).
+    
+    Automatically handles keywords and explicit values transparently.
+    
+    Parameters
+    ----------
+    holes_spec : str, int, or list
+        Hole specification:
+        - Keyword string: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
+        - Single integer: 0, 5, etc.
+        - List of integers: [0, 1, 2]
+        
+    Returns
+    -------
+    list[int]
+        List of hole indices
+    """
+    if isinstance(holes_spec, str):
+        if holes_spec == 'all':
+            return list(range(21))  # Holes 0-20
+        elif holes_spec == 'none':
+            return []
+        elif holes_spec == 'inner':
+            return list(range(8))  # Holes 0-7
+        elif holes_spec == 'outer':
+            return list(range(8, 21))  # Holes 8-20
+        else:
+            raise ValueError(f"Unknown hole keyword: '{holes_spec}'. Use 'all', 'inner', 'outer', 'none', or explicit hole number(s).")
+    elif isinstance(holes_spec, int):
+        return [holes_spec]
+    else:
+        # Assume it's an iterable (list, tuple, etc.)
+        return list(holes_spec)
+
+
 class Apparatus(AttributeGetSetMixin):
     """
     A class representing a Apparatus device.
@@ -41,8 +79,11 @@ class Apparatus(AttributeGetSetMixin):
         
         Parameters
         ----------
-        holes : list[int]
-            List of hole indices to set the color for (0-20).
+        holes : str, int, or list[int]
+            Holes to control:
+            - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
+            - Single hole: 0, 5
+            - Multiple holes: [0, 1, 2]
         color : Color
             RGB color value as a Color object.
         rate_limited : bool
@@ -53,6 +94,12 @@ class Apparatus(AttributeGetSetMixin):
         bool
             True if successful, False if skipped due to rate limiting or error.
         """
+        # Parse holes intelligently
+        holes_list = _parse_holes(holes)
+        
+        if not holes_list:
+            return True  # No holes to update
+        
         if rate_limited:
             # Check rate limiting
             if time.monotonic() - self._device._last_send_time < self._device._rate_limit_interval:
@@ -62,7 +109,7 @@ class Apparatus(AttributeGetSetMixin):
         color255 = tuple(int(c.item()) for c in color.rgb255)
         
         # Send LED command with auto show
-        return self._device.setLedColors(holes, color255, show=True, wait_ack=True)
+        return self._device.setLedColors(holes_list, color255, show=True, wait_ack=True)
     
     def setColors(self, colors: dict[int, Color], rate_limited: bool = False) -> bool:
         """
@@ -70,8 +117,12 @@ class Apparatus(AttributeGetSetMixin):
         
         Parameters
         ----------
-        colors : dict[int, Color]
-            Dictionary mapping hole number to Color object.
+        colors : dict
+            Dictionary mapping hole spec to Color object. Hole specs can be:
+            - Keywords: 'all', 'inner', 'outer', 'none'
+            - Single hole: 0, 5
+            - Multiple holes: (0, 1, 2) as tuple/list key
+            Or simply: {0: Color(...), 1: Color(...), ...}
         rate_limited : bool
             If True, skip command if sent too soon after previous command.
             
@@ -101,8 +152,11 @@ class Apparatus(AttributeGetSetMixin):
         
         Parameters
         ----------
-        holes : list[int]
-            List of hole indices to turn off the lights for.
+        holes : str, int, or list[int]
+            Holes to turn off:
+            - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
+            - Single hole: 0, 5
+            - Multiple holes: [0, 1, 2]
         rate_limited : bool
             If True, skip command if sent too soon after previous command.
             

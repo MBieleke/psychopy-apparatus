@@ -26,8 +26,8 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         self, exp, parentName, 
         # basic
         name="apparatusLED",
-        holes=[1, 2, 3],
-        holeColor="red",
+        holes="all",
+        holeColor="black",
         turnOffOnStop=True,
         turnOffOnRoutineEnd=True,
         # device
@@ -51,11 +51,17 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         ]
         self.params['holes'] = Param(   
             holes, valType="code", inputType="single", categ="Basic",
-            label="Holes", hint="The holes to control."
+            label="Holes",
+            updates='constant',
+            allowedUpdates=['constant', 'set every repeat'],
+            hint="Keywords (quoted): 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'. Or explicit: 0, [0,1,2]. Can use $variable from loops."
         )
         self.params['holeColor'] = Param(
-            holeColor, valType="str", inputType="color", categ="Basic",
-            label="Hole Color", hint="The color of the holes to light up."
+            holeColor, valType='color', inputType="single", categ='Basic',
+            label="Hole Color(s)",
+            updates='constant',
+            allowedUpdates=['constant', 'set every repeat'],
+            hint="Single color: black, red, [1,0,0], [255,0,0]. Or list: ['red', 'green']. Can use $variable from loops."
         )
         self.params['turnOffOnStop'] = Param(
             turnOffOnStop, valType="code", inputType="bool", categ="Basic",
@@ -118,7 +124,41 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
             code = (
-                "%(name)s.setHoleLights(%(holes)s, Color(%(holeColor)s))\n"
+                "# Handle colors: single or multiple\n"
+                "_colors = %(holeColor)s\n"
+                "\n"
+                "# Detect if we have multiple colors (list of lists/tuples or list of strings)\n"
+                "_is_multiple_colors = (\n"
+                "    isinstance(_colors, (list, tuple)) and\n"
+                "    len(_colors) > 0 and\n"
+                "    (isinstance(_colors[0], (list, tuple)) or isinstance(_colors[0], str))\n"
+                ")\n"
+                "\n"
+                "if _is_multiple_colors:\n"
+                "    # Multiple colors per hole - use setColors with mapping\n"
+                "    # Note: holes parameter must match the number of colors\n"
+                "    _holes_spec = %(holes)s\n"
+                "    _color_dict = {}\n"
+                "    # If holes is a keyword, we can't map individual colors; warn user\n"
+                "    if isinstance(_holes_spec, str):\n"
+                "        logging.warning('Cannot use keyword holes with multiple colors. Use explicit list of holes instead.')\n"
+                "    else:\n"
+                "        # Map each hole to its color\n"
+                "        _holes_list = [_holes_spec] if isinstance(_holes_spec, int) else list(_holes_spec)\n"
+                "        if len(_holes_list) == len(_colors):\n"
+                "            for _hole, _color_spec in zip(_holes_list, _colors):\n"
+                "                if isinstance(_color_spec, str):\n"
+                "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
+                "                else:\n"
+                "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
+                "            %(name)s.setColors(_color_dict)\n"
+                "else:\n"
+                "    # Single color for all holes (Apparatus will handle hole parsing)\n"
+                "    if isinstance(_colors, str):\n"
+                "        _color = Color(_colors, space='rgb')\n"
+                "    else:\n"
+                "        _color = Color(_colors, space='rgb')\n"
+                "    %(name)s.setHoleLights(%(holes)s, _color)\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -164,8 +204,6 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         code = (
             "if %(turnOffOnRoutineEnd)s:\n"
             "    %(name)s.turnOffHoleLights(%(holes)s)\n"
-            # "%(currentLoop)s.addData('%(name)s.holes', %(holes)s)\n"
-            # "%(currentLoop)s.addData('%(name)s.holeColor', %(holeColor)s.rgb255)\n"
         )
         buff.writeIndentedLines(code % params)
 
