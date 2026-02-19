@@ -37,7 +37,7 @@ tests = [
 
 [project.entry-points."psychopy.experiment.components"]
 # if you want a Component to appear in the "Components" panel, add its class here
-ExampleComponent = "psychopy_apparatus.components.exampleComponent:ExampleComponent"
+ExampleComponent = "psychopy_apparatus.components.apparatusLED:ApparatusLEDComponent"
 
 # [project.entry-points."psychopy.experiment.routines"]
 # # if you want a Standalone Routine to appear in the "Components" panel, add its class here
@@ -45,8 +45,7 @@ ExampleComponent = "psychopy_apparatus.components.exampleComponent:ExampleCompon
 
 [project.entry-points."psychopy.hardware"]
 # if you want something to be importable from psychopy.hardware, add it here
-ExampleDevice = "psychopy_apparatus.hardware.exampleDevice:ExampleDevice"
-ExampleResponseDevice = "psychopy_apparatus.hardware.exampleResponseDevice:ExampleResponseDevice"
+ApparatusDevice = "psychopy_apparatus.hardware.apparatusDevice:ApparatusDevice"
 
 [tool.setuptools.package-data]
 # any resources you want including in the package, add their file extensions here (e.g. "*.wav" if you want audio files)
