@@ -427,3 +427,69 @@ def parse_force_data_payload(payload: bytes) -> dict:
         'value': value,
         'device': device
     }
+
+
+def encode_reed_start_payload(rate_hz: float) -> bytes:
+    """
+    Encode payload for CMD_REED_START command.
+    
+    Converts Hz sampling rate to microsecond period.
+    
+    Payload format: period_us(u32)
+    
+    Parameters
+    ----------
+    rate_hz : float
+        Sampling rate in Hz (e.g., 100 for 100 Hz)
+        
+    Returns
+    -------
+    bytes
+        Encoded payload (4 bytes)
+    """
+    # Convert Hz to microseconds
+    period_us = int(1_000_000 / rate_hz)
+    
+    # Pack as little-endian u32
+    return struct.pack('<I', period_us)
+
+
+def parse_reed_data_payload(payload: bytes) -> dict:
+    """
+    Parse DATA_REED payload.
+    
+    Payload format: time_us(u32) + reed_bits(u32)
+    
+    The reed_bits field contains the state of all 21 holes as individual bits:
+    - Bit N represents hole N (0-20)
+    - 1 = reed contact closed (hole active/plugged)
+    - 0 = reed contact open (hole inactive/empty)
+    
+    Parameters
+    ----------
+    payload : bytes
+        Raw payload bytes (8 bytes)
+        
+    Returns
+    -------
+    dict
+        Dictionary with keys: 'time_us', 'reed_bits', 'holes'
+        - time_us: Timestamp in microseconds
+        - reed_bits: Raw 32-bit value with all reed states
+        - holes: Dict mapping hole number to state {0: 1, 5: 0, ...}
+    """
+    if len(payload) != 8:
+        raise ValueError(f"Invalid reed data payload length: {len(payload)} (expected 8)")
+    
+    time_us, reed_bits = struct.unpack('<II', payload)
+    
+    # Extract individual hole states from the 32-bit value
+    holes = {}
+    for hole in range(21):  # Holes 0-20
+        holes[hole] = (reed_bits >> hole) & 1
+    
+    return {
+        'time_us': time_us,
+        'reed_bits': reed_bits,
+        'holes': holes
+    }

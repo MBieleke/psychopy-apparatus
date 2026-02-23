@@ -1,12 +1,12 @@
 from psychopy.tools.attributetools import AttributeGetSetMixin
-from psychopy import logging
+from psychopy import logging, core
 from psychopy.constants import NOT_STARTED, STARTED, FINISHED
 from psychopy.hardware import DeviceManager
 from psychopy.colors import Color
 import time
 
 from psychopy_apparatus.hardware.apparatusDevice import ApparatusResponse
-from psychopy_apparatus.utils.protocol import DATA_FORCE
+from psychopy_apparatus.utils.protocol import DATA_FORCE, DATA_REED
 
 
 def _parse_holes(holes_spec):
@@ -28,6 +28,14 @@ def _parse_holes(holes_spec):
     list[int]
         List of hole indices
     """
+    # Check for common mistake: passing Python's built-in all() function
+    if callable(holes_spec):
+        raise TypeError(
+            "holes_spec appears to be a function (did you forget quotes?). "
+            "Use 'all' (string) instead of all (built-in function). "
+            "Valid values: 'all', 'inner', 'outer', 'none', integer, or list."
+        )
+    
     if isinstance(holes_spec, str):
         if holes_spec == 'all':
             return list(range(21))  # Holes 0-20
@@ -43,7 +51,13 @@ def _parse_holes(holes_spec):
         return [holes_spec]
     else:
         # Assume it's an iterable (list, tuple, etc.)
-        return list(holes_spec)
+        try:
+            return list(holes_spec)
+        except TypeError:
+            raise TypeError(
+                f"Invalid holes_spec type: {type(holes_spec).__name__}. "
+                "Expected: 'all'/'inner'/'outer'/'none' (string), integer, or list of integers."
+            )
 
 
 class Apparatus(AttributeGetSetMixin):
@@ -83,6 +97,23 @@ class Apparatus(AttributeGetSetMixin):
         # Force measurement state
         self._force_measuring = False
         self._force_start_response_count = 0
+        
+        # Reed sensor data (for data output)
+        self.reedTimes = []  # List of event timestamps
+        self.reedHoles = []  # List of hole numbers (parallel to reedTimes)
+        self.reedActions = []  # List of actions: 1=insert, 0=remove (parallel to reedTimes)
+        self.reedSummary = []  # Per-hole summary: [{'hole': h, 'insertions': n, 'removals': m, 'duration': s}, ...]
+        
+        # Reed measurement state (internal tracking)
+        self._reed_measuring = False
+        self._reed_monitored_holes = []  # Which holes to monitor
+        self._reed_start_response_count = 0
+        self._reed_last_states = {}  # Last known state per hole (0 or 1)
+        self._reed_last_timestamp = None  # Timestamp of last state change
+        self._reed_insertion_counts = {}  # Count of insertions per hole
+        self._reed_removal_counts = {}  # Count of removals per hole
+        self._reed_active_durations = {}  # Total active time per hole
+        self._reed_last_insert_time = {}  # When each hole was last inserted (for duration calc)  # Last update timestamp
 
     def setHoleLights(self, holes, color: Color, rate_limited: bool = False) -> bool:
         """
@@ -383,6 +414,177 @@ class Apparatus(AttributeGetSetMixin):
         to collect new force data from the device.
         """
         self._collectForceResponses()
+
+    def startReedMeasurement(self, rate: float, holes) -> bool:
+        """
+        Start reed sensor measurement on the apparatus device.
+        
+        Begins streaming reed sensor data from the client at the given rate.
+        Reed data will be collected only for specified holes, and active durations
+        will be tracked automatically.
+
+        Parameters
+        ----------
+        rate : float
+            Sampling rate in Hz (e.g., 100 for 100 Hz sampling).
+        holes : str, int, or list[int]
+            Holes to monitor:
+            - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
+            - Single hole: 0, 5
+            - Multiple holes: [0, 1, 2]
+            
+        Returns
+        -------
+        bool
+            True if measurement started successfully, False otherwise.
+        """
+        # Parse holes specification
+        self._reed_monitored_holes = _parse_holes(holes)
+        
+        # Clear previous data
+        self.reedTimes.clear()
+        self.reedHoles.clear()
+        self.reedActions.clear()
+        self.reedSummary.clear()
+        
+        # Initialize tracking for each monitored hole
+        self._reed_last_states = {hole: 0 for hole in self._reed_monitored_holes}
+        self._reed_insertion_counts = {hole: 0 for hole in self._reed_monitored_holes}
+        self._reed_removal_counts = {hole: 0 for hole in self._reed_monitored_holes}
+        self._reed_active_durations = {hole: 0.0 for hole in self._reed_monitored_holes}
+        self._reed_last_insert_time = {hole: None for hole in self._reed_monitored_holes}
+        self._reed_last_timestamp = None
+        
+        # Clear device responses to start fresh
+        self._device.clearResponses()
+        self._reed_start_response_count = self._device.getNumberOfResponses()
+        
+        # Start measurement on device
+        success = self._device.startReedMeasurement(rate, wait_ack=True)
+        
+        if success:
+            self._reed_measuring = True
+            self.status = STARTED
+            logging.info(f"Reed measurement started: {rate} Hz, monitoring holes {self._reed_monitored_holes}")
+        else:
+            logging.error("Failed to start reed measurement")
+            
+        return success
+
+    def stopReedMeasurement(self) -> bool:
+        """
+        Stop reed sensor measurement on the apparatus device.
+        
+        Stops the streaming of reed sensor data and finalizes the measurement session.
+        
+        Returns
+        -------
+        bool
+            True if measurement stopped successfully, False otherwise.
+        """
+        if not self._reed_measuring:
+            logging.warning("Reed measurement was not running")
+            return True
+        
+        # Collect any remaining responses before stopping
+        self._collectReedResponses()
+        
+        # Finalize durations for any holes that are still inserted
+        final_timestamp = core.getTime()
+        for hole in self._reed_monitored_holes:
+            if self._reed_last_states[hole] == 1 and self._reed_last_insert_time[hole] is not None:
+                # Hole is still inserted, calculate final duration
+                duration = final_timestamp - self._reed_last_insert_time[hole]
+                self._reed_active_durations[hole] += duration
+        
+        # Build summary statistics (only for holes with activity)
+        self.reedSummary = []
+        for hole in sorted(self._reed_monitored_holes):
+            if self._reed_insertion_counts[hole] > 0 or self._reed_removal_counts[hole] > 0:
+                self.reedSummary.append({
+                    'hole': hole,
+                    'insertions': self._reed_insertion_counts[hole],
+                    'removals': self._reed_removal_counts[hole],
+                    'duration': self._reed_active_durations[hole]
+                })
+        
+        # Stop measurement on device
+        success = self._device.stopReedMeasurement(wait_ack=True)
+        
+        if success:
+            self._reed_measuring = False
+            self.status = FINISHED
+            logging.info(f"Reed measurement stopped. Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes.")
+        else:
+            logging.error("Failed to stop reed measurement")
+            
+        return success
+
+    def _collectReedResponses(self):
+        """
+        Collect reed sensor responses from the device.
+        
+        This method should be called regularly (e.g., each frame) during measurement
+        to retrieve new reed data and update states/durations.
+        """
+        if not self._reed_measuring:
+            return
+        
+        # Get all responses from device
+        all_responses = self._device.getResponses()
+        
+        # Process only new responses (those received after measurement started)
+        new_responses = all_responses[self._reed_start_response_count:]
+        
+        for response in new_responses:
+            # Only process reed data responses
+            if response.msg_type != DATA_REED:
+                continue
+            
+            if hasattr(response, 'reed_holes') and response.reed_holes is not None:
+                timestamp = response.t
+                
+                # Check each monitored hole for state changes
+                for hole in self._reed_monitored_holes:
+                    new_state = response.reed_holes.get(hole, 0)
+                    old_state = self._reed_last_states[hole]
+                    
+                    # Detect state change
+                    if new_state != old_state:
+                        if new_state == 1:
+                            # Insertion detected
+                            action = 1
+                            self._reed_insertion_counts[hole] += 1
+                            self._reed_last_insert_time[hole] = timestamp
+                        else:
+                            # Removal detected
+                            action = 0
+                            self._reed_removal_counts[hole] += 1
+                            # Calculate duration if we have an insertion time
+                            if self._reed_last_insert_time[hole] is not None:
+                                duration = timestamp - self._reed_last_insert_time[hole]
+                                self._reed_active_durations[hole] += duration
+                                self._reed_last_insert_time[hole] = None
+                        
+                        # Record event in parallel lists
+                        self.reedTimes.append(timestamp)
+                        self.reedHoles.append(hole)
+                        self.reedActions.append(action)
+                        
+                        # Update last known state
+                        self._reed_last_states[hole] = new_state
+        
+        # Update the response counter
+        self._reed_start_response_count = len(all_responses)
+
+    def updateReedMeasurement(self):
+        """
+        Update reed sensor measurement data.
+        
+        Call this method regularly (e.g., each frame) during active measurement
+        to collect new reed sensor data from the device.
+        """
+        self._collectReedResponses()
 
     def startMeasurement(self, hole, method, light_feedback):
         """

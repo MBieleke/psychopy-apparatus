@@ -1,6 +1,7 @@
 [psychopy.experiment.components]
 ApparatusForceComponent = psychopy_apparatus.components.apparatusForce:ApparatusForceComponent
 ApparatusLEDComponent = psychopy_apparatus.components.apparatusLED:ApparatusLEDComponent
+ApparatusReedComponent = psychopy_apparatus.components.apparatusReed:ApparatusReedComponent
 
 [psychopy.hardware]
 ApparatusDevice = psychopy_apparatus.hardware.apparatusDevice:ApparatusDevice

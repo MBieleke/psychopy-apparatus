@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 firmware/tests/test_force.py
 firmware/tests/test_led.py
+firmware/tests/test_reed.py
 psychopy_apparatus.egg-info/PKG-INFO
 psychopy_apparatus.egg-info/SOURCES.txt
 psychopy_apparatus.egg-info/dependency_links.txt
@@ -23,6 +24,13 @@ psychopy_apparatus/components/apparatusLED/dark/example.png
 psychopy_apparatus/components/apparatusLED/dark/example@2x.png
 psychopy_apparatus/components/apparatusLED/light/example.png
 psychopy_apparatus/components/apparatusLED/light/example@2x.png
+psychopy_apparatus/components/apparatusReed/__init__.py
+psychopy_apparatus/components/apparatusReed/classic/example.png
+psychopy_apparatus/components/apparatusReed/classic/example@2x.png
+psychopy_apparatus/components/apparatusReed/dark/example.png
+psychopy_apparatus/components/apparatusReed/dark/example@2x.png
+psychopy_apparatus/components/apparatusReed/light/example.png
+psychopy_apparatus/components/apparatusReed/light/example@2x.png
 psychopy_apparatus/hardware/__init__.py
 psychopy_apparatus/hardware/apparatus.py
 psychopy_apparatus/hardware/apparatusDevice.py

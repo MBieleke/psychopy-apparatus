@@ -9,6 +9,7 @@ from psychopy_apparatus.utils.protocol import (
     cobs_encode, cobs_decode, build_message, parse_message,
     encode_led_payload_auto, encode_led_payload_format_a, encode_led_payload_format_b,
     encode_force_start_payload, parse_force_data_payload,
+    encode_reed_start_payload, parse_reed_data_payload,
     CMD_LED_SET_N, CMD_LED_SHOW, CMD_HOLE_START, CMD_HOLE_STOP, CMD_REED_START, CMD_REED_STOP,
     CMD_FORCE_START, CMD_FORCE_STOP,
     MSG_ACK, MSG_NACK, DATA_REED, DATA_HALL, DATA_FORCE,
@@ -37,7 +38,7 @@ class ApparatusResponse(BaseResponse):
     fields = ['t', 'value', 'msg_type', 'seq', 'payload']
 
     # Extended fields for sensor data (populated if applicable, kept dormant for LED-only phase)
-    extended_fields = ['pluggedIn', 'reactionTime', 'holes', 'whiteForce', 'blueForce']
+    extended_fields = ['pluggedIn', 'reactionTime', 'holes', 'whiteForce', 'blueForce', 'reed_bits', 'reed_holes']
 
     def __init__(self, t, value, msg_type, seq, payload, device=None):
         super().__init__(t=t, value=value, device=device)
@@ -52,6 +53,8 @@ class ApparatusResponse(BaseResponse):
         self.holes = None
         self.whiteForce = None
         self.blueForce = None
+        self.reed_bits = None
+        self.reed_holes = None
         
         # Parse force data if this is a DATA_FORCE message
         if msg_type == DATA_FORCE and len(payload) == 7:
@@ -64,6 +67,15 @@ class ApparatusResponse(BaseResponse):
                     self.blueForce = force_data['value']
             except Exception as e:
                 logging.warning(f"Failed to parse force data: {e}")
+        
+        # Parse reed data if this is a DATA_REED message
+        if msg_type == DATA_REED and len(payload) == 8:
+            try:
+                reed_data = parse_reed_data_payload(payload)
+                self.reed_bits = reed_data['reed_bits']
+                self.reed_holes = reed_data['holes']
+            except Exception as e:
+                logging.warning(f"Failed to parse reed data: {e}")
         
     def is_ack(self) -> bool:
         """Check if this is an ACK response."""
@@ -489,6 +501,56 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             True if successful (or if wait_ack=False), False if NACK or timeout
         """
         seq = self._send_message(CMD_FORCE_STOP, b'', dst=ADDR_SERVER)
+        
+        if wait_ack:
+            return self._wait_for_ack(seq)
+        
+        return True
+
+    def startReedMeasurement(self, rate_hz: float, wait_ack: bool = True) -> bool:
+        """
+        Start streaming reed sensor measurements from the client.
+        
+        The client will sample reed switches at the specified rate and send DATA_REED
+        messages only when the state changes (at least one hole plugged/unplugged).
+        
+        Parameters
+        ----------
+        rate_hz : float
+            Sampling rate in Hz (e.g., 100 for 100 Hz)
+        wait_ack : bool
+            If True, wait for ACK before returning
+            
+        Returns
+        -------
+        bool
+            True if successful (or if wait_ack=False), False if NACK or timeout
+        """
+        payload = encode_reed_start_payload(rate_hz)
+        seq = self._send_message(CMD_REED_START, payload, dst=ADDR_CLIENT)
+        
+        if wait_ack:
+            return self._wait_for_ack(seq)
+        
+        return True
+
+    def stopReedMeasurement(self, wait_ack: bool = True) -> bool:
+        """
+        Stop streaming reed sensor measurements.
+        
+        The client will stop monitoring reed switches and send a final ACK.
+        
+        Parameters
+        ----------
+        wait_ack : bool
+            If True, wait for ACK before returning
+            
+        Returns
+        -------
+        bool
+            True if successful (or if wait_ack=False), False if NACK or timeout
+        """
+        seq = self._send_message(CMD_REED_STOP, b'', dst=ADDR_CLIENT)
         
         if wait_ack:
             return self._wait_for_ack(seq)
