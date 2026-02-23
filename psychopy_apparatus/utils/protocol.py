@@ -48,7 +48,7 @@ ADDR_PC = 1
 ADDR_SERVER = 2
 ADDR_CLIENT = 3
 
-# Message types - Commands
+# Message types - Commands (PC -> Client)
 CMD_LED_SET_N = 0x10
 CMD_LED_SHOW = 0x11
 CMD_HOLE_START = 0x12
@@ -56,11 +56,16 @@ CMD_HOLE_STOP = 0x13
 CMD_REED_START = 0x14
 CMD_REED_STOP = 0x15
 
+# Message types - Commands (PC -> Server)
+CMD_FORCE_START = 0x03
+CMD_FORCE_STOP = 0x04
+
 # Message types - Responses
 MSG_ACK = 0x80
 MSG_NACK = 0x81
 DATA_REED = 0x91
 DATA_HALL = 0x92
+DATA_FORCE = 0x90
 
 # Flags
 FLAG_ACK_REQUIRED = 0x01
@@ -348,3 +353,77 @@ def encode_led_payload_auto(holes: list[int], colors) -> bytes:
     else:
         # Different colors → Format B
         return encode_led_payload_format_b(holes, colors)
+
+
+def encode_force_start_payload(rate_hz: float, device: str) -> bytes:
+    """
+    Encode payload for CMD_FORCE_START command.
+    
+    Converts Hz sampling rate to microsecond period and maps device to device selector.
+    
+    Payload format: period_us(u32) + device(u8)
+    
+    Parameters
+    ----------
+    rate_hz : float
+        Sampling rate in Hz (e.g., 100 for 100 Hz)
+    device : str
+        Dynamometer selector:
+        - 'white': Right/white dynamometer
+        - 'blue': Left/blue dynamometer  
+        - 'both': Both dynamometers
+        
+    Returns
+    -------
+    bytes
+        Encoded payload (5 bytes)
+    """
+    # Convert Hz to microseconds
+    period_us = int(1_000_000 / rate_hz)
+    
+    # Map device name to device selector
+    device_map = {
+        'white': 0,
+        'blue': 1,
+        'both': 2
+    }
+    
+    device_lower = device.lower()
+    if device_lower not in device_map:
+        raise ValueError(f"Invalid device '{device}'. Must be 'white', 'blue', or 'both'")
+    
+    device_selector = device_map[device_lower]
+    
+    # Pack as little-endian u32 + u8
+    return struct.pack('<IB', period_us, device_selector)
+
+
+def parse_force_data_payload(payload: bytes) -> dict:
+    """
+    Parse DATA_FORCE payload.
+    
+    Payload format: time_us(u32) + value(i16) + device(u8)
+    
+    Parameters
+    ----------
+    payload : bytes
+        Raw payload bytes (7 bytes)
+        
+    Returns
+    -------
+    dict
+        Dictionary with keys: 'time_us', 'value', 'device'
+        - time_us: Timestamp in microseconds
+        - value: Force value in Newtons (int16)
+        - device: Device identifier (0=right/white, 1=left/blue)
+    """
+    if len(payload) != 7:
+        raise ValueError(f"Invalid force data payload length: {len(payload)} (expected 7)")
+    
+    time_us, value, device = struct.unpack('<IhB', payload)
+    
+    return {
+        'time_us': time_us,
+        'value': value,
+        'device': device
+    }

@@ -4,9 +4,9 @@ from pathlib import Path
 from psychopy_apparatus.components.apparatusDeviceBackend import ApparatusDeviceBackend
 from psychopy.experiment.devices import DeviceBackend
 
-class ApparatusMeasurementComponent(BaseDeviceComponent):
+class ApparatusForceComponent(BaseDeviceComponent):
     """
-    Controls Apparatus measurement.
+    Controls Apparatus force measurement.
     """
     # mark it as coming from this plugin
     plugin = "psychopy-apparatus"
@@ -17,7 +17,7 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
     # path to this Component's icon file - ignoring the light/dark/classic folder and any @2x in the filename (PsychoPy will add these accordingly)
     iconFile = Path(__file__).parent / "example.png"
     # Text to display when this Component is hovered over
-    tooltip = "Controls Apparatus measurement."
+    tooltip = "Controls Apparatus force measurement."
     # what is the earliest version of PsychoPy this Component works with?
     version = "2025.2.1"
     # is this Component still in beta?
@@ -26,13 +26,12 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
     def __init__(
         self, exp, parentName, 
         # basic
-        name="apparatusMeasurement",
-        hole=1,
-        method="method3",
-        lightFeedback=True,
-        endRoutineOnResponse=False,
+        name = "apparatusForce",
+        rate = 100,
+        device = "both",
+        endRoutineOnResponse = False,
         # device
-        deviceLabel="",
+        deviceLabel = "",
     ):
         # initialise the base component class
         BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
@@ -44,22 +43,18 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
 
         # appearance
         self.order += [
-            "hole",
-            "method",
-            "lightFeedback",
+            "rate",
+            "device",
             "endRoutineOnResponse"
         ]
-        self.params['hole'] = Param(
-            hole, valType="code", inputType="single", categ="Basic",
-            label="Hole", hint="The hole to measure."
+        self.params['rate'] = Param(
+            rate, valType="code", inputType="single", categ="Basic",
+            label="Rate (Hz)", hint="Sampling rate in Hz (e.g., 100 for 100 Hz)."
         )
-        self.params['method'] = Param(
-            method, valType="str", allowedVals=["method1", "method2", "method3", "method4"], inputType="choice", categ="Basic",
-            label="Method", hint="The method to use for measurement."
-        )
-        self.params['lightFeedback'] = Param(
-            lightFeedback, valType="code", inputType="bool", categ="Basic",
-            label="Light Feedback", hint="Whether to use light feedback."
+        self.params['device'] = Param(
+            device, valType="str", inputType="choice", categ="Basic",
+            allowedVals=["'white'", "'blue'", "'both'"],
+            label="Device", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
         )
         self.params['endRoutineOnResponse'] = Param(
             endRoutineOnResponse, valType="code", inputType="bool", categ="Basic",
@@ -118,7 +113,7 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
             code = (
-                "%(name)s.startMeasurement(%(hole)s, %(method)s, %(lightFeedback)s)\n"
+                "%(name)s.startForceMeasurement(%(rate)s, %(device)s)\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -127,10 +122,11 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
         # # use the same principle as we used for first-frame-of-Component code to add code which only runs while the Component is active
         dedent = self.writeActiveTestCode(buff)
         if dedent:
-            # here we can just add anything we want to happen each frame - let's update some arbitrary variable for fun
+            # Update force measurement data each frame
             code = (
+                "%(name)s.updateForceMeasurement()\n"
                 "if %(endRoutineOnResponse)s and %(name)s.getNumberOfResponses() > 0:\n"
-                "    %(name)s.stopMeasurement()\n"
+                "    %(name)s.stopForceMeasurement()\n"
                 "    continueRoutine = False\n"
             )   
             buff.writeIndentedLines(code % self.params)
@@ -142,7 +138,7 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
         if dedent:
             # aaaaaaand some extra code for when the Component stops
             code = (
-                "%(name)s.stopMeasurement()\n"
+                "%(name)s.stopForceMeasurement()\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -163,13 +159,16 @@ class ApparatusMeasurementComponent(BaseDeviceComponent):
         params['currentLoop'] = self.currentLoop
         # store any data we'd like to store (start/stop are already handled)
         code = (
-            "%(currentLoop)s.addData('%(name)s.hole', %(hole)s)\n"
-            "%(currentLoop)s.addData('%(name)s.method', %(method)s)\n"
-            "%(currentLoop)s.addData('%(name)s.lightFeedback', %(lightFeedback)s)\n"
-            "%(currentLoop)s.addData('%(name)s.times', %(name)s.times)\n"
-            "%(currentLoop)s.addData('%(name)s.responses', %(name)s.responses)\n"
+            "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
+            "%(currentLoop)s.addData('%(name)s.device', %(device)s)\n"
+            "%(currentLoop)s.addData('%(name)s.whiteForceValues', %(name)s.whiteForceValues)\n"
+            "%(currentLoop)s.addData('%(name)s.whiteForceTimestamps', %(name)s.whiteForceTimestamps)\n"
+            "%(currentLoop)s.addData('%(name)s.blueForceValues', %(name)s.blueForceValues)\n"
+            "%(currentLoop)s.addData('%(name)s.blueForceTimestamps', %(name)s.blueForceTimestamps)\n"
+            "%(currentLoop)s.addData('%(name)s.maxWhiteForce', %(name)s.maxWhiteForce)\n"
+            "%(currentLoop)s.addData('%(name)s.maxBlueForce', %(name)s.maxBlueForce)\n"
         )
         buff.writeIndentedLines(code % params)
 
 # Register device backend for this component
-ApparatusMeasurementComponent.registerBackend(ApparatusDeviceBackend)
+ApparatusForceComponent.registerBackend(ApparatusDeviceBackend)

@@ -1,17 +1,18 @@
 import time
 import struct
-import psychopy
 from serial import Serial
 from serial.threaded import ReaderThread, Protocol
-from psychopy import logging
+from psychopy import logging, core
 from psychopy.hardware.base import BaseResponseDevice, BaseResponse
 
 from psychopy_apparatus.utils.protocol import (
     cobs_encode, cobs_decode, build_message, parse_message,
     encode_led_payload_auto, encode_led_payload_format_a, encode_led_payload_format_b,
+    encode_force_start_payload, parse_force_data_payload,
     CMD_LED_SET_N, CMD_LED_SHOW, CMD_HOLE_START, CMD_HOLE_STOP, CMD_REED_START, CMD_REED_STOP,
-    MSG_ACK, MSG_NACK, DATA_REED, DATA_HALL,
-    ADDR_PC, ADDR_CLIENT,
+    CMD_FORCE_START, CMD_FORCE_STOP,
+    MSG_ACK, MSG_NACK, DATA_REED, DATA_HALL, DATA_FORCE,
+    ADDR_PC, ADDR_CLIENT, ADDR_SERVER,
     ERR_BAD_LEN, ERR_BAD_MSG, ERR_BAD_PAYLOAD
 )
 
@@ -52,6 +53,18 @@ class ApparatusResponse(BaseResponse):
         self.whiteForce = None
         self.blueForce = None
         
+        # Parse force data if this is a DATA_FORCE message
+        if msg_type == DATA_FORCE and len(payload) == 7:
+            try:
+                force_data = parse_force_data_payload(payload)
+                # Map device ID to force field
+                if force_data['device'] == 0:
+                    self.whiteForce = force_data['value']
+                elif force_data['device'] == 1:
+                    self.blueForce = force_data['value']
+            except Exception as e:
+                logging.warning(f"Failed to parse force data: {e}")
+        
     def is_ack(self) -> bool:
         """Check if this is an ACK response."""
         return self.msg_type == MSG_ACK
@@ -80,7 +93,7 @@ class ApparatusProtocol(Protocol):
         super().__init__()
         self._buffer = bytearray()
         self._responses = []
-        self._clock = psychopy.core.Clock()
+        self._clock = core.Clock()
 
     def data_received(self, data: bytes):
         """Process incoming serial data byte by byte, looking for 0x00 delimiters."""
@@ -238,7 +251,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             self._seq_counter = 1
         return seq
 
-    def _send_message(self, msg_type: int, payload: bytes = b'', expect_ack: bool = True) -> int:
+    def _send_message(self, msg_type: int, payload: bytes = b'', dst: int = ADDR_CLIENT, expect_ack: bool = True) -> int:
         """
         Send a message to the apparatus device.
         
@@ -248,6 +261,8 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             Message type identifier
         payload : bytes
             Message payload
+        dst : int
+            Destination address (ADDR_CLIENT or ADDR_SERVER)
         expect_ack : bool
             Whether to expect an ACK response
             
@@ -259,7 +274,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         seq = self._get_next_seq()
         
         # Build and encode message
-        raw_msg = build_message(msg_type, seq, payload, dst=ADDR_CLIENT)
+        raw_msg = build_message(msg_type, seq, payload, dst=dst)
         encoded = cobs_encode(raw_msg)
         
         if not self._simulate:
@@ -273,10 +288,13 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
                 CMD_HOLE_STOP: 'CMD_HOLE_STOP',
                 CMD_REED_START: 'CMD_REED_START',
                 CMD_REED_STOP: 'CMD_REED_STOP',
+                CMD_FORCE_START: 'CMD_FORCE_START',
+                CMD_FORCE_STOP: 'CMD_FORCE_STOP',
             }
             msg_name = msg_names.get(msg_type, f'0x{msg_type:02X}')
             payload_hex = payload.hex() if payload else '(empty)'
-            logging.info(f"Apparatus TX: seq={seq}, type={msg_name}, payload={payload_hex[:60]}")
+            dst_name = 'CLIENT' if dst == ADDR_CLIENT else 'SERVER'
+            logging.info(f"Apparatus TX: seq={seq}, type={msg_name}, dst={dst_name}, payload={payload_hex[:60]}")
         
         return seq
 
@@ -419,6 +437,65 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         # Set all 21 holes to black (0, 0, 0)
         holes = list(range(21))
         return self.setLedColors(holes, (0, 0, 0), show=True, wait_ack=wait_ack)
+
+    # ===== Force Measurement Methods =====
+
+    def startForceMeasurement(self, rate_hz: float, device: str, wait_ack: bool = True) -> bool:
+        """
+        Start streaming force measurements from handgrip dynamometer(s).
+        
+        The server will continuously measure and transmit force data at the specified rate
+        until stopForceMeasurement() is called.
+        
+        Parameters
+        ----------
+        rate_hz : float
+            Sampling rate in Hz (e.g., 100 for 100 Hz)
+        device : str
+            Dynamometer selector:
+            - 'white': Right/white dynamometer only
+            - 'blue': Left/blue dynamometer only
+            - 'both': Both dynamometers
+        wait_ack : bool
+            If True, wait for ACK before returning
+            
+        Returns
+        -------
+        bool
+            True if successful (or if wait_ack=False), False if NACK or timeout
+        """
+        payload = encode_force_start_payload(rate_hz, device)
+        seq = self._send_message(CMD_FORCE_START, payload, dst=ADDR_SERVER)
+        
+        if wait_ack:
+            return self._wait_for_ack(seq)
+        
+        return True
+
+    def stopForceMeasurement(self, wait_ack: bool = True) -> bool:
+        """
+        Stop streaming force measurements.
+        
+        The server will stop measuring and send a final ACK.
+        
+        Parameters
+        ----------
+        wait_ack : bool
+            If True, wait for ACK before returning
+            
+        Returns
+        -------
+        bool
+            True if successful (or if wait_ack=False), False if NACK or timeout
+        """
+        seq = self._send_message(CMD_FORCE_STOP, b'', dst=ADDR_SERVER)
+        
+        if wait_ack:
+            return self._wait_for_ack(seq)
+        
+        return True
+
+    # ===== Response Management =====
 
     def getResponses(self) -> list[ApparatusResponse]:
         """

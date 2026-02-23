@@ -1,11 +1,12 @@
 from psychopy.tools.attributetools import AttributeGetSetMixin
 from psychopy import logging
-from psychopy.constants import NOT_STARTED
+from psychopy.constants import NOT_STARTED, STARTED, FINISHED
 from psychopy.hardware import DeviceManager
 from psychopy.colors import Color
 import time
 
 from psychopy_apparatus.hardware.apparatusDevice import ApparatusResponse
+from psychopy_apparatus.utils.protocol import DATA_FORCE
 
 
 def _parse_holes(holes_spec):
@@ -67,11 +68,21 @@ class Apparatus(AttributeGetSetMixin):
 
         self.times = []
         self.responses = []
+        
+        # Human-readable force data (for data output)
+        self.whiteForceValues = []  # List of white force samples
+        self.blueForceValues = []   # List of blue force samples
+        self.whiteForceTimestamps = []  # Timestamps for white force samples
+        self.blueForceTimestamps = []   # Timestamps for blue force samples
 
         self.whiteForce = 0
         self.blueForce = 0
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
+        
+        # Force measurement state
+        self._force_measuring = False
+        self._force_start_response_count = 0
 
     def setHoleLights(self, holes, color: Color, rate_limited: bool = False) -> bool:
         """
@@ -240,13 +251,145 @@ class Apparatus(AttributeGetSetMixin):
         whiteUpperHysteresis : list[int]
             Upper hysteresis value for the white meter.
         """
-        raise NotImplementedError("Hand dynamometer not yet ported to new protocol")
+        raise NotImplementedError("Hand dynamometer configuration not yet ported to new protocol")
+
+    def startForceMeasurement(self, rate: float, device: str) -> bool:
+        """
+        Start force measurement on the apparatus device.
+        
+        Begins streaming force data from the specified dynamometer(s) at the given rate.
+        Force data will be collected in .times and .responses lists, and current/max force
+        values will be updated in real-time.
+
+        Parameters
+        ----------
+        rate : float
+            Sampling rate in Hz (e.g., 100 for 100 Hz sampling).
+        device : str
+            Dynamometer selector:
+            - 'white': Right/white dynamometer only
+            - 'blue': Left/blue dynamometer only
+            - 'both': Both dynamometers
+            
+        Returns
+        -------
+        bool
+            True if measurement started successfully, False otherwise.
+        """
+        # Clear previous data
+        self.times.clear()
+        self.responses.clear()
+        self.whiteForceValues.clear()
+        self.blueForceValues.clear()
+        self.whiteForceTimestamps.clear()
+        self.blueForceTimestamps.clear()
+        self.whiteForce = 0
+        self.blueForce = 0
+        self.maxWhiteForce = 0
+        self.maxBlueForce = 0
+        
+        # Clear device responses to start fresh
+        self._device.clearResponses()
+        self._force_start_response_count = self._device.getNumberOfResponses()
+        
+        # Start measurement on device
+        success = self._device.startForceMeasurement(rate, device, wait_ack=True)
+        
+        if success:
+            self._force_measuring = True
+            self.status = STARTED
+            logging.info(f"Force measurement started: {rate} Hz, device '{device}'")
+        else:
+            logging.error("Failed to start force measurement")
+            
+        return success
+
+    def stopForceMeasurement(self) -> bool:
+        """
+        Stop force measurement on the apparatus device.
+        
+        Stops the streaming of force data and finalizes the measurement session.
+        
+        Returns
+        -------
+        bool
+            True if measurement stopped successfully, False otherwise.
+        """
+        if not self._force_measuring:
+            logging.warning("Force measurement was not running")
+            return True
+        
+        # Collect any remaining responses before stopping
+        self._collectForceResponses()
+        
+        # Stop measurement on device
+        success = self._device.stopForceMeasurement(wait_ack=True)
+        
+        if success:
+            self._force_measuring = False
+            self.status = FINISHED
+            logging.info(f"Force measurement stopped. Collected {len(self.responses)} samples.")
+        else:
+            logging.error("Failed to stop force measurement")
+            
+        return success
+
+    def _collectForceResponses(self):
+        """
+        Collect force measurement responses from the device.
+        
+        This method should be called regularly (e.g., each frame) during measurement
+        to retrieve new force data and update current/max force values.
+        """
+        if not self._force_measuring:
+            return
+        
+        # Get all responses from device
+        all_responses = self._device.getResponses()
+        
+        # Process only new responses (those received after measurement started)
+        new_responses = all_responses[self._force_start_response_count:]
+        
+        for response in new_responses:
+            # Only process force data responses
+            if response.msg_type == DATA_FORCE:
+                # Store response and timestamp
+                self.times.append(response.t)
+                self.responses.append(response)
+                
+                # Extract and store force values
+                if response.whiteForce is not None:
+                    self.whiteForce = response.whiteForce
+                    self.whiteForceValues.append(response.whiteForce)
+                    self.whiteForceTimestamps.append(response.t)
+                    if response.whiteForce > self.maxWhiteForce:
+                        self.maxWhiteForce = response.whiteForce
+                        
+                if response.blueForce is not None:
+                    self.blueForce = response.blueForce
+                    self.blueForceValues.append(response.blueForce)
+                    self.blueForceTimestamps.append(response.t)
+                    if response.blueForce > self.maxBlueForce:
+                        self.maxBlueForce = response.blueForce
+        
+        # Update the response counter
+        self._force_start_response_count = len(all_responses)
+
+    def updateForceMeasurement(self):
+        """
+        Update force measurement data.
+        
+        Call this method regularly (e.g., each frame) during active measurement
+        to collect new force data from the device.
+        """
+        self._collectForceResponses()
 
     def startMeasurement(self, hole, method, light_feedback):
         """
         Start measurement on the apparatus device.
         
         NOTE: This method is dormant and not yet ported to the new protocol.
+        Use startForceMeasurement() for force measurements.
 
         Parameters
         ----------
@@ -257,15 +400,16 @@ class Apparatus(AttributeGetSetMixin):
         light_feedback : bool
             Whether to enable light feedback.
         """
-        raise NotImplementedError("Measurement not yet ported to new protocol")
+        raise NotImplementedError("Generic measurement not yet ported to new protocol. Use startForceMeasurement() for force measurements.")
 
     def stopMeasurement(self):
         """
         Stop measurement on the apparatus device.
         
         NOTE: This method is dormant and not yet ported to the new protocol.
+        Use stopForceMeasurement() for force measurements.
         """
-        raise NotImplementedError("Measurement not yet ported to new protocol")
+        raise NotImplementedError("Generic measurement not yet ported to new protocol. Use stopForceMeasurement() for force measurements.")
 
     # ===== Response management =====
 
