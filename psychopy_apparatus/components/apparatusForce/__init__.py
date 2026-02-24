@@ -30,6 +30,8 @@ class ApparatusForceComponent(BaseDeviceComponent):
         rate = 100,
         device = "both",
         endRoutineOnResponse = False,
+        saveRawData = False,
+        rawDataId = "",
         # device
         deviceLabel = "",
     ):
@@ -38,6 +40,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         self.exp.requireImport("Apparatus", "psychopy_apparatus.hardware.apparatus")
+        self.exp.requireImport("os")
 
         # --- Params ---
 
@@ -45,7 +48,9 @@ class ApparatusForceComponent(BaseDeviceComponent):
         self.order += [
             "rate",
             "device",
-            "endRoutineOnResponse"
+            "endRoutineOnResponse",
+            "saveRawData",
+            "rawDataId"
         ]
         self.params['rate'] = Param(
             rate, valType="code", inputType="single", categ="Basic",
@@ -53,13 +58,21 @@ class ApparatusForceComponent(BaseDeviceComponent):
         )
         self.params['device'] = Param(
             device, valType="str", inputType="choice", categ="Basic",
-            allowedVals=["'white'", "'blue'", "'both'"],
+            allowedVals=["white", "blue", "both"],
             label="Device", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
         )
         self.params['endRoutineOnResponse'] = Param(
             endRoutineOnResponse, valType="code", inputType="bool", categ="Basic",
             label="End Routine On Response", hint="If checked, the routine will end when a response is received."
-        )   
+        )
+        self.params['saveRawData'] = Param(
+            saveRawData, valType="code", inputType="bool", categ="Basic",
+            label="Save Raw Data", hint="If checked, save raw force samples to a long-format file per experiment."
+        )
+        self.params['rawDataId'] = Param(
+            rawDataId, valType="code", inputType="single", categ="Basic",
+            label="Raw Data Identifier", hint="Optional identifier to tag rows (string or variable)."
+        )
 
     def writeInitCode(self, buff):
         """
@@ -157,16 +170,45 @@ class ApparatusForceComponent(BaseDeviceComponent):
         params = self.params.copy()
         # add reference to the current loop (handy for data writing)
         params['currentLoop'] = self.currentLoop
+        params['parentName'] = self.parentName
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
             "%(currentLoop)s.addData('%(name)s.device', %(device)s)\n"
-            "%(currentLoop)s.addData('%(name)s.whiteForceValues', %(name)s.whiteForceValues)\n"
-            "%(currentLoop)s.addData('%(name)s.whiteForceTimestamps', %(name)s.whiteForceTimestamps)\n"
-            "%(currentLoop)s.addData('%(name)s.blueForceValues', %(name)s.blueForceValues)\n"
-            "%(currentLoop)s.addData('%(name)s.blueForceTimestamps', %(name)s.blueForceTimestamps)\n"
             "%(currentLoop)s.addData('%(name)s.maxWhiteForce', %(name)s.maxWhiteForce)\n"
             "%(currentLoop)s.addData('%(name)s.maxBlueForce', %(name)s.maxBlueForce)\n"
+            "if %(saveRawData)s:\n"
+            "    _raw_path = thisExp.dataFileName + '_force_long.tsv'\n"
+            "    _write_header = not os.path.exists(_raw_path)\n"
+            "    _loop = %(currentLoop)s\n"
+            "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
+            "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
+            "    _identifier = %(rawDataId)s if %(rawDataId)s != None else ''\n"
+            "    _times = %(name)s.times\n"
+            "    _white = %(name)s.whiteForceValues\n"
+            "    _blue = %(name)s.blueForceValues\n"
+            "    _n = max(len(_times), len(_white), len(_blue))\n"
+            "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
+            "        if _write_header:\n"
+            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\ttime\twhite_force\tblue_force\\n')\n"
+            "        for _i in range(_n):\n"
+            "            _t = _times[_i] if _i < len(_times) else ''\n"
+            "            _w = _white[_i] if _i < len(_white) else ''\n"
+            "            _b = _blue[_i] if _i < len(_blue) else ''\n"
+            "            _row = [\n"
+            "                expInfo.get(\"participant\", \"\"),\n"
+            "                expInfo.get(\"session\", \"\"),\n"
+            "                '%(parentName)s',\n"
+            "                '%(name)s',\n"
+            "                _trial_index,\n"
+            "                _trial_name,\n"
+            "                _identifier,\n"
+            "                _i,\n"
+            "                _t,\n"
+            "                _w,\n"
+            "                _b,\n"
+            "            ]\n"
+            "            _f.write('\t'.join(str(_v) for _v in _row) + '\\n')\n"
         )
         buff.writeIndentedLines(code % params)
 
