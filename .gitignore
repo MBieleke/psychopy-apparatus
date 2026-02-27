@@ -4,7 +4,3 @@ venv
 __pycache__/
 *.pyc
 **/__pycache__/
-
-# Tests
-experiments/tests
-psychopy_apparatus/hardware/__pycache__/apparatus.cpython-310.pyc
