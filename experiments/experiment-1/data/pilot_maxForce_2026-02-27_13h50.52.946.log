@@ -1,0 +1,243 @@
+5.7424 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+5.7431 	INFO 	Loaded monitor calibration from ['2026_01_16 20:23']
+5.9433 	INFO 	Using renderer 'Intel(R) Arc(TM) 140T GPU (32GB)' for graphics
+5.9434 	INFO 	OpenGL version supported by driver is 4..
+5.9678 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000017DCDA0B010>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000017DCDA0A260>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000017DD0F3BCA0>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(1136.0), np.float64(660.0)], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.9679 	EXP 	window1: backgroundImage = ''
+5.9679 	EXP 	window1: backgroundFit = 'none'
+5.9823 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.9904 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.9988 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0070 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0153 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0233 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0315 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0396 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0474 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0554 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0637 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0718 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0798 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0879 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.0961 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1042 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1125 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1207 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1288 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1371 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1451 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1455 	DEBUG 	Uploading Texture Font fontname to graphics card
+6.1503 	DEBUG 	Upload of Texture Font fontname complete
+6.1627 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1710 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1792 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+6.1794 	DEBUG 	Uploading Texture Font fontname to graphics card
+6.1832 	DEBUG 	Upload of Texture Font fontname complete
+6.1845 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+6.1846 	EXP 	window1: recordFrameIntervals = False
+6.3491 	EXP 	window1: recordFrameIntervals = True
+8.0176 	EXP 	window1: recordFrameIntervals = False
+8.0176 	EXP 	Screen (0) actual frame rate measured at 58.98Hz
+8.0312 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.0450 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.0566 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.0672 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.0780 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.0900 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.1048 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.1129 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.1229 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.1309 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.1312 	DEBUG 	Uploading Texture Font fontname to graphics card
+8.1317 	DEBUG 	Upload of Texture Font fontname complete
+8.2260 	INFO 	keyboard.Keyboard is using ptb backend.
+8.2345 	INFO 	Apparatus device initialized on COM6 at 115200 baud
+8.2346 	EXP 	maxForce: status = STARTED
+0.0154 	INFO 	Apparatus TX: seq=1, type=CMD_FORCE_START, dst=SERVER, payload=1027000002
+0.0257 	INFO 	Apparatus RX: ACK for seq=1
+0.0257 	INFO 	Force measurement started: 100 Hz, device 'both'
+0.1138 	INFO 	Apparatus TX: seq=2, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.1353 	INFO 	Apparatus RX: ACK for seq=2
+0.1619 	INFO 	Apparatus TX: seq=3, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.1812 	INFO 	Apparatus RX: ACK for seq=3
+0.2151 	INFO 	Apparatus TX: seq=4, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.2287 	INFO 	Apparatus RX: ACK for seq=4
+0.2446 	INFO 	Apparatus TX: seq=5, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.2596 	INFO 	Apparatus RX: ACK for seq=5
+0.3309 	INFO 	Apparatus TX: seq=6, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.3541 	INFO 	Apparatus RX: ACK for seq=6
+0.3704 	INFO 	Apparatus TX: seq=7, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.3856 	INFO 	Apparatus RX: ACK for seq=7
+0.4467 	INFO 	Apparatus TX: seq=8, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.4648 	INFO 	Apparatus RX: ACK for seq=8
+0.4848 	INFO 	Apparatus TX: seq=9, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.5102 	INFO 	Apparatus RX: ACK for seq=9
+0.5626 	INFO 	Apparatus TX: seq=10, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.6036 	INFO 	Apparatus RX: ACK for seq=10
+0.6194 	INFO 	Apparatus TX: seq=11, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.6512 	INFO 	Apparatus RX: ACK for seq=11
+0.6628 	INFO 	Apparatus TX: seq=12, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.6829 	INFO 	Apparatus RX: ACK for seq=12
+0.7126 	INFO 	Apparatus TX: seq=13, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.7281 	INFO 	Apparatus RX: ACK for seq=13
+0.7629 	INFO 	Apparatus TX: seq=14, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.7904 	INFO 	Apparatus RX: ACK for seq=14
+0.8059 	INFO 	Apparatus TX: seq=15, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.8216 	INFO 	Apparatus RX: ACK for seq=15
+0.8638 	INFO 	Apparatus TX: seq=16, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.8850 	INFO 	Apparatus RX: ACK for seq=16
+0.9009 	INFO 	Apparatus TX: seq=17, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.9296 	INFO 	Apparatus RX: ACK for seq=17
+0.9639 	INFO 	Apparatus TX: seq=18, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.9794 	INFO 	Apparatus RX: ACK for seq=18
+0.9957 	INFO 	Apparatus TX: seq=19, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.0110 	INFO 	Apparatus RX: ACK for seq=19
+1.0793 	INFO 	Apparatus TX: seq=20, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.1039 	INFO 	Apparatus RX: ACK for seq=20
+1.1201 	INFO 	Apparatus TX: seq=21, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.1497 	INFO 	Apparatus RX: ACK for seq=21
+1.1799 	INFO 	Apparatus TX: seq=22, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.1975 	INFO 	Apparatus RX: ACK for seq=22
+1.2140 	INFO 	Apparatus TX: seq=23, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.2288 	INFO 	Apparatus RX: ACK for seq=23
+1.2962 	INFO 	Apparatus TX: seq=24, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.3066 	INFO 	Apparatus RX: ACK for seq=24
+1.3227 	INFO 	Apparatus TX: seq=25, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.3381 	INFO 	Apparatus RX: ACK for seq=25
+1.4132 	INFO 	Apparatus TX: seq=26, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.4336 	INFO 	Apparatus RX: ACK for seq=26
+1.4499 	INFO 	Apparatus TX: seq=27, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.4777 	INFO 	Apparatus RX: ACK for seq=27
+1.5145 	INFO 	Apparatus TX: seq=28, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.5259 	INFO 	Apparatus RX: ACK for seq=28
+1.5425 	INFO 	Apparatus TX: seq=29, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.5576 	INFO 	Apparatus RX: ACK for seq=29
+1.6291 	INFO 	Apparatus TX: seq=30, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.6500 	INFO 	Apparatus RX: ACK for seq=30
+1.6663 	INFO 	Apparatus TX: seq=31, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.6864 	INFO 	Apparatus RX: ACK for seq=31
+1.7295 	INFO 	Apparatus TX: seq=32, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.7449 	INFO 	Apparatus RX: ACK for seq=32
+1.7610 	INFO 	Apparatus TX: seq=33, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.7767 	INFO 	Apparatus RX: ACK for seq=33
+1.8297 	INFO 	Apparatus TX: seq=34, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.8533 	INFO 	Apparatus RX: ACK for seq=34
+1.8698 	INFO 	Apparatus TX: seq=35, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.9066 	INFO 	Apparatus RX: ACK for seq=35
+1.9299 	INFO 	Apparatus TX: seq=36, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.9470 	INFO 	Apparatus RX: ACK for seq=36
+1.9635 	INFO 	Apparatus TX: seq=37, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.9789 	INFO 	Apparatus RX: ACK for seq=37
+2.0470 	INFO 	Apparatus TX: seq=38, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.0575 	INFO 	Apparatus RX: ACK for seq=38
+2.0739 	INFO 	Apparatus TX: seq=39, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.0894 	INFO 	Apparatus RX: ACK for seq=39
+2.1625 	INFO 	Apparatus TX: seq=40, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.1825 	INFO 	Apparatus RX: ACK for seq=40
+2.1988 	INFO 	Apparatus TX: seq=41, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.2293 	INFO 	Apparatus RX: ACK for seq=41
+2.2629 	INFO 	Apparatus TX: seq=42, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.2763 	INFO 	Apparatus RX: ACK for seq=42
+2.2928 	INFO 	Apparatus TX: seq=43, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.3082 	INFO 	Apparatus RX: ACK for seq=43
+2.3793 	INFO 	Apparatus TX: seq=44, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.4010 	INFO 	Apparatus RX: ACK for seq=44
+2.4172 	INFO 	Apparatus TX: seq=45, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.4328 	INFO 	Apparatus RX: ACK for seq=45
+2.4793 	INFO 	Apparatus TX: seq=46, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.4940 	INFO 	Apparatus RX: ACK for seq=46
+2.5101 	INFO 	Apparatus TX: seq=47, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.5419 	INFO 	Apparatus RX: ACK for seq=47
+2.5970 	INFO 	Apparatus TX: seq=48, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.6196 	INFO 	Apparatus RX: ACK for seq=48
+2.6361 	INFO 	Apparatus TX: seq=49, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.6508 	INFO 	Apparatus RX: ACK for seq=49
+2.7131 	INFO 	Apparatus TX: seq=50, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.7284 	INFO 	Apparatus RX: ACK for seq=50
+2.7445 	INFO 	Apparatus TX: seq=51, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.7602 	INFO 	Apparatus RX: ACK for seq=51
+2.8127 	INFO 	Apparatus TX: seq=52, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.8383 	INFO 	Apparatus RX: ACK for seq=52
+2.8542 	INFO 	Apparatus TX: seq=53, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.8693 	INFO 	Apparatus RX: ACK for seq=53
+2.9300 	INFO 	Apparatus TX: seq=54, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.9474 	INFO 	Apparatus RX: ACK for seq=54
+2.9640 	INFO 	Apparatus TX: seq=55, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.9792 	INFO 	Apparatus RX: ACK for seq=55
+3.0461 	INFO 	Apparatus TX: seq=56, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.0728 	INFO 	Apparatus RX: ACK for seq=56
+3.0889 	INFO 	Apparatus TX: seq=57, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.1190 	INFO 	Apparatus RX: ACK for seq=57
+3.1621 	INFO 	Apparatus TX: seq=58, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.1830 	INFO 	Apparatus RX: ACK for seq=58
+3.1986 	INFO 	Apparatus TX: seq=59, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.2280 	INFO 	Apparatus RX: ACK for seq=59
+3.2636 	INFO 	Apparatus TX: seq=60, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.2907 	INFO 	Apparatus RX: ACK for seq=60
+3.3066 	INFO 	Apparatus TX: seq=61, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.3218 	INFO 	Apparatus RX: ACK for seq=61
+3.3797 	INFO 	Apparatus TX: seq=62, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.3912 	INFO 	Apparatus RX: ACK for seq=62
+3.4069 	INFO 	Apparatus TX: seq=63, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.4222 	INFO 	Apparatus RX: ACK for seq=63
+3.4970 	INFO 	Apparatus TX: seq=64, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.5087 	INFO 	Apparatus RX: ACK for seq=64
+3.5245 	INFO 	Apparatus TX: seq=65, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.5392 	INFO 	Apparatus RX: ACK for seq=65
+3.6135 	INFO 	Apparatus TX: seq=66, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.6388 	INFO 	Apparatus RX: ACK for seq=66
+3.6657 	INFO 	Apparatus TX: seq=67, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.6815 	INFO 	Apparatus RX: ACK for seq=67
+3.7296 	INFO 	Apparatus TX: seq=68, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.7448 	INFO 	Apparatus RX: ACK for seq=68
+3.7609 	INFO 	Apparatus TX: seq=69, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.7908 	INFO 	Apparatus RX: ACK for seq=69
+3.8467 	INFO 	Apparatus TX: seq=70, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.8704 	INFO 	Apparatus RX: ACK for seq=70
+3.8867 	INFO 	Apparatus TX: seq=71, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.9025 	INFO 	Apparatus RX: ACK for seq=71
+3.9623 	INFO 	Apparatus TX: seq=72, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.9933 	INFO 	Apparatus RX: ACK for seq=72
+4.0108 	INFO 	Apparatus TX: seq=73, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.0423 	INFO 	Apparatus RX: ACK for seq=73
+4.0795 	INFO 	Apparatus TX: seq=74, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.1033 	INFO 	Apparatus RX: ACK for seq=74
+4.1192 	INFO 	Apparatus TX: seq=75, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.1345 	INFO 	Apparatus RX: ACK for seq=75
+4.1968 	INFO 	Apparatus TX: seq=76, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.2123 	INFO 	Apparatus RX: ACK for seq=76
+4.2283 	INFO 	Apparatus TX: seq=77, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.2437 	INFO 	Apparatus RX: ACK for seq=77
+4.3123 	INFO 	Apparatus TX: seq=78, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.3377 	INFO 	Apparatus RX: ACK for seq=78
+4.3543 	INFO 	Apparatus TX: seq=79, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.3697 	INFO 	Apparatus RX: ACK for seq=79
+4.4125 	INFO 	Apparatus TX: seq=80, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.4306 	INFO 	Apparatus RX: ACK for seq=80
+4.4471 	INFO 	Apparatus TX: seq=81, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.4623 	INFO 	Apparatus RX: ACK for seq=81
+4.5135 	INFO 	Apparatus TX: seq=82, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.5368 	INFO 	Apparatus RX: ACK for seq=82
+4.5570 	INFO 	Apparatus TX: seq=83, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.5724 	INFO 	Apparatus RX: ACK for seq=83
+4.6293 	INFO 	Apparatus TX: seq=84, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.6499 	INFO 	Apparatus RX: ACK for seq=84
+4.6657 	INFO 	Apparatus TX: seq=85, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.6815 	INFO 	Apparatus RX: ACK for seq=85
+4.7299 	INFO 	Apparatus TX: seq=86, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.7449 	INFO 	Apparatus RX: ACK for seq=86
+4.7605 	INFO 	Apparatus TX: seq=87, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.7909 	INFO 	Apparatus RX: ACK for seq=87
+4.8462 	INFO 	Apparatus TX: seq=88, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.8685 	INFO 	Apparatus RX: ACK for seq=88
+4.8847 	INFO 	Apparatus TX: seq=89, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.9006 	INFO 	Apparatus RX: ACK for seq=89
+4.9466 	INFO 	Apparatus TX: seq=90, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.9672 	INFO 	Apparatus RX: ACK for seq=90
+4.9777 	INFO 	Apparatus TX: seq=91, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.9932 	INFO 	Apparatus RX: ACK for seq=91
+5.0314 	EXP 	maxForce: status = STOPPED
+5.0364 	INFO 	saved data to 'C:\\Users\\Maik Bieleke\\My Drive\\Labor\\psychopy-apparatus\\experiments\\experiment-1\\data\\pilot_maxForce_2026-02-27_13h50.52.946.csv'
+5.0372 	INFO 	saved data to C:\Users\Maik Bieleke\My Drive\Labor\psychopy-apparatus\experiments\experiment-1\data\pilot_maxForce_2026-02-27_13h50.52.946.psydat
+5.3328 	DEBUG 	Saving data for maxForce ExperimentHandler
+5.3365 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.

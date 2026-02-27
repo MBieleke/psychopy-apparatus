@@ -1,0 +1,995 @@
+participant	session	routine	component	trial_index	trial_name	identifier	sample_index	time	white_force	blue_force
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	0	0.02815060003194958	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	1	0.028163300012238324	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	2	0.036297000013291836	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	3	0.036323899985291064	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	4	0.04626130004180595	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	5	0.04628290003165603	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	6	0.05628020002041012	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	7	0.05629989999579266	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	8	0.0667441000114195	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	9	0.06677010003477335	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	10	0.07631570001831278	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	11	0.07634820003295317	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	12	0.08636359998490661	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	13	0.0863853000337258	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	14	0.09630500001367182	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	15	0.09633359999861568	4	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	16	0.10624659998575225	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	17	0.10627109999768436	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	18	0.11664090002886951	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	19	0.11667560000205413	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	20	0.1278120999922976	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	21	0.12783860001945868	4	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	22	0.13664530002279207	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	23	0.1366791999898851	6	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	24	0.1466820000205189	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	25	0.1467125000199303	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	26	0.15667340002255514	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	27	0.15670390002196655	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	28	0.16664250002941117	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	29	0.16666710004210472	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	30	0.177900500013493	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	31	0.17793649999657646	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	32	0.18665470002451912	16	9
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	33	0.18668280000565574	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	34	0.19671029999153689	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	35	0.1967391000362113	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	36	0.20662170002469793	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	37	0.2066484999959357	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	38	0.21716810000361875	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	39	0.2171931000193581	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	40	0.22783009998966008	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	41	0.2278482000110671	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	42	0.23668189998716116	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	43	0.23670080001465976	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	44	0.24674080003751442	7	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	45	0.24677860003430396	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	46	0.2599783000187017	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	47	0.26002600003266707	7	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	48	0.266799200035166	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	49	0.2668316999915987	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	50	0.2766332000028342	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	51	0.27666080003837124	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	52	0.28671730001224205	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	53	0.28674300003331155	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	54	0.2967731000389904	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	55	0.2968038000399247	8	5
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	56	0.30665000004228204	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	57	0.30667250003898516	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	58	0.3166837000171654	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	59	0.3167078000260517	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	60	0.3268382000387646	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	61	0.3268662000191398	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	62	0.33659439999610186	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	63	0.33661230001598597	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	64	0.34699089999776334	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	65	0.34700320003321394	5	4
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	66	0.35678870003903285	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	67	0.35680290003074333	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	68	0.36677540000528097	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	69	0.3668072000145912	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	70	0.3766639000386931	6	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	71	0.3766823000041768	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	72	0.38799880002625287	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	73	0.388030800037086	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	74	0.3969082999974489	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	75	0.39693839999381453	7	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	76	0.40677910001249984	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	77	0.40681180002866313	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	78	0.41696300002513453	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	79	0.4169893999933265	0	19
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	80	0.42683380004018545	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	81	0.42688069998985156	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	82	0.4367169000324793	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	83	0.4367406000383198	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	84	0.447195400018245	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	85	0.44722540001384914	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	86	0.45927839999785647	2	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	87	0.45930490002501756	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	88	0.46681399998487905	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	89	0.46684380003716797	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	90	0.4767567000235431	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	91	0.47678430000087246	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	92	0.4867892999900505	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	93	0.4868226000107825	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	94	0.4968617000267841	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	95	0.4968878999934532	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	96	0.5067898000124842	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	97	0.5068102999939583	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	98	0.5168099000002258	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	99	0.5168385999859311	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	100	0.5268027000129223	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	101	0.5268257000134327	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	102	0.5368036000290886	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	103	0.5368228000006638	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	104	0.5468318000202999	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	105	0.5468580999877304	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	106	0.5568166000302881	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	107	0.5568391000269912	13	5
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	108	0.5668008000357077	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	109	0.5668194000027142	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	110	0.5779792999965139	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	111	0.5780006000422873	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	112	0.5868125000270084	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	113	0.5868316999985836	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	114	0.5967922999989241	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	115	0.5968091000104323	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	116	0.6070456000161357	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	117	0.6070699000265449	13	7
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	118	0.6168004000210203	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	119	0.6168291000067256	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	120	0.6268757000216283	8	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	121	0.6269326999899931	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	122	0.6385344000300393	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	123	0.6385781000135466	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	124	0.6468244999996386	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	125	0.6468490000115708	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	126	0.6568664000369608	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	127	0.6568976000417024	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	128	0.666915700014215	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	129	0.6669311000150628	6	1
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	130	0.6779480000259355	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	131	0.6779638000298291	4	1
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	132	0.6869405999896117	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	133	0.6869584000087343	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	134	0.6971329000080004	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	135	0.6971769999945536	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	136	0.7068455000407994	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	137	0.706875600037165	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	138	0.7167905000387691	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	139	0.716808500001207	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	140	0.7292622000095434	7	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	141	0.7293178000254557	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	142	0.7368304000119679	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	143	0.736848300031852	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	144	0.7471912000328302	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	145	0.7472515000263229	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	146	0.7571762999868952	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	147	0.7572056000353768	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	148	0.7668734000180848	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	149	0.7669025000068359	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	150	0.7782515999861062	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	151	0.7782774000079371	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	152	0.7871909000095911	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	153	0.7872338999877684	5	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	154	0.797011399990879	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	155	0.7970352999982424	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	156	0.8071736000129022	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	157	0.8072057000244968	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	158	0.8170733000151813	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	159	0.8171058000298217	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	160	0.8268786999979056	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	161	0.8268974000238813	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	162	0.8369409000151791	11	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	163	0.8369660000316799	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	164	0.8470278999884613	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	165	0.8470644000335597	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	166	0.856998700008262	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	167	0.8570247000316158	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	168	0.8669312000274658	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	169	0.866964699991513	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	170	0.8782617000397295	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	171	0.8782906000269577	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	172	0.887228200037498	10	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	173	0.8872583000338636	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	174	0.8971199000370689	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	175	0.8971474000136368	2	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	176	0.9068821000400931	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	177	0.9069054000428878	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	178	0.9184791999869049	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	179	0.9185049000079744	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	180	0.9273072000360116	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	181	0.9273253999999724	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	182	0.936921100015752	11	6
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	183	0.9369434000109322	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	184	0.9471073999884538	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	185	0.9471354000270367	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	186	0.9571575000300072	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	187	0.9571854000096209	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	188	0.9670244000153616	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	189	0.9670464000082575	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	190	0.9786715999944136	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	191	0.9786985000246204	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	192	0.9869939000345767	11	5
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	193	0.9870137000107206	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	194	0.9971687000361271	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	195	0.9971947000012733	6	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	196	1.0072405000100844	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	197	1.007266000029631	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	198	1.017062500002794	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	199	1.017083399987314	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	200	1.027465699997265	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	201	1.0274869999848306	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	202	1.0369953000335954	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	203	1.0370169000234455	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	204	1.0471099000424147	4	1
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	205	1.0471325000398792	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	206	1.0574445000384003	5	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	207	1.0574626000015996	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	208	1.0670487000024877	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	209	1.0670717000029981	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	210	1.0771940000122413	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	211	1.0772149999975227	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	212	1.0873978000017814	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	213	1.0874159000231884	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	214	1.0970252000261098	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	215	1.0970435999915935	13	20
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	216	1.1071818000054918	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	217	1.1071994000230916	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	218	1.1175209000357427	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	219	1.1175397000042722	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	220	1.126866600010544	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	221	1.1268862999859266	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	222	1.1385163000086322	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	223	1.138537599996198	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	224	1.1472785000223666	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	225	1.1473095000255853	5	7
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	226	1.157011900038924	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	227	1.1570336000295356	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	228	1.1670520000043325	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	229	1.167073699994944	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	230	1.1772190000046976	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	231	1.1772492000018246	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	232	1.1869473000406288	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	233	1.1869728000019677	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	234	1.1973044000333175	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	235	1.197316600009799	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	236	1.2072332000243478	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	237	1.2072540000081062	10	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	238	1.2170148000004701	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	239	1.2170291999937035	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	240	1.228699300030712	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	241	1.2287241999874823	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	242	1.2370831000152975	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	243	1.2371056000120007	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	244	1.24705870001344	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	245	1.247078699991107	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	246	1.2575524999992922	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	247	1.2575736999860965	10	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	248	1.2671038000262342	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	249	1.2671333000180312	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	250	1.2771346000372432	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	251	1.277150400041137	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	252	1.2873193999985233	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	253	1.2873428000020795	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	254	1.297088299994357	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	255	1.2971160000306554	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	256	1.3089889000402763	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	257	1.3090072000049986	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	258	1.3173715000157245	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	259	1.3174012000090443	6	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	260	1.3272317000082694	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	261	1.327252299990505	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	262	1.3385761000099592	7	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	263	1.338602300034836	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	264	1.3484672000049613	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	265	1.3484897000016645	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	266	1.3574771000421606	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	267	1.3575334000051953	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	268	1.3671803000033833	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	269	1.3672032000031322	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	270	1.3771428000181913	15	10
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	271	1.3771646000095643	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	272	1.3874709000228904	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	273	1.3874898999929428	9	1
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	274	1.3972402000217699	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	275	1.3972673999960534	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	276	1.4071828000014648	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	277	1.4072073000133969	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	278	1.4172515000100248	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	279	1.4172825000132434	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	280	1.428360900026746	29	16
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	281	1.4283914000261575	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	282	1.4374136000405997	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	283	1.4374325000098906	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	284	1.4474740999867208	7	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	285	1.4474921000073664	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	286	1.4571469000075012	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	287	1.4571653000311926	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	288	1.468571300036274	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	289	1.4685951999854296	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	290	1.4775582000147551	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	291	1.4775739000178874	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	292	1.4872376000275835	12	6
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	293	1.4872662000125274	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	294	1.497154499986209	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	295	1.4972027000039816	7	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	296	1.507361399999354	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	297	1.5073820000397973	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	298	1.5172393000102602	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	299	1.5172599999932572	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	300	1.5285462000174448	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	301	1.5285680000088178	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	302	1.5378388999961317	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	303	1.5378685999894515	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	304	1.54743590002181	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	305	1.5474820000235923	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	306	1.5589949000277556	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	307	1.5590288999956101	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	308	1.567468099994585	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	309	1.567513499991037	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	310	1.577736700011883	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	311	1.5777703000348993	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	312	1.5877671000198461	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	313	1.587793499988038	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	314	1.5982833000016399	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	315	1.5983071000082418	13	8
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	316	1.6074466000427492	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	317	1.6074935999931768	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	318	1.617617000010796	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	319	1.6176367999869399	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	320	1.6273542999988422	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	321	1.6273693999974057	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	322	1.637558899994474	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	323	1.6375744999968447	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	324	1.6474380000145175	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	325	1.64745510002831	15	9
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	326	1.6574573999969289	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	327	1.6574745000107214	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	328	1.6677931000012904	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	329	1.6678209000383504	9	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	330	1.6776516000390984	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	331	1.6776705000083894	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	332	1.6874527999898419	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	333	1.68746889999602	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	334	1.6977991000167094	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	335	1.6978183999890462	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	336	1.707834200002253	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	337	1.7078535000327975	9	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	338	1.7175726999994367	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	339	1.7175948999938555	9	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	340	1.7275708999950439	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	341	1.7275913000339642	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	342	1.7377318000071682	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	343	1.7377592000411823	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	344	1.7480569999897853	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	345	1.7480778000317514	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	346	1.7576791000319645	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	347	1.7576984000043012	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	348	1.7674882000428624	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	349	1.7675102000357583	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	350	1.7788847000338137	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	351	1.7789066000259481	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	352	1.7880886000348255	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	353	1.7881260000285693	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	354	1.7975005999905989	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	355	1.7975384999881499	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	356	1.8078677000012249	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	357	1.8078860000241548	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	358	1.817525900027249	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	359	1.8175473000155762	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	360	1.8275218000053428	14	7
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	361	1.8275469000218436	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	362	1.8378933999920264	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	363	1.837913400027901	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	364	1.8476029000012204	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	365	1.847614300029818	6	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	366	1.8575720000080764	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	367	1.8575916000409052	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	368	1.867781000037212	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	369	1.8678099000244401	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	370	1.8774891000357457	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	371	1.8775082000065595	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	372	1.8884918999974616	7	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	373	1.888504600035958	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	374	1.8976385000278242	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	375	1.8976689000264741	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	376	1.9076160000404343	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	377	1.9076345000066794	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	378	1.91777960001491	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	379	1.9178023000131361	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	380	1.9276434000348672	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	381	1.9276632000110112	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	382	1.93781560001662	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	383	1.9378871000371873	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	384	1.9477000000188127	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	385	1.9477111999876797	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	386	1.9576617000275292	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	387	1.9576831000158563	9	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	388	1.967625199991744	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	389	1.9676610000315122	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	390	1.9789747000322677	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	391	1.978993900003843	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	392	1.9877986999927089	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	393	1.987828100041952	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	394	1.9975795000209473	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	395	1.9976099000195973	11	5
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	396	2.0076520000002347	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	397	2.007673699990846	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	398	2.0178201000089757	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	399	2.0178423000033945	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	400	2.028037999989465	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	401	2.028064500016626	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	402	2.038077400007751	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	403	2.038097300042864	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	404	2.047676499991212	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	405	2.0477006000000983	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	406	2.059589300013613	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	407	2.059612700017169	5	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	408	2.0677217000047676	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	409	2.0677459000144154	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	410	2.0779174999915995	12	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	411	2.0779347000061534	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	412	2.089485100004822	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	413	2.0895112000289373	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	414	2.0976476999931037	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	415	2.0976686000358313	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	416	2.1079673999920487	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	417	2.1079854000126943	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	418	2.1176593000418507	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	419	2.1176820000400767	1	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	420	2.1279434000025503	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	421	2.1279627000330947	6	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	422	2.137720200000331	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	423	2.1377425999962725	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	424	2.1478137000231072	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	425	2.14783550001448	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	426	2.157676300033927	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	427	2.157696800015401	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	428	2.1675289000268094	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	429	2.167546000040602	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	430	2.1788632000098005	13	4
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	431	2.178873700031545	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	432	2.187714400002733	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	433	2.1877356999902986	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	434	2.19779310002923	2	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	435	2.1978099000407383	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	436	2.2077342999982648	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	437	2.207754200033378	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	438	2.2178905000328086	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	439	2.217901800002437	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	440	2.2277976000332274	11	6
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	441	2.227816900005564	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	442	2.2377727000275627	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	443	2.237796400033403	7	3
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	444	2.249271899985615	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	445	2.2492918000207283	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	446	2.2579251000424847	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	447	2.2579462000285275	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	448	2.2677753000170924	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	449	2.2677952999947593	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	450	2.2790549999917857	15	6
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	451	2.279072700010147	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	452	2.288174199988134	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	453	2.2881926000118256	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	454	2.2976881000213325	6	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	455	2.297707799996715	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	456	2.3095048000104725	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	457	2.3095504000084475	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	458	2.3179405000410043	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	459	2.3179573999950662	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	460	2.3276966999983415	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	461	2.327720200002659	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	462	2.3381412000162527	4	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	463	2.338163500011433	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	464	2.3482747999951243	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	465	2.3482929000165313	3	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	466	2.3582636000355706	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	467	2.3582825000048615	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	468	2.368080899992492	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	469	2.368098300008569	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	470	2.377953000017442	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	471	2.377976000017952	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	472	2.3881739000207745	7	1
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	473	2.3882341000135057	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	474	2.3981450000428595	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	475	2.3981628000037745	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	476	2.4077282000216655	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	477	2.407744400028605	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	478	2.418122500006575	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	479	2.418142899987288	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	480	2.4280045999912545	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	481	2.428025000030175	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	482	2.437757200037595	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	483	2.437776800012216	11	6
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	484	2.4485533999977633	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	485	2.4485729000298306	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	486	2.457858000008855	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	487	2.4578724000020884	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	488	2.46793169999728	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	489	2.4679547999985516	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	490	2.477832800010219	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	491	2.47785860003205	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	492	2.48780689999694	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	493	2.4878255000221543	8	4
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	494	2.497824900026899	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	495	2.4978434999939054	0	0
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	496	2.5078876999905333	7	2
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	497	2.507906800019555		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	498	2.517823900037911		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	499	2.5178404999896884		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	500	2.5287680000183173		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	501	2.528784300026018		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	502	2.537934000021778		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	503	2.5379641000181437		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	504	2.5479382000048645		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	505	2.547963500022888		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	506	2.5584153000381775		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	507	2.558432099991478		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	508	2.567788799991831		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	509	2.5678107000421733		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	510	2.5779345000046305		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	511	2.577950500010047		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	512	2.5881440000375733		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	513	2.588163500011433		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	514	2.597796500020195		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	515	2.597817500005476		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	516	2.609595399990212		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	517	2.609614600019995		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	518	2.6180598000064492		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	519	2.6181141000124626		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	520	2.628104600007646		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	521	2.6281224000267684		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	522	2.6389011000283062		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	523	2.6389598000096157		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	524	2.6479184000054374		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	525	2.6479390999884345		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	526	2.657900399994105		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	527	2.6579162999987602		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	528	2.6680768000078388		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	529	2.668094300024677		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	530	2.678171400038991		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	531	2.678189400001429		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	532	2.6880445000133477		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	533	2.688065900001675		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	534	2.698288000014145		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	535	2.698305900034029		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	536	2.7081998999929056		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	537	2.7082327000098303		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	538	2.717951200029347		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	539	2.71798439999111		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	540	2.7288688000408		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	541	2.7288827000302263		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	542	2.738305200007744		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	543	2.738337600021623		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	544	2.747934000042733		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	545	2.7479569000424817		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	546	2.7597837999928743		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	547	2.7598101000185125		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	548	2.7679893000167795		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	549	2.7680086999898776		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	550	2.7783205999876373		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	551	2.778373700042721		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	552	2.7882909000036307		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	553	2.788313700002618		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	554	2.7986747000250034		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	555	2.798691800038796		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	556	2.808033100038301		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	557	2.808045600017067		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	558	2.8179073000210337		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	559	2.817924100032542		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	560	2.8290756000205874		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	561	2.829090900020674		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	562	2.8384345000376925		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	563	2.838484200008679		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	564	2.848008500004653		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	565	2.8480279000359587		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	566	2.85848380002426		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	567	2.858533399994485		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	568	2.869477000029292		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	569	2.869512000004761		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	570	2.8784440000308678		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	571	2.878499999991618		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	572	2.888507399999071		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	573	2.888523100002203		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	574	2.898092399991583		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	575	2.898110900016036		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	576	2.9079848999972455		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	577	2.9080082000000402		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	578	2.918365499994252		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	579	2.918384300020989		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	580	2.928263899986632		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	581	2.9282854000339285		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	582	2.9380454000202008		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	583	2.9380681000184268		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	584	2.948032099986449		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	585	2.948047799989581		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	586	2.9580704999971204		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	587	2.958091999986209		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	588	2.9679747000336647		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	589	2.9679942000075243		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	590	2.979260499996599		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	591	2.9792777000111528		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	592	2.9880944000324234		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	593	2.988115000014659		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	594	2.9982819000142626		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	595	2.9983037000056356		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	596	3.0081089999875985		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	597	3.0081397999892943		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	598	3.0181077999877743		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	599	3.0181270000175573		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	600	3.0281021000118926		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	601	3.0281191000249237		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	602	3.0383460000157356		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	603	3.0383685000124387		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	604	3.0484790999908		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	605	3.0484995000297204		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	606	3.059988400025759		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	607	3.0600067999912426		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	608	3.0690226000151597		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	609	3.069065199990291		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	610	3.0787735999911092		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	611	3.078792800020892		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	612	3.089363900013268		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	613	3.0894050000351854		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	614	3.099760100012645		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	615	3.099819800001569		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	616	3.109537000011187		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	617	3.1095475000329316		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	618	3.119406900019385		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	619	3.119433299987577		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	620	3.1293823000160046		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	621	3.129404900013469		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	622	3.1390759000205435		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	623	3.1391020999872126		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	624	3.14923280000221		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	625	3.1492481000022963		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	626	3.159125000005588		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	627	3.1591410000110045		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	628	3.16920870001195		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	629	3.1692247000173666		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	630	3.1792989000095986		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	631	3.1793099000351503		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	632	3.189155300031416		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	633	3.1891834000125527		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	634	3.1991840000264347		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	635	3.1992014000425115		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	636	3.2095953000243753		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	637	3.2096142999944277		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	638	3.2194701000116765		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	639	3.2194857000140473		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	640	3.2293153000064194		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	641	3.229338100005407		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	642	3.2393502999912016		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	643	3.2393822000012733		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	644	3.2492515000049025		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	645	3.249275400012266		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	646	3.2594670000253245		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	647	3.2594904000288807		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	648	3.2694661000277847		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	649	3.269483200041577		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	650	3.2795916000031866		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	651	3.2796024000272155		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	652	3.2894524000003003		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	653	3.2894761000061408		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	654	3.2992695000139065		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	655	3.2992899999953806		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	656	3.3093430000008084		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	657	3.309362300031353		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	658	3.3218016999890096		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	659	3.3218231000355445		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	660	3.3292363000218756		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	661	3.329260900034569		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	662	3.339334400021471		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	663	3.3393610999919474		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	664	3.349418300029356		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	665	3.3494418000336736		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	666	3.3592572000343353		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	667	3.359278100018855		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	668	3.3693425999954343		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	669	3.369361500022933		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	670	3.379194799985271		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	671	3.3792152000241913		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	672	3.3923063999973238		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	673	3.392325200024061		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	674	3.399321000033524		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	675	3.3993450000416487		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	676	3.409356700023636		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	677	3.409373000031337		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	678	3.4219957999885082		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	679	3.422018100041896		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	680	3.4293710000347346		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	681	3.429403199988883		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	682	3.439647099992726		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	683	3.43966430000728		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	684	3.449246700038202		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	685	3.449266300012823		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	686	3.4594285000348464		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	687	3.4594456999911927		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	688	3.469260000041686		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	689	3.4692815000307746		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	690	3.4794088000198826		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	691	3.479432900028769		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	692	3.489280999987386		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	693	3.4893102000351064		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	694	3.499352600018028		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	695	3.4993851000326686		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	696	3.5114025000366382		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	697	3.51141869998537		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	698	3.5201710000401363		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	699	3.520235900010448		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	700	3.529917000036221		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	701	3.529946100024972		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	702	3.5412298000301234		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	703	3.5412561999983154		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	704	3.5500271000200883		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	705	3.5500534999882802		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	706	3.560078800015617		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	707	3.5600977999856696		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	708	3.5700471000163816		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	709	3.570068800006993		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	710	3.5800318000256084		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	711	3.5800815999973565		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	712	3.589978800038807		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	713	3.5900100999861024		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	714	3.600112900021486		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	715	3.600132899999153		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	716	3.610065700020641		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	717	3.610083300038241		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	718	3.619840600003954		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	719	3.6198552999994718		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	720	3.630043299985118		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	721	3.6300548000144772		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	722	3.6401571999886073		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	723	3.6401747000054456		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	724	3.650079299986828		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	725	3.6500997000257485		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	726	3.660554600006435		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	727	3.6605753999901935		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	728	3.6699565000017174		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	729	3.6699774999869987		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	730	3.6811831000377424		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	731	3.6812038000207394		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	732	3.6899448999902233		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	733	3.689964000019245		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	734	3.6999798000324517		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	735	3.700000500015449		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	736	3.7102704000426456		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	737	3.7102891000104137		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	738	3.720081700012088		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	739	3.720108000037726		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	740	3.7304358000401407		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	741	3.730461400002241		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	742	3.7422701999894343		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	743	3.742289300018456		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	744	3.7500527999945916		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	745	3.7500747999874875		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	746	3.7603202000027522		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	747	3.7603383000241593		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	748	3.770433600002434		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	749	3.7704758000327274		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	750	3.7801935999887064		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	751	3.780224099988118		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	752	3.790270400000736		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	753	3.790290900040418		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	754	3.800069299992174		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	755	3.8000918999896385		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	756	3.8102613000082783		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	757	3.810290299996268		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	758	3.820305700006429		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	759	3.8203273999970406		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	760	3.8301001000218093		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	761	3.830164299986791		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	762	3.8403888000175357		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	763	3.84041070000967		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	764	3.850091800035443		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	765	3.8501085999887437		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	766	3.8612428000196815		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	767	3.8612635000026785		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	768	3.8703253000276163		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	769	3.8703452000045218		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	770	3.880141400033608		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	771	3.88016709999647		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	772	3.8902209000079893		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	773	3.8902428000001237		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	774	3.901932400010992		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	775	3.9019509000354446		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	776	3.9100602000253275		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	777	3.9100781999877654		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	778	3.9202706000069156		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	779	3.9203056000405923		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	780	3.9301248000119813		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	781	3.9301489000208676		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	782	3.940177600015886		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	783	3.940198700001929		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	784	3.9500915000098757		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	785	3.9501089000259526		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	786	3.960183600021992		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	787	3.9602076000301167		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	788	3.9700028999941424		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	789	3.970019100001082		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	790	3.9802454999880865		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	791	3.9802565000136383		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	792	3.990418400033377		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	793	3.990437700005714		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	794	4.000109900021926		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	795	4.000128399988171		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	796	4.010311999998521		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	797	4.010328700009268		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	798	4.02042660000734		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	799	4.0204454000340775		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	800	4.030314700037707		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	801	4.030324399995152		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	802	4.040268899989314		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	803	4.0402943000080995		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	804	4.050170800008345		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	805	4.050190899986774		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	806	4.060270000016317		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	807	4.060286500025541		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	808	4.0703105999855325		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	809	4.070344600011595		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	810	4.080202299985103		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	811	4.080228900013026		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	812	4.092256300034933		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	813	4.092275200004224		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	814	4.1004958000266925		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	815	4.100515700003598		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	816	4.110122199985199		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	817	4.110140900011174		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	818	4.120226800034288		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	819	4.120245700003579		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	820	4.1302219000062905		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	821	4.130245400010608		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	822	4.140179899986833		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	823	4.140198200009763		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	824	4.150312300014775		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	825	4.150335400016047		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	826	4.1604970000335015		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	827	4.160520100034773		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	828	4.1702365000383		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	829	4.170260599988978		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	830	4.180163400014862		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	831	4.180181800038554		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	832	4.1904960999963805		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	833	4.1905253999866545		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	834	4.200242199993227		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	835	4.200255300034769		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	836	4.211701399995945		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	837	4.211717900005169		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	838	4.220440800010692		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	839	4.220484699995723		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	840	4.230512200039811		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	841	4.230533600028139		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	842	4.240783900022507		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	843	4.24080570001388		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	844	4.2502560000284575		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	845	4.250278500025161		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	846	4.260746299987659		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	847	4.26078300003428		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	848	4.270590600033756		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	849	4.270614899985958		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	850	4.280702100018971		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	851	4.2807686000014655		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	852	4.290530500002205		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	853	4.290548200020567		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	854	4.300292500003707		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	855	4.300316700013354		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	856	4.310546800028533		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	857	4.310562900034711		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	858	4.320466100005433		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	859	4.320525499992073		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	860	4.330410099995788		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	861	4.330432799994014		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	862	4.340689900040161		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	863	4.340711300028488		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	864	4.350378300005104		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	865	4.350405500037596		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	866	4.360121300036553		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	867	4.360140200005844		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	868	4.3717483000364155		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	869	4.3717644000425935		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	870	4.380338300019503		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	871	4.380359600007068		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	872	4.390486999996938		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	873	4.390505800023675		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	874	4.400440800003707		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	875	4.4004607000388205		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	876	4.4106279000407085		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	877	4.410646300006192		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	878	4.4206567000364885		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	879	4.420684700016864		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	880	4.430540600034874		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	881	4.430570200027432		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	882	4.4407956000068225		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	883	4.440813500026707		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	884	4.450369400030468		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	885	4.450386699987575		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	886	4.4623485000338405		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	887	4.462370400025975		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	888	4.470370099996217		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	889	4.470384099986404		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	890	4.480400400003418		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	891	4.480416200007312		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	892	4.4906686000176705		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	893	4.490687699988484		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	894	4.500446600024588		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	895	4.500466400000732		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	896	4.510827200021595		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	897	4.510844600037672		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	898	4.5205146000371315		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	899	4.520530999987386		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	900	4.530415699991863		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	901	4.5304257000098005		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	902	4.540330699994229		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	903	4.540347100002691		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	904	4.550622300012037		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	905	4.55064410000341		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	906	4.5603593999985605		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	907	4.560378200025298		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	908	4.572119200020097		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	909	4.572143700032029		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	910	4.580442200007383		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	911	4.580461600038689		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	912	4.590411200013477		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	913	4.5904377000406384		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	914	4.60043950000545		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	915	4.600461699999869		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	916	4.610468600003514		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	917	4.610490399994887		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	918	4.620376600010786		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	919	4.620391600008588		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	920	4.630488299997523		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	921	4.630514200020116		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	922	4.641809900000226		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	923	4.641834800015204		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	924	4.650461699988227		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	925	4.650477799994405		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	926	4.660396300023422		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	927	4.660416500002611		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	928	4.670482499990612		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	929	4.670501800021157		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	930	4.681562900019344		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	931	4.681579800031614		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	932	4.690467400010675		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	933	4.690486500039697		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	934	4.700585299986415		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	935	4.700603800010867		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	936	4.71073350001825		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	937	4.710744399984833		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	938	4.720468599989545		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	939	4.7204880000208504		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	940	4.730999400024302		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	941	4.7310208000126295		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	942	4.7423518000287		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	943	4.742371000000276		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	944	4.750504800002091		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	945	4.750523600028828		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	946	4.760541399999056		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	947	4.760561000031885		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	948	4.770775599987246		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	949	4.770799299993087		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	950	4.780759499990381		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	951	4.7807717000250705		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	952	4.790757000038866		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	953	4.790789399994537		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	954	4.8008586000069045		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	955	4.8008792999899015		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	956	4.8107782999868505		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	957	4.810804500011727		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	958	4.820784200041089		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	959	4.820805600029416		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	960	4.830794900015462		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	961	4.830825300014112		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	962	4.840983200003393		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	963	4.841005499998573		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	964	4.850814100005664		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	965	4.850829000002705		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	966	4.861961100017652		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	967	4.861990400007926		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	968	4.870835200010333		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	969	4.870861200033687		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	970	4.880924099998083		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	971	4.8809452000423335		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	972	4.8907911000424065		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	973	4.8908109000185505		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	974	4.902373599994462		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	975	4.902398700010963		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	976	4.911126699997112		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	977	4.911171599989757		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	978	4.920838200021535		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	979	4.9208632000372745		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	980	4.930932999996003		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	981	4.930954300041776		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	982	4.941000899998471		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	983	4.941036300035194		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	984	4.951013299985789		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	985	4.951035600039177		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	986	4.962083799997345		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	987	4.962118400027975		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	988	4.970903400040697		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	989	4.970926100038923		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	990	4.980928300006781		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	991	4.980981200002134		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	992	4.992705399985425		
+pilot	001	countdown	apparatusForce_2	-1	maxForce	test	993	4.992722299997695		

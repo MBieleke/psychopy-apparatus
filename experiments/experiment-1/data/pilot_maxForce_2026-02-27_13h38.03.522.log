@@ -1,0 +1,2266 @@
+5.1822 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+5.1829 	INFO 	Loaded monitor calibration from ['2026_01_16 20:23']
+5.3751 	INFO 	Using renderer 'Intel(R) Arc(TM) 140T GPU (32GB)' for graphics
+5.3751 	INFO 	OpenGL version supported by driver is 4..
+5.3997 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000209D584EAD0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000209D584EB90>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000209D3E831C0>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(1136.0), np.float64(660.0)], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.3997 	EXP 	window1: backgroundImage = ''
+5.3998 	EXP 	window1: backgroundFit = 'none'
+5.4125 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4211 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4292 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4371 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4453 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4543 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4622 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4704 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4782 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4870 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.4949 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5031 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5113 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5189 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5263 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5342 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5424 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5496 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5574 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5655 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5734 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5737 	DEBUG 	Uploading Texture Font fontname to graphics card
+5.5783 	DEBUG 	Upload of Texture Font fontname complete
+5.5891 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.5980 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.6060 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+5.6065 	DEBUG 	Uploading Texture Font fontname to graphics card
+5.6111 	DEBUG 	Upload of Texture Font fontname complete
+5.6123 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+5.6124 	EXP 	window1: recordFrameIntervals = False
+5.7735 	EXP 	window1: recordFrameIntervals = True
+7.4415 	EXP 	window1: recordFrameIntervals = False
+7.4416 	EXP 	Screen (0) actual frame rate measured at 59.88Hz
+7.4526 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4603 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4684 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4761 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4839 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4917 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.4992 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.5070 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.5148 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.5226 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+7.5229 	DEBUG 	Uploading Texture Font fontname to graphics card
+7.5234 	DEBUG 	Upload of Texture Font fontname complete
+7.6068 	INFO 	keyboard.Keyboard is using ptb backend.
+7.6142 	INFO 	Apparatus device initialized on COM6 at 115200 baud
+7.6142 	EXP 	maxForce: status = STARTED
+0.0112 	INFO 	Apparatus TX: seq=1, type=CMD_FORCE_START, dst=SERVER, payload=1027000002
+0.0210 	INFO 	Apparatus RX: ACK for seq=1
+0.0210 	INFO 	Force measurement started: 100 Hz, device 'both'
+0.1111 	INFO 	Apparatus TX: seq=2, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.1231 	INFO 	Apparatus RX: ACK for seq=2
+0.1334 	INFO 	Apparatus TX: seq=3, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.1494 	INFO 	Apparatus RX: ACK for seq=3
+0.2267 	INFO 	Apparatus TX: seq=4, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.2406 	INFO 	Apparatus RX: ACK for seq=4
+0.2513 	INFO 	Apparatus TX: seq=5, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.2637 	INFO 	Apparatus RX: ACK for seq=5
+0.3267 	INFO 	Apparatus TX: seq=6, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.3413 	INFO 	Apparatus RX: ACK for seq=6
+0.3514 	INFO 	Apparatus TX: seq=7, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.3644 	INFO 	Apparatus RX: ACK for seq=7
+0.4275 	INFO 	Apparatus TX: seq=8, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.4423 	INFO 	Apparatus RX: ACK for seq=8
+0.4533 	INFO 	Apparatus TX: seq=9, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.4700 	INFO 	Apparatus RX: ACK for seq=9
+0.5432 	INFO 	Apparatus TX: seq=10, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.5538 	INFO 	Apparatus RX: ACK for seq=10
+0.5649 	INFO 	Apparatus TX: seq=11, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.5819 	INFO 	Apparatus RX: ACK for seq=11
+0.6438 	INFO 	Apparatus TX: seq=12, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.6538 	INFO 	Apparatus RX: ACK for seq=12
+0.6647 	INFO 	Apparatus TX: seq=13, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.6807 	INFO 	Apparatus RX: ACK for seq=13
+0.7594 	INFO 	Apparatus TX: seq=14, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+0.7716 	INFO 	Apparatus RX: ACK for seq=14
+0.7821 	INFO 	Apparatus TX: seq=15, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.7942 	INFO 	Apparatus RX: ACK for seq=15
+0.8605 	INFO 	Apparatus TX: seq=16, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+0.8715 	INFO 	Apparatus RX: ACK for seq=16
+0.8831 	INFO 	Apparatus TX: seq=17, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.9002 	INFO 	Apparatus RX: ACK for seq=17
+0.9610 	INFO 	Apparatus TX: seq=18, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+0.9710 	INFO 	Apparatus RX: ACK for seq=18
+0.9819 	INFO 	Apparatus TX: seq=19, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+0.9947 	INFO 	Apparatus RX: ACK for seq=19
+1.0775 	INFO 	Apparatus TX: seq=20, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.0920 	INFO 	Apparatus RX: ACK for seq=20
+1.1033 	INFO 	Apparatus TX: seq=21, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.1217 	INFO 	Apparatus RX: ACK for seq=21
+1.1777 	INFO 	Apparatus TX: seq=22, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.1920 	INFO 	Apparatus RX: ACK for seq=22
+1.2025 	INFO 	Apparatus TX: seq=23, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.2205 	INFO 	Apparatus RX: ACK for seq=23
+1.2936 	INFO 	Apparatus TX: seq=24, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.3048 	INFO 	Apparatus RX: ACK for seq=24
+1.3151 	INFO 	Apparatus TX: seq=25, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.3310 	INFO 	Apparatus RX: ACK for seq=25
+1.4097 	INFO 	Apparatus TX: seq=26, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.4212 	INFO 	Apparatus RX: ACK for seq=26
+1.4315 	INFO 	Apparatus TX: seq=27, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.4448 	INFO 	Apparatus RX: ACK for seq=27
+1.5270 	INFO 	Apparatus TX: seq=28, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.5413 	INFO 	Apparatus RX: ACK for seq=28
+1.5524 	INFO 	Apparatus TX: seq=29, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.5649 	INFO 	Apparatus RX: ACK for seq=29
+1.6278 	INFO 	Apparatus TX: seq=30, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.6418 	INFO 	Apparatus RX: ACK for seq=30
+1.6522 	INFO 	Apparatus TX: seq=31, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.6659 	INFO 	Apparatus RX: ACK for seq=31
+1.7431 	INFO 	Apparatus TX: seq=32, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+1.7531 	INFO 	Apparatus RX: ACK for seq=32
+1.7638 	INFO 	Apparatus TX: seq=33, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.7805 	INFO 	Apparatus RX: ACK for seq=33
+1.8442 	INFO 	Apparatus TX: seq=34, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+1.8546 	INFO 	Apparatus RX: ACK for seq=34
+1.8649 	INFO 	Apparatus TX: seq=35, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+1.8808 	INFO 	Apparatus RX: ACK for seq=35
+1.9617 	INFO 	Apparatus TX: seq=36, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+1.9732 	INFO 	Apparatus RX: ACK for seq=36
+1.9840 	INFO 	Apparatus TX: seq=37, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.0009 	INFO 	Apparatus RX: ACK for seq=37
+2.0766 	INFO 	Apparatus TX: seq=38, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.0913 	INFO 	Apparatus RX: ACK for seq=38
+2.1032 	INFO 	Apparatus TX: seq=39, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.1208 	INFO 	Apparatus RX: ACK for seq=39
+2.1769 	INFO 	Apparatus TX: seq=40, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.1910 	INFO 	Apparatus RX: ACK for seq=40
+2.2012 	INFO 	Apparatus TX: seq=41, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.2150 	INFO 	Apparatus RX: ACK for seq=41
+2.2941 	INFO 	Apparatus TX: seq=42, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.3052 	INFO 	Apparatus RX: ACK for seq=42
+2.3155 	INFO 	Apparatus TX: seq=43, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.3315 	INFO 	Apparatus RX: ACK for seq=43
+2.4127 	INFO 	Apparatus TX: seq=44, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.4225 	INFO 	Apparatus RX: ACK for seq=44
+2.4328 	INFO 	Apparatus TX: seq=45, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.4457 	INFO 	Apparatus RX: ACK for seq=45
+2.5273 	INFO 	Apparatus TX: seq=46, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.5408 	INFO 	Apparatus RX: ACK for seq=46
+2.5512 	INFO 	Apparatus TX: seq=47, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.5650 	INFO 	Apparatus RX: ACK for seq=47
+2.6277 	INFO 	Apparatus TX: seq=48, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.6411 	INFO 	Apparatus RX: ACK for seq=48
+2.6519 	INFO 	Apparatus TX: seq=49, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.6643 	INFO 	Apparatus RX: ACK for seq=49
+2.7444 	INFO 	Apparatus TX: seq=50, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+2.7545 	INFO 	Apparatus RX: ACK for seq=50
+2.7648 	INFO 	Apparatus TX: seq=51, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.7816 	INFO 	Apparatus RX: ACK for seq=51
+2.8447 	INFO 	Apparatus TX: seq=52, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+2.8557 	INFO 	Apparatus RX: ACK for seq=52
+2.8665 	INFO 	Apparatus TX: seq=53, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.8823 	INFO 	Apparatus RX: ACK for seq=53
+2.9602 	INFO 	Apparatus TX: seq=54, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+2.9720 	INFO 	Apparatus RX: ACK for seq=54
+2.9822 	INFO 	Apparatus TX: seq=55, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+2.9963 	INFO 	Apparatus RX: ACK for seq=55
+3.0604 	INFO 	Apparatus TX: seq=56, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.0741 	INFO 	Apparatus RX: ACK for seq=56
+3.0843 	INFO 	Apparatus TX: seq=57, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.1013 	INFO 	Apparatus RX: ACK for seq=57
+3.1605 	INFO 	Apparatus TX: seq=58, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.1735 	INFO 	Apparatus RX: ACK for seq=58
+3.1839 	INFO 	Apparatus TX: seq=59, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.2029 	INFO 	Apparatus RX: ACK for seq=59
+3.2615 	INFO 	Apparatus TX: seq=60, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.2727 	INFO 	Apparatus RX: ACK for seq=60
+3.2835 	INFO 	Apparatus TX: seq=61, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.2971 	INFO 	Apparatus RX: ACK for seq=61
+3.3618 	INFO 	Apparatus TX: seq=62, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.3747 	INFO 	Apparatus RX: ACK for seq=62
+3.3850 	INFO 	Apparatus TX: seq=63, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.4027 	INFO 	Apparatus RX: ACK for seq=63
+3.4627 	INFO 	Apparatus TX: seq=64, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.4732 	INFO 	Apparatus RX: ACK for seq=64
+3.4843 	INFO 	Apparatus TX: seq=65, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.5018 	INFO 	Apparatus RX: ACK for seq=65
+3.5785 	INFO 	Apparatus TX: seq=66, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.5940 	INFO 	Apparatus RX: ACK for seq=66
+3.6046 	INFO 	Apparatus TX: seq=67, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.6223 	INFO 	Apparatus RX: ACK for seq=67
+3.6794 	INFO 	Apparatus TX: seq=68, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+3.6927 	INFO 	Apparatus RX: ACK for seq=68
+3.7039 	INFO 	Apparatus TX: seq=69, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.7167 	INFO 	Apparatus RX: ACK for seq=69
+3.7952 	INFO 	Apparatus TX: seq=70, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+3.8066 	INFO 	Apparatus RX: ACK for seq=70
+3.8170 	INFO 	Apparatus TX: seq=71, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.8328 	INFO 	Apparatus RX: ACK for seq=71
+3.8982 	INFO 	Apparatus TX: seq=72, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+3.9132 	INFO 	Apparatus RX: ACK for seq=72
+3.9238 	INFO 	Apparatus TX: seq=73, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+3.9362 	INFO 	Apparatus RX: ACK for seq=73
+4.0117 	INFO 	Apparatus TX: seq=74, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.0255 	INFO 	Apparatus RX: ACK for seq=74
+4.0362 	INFO 	Apparatus TX: seq=75, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.0529 	INFO 	Apparatus RX: ACK for seq=75
+4.1273 	INFO 	Apparatus TX: seq=76, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.1435 	INFO 	Apparatus RX: ACK for seq=76
+4.1537 	INFO 	Apparatus TX: seq=77, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.1664 	INFO 	Apparatus RX: ACK for seq=77
+4.2285 	INFO 	Apparatus TX: seq=78, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.2426 	INFO 	Apparatus RX: ACK for seq=78
+4.2539 	INFO 	Apparatus TX: seq=79, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.2668 	INFO 	Apparatus RX: ACK for seq=79
+4.3433 	INFO 	Apparatus TX: seq=80, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.3550 	INFO 	Apparatus RX: ACK for seq=80
+4.3655 	INFO 	Apparatus TX: seq=81, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.3784 	INFO 	Apparatus RX: ACK for seq=81
+4.4600 	INFO 	Apparatus TX: seq=82, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.4748 	INFO 	Apparatus RX: ACK for seq=82
+4.4858 	INFO 	Apparatus TX: seq=83, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.5046 	INFO 	Apparatus RX: ACK for seq=83
+4.5603 	INFO 	Apparatus TX: seq=84, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.5753 	INFO 	Apparatus RX: ACK for seq=84
+4.5855 	INFO 	Apparatus TX: seq=85, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.5994 	INFO 	Apparatus RX: ACK for seq=85
+4.6606 	INFO 	Apparatus TX: seq=86, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+4.6749 	INFO 	Apparatus RX: ACK for seq=86
+4.6849 	INFO 	Apparatus TX: seq=87, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.6988 	INFO 	Apparatus RX: ACK for seq=87
+4.7773 	INFO 	Apparatus TX: seq=88, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+4.7878 	INFO 	Apparatus RX: ACK for seq=88
+4.7983 	INFO 	Apparatus TX: seq=89, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.8146 	INFO 	Apparatus RX: ACK for seq=89
+4.8930 	INFO 	Apparatus TX: seq=90, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+4.9050 	INFO 	Apparatus RX: ACK for seq=90
+4.9161 	INFO 	Apparatus TX: seq=91, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+4.9340 	INFO 	Apparatus RX: ACK for seq=91
+5.0099 	INFO 	Apparatus TX: seq=92, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+5.0251 	INFO 	Apparatus RX: ACK for seq=92
+5.0357 	INFO 	Apparatus TX: seq=93, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.0494 	INFO 	Apparatus RX: ACK for seq=93
+5.0497 	INFO 	Apparatus TX: seq=94, type=CMD_FORCE_STOP, dst=SERVER, payload=(empty)
+5.0556 	INFO 	Apparatus RX: ACK for seq=94
+5.0557 	INFO 	Force measurement stopped. Collected 1006 samples.
+5.1101 	INFO 	Apparatus TX: seq=95, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+5.1201 	INFO 	Apparatus RX: ACK for seq=95
+5.1303 	INFO 	Apparatus TX: seq=96, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.1435 	INFO 	Apparatus RX: ACK for seq=96
+5.2118 	INFO 	Apparatus TX: seq=97, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+5.2225 	INFO 	Apparatus RX: ACK for seq=97
+5.2335 	INFO 	Apparatus TX: seq=98, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.2460 	INFO 	Apparatus RX: ACK for seq=98
+5.3287 	INFO 	Apparatus TX: seq=99, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+5.3395 	INFO 	Apparatus RX: ACK for seq=99
+5.3509 	INFO 	Apparatus TX: seq=100, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.3650 	INFO 	Apparatus RX: ACK for seq=100
+5.4442 	INFO 	Apparatus TX: seq=101, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+5.4546 	INFO 	Apparatus RX: ACK for seq=101
+5.4655 	INFO 	Apparatus TX: seq=102, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.4781 	INFO 	Apparatus RX: ACK for seq=102
+5.5446 	INFO 	Apparatus TX: seq=103, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+5.5548 	INFO 	Apparatus RX: ACK for seq=103
+5.5660 	INFO 	Apparatus TX: seq=104, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.5832 	INFO 	Apparatus RX: ACK for seq=104
+5.6451 	INFO 	Apparatus TX: seq=105, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+5.6562 	INFO 	Apparatus RX: ACK for seq=105
+5.6673 	INFO 	Apparatus TX: seq=106, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.6795 	INFO 	Apparatus RX: ACK for seq=106
+5.7609 	INFO 	Apparatus TX: seq=107, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+5.7718 	INFO 	Apparatus RX: ACK for seq=107
+5.7829 	INFO 	Apparatus TX: seq=108, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.7968 	INFO 	Apparatus RX: ACK for seq=108
+5.8768 	INFO 	Apparatus TX: seq=109, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+5.8892 	INFO 	Apparatus RX: ACK for seq=109
+5.8997 	INFO 	Apparatus TX: seq=110, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+5.9124 	INFO 	Apparatus RX: ACK for seq=110
+5.9782 	INFO 	Apparatus TX: seq=111, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+5.9880 	INFO 	Apparatus RX: ACK for seq=111
+5.9992 	INFO 	Apparatus TX: seq=112, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.0115 	INFO 	Apparatus RX: ACK for seq=112
+6.0952 	INFO 	Apparatus TX: seq=113, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+6.1057 	INFO 	Apparatus RX: ACK for seq=113
+6.1157 	INFO 	Apparatus TX: seq=114, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.1288 	INFO 	Apparatus RX: ACK for seq=114
+6.1954 	INFO 	Apparatus TX: seq=115, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+6.2075 	INFO 	Apparatus RX: ACK for seq=115
+6.2186 	INFO 	Apparatus TX: seq=116, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.2320 	INFO 	Apparatus RX: ACK for seq=116
+6.2954 	INFO 	Apparatus TX: seq=117, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+6.3054 	INFO 	Apparatus RX: ACK for seq=117
+6.3169 	INFO 	Apparatus TX: seq=118, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.3309 	INFO 	Apparatus RX: ACK for seq=118
+6.3962 	INFO 	Apparatus TX: seq=119, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+6.4077 	INFO 	Apparatus RX: ACK for seq=119
+6.4189 	INFO 	Apparatus TX: seq=120, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.4317 	INFO 	Apparatus RX: ACK for seq=120
+6.5111 	INFO 	Apparatus TX: seq=121, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+6.5212 	INFO 	Apparatus RX: ACK for seq=121
+6.5322 	INFO 	Apparatus TX: seq=122, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.5463 	INFO 	Apparatus RX: ACK for seq=122
+6.6276 	INFO 	Apparatus TX: seq=123, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+6.6384 	INFO 	Apparatus RX: ACK for seq=123
+6.6488 	INFO 	Apparatus TX: seq=124, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.6615 	INFO 	Apparatus RX: ACK for seq=124
+6.7442 	INFO 	Apparatus TX: seq=125, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+6.7542 	INFO 	Apparatus RX: ACK for seq=125
+6.7646 	INFO 	Apparatus TX: seq=126, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.7778 	INFO 	Apparatus RX: ACK for seq=126
+6.8445 	INFO 	Apparatus TX: seq=127, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+6.8559 	INFO 	Apparatus RX: ACK for seq=127
+6.8666 	INFO 	Apparatus TX: seq=128, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.8796 	INFO 	Apparatus RX: ACK for seq=128
+6.9447 	INFO 	Apparatus TX: seq=129, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+6.9558 	INFO 	Apparatus RX: ACK for seq=129
+6.9664 	INFO 	Apparatus TX: seq=130, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+6.9793 	INFO 	Apparatus RX: ACK for seq=130
+7.0611 	INFO 	Apparatus TX: seq=131, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+7.0715 	INFO 	Apparatus RX: ACK for seq=131
+7.0835 	INFO 	Apparatus TX: seq=132, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.0971 	INFO 	Apparatus RX: ACK for seq=132
+7.1791 	INFO 	Apparatus TX: seq=133, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+7.1909 	INFO 	Apparatus RX: ACK for seq=133
+7.2015 	INFO 	Apparatus TX: seq=134, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.2138 	INFO 	Apparatus RX: ACK for seq=134
+7.2944 	INFO 	Apparatus TX: seq=135, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+7.3045 	INFO 	Apparatus RX: ACK for seq=135
+7.3156 	INFO 	Apparatus TX: seq=136, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.3293 	INFO 	Apparatus RX: ACK for seq=136
+7.3962 	INFO 	Apparatus TX: seq=137, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+7.4083 	INFO 	Apparatus RX: ACK for seq=137
+7.4193 	INFO 	Apparatus TX: seq=138, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.4318 	INFO 	Apparatus RX: ACK for seq=138
+7.5100 	INFO 	Apparatus TX: seq=139, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+7.5202 	INFO 	Apparatus RX: ACK for seq=139
+7.5305 	INFO 	Apparatus TX: seq=140, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.5434 	INFO 	Apparatus RX: ACK for seq=140
+7.6106 	INFO 	Apparatus TX: seq=141, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+7.6216 	INFO 	Apparatus RX: ACK for seq=141
+7.6319 	INFO 	Apparatus TX: seq=142, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.6448 	INFO 	Apparatus RX: ACK for seq=142
+7.7120 	INFO 	Apparatus TX: seq=143, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+7.7222 	INFO 	Apparatus RX: ACK for seq=143
+7.7331 	INFO 	Apparatus TX: seq=144, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.7464 	INFO 	Apparatus RX: ACK for seq=144
+7.8264 	INFO 	Apparatus TX: seq=145, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+7.8365 	INFO 	Apparatus RX: ACK for seq=145
+7.8466 	INFO 	Apparatus TX: seq=146, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.8601 	INFO 	Apparatus RX: ACK for seq=146
+7.9283 	INFO 	Apparatus TX: seq=147, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+7.9380 	INFO 	Apparatus RX: ACK for seq=147
+7.9483 	INFO 	Apparatus TX: seq=148, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+7.9605 	INFO 	Apparatus RX: ACK for seq=148
+8.0442 	INFO 	Apparatus TX: seq=149, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+8.0562 	INFO 	Apparatus RX: ACK for seq=149
+8.0666 	INFO 	Apparatus TX: seq=150, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.0808 	INFO 	Apparatus RX: ACK for seq=150
+8.1451 	INFO 	Apparatus TX: seq=151, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+8.1572 	INFO 	Apparatus RX: ACK for seq=151
+8.1690 	INFO 	Apparatus TX: seq=152, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.1818 	INFO 	Apparatus RX: ACK for seq=152
+8.2614 	INFO 	Apparatus TX: seq=153, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+8.2719 	INFO 	Apparatus RX: ACK for seq=153
+8.2834 	INFO 	Apparatus TX: seq=154, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.2951 	INFO 	Apparatus RX: ACK for seq=154
+8.3782 	INFO 	Apparatus TX: seq=155, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+8.3887 	INFO 	Apparatus RX: ACK for seq=155
+8.3993 	INFO 	Apparatus TX: seq=156, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.4126 	INFO 	Apparatus RX: ACK for seq=156
+8.4792 	INFO 	Apparatus TX: seq=157, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+8.4906 	INFO 	Apparatus RX: ACK for seq=157
+8.5022 	INFO 	Apparatus TX: seq=158, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.5157 	INFO 	Apparatus RX: ACK for seq=158
+8.5944 	INFO 	Apparatus TX: seq=159, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+8.6057 	INFO 	Apparatus RX: ACK for seq=159
+8.6165 	INFO 	Apparatus TX: seq=160, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.6293 	INFO 	Apparatus RX: ACK for seq=160
+8.6949 	INFO 	Apparatus TX: seq=161, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+8.7053 	INFO 	Apparatus RX: ACK for seq=161
+8.7154 	INFO 	Apparatus TX: seq=162, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.7296 	INFO 	Apparatus RX: ACK for seq=162
+8.8114 	INFO 	Apparatus TX: seq=163, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+8.8220 	INFO 	Apparatus RX: ACK for seq=163
+8.8333 	INFO 	Apparatus TX: seq=164, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.8457 	INFO 	Apparatus RX: ACK for seq=164
+8.9118 	INFO 	Apparatus TX: seq=165, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+8.9217 	INFO 	Apparatus RX: ACK for seq=165
+8.9323 	INFO 	Apparatus TX: seq=166, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+8.9463 	INFO 	Apparatus RX: ACK for seq=166
+9.0303 	INFO 	Apparatus TX: seq=167, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+9.0409 	INFO 	Apparatus RX: ACK for seq=167
+9.0523 	INFO 	Apparatus TX: seq=168, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.0648 	INFO 	Apparatus RX: ACK for seq=168
+9.1447 	INFO 	Apparatus TX: seq=169, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+9.1561 	INFO 	Apparatus RX: ACK for seq=169
+9.1669 	INFO 	Apparatus TX: seq=170, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.1797 	INFO 	Apparatus RX: ACK for seq=170
+9.2457 	INFO 	Apparatus TX: seq=171, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+9.2572 	INFO 	Apparatus RX: ACK for seq=171
+9.2684 	INFO 	Apparatus TX: seq=172, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.2805 	INFO 	Apparatus RX: ACK for seq=172
+9.3610 	INFO 	Apparatus TX: seq=173, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+9.3713 	INFO 	Apparatus RX: ACK for seq=173
+9.3828 	INFO 	Apparatus TX: seq=174, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.3958 	INFO 	Apparatus RX: ACK for seq=174
+9.4621 	INFO 	Apparatus TX: seq=175, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+9.4734 	INFO 	Apparatus RX: ACK for seq=175
+9.4844 	INFO 	Apparatus TX: seq=176, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.4965 	INFO 	Apparatus RX: ACK for seq=176
+9.5775 	INFO 	Apparatus TX: seq=177, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+9.5880 	INFO 	Apparatus RX: ACK for seq=177
+9.5991 	INFO 	Apparatus TX: seq=178, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.6122 	INFO 	Apparatus RX: ACK for seq=178
+9.6797 	INFO 	Apparatus TX: seq=179, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+9.6905 	INFO 	Apparatus RX: ACK for seq=179
+9.7018 	INFO 	Apparatus TX: seq=180, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.7147 	INFO 	Apparatus RX: ACK for seq=180
+9.7952 	INFO 	Apparatus TX: seq=181, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+9.8065 	INFO 	Apparatus RX: ACK for seq=181
+9.8183 	INFO 	Apparatus TX: seq=182, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.8304 	INFO 	Apparatus RX: ACK for seq=182
+9.8956 	INFO 	Apparatus TX: seq=183, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+9.9064 	INFO 	Apparatus RX: ACK for seq=183
+9.9169 	INFO 	Apparatus TX: seq=184, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+9.9307 	INFO 	Apparatus RX: ACK for seq=184
+9.9966 	INFO 	Apparatus TX: seq=185, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+10.0081 	INFO 	Apparatus RX: ACK for seq=185
+10.0196 	INFO 	Apparatus TX: seq=186, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.0327 	INFO 	Apparatus RX: ACK for seq=186
+10.1112 	INFO 	Apparatus TX: seq=187, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+10.1217 	INFO 	Apparatus RX: ACK for seq=187
+10.1327 	INFO 	Apparatus TX: seq=188, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.1456 	INFO 	Apparatus RX: ACK for seq=188
+10.2119 	INFO 	Apparatus TX: seq=189, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+10.2219 	INFO 	Apparatus RX: ACK for seq=189
+10.2323 	INFO 	Apparatus TX: seq=190, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.2463 	INFO 	Apparatus RX: ACK for seq=190
+10.3274 	INFO 	Apparatus TX: seq=191, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+10.3382 	INFO 	Apparatus RX: ACK for seq=191
+10.3494 	INFO 	Apparatus TX: seq=192, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.3618 	INFO 	Apparatus RX: ACK for seq=192
+10.4283 	INFO 	Apparatus TX: seq=193, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+10.4389 	INFO 	Apparatus RX: ACK for seq=193
+10.4501 	INFO 	Apparatus TX: seq=194, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.4623 	INFO 	Apparatus RX: ACK for seq=194
+10.5439 	INFO 	Apparatus TX: seq=195, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+10.5557 	INFO 	Apparatus RX: ACK for seq=195
+10.5663 	INFO 	Apparatus TX: seq=196, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.5789 	INFO 	Apparatus RX: ACK for seq=196
+10.6443 	INFO 	Apparatus TX: seq=197, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+10.6560 	INFO 	Apparatus RX: ACK for seq=197
+10.6670 	INFO 	Apparatus TX: seq=198, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.6809 	INFO 	Apparatus RX: ACK for seq=198
+10.7447 	INFO 	Apparatus TX: seq=199, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+10.7564 	INFO 	Apparatus RX: ACK for seq=199
+10.7670 	INFO 	Apparatus TX: seq=200, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.7804 	INFO 	Apparatus RX: ACK for seq=200
+10.8622 	INFO 	Apparatus TX: seq=201, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+10.8719 	INFO 	Apparatus RX: ACK for seq=201
+10.8828 	INFO 	Apparatus TX: seq=202, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+10.8955 	INFO 	Apparatus RX: ACK for seq=202
+10.9783 	INFO 	Apparatus TX: seq=203, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+10.9896 	INFO 	Apparatus RX: ACK for seq=203
+11.0006 	INFO 	Apparatus TX: seq=204, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.0141 	INFO 	Apparatus RX: ACK for seq=204
+11.0948 	INFO 	Apparatus TX: seq=205, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+11.1066 	INFO 	Apparatus RX: ACK for seq=205
+11.1168 	INFO 	Apparatus TX: seq=206, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.1297 	INFO 	Apparatus RX: ACK for seq=206
+11.1957 	INFO 	Apparatus TX: seq=207, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+11.2064 	INFO 	Apparatus RX: ACK for seq=207
+11.2172 	INFO 	Apparatus TX: seq=208, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.2300 	INFO 	Apparatus RX: ACK for seq=208
+11.3112 	INFO 	Apparatus TX: seq=209, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+11.3215 	INFO 	Apparatus RX: ACK for seq=209
+11.3327 	INFO 	Apparatus TX: seq=210, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.3449 	INFO 	Apparatus RX: ACK for seq=210
+11.4114 	INFO 	Apparatus TX: seq=211, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+11.4225 	INFO 	Apparatus RX: ACK for seq=211
+11.4334 	INFO 	Apparatus TX: seq=212, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.4476 	INFO 	Apparatus RX: ACK for seq=212
+11.5292 	INFO 	Apparatus TX: seq=213, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+11.5402 	INFO 	Apparatus RX: ACK for seq=213
+11.5509 	INFO 	Apparatus TX: seq=214, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.5632 	INFO 	Apparatus RX: ACK for seq=214
+11.6442 	INFO 	Apparatus TX: seq=215, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+11.6553 	INFO 	Apparatus RX: ACK for seq=215
+11.6659 	INFO 	Apparatus TX: seq=216, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.6786 	INFO 	Apparatus RX: ACK for seq=216
+11.7444 	INFO 	Apparatus TX: seq=217, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+11.7554 	INFO 	Apparatus RX: ACK for seq=217
+11.7666 	INFO 	Apparatus TX: seq=218, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.7786 	INFO 	Apparatus RX: ACK for seq=218
+11.8602 	INFO 	Apparatus TX: seq=219, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+11.8699 	INFO 	Apparatus RX: ACK for seq=219
+11.8805 	INFO 	Apparatus TX: seq=220, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.8932 	INFO 	Apparatus RX: ACK for seq=220
+11.9616 	INFO 	Apparatus TX: seq=221, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+11.9725 	INFO 	Apparatus RX: ACK for seq=221
+11.9840 	INFO 	Apparatus TX: seq=222, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+11.9961 	INFO 	Apparatus RX: ACK for seq=222
+12.0777 	INFO 	Apparatus TX: seq=223, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+12.0879 	INFO 	Apparatus RX: ACK for seq=223
+12.0987 	INFO 	Apparatus TX: seq=224, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.1117 	INFO 	Apparatus RX: ACK for seq=224
+12.1779 	INFO 	Apparatus TX: seq=225, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+12.1891 	INFO 	Apparatus RX: ACK for seq=225
+12.2004 	INFO 	Apparatus TX: seq=226, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.2130 	INFO 	Apparatus RX: ACK for seq=226
+12.2779 	INFO 	Apparatus TX: seq=227, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+12.2898 	INFO 	Apparatus RX: ACK for seq=227
+12.3008 	INFO 	Apparatus TX: seq=228, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.3147 	INFO 	Apparatus RX: ACK for seq=228
+12.3781 	INFO 	Apparatus TX: seq=229, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+12.3887 	INFO 	Apparatus RX: ACK for seq=229
+12.4000 	INFO 	Apparatus TX: seq=230, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.4126 	INFO 	Apparatus RX: ACK for seq=230
+12.4946 	INFO 	Apparatus TX: seq=231, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+12.5055 	INFO 	Apparatus RX: ACK for seq=231
+12.5180 	INFO 	Apparatus TX: seq=232, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.5302 	INFO 	Apparatus RX: ACK for seq=232
+12.6103 	INFO 	Apparatus TX: seq=233, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+12.6212 	INFO 	Apparatus RX: ACK for seq=233
+12.6318 	INFO 	Apparatus TX: seq=234, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.6443 	INFO 	Apparatus RX: ACK for seq=234
+12.7106 	INFO 	Apparatus TX: seq=235, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+12.7214 	INFO 	Apparatus RX: ACK for seq=235
+12.7326 	INFO 	Apparatus TX: seq=236, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.7449 	INFO 	Apparatus RX: ACK for seq=236
+12.8115 	INFO 	Apparatus TX: seq=237, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+12.8222 	INFO 	Apparatus RX: ACK for seq=237
+12.8324 	INFO 	Apparatus TX: seq=238, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.8452 	INFO 	Apparatus RX: ACK for seq=238
+12.9269 	INFO 	Apparatus TX: seq=239, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+12.9374 	INFO 	Apparatus RX: ACK for seq=239
+12.9477 	INFO 	Apparatus TX: seq=240, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+12.9614 	INFO 	Apparatus RX: ACK for seq=240
+13.0428 	INFO 	Apparatus TX: seq=241, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+13.0529 	INFO 	Apparatus RX: ACK for seq=241
+13.0633 	INFO 	Apparatus TX: seq=242, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.0755 	INFO 	Apparatus RX: ACK for seq=242
+13.1437 	INFO 	Apparatus TX: seq=243, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+13.1547 	INFO 	Apparatus RX: ACK for seq=243
+13.1656 	INFO 	Apparatus TX: seq=244, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.1783 	INFO 	Apparatus RX: ACK for seq=244
+13.2438 	INFO 	Apparatus TX: seq=245, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+13.2539 	INFO 	Apparatus RX: ACK for seq=245
+13.2652 	INFO 	Apparatus TX: seq=246, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.2792 	INFO 	Apparatus RX: ACK for seq=246
+13.3446 	INFO 	Apparatus TX: seq=247, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+13.3555 	INFO 	Apparatus RX: ACK for seq=247
+13.3657 	INFO 	Apparatus TX: seq=248, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.3795 	INFO 	Apparatus RX: ACK for seq=248
+13.4445 	INFO 	Apparatus TX: seq=249, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+13.4557 	INFO 	Apparatus RX: ACK for seq=249
+13.4660 	INFO 	Apparatus TX: seq=250, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.4788 	INFO 	Apparatus RX: ACK for seq=250
+13.5599 	INFO 	Apparatus TX: seq=251, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+13.5701 	INFO 	Apparatus RX: ACK for seq=251
+13.5804 	INFO 	Apparatus TX: seq=252, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.5933 	INFO 	Apparatus RX: ACK for seq=252
+13.6609 	INFO 	Apparatus TX: seq=253, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+13.6723 	INFO 	Apparatus RX: ACK for seq=253
+13.6838 	INFO 	Apparatus TX: seq=254, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.6962 	INFO 	Apparatus RX: ACK for seq=254
+13.7765 	INFO 	Apparatus TX: seq=255, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+13.7873 	INFO 	Apparatus RX: ACK for seq=255
+13.7975 	INFO 	Apparatus TX: seq=256, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.8106 	INFO 	Apparatus RX: ACK for seq=256
+13.8773 	INFO 	Apparatus TX: seq=257, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+13.8873 	INFO 	Apparatus RX: ACK for seq=257
+13.8989 	INFO 	Apparatus TX: seq=258, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+13.9115 	INFO 	Apparatus RX: ACK for seq=258
+13.9783 	INFO 	Apparatus TX: seq=259, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+13.9887 	INFO 	Apparatus RX: ACK for seq=259
+13.9997 	INFO 	Apparatus TX: seq=260, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.0146 	INFO 	Apparatus RX: ACK for seq=260
+14.0786 	INFO 	Apparatus TX: seq=261, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+14.0893 	INFO 	Apparatus RX: ACK for seq=261
+14.1001 	INFO 	Apparatus TX: seq=262, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.1128 	INFO 	Apparatus RX: ACK for seq=262
+14.1933 	INFO 	Apparatus TX: seq=263, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+14.2036 	INFO 	Apparatus RX: ACK for seq=263
+14.2139 	INFO 	Apparatus TX: seq=264, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.2268 	INFO 	Apparatus RX: ACK for seq=264
+14.3100 	INFO 	Apparatus TX: seq=265, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+14.3211 	INFO 	Apparatus RX: ACK for seq=265
+14.3312 	INFO 	Apparatus TX: seq=266, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.3451 	INFO 	Apparatus RX: ACK for seq=266
+14.4107 	INFO 	Apparatus TX: seq=267, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+14.4205 	INFO 	Apparatus RX: ACK for seq=267
+14.4309 	INFO 	Apparatus TX: seq=268, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.4436 	INFO 	Apparatus RX: ACK for seq=268
+14.5265 	INFO 	Apparatus TX: seq=269, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+14.5367 	INFO 	Apparatus RX: ACK for seq=269
+14.5471 	INFO 	Apparatus TX: seq=270, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.5606 	INFO 	Apparatus RX: ACK for seq=270
+14.6272 	INFO 	Apparatus TX: seq=271, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+14.6384 	INFO 	Apparatus RX: ACK for seq=271
+14.6494 	INFO 	Apparatus TX: seq=272, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.6628 	INFO 	Apparatus RX: ACK for seq=272
+14.7279 	INFO 	Apparatus TX: seq=273, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+14.7379 	INFO 	Apparatus RX: ACK for seq=273
+14.7490 	INFO 	Apparatus TX: seq=274, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.7627 	INFO 	Apparatus RX: ACK for seq=274
+14.8283 	INFO 	Apparatus TX: seq=275, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+14.8400 	INFO 	Apparatus RX: ACK for seq=275
+14.8502 	INFO 	Apparatus TX: seq=276, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.8642 	INFO 	Apparatus RX: ACK for seq=276
+14.9302 	INFO 	Apparatus TX: seq=277, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+14.9405 	INFO 	Apparatus RX: ACK for seq=277
+14.9519 	INFO 	Apparatus TX: seq=278, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+14.9657 	INFO 	Apparatus RX: ACK for seq=278
+15.0447 	INFO 	Apparatus TX: seq=279, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+15.0555 	INFO 	Apparatus RX: ACK for seq=279
+15.0657 	INFO 	Apparatus TX: seq=280, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.0792 	INFO 	Apparatus RX: ACK for seq=280
+15.1455 	INFO 	Apparatus TX: seq=281, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+15.1568 	INFO 	Apparatus RX: ACK for seq=281
+15.1676 	INFO 	Apparatus TX: seq=282, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.1802 	INFO 	Apparatus RX: ACK for seq=282
+15.2616 	INFO 	Apparatus TX: seq=283, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+15.2720 	INFO 	Apparatus RX: ACK for seq=283
+15.2826 	INFO 	Apparatus TX: seq=284, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.2963 	INFO 	Apparatus RX: ACK for seq=284
+15.3626 	INFO 	Apparatus TX: seq=285, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+15.3735 	INFO 	Apparatus RX: ACK for seq=285
+15.3839 	INFO 	Apparatus TX: seq=286, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.3961 	INFO 	Apparatus RX: ACK for seq=286
+15.4780 	INFO 	Apparatus TX: seq=287, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+15.4894 	INFO 	Apparatus RX: ACK for seq=287
+15.5004 	INFO 	Apparatus TX: seq=288, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.5137 	INFO 	Apparatus RX: ACK for seq=288
+15.5931 	INFO 	Apparatus TX: seq=289, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+15.6032 	INFO 	Apparatus RX: ACK for seq=289
+15.6134 	INFO 	Apparatus TX: seq=290, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.6278 	INFO 	Apparatus RX: ACK for seq=290
+15.6960 	INFO 	Apparatus TX: seq=291, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+15.7065 	INFO 	Apparatus RX: ACK for seq=291
+15.7185 	INFO 	Apparatus TX: seq=292, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.7316 	INFO 	Apparatus RX: ACK for seq=292
+15.8116 	INFO 	Apparatus TX: seq=293, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+15.8223 	INFO 	Apparatus RX: ACK for seq=293
+15.8335 	INFO 	Apparatus TX: seq=294, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.8467 	INFO 	Apparatus RX: ACK for seq=294
+15.9120 	INFO 	Apparatus TX: seq=295, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+15.9233 	INFO 	Apparatus RX: ACK for seq=295
+15.9349 	INFO 	Apparatus TX: seq=296, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+15.9480 	INFO 	Apparatus RX: ACK for seq=296
+16.0269 	INFO 	Apparatus TX: seq=297, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+16.0385 	INFO 	Apparatus RX: ACK for seq=297
+16.0487 	INFO 	Apparatus TX: seq=298, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.0617 	INFO 	Apparatus RX: ACK for seq=298
+16.1272 	INFO 	Apparatus TX: seq=299, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+16.1387 	INFO 	Apparatus RX: ACK for seq=299
+16.1501 	INFO 	Apparatus TX: seq=300, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.1625 	INFO 	Apparatus RX: ACK for seq=300
+16.2438 	INFO 	Apparatus TX: seq=301, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+16.2535 	INFO 	Apparatus RX: ACK for seq=301
+16.2643 	INFO 	Apparatus TX: seq=302, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.2766 	INFO 	Apparatus RX: ACK for seq=302
+16.3594 	INFO 	Apparatus TX: seq=303, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+16.3705 	INFO 	Apparatus RX: ACK for seq=303
+16.3808 	INFO 	Apparatus TX: seq=304, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.3936 	INFO 	Apparatus RX: ACK for seq=304
+16.4612 	INFO 	Apparatus TX: seq=305, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+16.4716 	INFO 	Apparatus RX: ACK for seq=305
+16.4821 	INFO 	Apparatus TX: seq=306, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.4960 	INFO 	Apparatus RX: ACK for seq=306
+16.5616 	INFO 	Apparatus TX: seq=307, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+16.5735 	INFO 	Apparatus RX: ACK for seq=307
+16.5837 	INFO 	Apparatus TX: seq=308, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.5967 	INFO 	Apparatus RX: ACK for seq=308
+16.6790 	INFO 	Apparatus TX: seq=309, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+16.6896 	INFO 	Apparatus RX: ACK for seq=309
+16.7008 	INFO 	Apparatus TX: seq=310, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.7136 	INFO 	Apparatus RX: ACK for seq=310
+16.7930 	INFO 	Apparatus TX: seq=311, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+16.8029 	INFO 	Apparatus RX: ACK for seq=311
+16.8140 	INFO 	Apparatus TX: seq=312, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.8280 	INFO 	Apparatus RX: ACK for seq=312
+16.8976 	INFO 	Apparatus TX: seq=313, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+16.9076 	INFO 	Apparatus RX: ACK for seq=313
+16.9190 	INFO 	Apparatus TX: seq=314, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+16.9317 	INFO 	Apparatus RX: ACK for seq=314
+17.0109 	INFO 	Apparatus TX: seq=315, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+17.0212 	INFO 	Apparatus RX: ACK for seq=315
+17.0325 	INFO 	Apparatus TX: seq=316, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.0466 	INFO 	Apparatus RX: ACK for seq=316
+17.1138 	INFO 	Apparatus TX: seq=317, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+17.1242 	INFO 	Apparatus RX: ACK for seq=317
+17.1355 	INFO 	Apparatus TX: seq=318, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.1482 	INFO 	Apparatus RX: ACK for seq=318
+17.2278 	INFO 	Apparatus TX: seq=319, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+17.2383 	INFO 	Apparatus RX: ACK for seq=319
+17.2495 	INFO 	Apparatus TX: seq=320, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.2626 	INFO 	Apparatus RX: ACK for seq=320
+17.3290 	INFO 	Apparatus TX: seq=321, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+17.3388 	INFO 	Apparatus RX: ACK for seq=321
+17.3493 	INFO 	Apparatus TX: seq=322, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.3632 	INFO 	Apparatus RX: ACK for seq=322
+17.4444 	INFO 	Apparatus TX: seq=323, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+17.4552 	INFO 	Apparatus RX: ACK for seq=323
+17.4661 	INFO 	Apparatus TX: seq=324, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.4786 	INFO 	Apparatus RX: ACK for seq=324
+17.5460 	INFO 	Apparatus TX: seq=325, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+17.5563 	INFO 	Apparatus RX: ACK for seq=325
+17.5671 	INFO 	Apparatus TX: seq=326, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.5813 	INFO 	Apparatus RX: ACK for seq=326
+17.6598 	INFO 	Apparatus TX: seq=327, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+17.6701 	INFO 	Apparatus RX: ACK for seq=327
+17.6821 	INFO 	Apparatus TX: seq=328, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.6952 	INFO 	Apparatus RX: ACK for seq=328
+17.7612 	INFO 	Apparatus TX: seq=329, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+17.7715 	INFO 	Apparatus RX: ACK for seq=329
+17.7833 	INFO 	Apparatus TX: seq=330, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.7972 	INFO 	Apparatus RX: ACK for seq=330
+17.8621 	INFO 	Apparatus TX: seq=331, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+17.8731 	INFO 	Apparatus RX: ACK for seq=331
+17.8843 	INFO 	Apparatus TX: seq=332, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+17.8979 	INFO 	Apparatus RX: ACK for seq=332
+17.9775 	INFO 	Apparatus TX: seq=333, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+17.9881 	INFO 	Apparatus RX: ACK for seq=333
+18.0002 	INFO 	Apparatus TX: seq=334, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.0136 	INFO 	Apparatus RX: ACK for seq=334
+18.0946 	INFO 	Apparatus TX: seq=335, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+18.1058 	INFO 	Apparatus RX: ACK for seq=335
+18.1167 	INFO 	Apparatus TX: seq=336, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.1306 	INFO 	Apparatus RX: ACK for seq=336
+18.2125 	INFO 	Apparatus TX: seq=337, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+18.2231 	INFO 	Apparatus RX: ACK for seq=337
+18.2341 	INFO 	Apparatus TX: seq=338, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.2469 	INFO 	Apparatus RX: ACK for seq=338
+18.3267 	INFO 	Apparatus TX: seq=339, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+18.3374 	INFO 	Apparatus RX: ACK for seq=339
+18.3483 	INFO 	Apparatus TX: seq=340, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.3626 	INFO 	Apparatus RX: ACK for seq=340
+18.4283 	INFO 	Apparatus TX: seq=341, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+18.4390 	INFO 	Apparatus RX: ACK for seq=341
+18.4501 	INFO 	Apparatus TX: seq=342, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.4627 	INFO 	Apparatus RX: ACK for seq=342
+18.5448 	INFO 	Apparatus TX: seq=343, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+18.5546 	INFO 	Apparatus RX: ACK for seq=343
+18.5656 	INFO 	Apparatus TX: seq=344, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.5784 	INFO 	Apparatus RX: ACK for seq=344
+18.6458 	INFO 	Apparatus TX: seq=345, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+18.6569 	INFO 	Apparatus RX: ACK for seq=345
+18.6679 	INFO 	Apparatus TX: seq=346, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.6808 	INFO 	Apparatus RX: ACK for seq=346
+18.7604 	INFO 	Apparatus TX: seq=347, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+18.7708 	INFO 	Apparatus RX: ACK for seq=347
+18.7814 	INFO 	Apparatus TX: seq=348, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.7952 	INFO 	Apparatus RX: ACK for seq=348
+18.8765 	INFO 	Apparatus TX: seq=349, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+18.8864 	INFO 	Apparatus RX: ACK for seq=349
+18.8971 	INFO 	Apparatus TX: seq=350, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+18.9105 	INFO 	Apparatus RX: ACK for seq=350
+18.9770 	INFO 	Apparatus TX: seq=351, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+18.9871 	INFO 	Apparatus RX: ACK for seq=351
+18.9975 	INFO 	Apparatus TX: seq=352, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.0105 	INFO 	Apparatus RX: ACK for seq=352
+19.0773 	INFO 	Apparatus TX: seq=353, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+19.0873 	INFO 	Apparatus RX: ACK for seq=353
+19.0974 	INFO 	Apparatus TX: seq=354, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.1113 	INFO 	Apparatus RX: ACK for seq=354
+19.1778 	INFO 	Apparatus TX: seq=355, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+19.1892 	INFO 	Apparatus RX: ACK for seq=355
+19.2002 	INFO 	Apparatus TX: seq=356, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.2148 	INFO 	Apparatus RX: ACK for seq=356
+19.2946 	INFO 	Apparatus TX: seq=357, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+19.3062 	INFO 	Apparatus RX: ACK for seq=357
+19.3165 	INFO 	Apparatus TX: seq=358, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.3304 	INFO 	Apparatus RX: ACK for seq=358
+19.3956 	INFO 	Apparatus TX: seq=359, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+19.4069 	INFO 	Apparatus RX: ACK for seq=359
+19.4181 	INFO 	Apparatus TX: seq=360, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.4303 	INFO 	Apparatus RX: ACK for seq=360
+19.5105 	INFO 	Apparatus TX: seq=361, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+19.5203 	INFO 	Apparatus RX: ACK for seq=361
+19.5305 	INFO 	Apparatus TX: seq=362, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.5435 	INFO 	Apparatus RX: ACK for seq=362
+19.6123 	INFO 	Apparatus TX: seq=363, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+19.6242 	INFO 	Apparatus RX: ACK for seq=363
+19.6347 	INFO 	Apparatus TX: seq=364, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.6485 	INFO 	Apparatus RX: ACK for seq=364
+19.7269 	INFO 	Apparatus TX: seq=365, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+19.7380 	INFO 	Apparatus RX: ACK for seq=365
+19.7493 	INFO 	Apparatus TX: seq=366, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.7612 	INFO 	Apparatus RX: ACK for seq=366
+19.8295 	INFO 	Apparatus TX: seq=367, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+19.8413 	INFO 	Apparatus RX: ACK for seq=367
+19.8528 	INFO 	Apparatus TX: seq=368, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.8667 	INFO 	Apparatus RX: ACK for seq=368
+19.9430 	INFO 	Apparatus TX: seq=369, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+19.9536 	INFO 	Apparatus RX: ACK for seq=369
+19.9647 	INFO 	Apparatus TX: seq=370, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+19.9773 	INFO 	Apparatus RX: ACK for seq=370
+20.0595 	INFO 	Apparatus TX: seq=371, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+20.0710 	INFO 	Apparatus RX: ACK for seq=371
+20.0816 	INFO 	Apparatus TX: seq=372, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.0942 	INFO 	Apparatus RX: ACK for seq=372
+20.1605 	INFO 	Apparatus TX: seq=373, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+20.1709 	INFO 	Apparatus RX: ACK for seq=373
+20.1816 	INFO 	Apparatus TX: seq=374, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.1945 	INFO 	Apparatus RX: ACK for seq=374
+20.2614 	INFO 	Apparatus TX: seq=375, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+20.2716 	INFO 	Apparatus RX: ACK for seq=375
+20.2825 	INFO 	Apparatus TX: seq=376, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.2952 	INFO 	Apparatus RX: ACK for seq=376
+20.3617 	INFO 	Apparatus TX: seq=377, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+20.3730 	INFO 	Apparatus RX: ACK for seq=377
+20.3836 	INFO 	Apparatus TX: seq=378, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.3972 	INFO 	Apparatus RX: ACK for seq=378
+20.4770 	INFO 	Apparatus TX: seq=379, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+20.4871 	INFO 	Apparatus RX: ACK for seq=379
+20.4973 	INFO 	Apparatus TX: seq=380, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.5103 	INFO 	Apparatus RX: ACK for seq=380
+20.5795 	INFO 	Apparatus TX: seq=381, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+20.5906 	INFO 	Apparatus RX: ACK for seq=381
+20.6017 	INFO 	Apparatus TX: seq=382, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.6144 	INFO 	Apparatus RX: ACK for seq=382
+20.6942 	INFO 	Apparatus TX: seq=383, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+20.7059 	INFO 	Apparatus RX: ACK for seq=383
+20.7170 	INFO 	Apparatus TX: seq=384, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.7301 	INFO 	Apparatus RX: ACK for seq=384
+20.7958 	INFO 	Apparatus TX: seq=385, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+20.8064 	INFO 	Apparatus RX: ACK for seq=385
+20.8170 	INFO 	Apparatus TX: seq=386, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.8298 	INFO 	Apparatus RX: ACK for seq=386
+20.9125 	INFO 	Apparatus TX: seq=387, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+20.9226 	INFO 	Apparatus RX: ACK for seq=387
+20.9328 	INFO 	Apparatus TX: seq=388, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+20.9453 	INFO 	Apparatus RX: ACK for seq=388
+21.0287 	INFO 	Apparatus TX: seq=389, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+21.0388 	INFO 	Apparatus RX: ACK for seq=389
+21.0489 	INFO 	Apparatus TX: seq=390, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.0614 	INFO 	Apparatus RX: ACK for seq=390
+21.1431 	INFO 	Apparatus TX: seq=391, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+21.1531 	INFO 	Apparatus RX: ACK for seq=391
+21.1634 	INFO 	Apparatus TX: seq=392, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.1763 	INFO 	Apparatus RX: ACK for seq=392
+21.2454 	INFO 	Apparatus TX: seq=393, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+21.2567 	INFO 	Apparatus RX: ACK for seq=393
+21.2676 	INFO 	Apparatus TX: seq=394, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.2809 	INFO 	Apparatus RX: ACK for seq=394
+21.3599 	INFO 	Apparatus TX: seq=395, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+21.3704 	INFO 	Apparatus RX: ACK for seq=395
+21.3812 	INFO 	Apparatus TX: seq=396, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.3935 	INFO 	Apparatus RX: ACK for seq=396
+21.4599 	INFO 	Apparatus TX: seq=397, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+21.4700 	INFO 	Apparatus RX: ACK for seq=397
+21.4809 	INFO 	Apparatus TX: seq=398, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.4933 	INFO 	Apparatus RX: ACK for seq=398
+21.5629 	INFO 	Apparatus TX: seq=399, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+21.5734 	INFO 	Apparatus RX: ACK for seq=399
+21.5848 	INFO 	Apparatus TX: seq=400, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.5978 	INFO 	Apparatus RX: ACK for seq=400
+21.6779 	INFO 	Apparatus TX: seq=401, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+21.6881 	INFO 	Apparatus RX: ACK for seq=401
+21.6996 	INFO 	Apparatus TX: seq=402, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.7127 	INFO 	Apparatus RX: ACK for seq=402
+21.7937 	INFO 	Apparatus TX: seq=403, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+21.8047 	INFO 	Apparatus RX: ACK for seq=403
+21.8156 	INFO 	Apparatus TX: seq=404, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.8282 	INFO 	Apparatus RX: ACK for seq=404
+21.8944 	INFO 	Apparatus TX: seq=405, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+21.9044 	INFO 	Apparatus RX: ACK for seq=405
+21.9152 	INFO 	Apparatus TX: seq=406, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+21.9280 	INFO 	Apparatus RX: ACK for seq=406
+21.9952 	INFO 	Apparatus TX: seq=407, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+22.0074 	INFO 	Apparatus RX: ACK for seq=407
+22.0186 	INFO 	Apparatus TX: seq=408, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.0312 	INFO 	Apparatus RX: ACK for seq=408
+22.1103 	INFO 	Apparatus TX: seq=409, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+22.1213 	INFO 	Apparatus RX: ACK for seq=409
+22.1324 	INFO 	Apparatus TX: seq=410, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.1445 	INFO 	Apparatus RX: ACK for seq=410
+22.2116 	INFO 	Apparatus TX: seq=411, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+22.2235 	INFO 	Apparatus RX: ACK for seq=411
+22.2343 	INFO 	Apparatus TX: seq=412, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.2464 	INFO 	Apparatus RX: ACK for seq=412
+22.3272 	INFO 	Apparatus TX: seq=413, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+22.3380 	INFO 	Apparatus RX: ACK for seq=413
+22.3499 	INFO 	Apparatus TX: seq=414, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.3634 	INFO 	Apparatus RX: ACK for seq=414
+22.4276 	INFO 	Apparatus TX: seq=415, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+22.4379 	INFO 	Apparatus RX: ACK for seq=415
+22.4491 	INFO 	Apparatus TX: seq=416, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.4632 	INFO 	Apparatus RX: ACK for seq=416
+22.5288 	INFO 	Apparatus TX: seq=417, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+22.5397 	INFO 	Apparatus RX: ACK for seq=417
+22.5506 	INFO 	Apparatus TX: seq=418, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.5631 	INFO 	Apparatus RX: ACK for seq=418
+22.6438 	INFO 	Apparatus TX: seq=419, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+22.6542 	INFO 	Apparatus RX: ACK for seq=419
+22.6656 	INFO 	Apparatus TX: seq=420, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.6774 	INFO 	Apparatus RX: ACK for seq=420
+22.7464 	INFO 	Apparatus TX: seq=421, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+22.7585 	INFO 	Apparatus RX: ACK for seq=421
+22.7697 	INFO 	Apparatus TX: seq=422, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.7825 	INFO 	Apparatus RX: ACK for seq=422
+22.8604 	INFO 	Apparatus TX: seq=423, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+22.8714 	INFO 	Apparatus RX: ACK for seq=423
+22.8817 	INFO 	Apparatus TX: seq=424, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.8950 	INFO 	Apparatus RX: ACK for seq=424
+22.9604 	INFO 	Apparatus TX: seq=425, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+22.9704 	INFO 	Apparatus RX: ACK for seq=425
+22.9807 	INFO 	Apparatus TX: seq=426, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+22.9930 	INFO 	Apparatus RX: ACK for seq=426
+23.0608 	INFO 	Apparatus TX: seq=427, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+23.0709 	INFO 	Apparatus RX: ACK for seq=427
+23.0813 	INFO 	Apparatus TX: seq=428, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.0936 	INFO 	Apparatus RX: ACK for seq=428
+23.1760 	INFO 	Apparatus TX: seq=429, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+23.1865 	INFO 	Apparatus RX: ACK for seq=429
+23.1975 	INFO 	Apparatus TX: seq=430, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.2112 	INFO 	Apparatus RX: ACK for seq=430
+23.2785 	INFO 	Apparatus TX: seq=431, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+23.2891 	INFO 	Apparatus RX: ACK for seq=431
+23.2993 	INFO 	Apparatus TX: seq=432, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.3122 	INFO 	Apparatus RX: ACK for seq=432
+23.3943 	INFO 	Apparatus TX: seq=433, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+23.4046 	INFO 	Apparatus RX: ACK for seq=433
+23.4156 	INFO 	Apparatus TX: seq=434, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.4283 	INFO 	Apparatus RX: ACK for seq=434
+23.5110 	INFO 	Apparatus TX: seq=435, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+23.5224 	INFO 	Apparatus RX: ACK for seq=435
+23.5327 	INFO 	Apparatus TX: seq=436, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.5456 	INFO 	Apparatus RX: ACK for seq=436
+23.6271 	INFO 	Apparatus TX: seq=437, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+23.6377 	INFO 	Apparatus RX: ACK for seq=437
+23.6487 	INFO 	Apparatus TX: seq=438, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.6613 	INFO 	Apparatus RX: ACK for seq=438
+23.7273 	INFO 	Apparatus TX: seq=439, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+23.7389 	INFO 	Apparatus RX: ACK for seq=439
+23.7496 	INFO 	Apparatus TX: seq=440, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.7631 	INFO 	Apparatus RX: ACK for seq=440
+23.8276 	INFO 	Apparatus TX: seq=441, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+23.8374 	INFO 	Apparatus RX: ACK for seq=441
+23.8480 	INFO 	Apparatus TX: seq=442, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.8622 	INFO 	Apparatus RX: ACK for seq=442
+23.9285 	INFO 	Apparatus TX: seq=443, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+23.9399 	INFO 	Apparatus RX: ACK for seq=443
+23.9504 	INFO 	Apparatus TX: seq=444, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+23.9632 	INFO 	Apparatus RX: ACK for seq=444
+24.0291 	INFO 	Apparatus TX: seq=445, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+24.0393 	INFO 	Apparatus RX: ACK for seq=445
+24.0504 	INFO 	Apparatus TX: seq=446, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.0625 	INFO 	Apparatus RX: ACK for seq=446
+24.1444 	INFO 	Apparatus TX: seq=447, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+24.1546 	INFO 	Apparatus RX: ACK for seq=447
+24.1658 	INFO 	Apparatus TX: seq=448, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.1784 	INFO 	Apparatus RX: ACK for seq=448
+24.2446 	INFO 	Apparatus TX: seq=449, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+24.2552 	INFO 	Apparatus RX: ACK for seq=449
+24.2655 	INFO 	Apparatus TX: seq=450, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.2778 	INFO 	Apparatus RX: ACK for seq=450
+24.3605 	INFO 	Apparatus TX: seq=451, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+24.3710 	INFO 	Apparatus RX: ACK for seq=451
+24.3822 	INFO 	Apparatus TX: seq=452, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.3956 	INFO 	Apparatus RX: ACK for seq=452
+24.4768 	INFO 	Apparatus TX: seq=453, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+24.4868 	INFO 	Apparatus RX: ACK for seq=453
+24.4979 	INFO 	Apparatus TX: seq=454, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.5119 	INFO 	Apparatus RX: ACK for seq=454
+24.5780 	INFO 	Apparatus TX: seq=455, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+24.5900 	INFO 	Apparatus RX: ACK for seq=455
+24.6010 	INFO 	Apparatus TX: seq=456, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.6142 	INFO 	Apparatus RX: ACK for seq=456
+24.6940 	INFO 	Apparatus TX: seq=457, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+24.7052 	INFO 	Apparatus RX: ACK for seq=457
+24.7156 	INFO 	Apparatus TX: seq=458, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.7295 	INFO 	Apparatus RX: ACK for seq=458
+24.7947 	INFO 	Apparatus TX: seq=459, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+24.8058 	INFO 	Apparatus RX: ACK for seq=459
+24.8170 	INFO 	Apparatus TX: seq=460, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.8297 	INFO 	Apparatus RX: ACK for seq=460
+24.9109 	INFO 	Apparatus TX: seq=461, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+24.9218 	INFO 	Apparatus RX: ACK for seq=461
+24.9328 	INFO 	Apparatus TX: seq=462, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+24.9467 	INFO 	Apparatus RX: ACK for seq=462
+25.0107 	INFO 	Apparatus TX: seq=463, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+25.0218 	INFO 	Apparatus RX: ACK for seq=463
+25.0329 	INFO 	Apparatus TX: seq=464, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.0461 	INFO 	Apparatus RX: ACK for seq=464
+25.1113 	INFO 	Apparatus TX: seq=465, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+25.1218 	INFO 	Apparatus RX: ACK for seq=465
+25.1328 	INFO 	Apparatus TX: seq=466, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.1459 	INFO 	Apparatus RX: ACK for seq=466
+25.2280 	INFO 	Apparatus TX: seq=467, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+25.2401 	INFO 	Apparatus RX: ACK for seq=467
+25.2507 	INFO 	Apparatus TX: seq=468, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.2637 	INFO 	Apparatus RX: ACK for seq=468
+25.3283 	INFO 	Apparatus TX: seq=469, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+25.3384 	INFO 	Apparatus RX: ACK for seq=469
+25.3504 	INFO 	Apparatus TX: seq=470, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.3626 	INFO 	Apparatus RX: ACK for seq=470
+25.4465 	INFO 	Apparatus TX: seq=471, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+25.4578 	INFO 	Apparatus RX: ACK for seq=471
+25.4686 	INFO 	Apparatus TX: seq=472, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.4824 	INFO 	Apparatus RX: ACK for seq=472
+25.5619 	INFO 	Apparatus TX: seq=473, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+25.5750 	INFO 	Apparatus RX: ACK for seq=473
+25.5867 	INFO 	Apparatus TX: seq=474, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.6002 	INFO 	Apparatus RX: ACK for seq=474
+25.6769 	INFO 	Apparatus TX: seq=475, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+25.6867 	INFO 	Apparatus RX: ACK for seq=475
+25.6977 	INFO 	Apparatus TX: seq=476, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.7107 	INFO 	Apparatus RX: ACK for seq=476
+25.7939 	INFO 	Apparatus TX: seq=477, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+25.8047 	INFO 	Apparatus RX: ACK for seq=477
+25.8160 	INFO 	Apparatus TX: seq=478, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.8289 	INFO 	Apparatus RX: ACK for seq=478
+25.9106 	INFO 	Apparatus TX: seq=479, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+25.9206 	INFO 	Apparatus RX: ACK for seq=479
+25.9318 	INFO 	Apparatus TX: seq=480, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+25.9451 	INFO 	Apparatus RX: ACK for seq=480
+26.0107 	INFO 	Apparatus TX: seq=481, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+26.0216 	INFO 	Apparatus RX: ACK for seq=481
+26.0315 	INFO 	Apparatus TX: seq=482, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.0445 	INFO 	Apparatus RX: ACK for seq=482
+26.1112 	INFO 	Apparatus TX: seq=483, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+26.1231 	INFO 	Apparatus RX: ACK for seq=483
+26.1345 	INFO 	Apparatus TX: seq=484, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.1463 	INFO 	Apparatus RX: ACK for seq=484
+26.2110 	INFO 	Apparatus TX: seq=485, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+26.2221 	INFO 	Apparatus RX: ACK for seq=485
+26.2330 	INFO 	Apparatus TX: seq=486, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.2469 	INFO 	Apparatus RX: ACK for seq=486
+26.3262 	INFO 	Apparatus TX: seq=487, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+26.3362 	INFO 	Apparatus RX: ACK for seq=487
+26.3483 	INFO 	Apparatus TX: seq=488, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.3609 	INFO 	Apparatus RX: ACK for seq=488
+26.4278 	INFO 	Apparatus TX: seq=489, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+26.4374 	INFO 	Apparatus RX: ACK for seq=489
+26.4484 	INFO 	Apparatus TX: seq=490, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.4607 	INFO 	Apparatus RX: ACK for seq=490
+26.5279 	INFO 	Apparatus TX: seq=491, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+26.5388 	INFO 	Apparatus RX: ACK for seq=491
+26.5490 	INFO 	Apparatus TX: seq=492, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.5614 	INFO 	Apparatus RX: ACK for seq=492
+26.6287 	INFO 	Apparatus TX: seq=493, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+26.6391 	INFO 	Apparatus RX: ACK for seq=493
+26.6496 	INFO 	Apparatus TX: seq=494, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.6623 	INFO 	Apparatus RX: ACK for seq=494
+26.7444 	INFO 	Apparatus TX: seq=495, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+26.7553 	INFO 	Apparatus RX: ACK for seq=495
+26.7666 	INFO 	Apparatus TX: seq=496, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.7794 	INFO 	Apparatus RX: ACK for seq=496
+26.8611 	INFO 	Apparatus TX: seq=497, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+26.8714 	INFO 	Apparatus RX: ACK for seq=497
+26.8822 	INFO 	Apparatus TX: seq=498, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.8955 	INFO 	Apparatus RX: ACK for seq=498
+26.9620 	INFO 	Apparatus TX: seq=499, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+26.9727 	INFO 	Apparatus RX: ACK for seq=499
+26.9832 	INFO 	Apparatus TX: seq=500, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+26.9969 	INFO 	Apparatus RX: ACK for seq=500
+27.0796 	INFO 	Apparatus TX: seq=501, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+27.0896 	INFO 	Apparatus RX: ACK for seq=501
+27.1010 	INFO 	Apparatus TX: seq=502, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.1137 	INFO 	Apparatus RX: ACK for seq=502
+27.1938 	INFO 	Apparatus TX: seq=503, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+27.2044 	INFO 	Apparatus RX: ACK for seq=503
+27.2154 	INFO 	Apparatus TX: seq=504, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.2282 	INFO 	Apparatus RX: ACK for seq=504
+27.2965 	INFO 	Apparatus TX: seq=505, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+27.3070 	INFO 	Apparatus RX: ACK for seq=505
+27.3172 	INFO 	Apparatus TX: seq=506, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.3313 	INFO 	Apparatus RX: ACK for seq=506
+27.4100 	INFO 	Apparatus TX: seq=507, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+27.4203 	INFO 	Apparatus RX: ACK for seq=507
+27.4309 	INFO 	Apparatus TX: seq=508, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.4440 	INFO 	Apparatus RX: ACK for seq=508
+27.5104 	INFO 	Apparatus TX: seq=509, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+27.5210 	INFO 	Apparatus RX: ACK for seq=509
+27.5314 	INFO 	Apparatus TX: seq=510, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.5440 	INFO 	Apparatus RX: ACK for seq=510
+27.6109 	INFO 	Apparatus TX: seq=511, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+27.6209 	INFO 	Apparatus RX: ACK for seq=511
+27.6321 	INFO 	Apparatus TX: seq=512, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.6464 	INFO 	Apparatus RX: ACK for seq=512
+27.7275 	INFO 	Apparatus TX: seq=513, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+27.7378 	INFO 	Apparatus RX: ACK for seq=513
+27.7485 	INFO 	Apparatus TX: seq=514, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.7613 	INFO 	Apparatus RX: ACK for seq=514
+27.8433 	INFO 	Apparatus TX: seq=515, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+27.8547 	INFO 	Apparatus RX: ACK for seq=515
+27.8650 	INFO 	Apparatus TX: seq=516, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.8780 	INFO 	Apparatus RX: ACK for seq=516
+27.9444 	INFO 	Apparatus TX: seq=517, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+27.9549 	INFO 	Apparatus RX: ACK for seq=517
+27.9664 	INFO 	Apparatus TX: seq=518, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+27.9789 	INFO 	Apparatus RX: ACK for seq=518
+28.0603 	INFO 	Apparatus TX: seq=519, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+28.0711 	INFO 	Apparatus RX: ACK for seq=519
+28.0817 	INFO 	Apparatus TX: seq=520, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.0942 	INFO 	Apparatus RX: ACK for seq=520
+28.1770 	INFO 	Apparatus TX: seq=521, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+28.1873 	INFO 	Apparatus RX: ACK for seq=521
+28.1975 	INFO 	Apparatus TX: seq=522, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.2098 	INFO 	Apparatus RX: ACK for seq=522
+28.2930 	INFO 	Apparatus TX: seq=523, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+28.3041 	INFO 	Apparatus RX: ACK for seq=523
+28.3144 	INFO 	Apparatus TX: seq=524, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.3267 	INFO 	Apparatus RX: ACK for seq=524
+28.3931 	INFO 	Apparatus TX: seq=525, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+28.4041 	INFO 	Apparatus RX: ACK for seq=525
+28.4143 	INFO 	Apparatus TX: seq=526, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.4271 	INFO 	Apparatus RX: ACK for seq=526
+28.4936 	INFO 	Apparatus TX: seq=527, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+28.5047 	INFO 	Apparatus RX: ACK for seq=527
+28.5154 	INFO 	Apparatus TX: seq=528, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.5284 	INFO 	Apparatus RX: ACK for seq=528
+28.5942 	INFO 	Apparatus TX: seq=529, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+28.6054 	INFO 	Apparatus RX: ACK for seq=529
+28.6155 	INFO 	Apparatus TX: seq=530, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.6293 	INFO 	Apparatus RX: ACK for seq=530
+28.7115 	INFO 	Apparatus TX: seq=531, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+28.7226 	INFO 	Apparatus RX: ACK for seq=531
+28.7336 	INFO 	Apparatus TX: seq=532, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.7457 	INFO 	Apparatus RX: ACK for seq=532
+28.8269 	INFO 	Apparatus TX: seq=533, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+28.8374 	INFO 	Apparatus RX: ACK for seq=533
+28.8476 	INFO 	Apparatus TX: seq=534, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.8614 	INFO 	Apparatus RX: ACK for seq=534
+28.9451 	INFO 	Apparatus TX: seq=535, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+28.9565 	INFO 	Apparatus RX: ACK for seq=535
+28.9667 	INFO 	Apparatus TX: seq=536, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+28.9798 	INFO 	Apparatus RX: ACK for seq=536
+29.0611 	INFO 	Apparatus TX: seq=537, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+29.0723 	INFO 	Apparatus RX: ACK for seq=537
+29.0834 	INFO 	Apparatus TX: seq=538, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.0961 	INFO 	Apparatus RX: ACK for seq=538
+29.1774 	INFO 	Apparatus TX: seq=539, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+29.1879 	INFO 	Apparatus RX: ACK for seq=539
+29.1994 	INFO 	Apparatus TX: seq=540, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.2125 	INFO 	Apparatus RX: ACK for seq=540
+29.2929 	INFO 	Apparatus TX: seq=541, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+29.3046 	INFO 	Apparatus RX: ACK for seq=541
+29.3148 	INFO 	Apparatus TX: seq=542, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.3275 	INFO 	Apparatus RX: ACK for seq=542
+29.3935 	INFO 	Apparatus TX: seq=543, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+29.4033 	INFO 	Apparatus RX: ACK for seq=543
+29.4134 	INFO 	Apparatus TX: seq=544, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.4265 	INFO 	Apparatus RX: ACK for seq=544
+29.5095 	INFO 	Apparatus TX: seq=545, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+29.5197 	INFO 	Apparatus RX: ACK for seq=545
+29.5299 	INFO 	Apparatus TX: seq=546, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.5423 	INFO 	Apparatus RX: ACK for seq=546
+29.6096 	INFO 	Apparatus TX: seq=547, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+29.6201 	INFO 	Apparatus RX: ACK for seq=547
+29.6304 	INFO 	Apparatus TX: seq=548, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.6434 	INFO 	Apparatus RX: ACK for seq=548
+29.7108 	INFO 	Apparatus TX: seq=549, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+29.7221 	INFO 	Apparatus RX: ACK for seq=549
+29.7326 	INFO 	Apparatus TX: seq=550, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.7453 	INFO 	Apparatus RX: ACK for seq=550
+29.8269 	INFO 	Apparatus TX: seq=551, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+29.8387 	INFO 	Apparatus RX: ACK for seq=551
+29.8495 	INFO 	Apparatus TX: seq=552, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.8617 	INFO 	Apparatus RX: ACK for seq=552
+29.9277 	INFO 	Apparatus TX: seq=553, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+29.9385 	INFO 	Apparatus RX: ACK for seq=553
+29.9496 	INFO 	Apparatus TX: seq=554, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+29.9631 	INFO 	Apparatus RX: ACK for seq=554
+30.0436 	INFO 	Apparatus TX: seq=555, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+30.0545 	INFO 	Apparatus RX: ACK for seq=555
+30.0665 	INFO 	Apparatus TX: seq=556, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.0795 	INFO 	Apparatus RX: ACK for seq=556
+30.1441 	INFO 	Apparatus TX: seq=557, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+30.1541 	INFO 	Apparatus RX: ACK for seq=557
+30.1647 	INFO 	Apparatus TX: seq=558, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.1776 	INFO 	Apparatus RX: ACK for seq=558
+30.2443 	INFO 	Apparatus TX: seq=559, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+30.2554 	INFO 	Apparatus RX: ACK for seq=559
+30.2663 	INFO 	Apparatus TX: seq=560, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.2792 	INFO 	Apparatus RX: ACK for seq=560
+30.3600 	INFO 	Apparatus TX: seq=561, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+30.3715 	INFO 	Apparatus RX: ACK for seq=561
+30.3826 	INFO 	Apparatus TX: seq=562, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.3952 	INFO 	Apparatus RX: ACK for seq=562
+30.4605 	INFO 	Apparatus TX: seq=563, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+30.4710 	INFO 	Apparatus RX: ACK for seq=563
+30.4821 	INFO 	Apparatus TX: seq=564, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.4951 	INFO 	Apparatus RX: ACK for seq=564
+30.5762 	INFO 	Apparatus TX: seq=565, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+30.5867 	INFO 	Apparatus RX: ACK for seq=565
+30.5982 	INFO 	Apparatus TX: seq=566, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.6107 	INFO 	Apparatus RX: ACK for seq=566
+30.6770 	INFO 	Apparatus TX: seq=567, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+30.6881 	INFO 	Apparatus RX: ACK for seq=567
+30.6992 	INFO 	Apparatus TX: seq=568, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.7135 	INFO 	Apparatus RX: ACK for seq=568
+30.7774 	INFO 	Apparatus TX: seq=569, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+30.7887 	INFO 	Apparatus RX: ACK for seq=569
+30.8002 	INFO 	Apparatus TX: seq=570, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.8128 	INFO 	Apparatus RX: ACK for seq=570
+30.8938 	INFO 	Apparatus TX: seq=571, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+30.9047 	INFO 	Apparatus RX: ACK for seq=571
+30.9149 	INFO 	Apparatus TX: seq=572, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+30.9280 	INFO 	Apparatus RX: ACK for seq=572
+30.9949 	INFO 	Apparatus TX: seq=573, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+31.0054 	INFO 	Apparatus RX: ACK for seq=573
+31.0158 	INFO 	Apparatus TX: seq=574, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.0286 	INFO 	Apparatus RX: ACK for seq=574
+31.1111 	INFO 	Apparatus TX: seq=575, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+31.1226 	INFO 	Apparatus RX: ACK for seq=575
+31.1339 	INFO 	Apparatus TX: seq=576, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.1467 	INFO 	Apparatus RX: ACK for seq=576
+31.2110 	INFO 	Apparatus TX: seq=577, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+31.2228 	INFO 	Apparatus RX: ACK for seq=577
+31.2338 	INFO 	Apparatus TX: seq=578, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.2467 	INFO 	Apparatus RX: ACK for seq=578
+31.3273 	INFO 	Apparatus TX: seq=579, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+31.3383 	INFO 	Apparatus RX: ACK for seq=579
+31.3493 	INFO 	Apparatus TX: seq=580, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.3619 	INFO 	Apparatus RX: ACK for seq=580
+31.4448 	INFO 	Apparatus TX: seq=581, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+31.4549 	INFO 	Apparatus RX: ACK for seq=581
+31.4652 	INFO 	Apparatus TX: seq=582, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.4779 	INFO 	Apparatus RX: ACK for seq=582
+31.5619 	INFO 	Apparatus TX: seq=583, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+31.5737 	INFO 	Apparatus RX: ACK for seq=583
+31.5842 	INFO 	Apparatus TX: seq=584, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.5970 	INFO 	Apparatus RX: ACK for seq=584
+31.6786 	INFO 	Apparatus TX: seq=585, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+31.6896 	INFO 	Apparatus RX: ACK for seq=585
+31.7009 	INFO 	Apparatus TX: seq=586, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.7147 	INFO 	Apparatus RX: ACK for seq=586
+31.7965 	INFO 	Apparatus TX: seq=587, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+31.8080 	INFO 	Apparatus RX: ACK for seq=587
+31.8181 	INFO 	Apparatus TX: seq=588, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.8309 	INFO 	Apparatus RX: ACK for seq=588
+31.9111 	INFO 	Apparatus TX: seq=589, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+31.9210 	INFO 	Apparatus RX: ACK for seq=589
+31.9323 	INFO 	Apparatus TX: seq=590, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+31.9456 	INFO 	Apparatus RX: ACK for seq=590
+32.0123 	INFO 	Apparatus TX: seq=591, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+32.0221 	INFO 	Apparatus RX: ACK for seq=591
+32.0323 	INFO 	Apparatus TX: seq=592, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.0454 	INFO 	Apparatus RX: ACK for seq=592
+32.1286 	INFO 	Apparatus TX: seq=593, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+32.1390 	INFO 	Apparatus RX: ACK for seq=593
+32.1508 	INFO 	Apparatus TX: seq=594, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.1647 	INFO 	Apparatus RX: ACK for seq=594
+32.2428 	INFO 	Apparatus TX: seq=595, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+32.2534 	INFO 	Apparatus RX: ACK for seq=595
+32.2637 	INFO 	Apparatus TX: seq=596, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.2769 	INFO 	Apparatus RX: ACK for seq=596
+32.3446 	INFO 	Apparatus TX: seq=597, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+32.3547 	INFO 	Apparatus RX: ACK for seq=597
+32.3659 	INFO 	Apparatus TX: seq=598, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.3783 	INFO 	Apparatus RX: ACK for seq=598
+32.4592 	INFO 	Apparatus TX: seq=599, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+32.4702 	INFO 	Apparatus RX: ACK for seq=599
+32.4806 	INFO 	Apparatus TX: seq=600, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.4944 	INFO 	Apparatus RX: ACK for seq=600
+32.5605 	INFO 	Apparatus TX: seq=601, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+32.5716 	INFO 	Apparatus RX: ACK for seq=601
+32.5827 	INFO 	Apparatus TX: seq=602, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.5950 	INFO 	Apparatus RX: ACK for seq=602
+32.6770 	INFO 	Apparatus TX: seq=603, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+32.6870 	INFO 	Apparatus RX: ACK for seq=603
+32.6980 	INFO 	Apparatus TX: seq=604, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.7110 	INFO 	Apparatus RX: ACK for seq=604
+32.7776 	INFO 	Apparatus TX: seq=605, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+32.7876 	INFO 	Apparatus RX: ACK for seq=605
+32.7988 	INFO 	Apparatus TX: seq=606, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.8121 	INFO 	Apparatus RX: ACK for seq=606
+32.8930 	INFO 	Apparatus TX: seq=607, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+32.9049 	INFO 	Apparatus RX: ACK for seq=607
+32.9164 	INFO 	Apparatus TX: seq=608, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+32.9293 	INFO 	Apparatus RX: ACK for seq=608
+32.9942 	INFO 	Apparatus TX: seq=609, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+33.0040 	INFO 	Apparatus RX: ACK for seq=609
+33.0149 	INFO 	Apparatus TX: seq=610, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.0282 	INFO 	Apparatus RX: ACK for seq=610
+33.1099 	INFO 	Apparatus TX: seq=611, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+33.1201 	INFO 	Apparatus RX: ACK for seq=611
+33.1313 	INFO 	Apparatus TX: seq=612, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.1441 	INFO 	Apparatus RX: ACK for seq=612
+33.2100 	INFO 	Apparatus TX: seq=613, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+33.2206 	INFO 	Apparatus RX: ACK for seq=613
+33.2309 	INFO 	Apparatus TX: seq=614, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.2436 	INFO 	Apparatus RX: ACK for seq=614
+33.3107 	INFO 	Apparatus TX: seq=615, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+33.3210 	INFO 	Apparatus RX: ACK for seq=615
+33.3317 	INFO 	Apparatus TX: seq=616, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.3446 	INFO 	Apparatus RX: ACK for seq=616
+33.4261 	INFO 	Apparatus TX: seq=617, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+33.4361 	INFO 	Apparatus RX: ACK for seq=617
+33.4463 	INFO 	Apparatus TX: seq=618, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.4595 	INFO 	Apparatus RX: ACK for seq=618
+33.5284 	INFO 	Apparatus TX: seq=619, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+33.5390 	INFO 	Apparatus RX: ACK for seq=619
+33.5495 	INFO 	Apparatus TX: seq=620, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.5636 	INFO 	Apparatus RX: ACK for seq=620
+33.6436 	INFO 	Apparatus TX: seq=621, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+33.6534 	INFO 	Apparatus RX: ACK for seq=621
+33.6643 	INFO 	Apparatus TX: seq=622, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.6765 	INFO 	Apparatus RX: ACK for seq=622
+33.7609 	INFO 	Apparatus TX: seq=623, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+33.7714 	INFO 	Apparatus RX: ACK for seq=623
+33.7815 	INFO 	Apparatus TX: seq=624, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.7949 	INFO 	Apparatus RX: ACK for seq=624
+33.8774 	INFO 	Apparatus TX: seq=625, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+33.8886 	INFO 	Apparatus RX: ACK for seq=625
+33.8999 	INFO 	Apparatus TX: seq=626, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+33.9139 	INFO 	Apparatus RX: ACK for seq=626
+33.9937 	INFO 	Apparatus TX: seq=627, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+34.0044 	INFO 	Apparatus RX: ACK for seq=627
+34.0146 	INFO 	Apparatus TX: seq=628, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.0270 	INFO 	Apparatus RX: ACK for seq=628
+34.0946 	INFO 	Apparatus TX: seq=629, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+34.1057 	INFO 	Apparatus RX: ACK for seq=629
+34.1166 	INFO 	Apparatus TX: seq=630, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.1302 	INFO 	Apparatus RX: ACK for seq=630
+34.2103 	INFO 	Apparatus TX: seq=631, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+34.2218 	INFO 	Apparatus RX: ACK for seq=631
+34.2330 	INFO 	Apparatus TX: seq=632, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.2453 	INFO 	Apparatus RX: ACK for seq=632
+34.3274 	INFO 	Apparatus TX: seq=633, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+34.3376 	INFO 	Apparatus RX: ACK for seq=633
+34.3481 	INFO 	Apparatus TX: seq=634, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.3603 	INFO 	Apparatus RX: ACK for seq=634
+34.4434 	INFO 	Apparatus TX: seq=635, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+34.4535 	INFO 	Apparatus RX: ACK for seq=635
+34.4642 	INFO 	Apparatus TX: seq=636, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.4772 	INFO 	Apparatus RX: ACK for seq=636
+34.5435 	INFO 	Apparatus TX: seq=637, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+34.5559 	INFO 	Apparatus RX: ACK for seq=637
+34.5675 	INFO 	Apparatus TX: seq=638, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.5805 	INFO 	Apparatus RX: ACK for seq=638
+34.6444 	INFO 	Apparatus TX: seq=639, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+34.6541 	INFO 	Apparatus RX: ACK for seq=639
+34.6649 	INFO 	Apparatus TX: seq=640, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.6779 	INFO 	Apparatus RX: ACK for seq=640
+34.7603 	INFO 	Apparatus TX: seq=641, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+34.7720 	INFO 	Apparatus RX: ACK for seq=641
+34.7828 	INFO 	Apparatus TX: seq=642, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.7957 	INFO 	Apparatus RX: ACK for seq=642
+34.8605 	INFO 	Apparatus TX: seq=643, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+34.8716 	INFO 	Apparatus RX: ACK for seq=643
+34.8824 	INFO 	Apparatus TX: seq=644, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.8956 	INFO 	Apparatus RX: ACK for seq=644
+34.9610 	INFO 	Apparatus TX: seq=645, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+34.9724 	INFO 	Apparatus RX: ACK for seq=645
+34.9833 	INFO 	Apparatus TX: seq=646, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+34.9973 	INFO 	Apparatus RX: ACK for seq=646
+35.0764 	INFO 	Apparatus TX: seq=647, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+35.0883 	INFO 	Apparatus RX: ACK for seq=647
+35.0996 	INFO 	Apparatus TX: seq=648, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.1112 	INFO 	Apparatus RX: ACK for seq=648
+35.1769 	INFO 	Apparatus TX: seq=649, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+35.1870 	INFO 	Apparatus RX: ACK for seq=649
+35.1988 	INFO 	Apparatus TX: seq=650, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.2116 	INFO 	Apparatus RX: ACK for seq=650
+35.2782 	INFO 	Apparatus TX: seq=651, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+35.2900 	INFO 	Apparatus RX: ACK for seq=651
+35.3007 	INFO 	Apparatus TX: seq=652, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.3135 	INFO 	Apparatus RX: ACK for seq=652
+35.3942 	INFO 	Apparatus TX: seq=653, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+35.4046 	INFO 	Apparatus RX: ACK for seq=653
+35.4158 	INFO 	Apparatus TX: seq=654, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.4286 	INFO 	Apparatus RX: ACK for seq=654
+35.4943 	INFO 	Apparatus TX: seq=655, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+35.5054 	INFO 	Apparatus RX: ACK for seq=655
+35.5156 	INFO 	Apparatus TX: seq=656, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.5298 	INFO 	Apparatus RX: ACK for seq=656
+35.6097 	INFO 	Apparatus TX: seq=657, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+35.6200 	INFO 	Apparatus RX: ACK for seq=657
+35.6317 	INFO 	Apparatus TX: seq=658, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.6437 	INFO 	Apparatus RX: ACK for seq=658
+35.7107 	INFO 	Apparatus TX: seq=659, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+35.7208 	INFO 	Apparatus RX: ACK for seq=659
+35.7312 	INFO 	Apparatus TX: seq=660, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.7435 	INFO 	Apparatus RX: ACK for seq=660
+35.8272 	INFO 	Apparatus TX: seq=661, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+35.8390 	INFO 	Apparatus RX: ACK for seq=661
+35.8493 	INFO 	Apparatus TX: seq=662, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.8624 	INFO 	Apparatus RX: ACK for seq=662
+35.9436 	INFO 	Apparatus TX: seq=663, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+35.9553 	INFO 	Apparatus RX: ACK for seq=663
+35.9664 	INFO 	Apparatus TX: seq=664, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+35.9789 	INFO 	Apparatus RX: ACK for seq=664
+36.0597 	INFO 	Apparatus TX: seq=665, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+36.0695 	INFO 	Apparatus RX: ACK for seq=665
+36.0803 	INFO 	Apparatus TX: seq=666, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.0941 	INFO 	Apparatus RX: ACK for seq=666
+36.1596 	INFO 	Apparatus TX: seq=667, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+36.1709 	INFO 	Apparatus RX: ACK for seq=667
+36.1810 	INFO 	Apparatus TX: seq=668, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.1942 	INFO 	Apparatus RX: ACK for seq=668
+36.2601 	INFO 	Apparatus TX: seq=669, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+36.2697 	INFO 	Apparatus RX: ACK for seq=669
+36.2810 	INFO 	Apparatus TX: seq=670, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.2937 	INFO 	Apparatus RX: ACK for seq=670
+36.3614 	INFO 	Apparatus TX: seq=671, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+36.3730 	INFO 	Apparatus RX: ACK for seq=671
+36.3847 	INFO 	Apparatus TX: seq=672, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.3984 	INFO 	Apparatus RX: ACK for seq=672
+36.4766 	INFO 	Apparatus TX: seq=673, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+36.4865 	INFO 	Apparatus RX: ACK for seq=673
+36.4974 	INFO 	Apparatus TX: seq=674, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.5106 	INFO 	Apparatus RX: ACK for seq=674
+36.5773 	INFO 	Apparatus TX: seq=675, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+36.5876 	INFO 	Apparatus RX: ACK for seq=675
+36.5984 	INFO 	Apparatus TX: seq=676, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.6114 	INFO 	Apparatus RX: ACK for seq=676
+36.6775 	INFO 	Apparatus TX: seq=677, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+36.6874 	INFO 	Apparatus RX: ACK for seq=677
+36.6986 	INFO 	Apparatus TX: seq=678, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.7115 	INFO 	Apparatus RX: ACK for seq=678
+36.7777 	INFO 	Apparatus TX: seq=679, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+36.7878 	INFO 	Apparatus RX: ACK for seq=679
+36.7988 	INFO 	Apparatus TX: seq=680, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.8123 	INFO 	Apparatus RX: ACK for seq=680
+36.8780 	INFO 	Apparatus TX: seq=681, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+36.8902 	INFO 	Apparatus RX: ACK for seq=681
+36.9012 	INFO 	Apparatus TX: seq=682, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+36.9143 	INFO 	Apparatus RX: ACK for seq=682
+36.9924 	INFO 	Apparatus TX: seq=683, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+37.0021 	INFO 	Apparatus RX: ACK for seq=683
+37.0132 	INFO 	Apparatus TX: seq=684, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.0270 	INFO 	Apparatus RX: ACK for seq=684
+37.0923 	INFO 	Apparatus TX: seq=685, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+37.1031 	INFO 	Apparatus RX: ACK for seq=685
+37.1134 	INFO 	Apparatus TX: seq=686, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.1269 	INFO 	Apparatus RX: ACK for seq=686
+37.1931 	INFO 	Apparatus TX: seq=687, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+37.2049 	INFO 	Apparatus RX: ACK for seq=687
+37.2150 	INFO 	Apparatus TX: seq=688, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.2272 	INFO 	Apparatus RX: ACK for seq=688
+37.2935 	INFO 	Apparatus TX: seq=689, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+37.3039 	INFO 	Apparatus RX: ACK for seq=689
+37.3144 	INFO 	Apparatus TX: seq=690, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.3270 	INFO 	Apparatus RX: ACK for seq=690
+37.3941 	INFO 	Apparatus TX: seq=691, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+37.4043 	INFO 	Apparatus RX: ACK for seq=691
+37.4145 	INFO 	Apparatus TX: seq=692, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.4270 	INFO 	Apparatus RX: ACK for seq=692
+37.5106 	INFO 	Apparatus TX: seq=693, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+37.5209 	INFO 	Apparatus RX: ACK for seq=693
+37.5318 	INFO 	Apparatus TX: seq=694, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.5450 	INFO 	Apparatus RX: ACK for seq=694
+37.6106 	INFO 	Apparatus TX: seq=695, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+37.6220 	INFO 	Apparatus RX: ACK for seq=695
+37.6324 	INFO 	Apparatus TX: seq=696, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.6454 	INFO 	Apparatus RX: ACK for seq=696
+37.7110 	INFO 	Apparatus TX: seq=697, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+37.7220 	INFO 	Apparatus RX: ACK for seq=697
+37.7332 	INFO 	Apparatus TX: seq=698, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.7452 	INFO 	Apparatus RX: ACK for seq=698
+37.8273 	INFO 	Apparatus TX: seq=699, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+37.8375 	INFO 	Apparatus RX: ACK for seq=699
+37.8488 	INFO 	Apparatus TX: seq=700, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.8617 	INFO 	Apparatus RX: ACK for seq=700
+37.9281 	INFO 	Apparatus TX: seq=701, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+37.9404 	INFO 	Apparatus RX: ACK for seq=701
+37.9514 	INFO 	Apparatus TX: seq=702, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+37.9647 	INFO 	Apparatus RX: ACK for seq=702
+38.0436 	INFO 	Apparatus TX: seq=703, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+38.0536 	INFO 	Apparatus RX: ACK for seq=703
+38.0646 	INFO 	Apparatus TX: seq=704, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.0774 	INFO 	Apparatus RX: ACK for seq=704
+38.1454 	INFO 	Apparatus TX: seq=705, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+38.1554 	INFO 	Apparatus RX: ACK for seq=705
+38.1658 	INFO 	Apparatus TX: seq=706, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.1796 	INFO 	Apparatus RX: ACK for seq=706
+38.2593 	INFO 	Apparatus TX: seq=707, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+38.2702 	INFO 	Apparatus RX: ACK for seq=707
+38.2806 	INFO 	Apparatus TX: seq=708, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.2935 	INFO 	Apparatus RX: ACK for seq=708
+38.3598 	INFO 	Apparatus TX: seq=709, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+38.3701 	INFO 	Apparatus RX: ACK for seq=709
+38.3810 	INFO 	Apparatus TX: seq=710, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.3938 	INFO 	Apparatus RX: ACK for seq=710
+38.4606 	INFO 	Apparatus TX: seq=711, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+38.4710 	INFO 	Apparatus RX: ACK for seq=711
+38.4812 	INFO 	Apparatus TX: seq=712, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.4937 	INFO 	Apparatus RX: ACK for seq=712
+38.5612 	INFO 	Apparatus TX: seq=713, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+38.5710 	INFO 	Apparatus RX: ACK for seq=713
+38.5814 	INFO 	Apparatus TX: seq=714, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.5953 	INFO 	Apparatus RX: ACK for seq=714
+38.6615 	INFO 	Apparatus TX: seq=715, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+38.6715 	INFO 	Apparatus RX: ACK for seq=715
+38.6829 	INFO 	Apparatus TX: seq=716, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.6967 	INFO 	Apparatus RX: ACK for seq=716
+38.7779 	INFO 	Apparatus TX: seq=717, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+38.7886 	INFO 	Apparatus RX: ACK for seq=717
+38.7996 	INFO 	Apparatus TX: seq=718, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.8142 	INFO 	Apparatus RX: ACK for seq=718
+38.8950 	INFO 	Apparatus TX: seq=719, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+38.9060 	INFO 	Apparatus RX: ACK for seq=719
+38.9175 	INFO 	Apparatus TX: seq=720, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+38.9305 	INFO 	Apparatus RX: ACK for seq=720
+39.0104 	INFO 	Apparatus TX: seq=721, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+39.0223 	INFO 	Apparatus RX: ACK for seq=721
+39.0324 	INFO 	Apparatus TX: seq=722, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.0463 	INFO 	Apparatus RX: ACK for seq=722
+39.1277 	INFO 	Apparatus TX: seq=723, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+39.1386 	INFO 	Apparatus RX: ACK for seq=723
+39.1496 	INFO 	Apparatus TX: seq=724, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.1626 	INFO 	Apparatus RX: ACK for seq=724
+39.2435 	INFO 	Apparatus TX: seq=725, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+39.2535 	INFO 	Apparatus RX: ACK for seq=725
+39.2650 	INFO 	Apparatus TX: seq=726, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.2788 	INFO 	Apparatus RX: ACK for seq=726
+39.3446 	INFO 	Apparatus TX: seq=727, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+39.3556 	INFO 	Apparatus RX: ACK for seq=727
+39.3668 	INFO 	Apparatus TX: seq=728, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.3791 	INFO 	Apparatus RX: ACK for seq=728
+39.4607 	INFO 	Apparatus TX: seq=729, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+39.4705 	INFO 	Apparatus RX: ACK for seq=729
+39.4820 	INFO 	Apparatus TX: seq=730, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.4947 	INFO 	Apparatus RX: ACK for seq=730
+39.5780 	INFO 	Apparatus TX: seq=731, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+39.5880 	INFO 	Apparatus RX: ACK for seq=731
+39.5999 	INFO 	Apparatus TX: seq=732, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.6120 	INFO 	Apparatus RX: ACK for seq=732
+39.6950 	INFO 	Apparatus TX: seq=733, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+39.7051 	INFO 	Apparatus RX: ACK for seq=733
+39.7163 	INFO 	Apparatus TX: seq=734, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.7293 	INFO 	Apparatus RX: ACK for seq=734
+39.8102 	INFO 	Apparatus TX: seq=735, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+39.8207 	INFO 	Apparatus RX: ACK for seq=735
+39.8312 	INFO 	Apparatus TX: seq=736, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.8447 	INFO 	Apparatus RX: ACK for seq=736
+39.9121 	INFO 	Apparatus TX: seq=737, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+39.9242 	INFO 	Apparatus RX: ACK for seq=737
+39.9355 	INFO 	Apparatus TX: seq=738, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+39.9484 	INFO 	Apparatus RX: ACK for seq=738
+40.0269 	INFO 	Apparatus TX: seq=739, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+40.0369 	INFO 	Apparatus RX: ACK for seq=739
+40.0482 	INFO 	Apparatus TX: seq=740, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.0610 	INFO 	Apparatus RX: ACK for seq=740
+40.1280 	INFO 	Apparatus TX: seq=741, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+40.1396 	INFO 	Apparatus RX: ACK for seq=741
+40.1506 	INFO 	Apparatus TX: seq=742, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.1626 	INFO 	Apparatus RX: ACK for seq=742
+40.2435 	INFO 	Apparatus TX: seq=743, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+40.2545 	INFO 	Apparatus RX: ACK for seq=743
+40.2660 	INFO 	Apparatus TX: seq=744, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.2792 	INFO 	Apparatus RX: ACK for seq=744
+40.3441 	INFO 	Apparatus TX: seq=745, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+40.3550 	INFO 	Apparatus RX: ACK for seq=745
+40.3658 	INFO 	Apparatus TX: seq=746, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.3791 	INFO 	Apparatus RX: ACK for seq=746
+40.4603 	INFO 	Apparatus TX: seq=747, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+40.4711 	INFO 	Apparatus RX: ACK for seq=747
+40.4814 	INFO 	Apparatus TX: seq=748, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.4937 	INFO 	Apparatus RX: ACK for seq=748
+40.5781 	INFO 	Apparatus TX: seq=749, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+40.5887 	INFO 	Apparatus RX: ACK for seq=749
+40.6000 	INFO 	Apparatus TX: seq=750, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.6134 	INFO 	Apparatus RX: ACK for seq=750
+40.6787 	INFO 	Apparatus TX: seq=751, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+40.6891 	INFO 	Apparatus RX: ACK for seq=751
+40.7008 	INFO 	Apparatus TX: seq=752, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.7135 	INFO 	Apparatus RX: ACK for seq=752
+40.7943 	INFO 	Apparatus TX: seq=753, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+40.8044 	INFO 	Apparatus RX: ACK for seq=753
+40.8157 	INFO 	Apparatus TX: seq=754, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.8294 	INFO 	Apparatus RX: ACK for seq=754
+40.9105 	INFO 	Apparatus TX: seq=755, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+40.9215 	INFO 	Apparatus RX: ACK for seq=755
+40.9328 	INFO 	Apparatus TX: seq=756, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+40.9460 	INFO 	Apparatus RX: ACK for seq=756
+41.0274 	INFO 	Apparatus TX: seq=757, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+41.0372 	INFO 	Apparatus RX: ACK for seq=757
+41.0481 	INFO 	Apparatus TX: seq=758, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.0609 	INFO 	Apparatus RX: ACK for seq=758
+41.1287 	INFO 	Apparatus TX: seq=759, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+41.1394 	INFO 	Apparatus RX: ACK for seq=759
+41.1508 	INFO 	Apparatus TX: seq=760, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.1641 	INFO 	Apparatus RX: ACK for seq=760
+41.2430 	INFO 	Apparatus TX: seq=761, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+41.2534 	INFO 	Apparatus RX: ACK for seq=761
+41.2641 	INFO 	Apparatus TX: seq=762, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.2764 	INFO 	Apparatus RX: ACK for seq=762
+41.3448 	INFO 	Apparatus TX: seq=763, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+41.3548 	INFO 	Apparatus RX: ACK for seq=763
+41.3661 	INFO 	Apparatus TX: seq=764, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.3785 	INFO 	Apparatus RX: ACK for seq=764
+41.4598 	INFO 	Apparatus TX: seq=765, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+41.4707 	INFO 	Apparatus RX: ACK for seq=765
+41.4815 	INFO 	Apparatus TX: seq=766, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.4953 	INFO 	Apparatus RX: ACK for seq=766
+41.5606 	INFO 	Apparatus TX: seq=767, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+41.5724 	INFO 	Apparatus RX: ACK for seq=767
+41.5834 	INFO 	Apparatus TX: seq=768, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.5961 	INFO 	Apparatus RX: ACK for seq=768
+41.6631 	INFO 	Apparatus TX: seq=769, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+41.6735 	INFO 	Apparatus RX: ACK for seq=769
+41.6846 	INFO 	Apparatus TX: seq=770, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.6971 	INFO 	Apparatus RX: ACK for seq=770
+41.7773 	INFO 	Apparatus TX: seq=771, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+41.7878 	INFO 	Apparatus RX: ACK for seq=771
+41.7989 	INFO 	Apparatus TX: seq=772, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.8118 	INFO 	Apparatus RX: ACK for seq=772
+41.8927 	INFO 	Apparatus TX: seq=773, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+41.9032 	INFO 	Apparatus RX: ACK for seq=773
+41.9138 	INFO 	Apparatus TX: seq=774, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+41.9261 	INFO 	Apparatus RX: ACK for seq=774
+42.0104 	INFO 	Apparatus TX: seq=775, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+42.0205 	INFO 	Apparatus RX: ACK for seq=775
+42.0316 	INFO 	Apparatus TX: seq=776, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.0435 	INFO 	Apparatus RX: ACK for seq=776
+42.1284 	INFO 	Apparatus TX: seq=777, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+42.1408 	INFO 	Apparatus RX: ACK for seq=777
+42.1517 	INFO 	Apparatus TX: seq=778, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.1650 	INFO 	Apparatus RX: ACK for seq=778
+42.2436 	INFO 	Apparatus TX: seq=779, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+42.2550 	INFO 	Apparatus RX: ACK for seq=779
+42.2658 	INFO 	Apparatus TX: seq=780, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.2797 	INFO 	Apparatus RX: ACK for seq=780
+42.3439 	INFO 	Apparatus TX: seq=781, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+42.3543 	INFO 	Apparatus RX: ACK for seq=781
+42.3644 	INFO 	Apparatus TX: seq=782, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.3773 	INFO 	Apparatus RX: ACK for seq=782
+42.4443 	INFO 	Apparatus TX: seq=783, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+42.4541 	INFO 	Apparatus RX: ACK for seq=783
+42.4653 	INFO 	Apparatus TX: seq=784, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.4792 	INFO 	Apparatus RX: ACK for seq=784
+42.5605 	INFO 	Apparatus TX: seq=785, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+42.5709 	INFO 	Apparatus RX: ACK for seq=785
+42.5814 	INFO 	Apparatus TX: seq=786, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.5946 	INFO 	Apparatus RX: ACK for seq=786
+42.6610 	INFO 	Apparatus TX: seq=787, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+42.6726 	INFO 	Apparatus RX: ACK for seq=787
+42.6836 	INFO 	Apparatus TX: seq=788, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.6967 	INFO 	Apparatus RX: ACK for seq=788
+42.7610 	INFO 	Apparatus TX: seq=789, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+42.7720 	INFO 	Apparatus RX: ACK for seq=789
+42.7831 	INFO 	Apparatus TX: seq=790, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.7958 	INFO 	Apparatus RX: ACK for seq=790
+42.8627 	INFO 	Apparatus TX: seq=791, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+42.8740 	INFO 	Apparatus RX: ACK for seq=791
+42.8849 	INFO 	Apparatus TX: seq=792, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+42.8982 	INFO 	Apparatus RX: ACK for seq=792
+42.9756 	INFO 	Apparatus TX: seq=793, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+42.9878 	INFO 	Apparatus RX: ACK for seq=793
+42.9986 	INFO 	Apparatus TX: seq=794, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.0126 	INFO 	Apparatus RX: ACK for seq=794
+43.0774 	INFO 	Apparatus TX: seq=795, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+43.0873 	INFO 	Apparatus RX: ACK for seq=795
+43.0989 	INFO 	Apparatus TX: seq=796, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.1122 	INFO 	Apparatus RX: ACK for seq=796
+43.1940 	INFO 	Apparatus TX: seq=797, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+43.2051 	INFO 	Apparatus RX: ACK for seq=797
+43.2154 	INFO 	Apparatus TX: seq=798, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.2281 	INFO 	Apparatus RX: ACK for seq=798
+43.3106 	INFO 	Apparatus TX: seq=799, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+43.3212 	INFO 	Apparatus RX: ACK for seq=799
+43.3313 	INFO 	Apparatus TX: seq=800, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.3454 	INFO 	Apparatus RX: ACK for seq=800
+43.4278 	INFO 	Apparatus TX: seq=801, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+43.4384 	INFO 	Apparatus RX: ACK for seq=801
+43.4491 	INFO 	Apparatus TX: seq=802, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.4619 	INFO 	Apparatus RX: ACK for seq=802
+43.5431 	INFO 	Apparatus TX: seq=803, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+43.5542 	INFO 	Apparatus RX: ACK for seq=803
+43.5646 	INFO 	Apparatus TX: seq=804, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.5774 	INFO 	Apparatus RX: ACK for seq=804
+43.6588 	INFO 	Apparatus TX: seq=805, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+43.6697 	INFO 	Apparatus RX: ACK for seq=805
+43.6808 	INFO 	Apparatus TX: seq=806, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.6930 	INFO 	Apparatus RX: ACK for seq=806
+43.7610 	INFO 	Apparatus TX: seq=807, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+43.7716 	INFO 	Apparatus RX: ACK for seq=807
+43.7828 	INFO 	Apparatus TX: seq=808, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.7951 	INFO 	Apparatus RX: ACK for seq=808
+43.8767 	INFO 	Apparatus TX: seq=809, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+43.8874 	INFO 	Apparatus RX: ACK for seq=809
+43.8986 	INFO 	Apparatus TX: seq=810, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+43.9124 	INFO 	Apparatus RX: ACK for seq=810
+43.9931 	INFO 	Apparatus TX: seq=811, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+44.0052 	INFO 	Apparatus RX: ACK for seq=811
+44.0166 	INFO 	Apparatus TX: seq=812, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.0292 	INFO 	Apparatus RX: ACK for seq=812
+44.1092 	INFO 	Apparatus TX: seq=813, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+44.1200 	INFO 	Apparatus RX: ACK for seq=813
+44.1305 	INFO 	Apparatus TX: seq=814, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.1430 	INFO 	Apparatus RX: ACK for seq=814
+44.2255 	INFO 	Apparatus TX: seq=815, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+44.2358 	INFO 	Apparatus RX: ACK for seq=815
+44.2461 	INFO 	Apparatus TX: seq=816, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.2585 	INFO 	Apparatus RX: ACK for seq=816
+44.3256 	INFO 	Apparatus TX: seq=817, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+44.3361 	INFO 	Apparatus RX: ACK for seq=817
+44.3467 	INFO 	Apparatus TX: seq=818, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.3597 	INFO 	Apparatus RX: ACK for seq=818
+44.4260 	INFO 	Apparatus TX: seq=819, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+44.4361 	INFO 	Apparatus RX: ACK for seq=819
+44.4463 	INFO 	Apparatus TX: seq=820, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.4600 	INFO 	Apparatus RX: ACK for seq=820
+44.5430 	INFO 	Apparatus TX: seq=821, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+44.5534 	INFO 	Apparatus RX: ACK for seq=821
+44.5639 	INFO 	Apparatus TX: seq=822, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.5767 	INFO 	Apparatus RX: ACK for seq=822
+44.6590 	INFO 	Apparatus TX: seq=823, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+44.6688 	INFO 	Apparatus RX: ACK for seq=823
+44.6791 	INFO 	Apparatus TX: seq=824, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.6913 	INFO 	Apparatus RX: ACK for seq=824
+44.7597 	INFO 	Apparatus TX: seq=825, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+44.7711 	INFO 	Apparatus RX: ACK for seq=825
+44.7815 	INFO 	Apparatus TX: seq=826, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.7954 	INFO 	Apparatus RX: ACK for seq=826
+44.8762 	INFO 	Apparatus TX: seq=827, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+44.8873 	INFO 	Apparatus RX: ACK for seq=827
+44.8989 	INFO 	Apparatus TX: seq=828, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+44.9118 	INFO 	Apparatus RX: ACK for seq=828
+44.9929 	INFO 	Apparatus TX: seq=829, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+45.0035 	INFO 	Apparatus RX: ACK for seq=829
+45.0151 	INFO 	Apparatus TX: seq=830, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.0273 	INFO 	Apparatus RX: ACK for seq=830
+45.0935 	INFO 	Apparatus TX: seq=831, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+45.1032 	INFO 	Apparatus RX: ACK for seq=831
+45.1134 	INFO 	Apparatus TX: seq=832, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.1265 	INFO 	Apparatus RX: ACK for seq=832
+45.1941 	INFO 	Apparatus TX: seq=833, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+45.2051 	INFO 	Apparatus RX: ACK for seq=833
+45.2155 	INFO 	Apparatus TX: seq=834, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.2294 	INFO 	Apparatus RX: ACK for seq=834
+45.2949 	INFO 	Apparatus TX: seq=835, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+45.3064 	INFO 	Apparatus RX: ACK for seq=835
+45.3168 	INFO 	Apparatus TX: seq=836, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.3295 	INFO 	Apparatus RX: ACK for seq=836
+45.4101 	INFO 	Apparatus TX: seq=837, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+45.4203 	INFO 	Apparatus RX: ACK for seq=837
+45.4316 	INFO 	Apparatus TX: seq=838, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.4456 	INFO 	Apparatus RX: ACK for seq=838
+45.5107 	INFO 	Apparatus TX: seq=839, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+45.5220 	INFO 	Apparatus RX: ACK for seq=839
+45.5330 	INFO 	Apparatus TX: seq=840, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.5463 	INFO 	Apparatus RX: ACK for seq=840
+45.6263 	INFO 	Apparatus TX: seq=841, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+45.6373 	INFO 	Apparatus RX: ACK for seq=841
+45.6485 	INFO 	Apparatus TX: seq=842, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.6610 	INFO 	Apparatus RX: ACK for seq=842
+45.7265 	INFO 	Apparatus TX: seq=843, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+45.7370 	INFO 	Apparatus RX: ACK for seq=843
+45.7483 	INFO 	Apparatus TX: seq=844, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.7609 	INFO 	Apparatus RX: ACK for seq=844
+45.8285 	INFO 	Apparatus TX: seq=845, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+45.8399 	INFO 	Apparatus RX: ACK for seq=845
+45.8511 	INFO 	Apparatus TX: seq=846, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.8634 	INFO 	Apparatus RX: ACK for seq=846
+45.9290 	INFO 	Apparatus TX: seq=847, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+45.9395 	INFO 	Apparatus RX: ACK for seq=847
+45.9508 	INFO 	Apparatus TX: seq=848, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+45.9631 	INFO 	Apparatus RX: ACK for seq=848
+46.0433 	INFO 	Apparatus TX: seq=849, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+46.0530 	INFO 	Apparatus RX: ACK for seq=849
+46.0639 	INFO 	Apparatus TX: seq=850, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.0766 	INFO 	Apparatus RX: ACK for seq=850
+46.1615 	INFO 	Apparatus TX: seq=851, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+46.1732 	INFO 	Apparatus RX: ACK for seq=851
+46.1845 	INFO 	Apparatus TX: seq=852, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.1965 	INFO 	Apparatus RX: ACK for seq=852
+46.2769 	INFO 	Apparatus TX: seq=853, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+46.2888 	INFO 	Apparatus RX: ACK for seq=853
+46.3001 	INFO 	Apparatus TX: seq=854, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.3132 	INFO 	Apparatus RX: ACK for seq=854
+46.3771 	INFO 	Apparatus TX: seq=855, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+46.3874 	INFO 	Apparatus RX: ACK for seq=855
+46.3983 	INFO 	Apparatus TX: seq=856, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.4112 	INFO 	Apparatus RX: ACK for seq=856
+46.4937 	INFO 	Apparatus TX: seq=857, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+46.5053 	INFO 	Apparatus RX: ACK for seq=857
+46.5161 	INFO 	Apparatus TX: seq=858, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.5300 	INFO 	Apparatus RX: ACK for seq=858
+46.5939 	INFO 	Apparatus TX: seq=859, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+46.6042 	INFO 	Apparatus RX: ACK for seq=859
+46.6143 	INFO 	Apparatus TX: seq=860, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.6268 	INFO 	Apparatus RX: ACK for seq=860
+46.7096 	INFO 	Apparatus TX: seq=861, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+46.7216 	INFO 	Apparatus RX: ACK for seq=861
+46.7329 	INFO 	Apparatus TX: seq=862, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.7468 	INFO 	Apparatus RX: ACK for seq=862
+46.8111 	INFO 	Apparatus TX: seq=863, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+46.8211 	INFO 	Apparatus RX: ACK for seq=863
+46.8319 	INFO 	Apparatus TX: seq=864, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.8459 	INFO 	Apparatus RX: ACK for seq=864
+46.9272 	INFO 	Apparatus TX: seq=865, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+46.9382 	INFO 	Apparatus RX: ACK for seq=865
+46.9493 	INFO 	Apparatus TX: seq=866, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+46.9616 	INFO 	Apparatus RX: ACK for seq=866
+47.0435 	INFO 	Apparatus TX: seq=867, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+47.0544 	INFO 	Apparatus RX: ACK for seq=867
+47.0651 	INFO 	Apparatus TX: seq=868, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.0782 	INFO 	Apparatus RX: ACK for seq=868
+47.1613 	INFO 	Apparatus TX: seq=869, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+47.1714 	INFO 	Apparatus RX: ACK for seq=869
+47.1826 	INFO 	Apparatus TX: seq=870, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.1950 	INFO 	Apparatus RX: ACK for seq=870
+47.2765 	INFO 	Apparatus TX: seq=871, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+47.2870 	INFO 	Apparatus RX: ACK for seq=871
+47.2987 	INFO 	Apparatus TX: seq=872, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.3109 	INFO 	Apparatus RX: ACK for seq=872
+47.3787 	INFO 	Apparatus TX: seq=873, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+47.3902 	INFO 	Apparatus RX: ACK for seq=873
+47.4014 	INFO 	Apparatus TX: seq=874, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.4139 	INFO 	Apparatus RX: ACK for seq=874
+47.4937 	INFO 	Apparatus TX: seq=875, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+47.5040 	INFO 	Apparatus RX: ACK for seq=875
+47.5153 	INFO 	Apparatus TX: seq=876, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.5274 	INFO 	Apparatus RX: ACK for seq=876
+47.6092 	INFO 	Apparatus TX: seq=877, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+47.6205 	INFO 	Apparatus RX: ACK for seq=877
+47.6311 	INFO 	Apparatus TX: seq=878, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.6440 	INFO 	Apparatus RX: ACK for seq=878
+47.7095 	INFO 	Apparatus TX: seq=879, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+47.7196 	INFO 	Apparatus RX: ACK for seq=879
+47.7299 	INFO 	Apparatus TX: seq=880, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.7420 	INFO 	Apparatus RX: ACK for seq=880
+47.8262 	INFO 	Apparatus TX: seq=881, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+47.8362 	INFO 	Apparatus RX: ACK for seq=881
+47.8476 	INFO 	Apparatus TX: seq=882, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.8608 	INFO 	Apparatus RX: ACK for seq=882
+47.9282 	INFO 	Apparatus TX: seq=883, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+47.9393 	INFO 	Apparatus RX: ACK for seq=883
+47.9503 	INFO 	Apparatus TX: seq=884, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+47.9628 	INFO 	Apparatus RX: ACK for seq=884
+48.0451 	INFO 	Apparatus TX: seq=885, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+48.0559 	INFO 	Apparatus RX: ACK for seq=885
+48.0669 	INFO 	Apparatus TX: seq=886, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.0809 	INFO 	Apparatus RX: ACK for seq=886
+48.1607 	INFO 	Apparatus TX: seq=887, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+48.1708 	INFO 	Apparatus RX: ACK for seq=887
+48.1822 	INFO 	Apparatus TX: seq=888, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.1951 	INFO 	Apparatus RX: ACK for seq=888
+48.2755 	INFO 	Apparatus TX: seq=889, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+48.2855 	INFO 	Apparatus RX: ACK for seq=889
+48.2961 	INFO 	Apparatus TX: seq=890, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.3096 	INFO 	Apparatus RX: ACK for seq=890
+48.3776 	INFO 	Apparatus TX: seq=891, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+48.3886 	INFO 	Apparatus RX: ACK for seq=891
+48.4001 	INFO 	Apparatus TX: seq=892, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.4130 	INFO 	Apparatus RX: ACK for seq=892
+48.4935 	INFO 	Apparatus TX: seq=893, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+48.5038 	INFO 	Apparatus RX: ACK for seq=893
+48.5149 	INFO 	Apparatus TX: seq=894, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.5281 	INFO 	Apparatus RX: ACK for seq=894
+48.5941 	INFO 	Apparatus TX: seq=895, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+48.6048 	INFO 	Apparatus RX: ACK for seq=895
+48.6153 	INFO 	Apparatus TX: seq=896, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.6282 	INFO 	Apparatus RX: ACK for seq=896
+48.7111 	INFO 	Apparatus TX: seq=897, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+48.7220 	INFO 	Apparatus RX: ACK for seq=897
+48.7331 	INFO 	Apparatus TX: seq=898, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.7453 	INFO 	Apparatus RX: ACK for seq=898
+48.8113 	INFO 	Apparatus TX: seq=899, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+48.8233 	INFO 	Apparatus RX: ACK for seq=899
+48.8341 	INFO 	Apparatus TX: seq=900, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.8468 	INFO 	Apparatus RX: ACK for seq=900
+48.9122 	INFO 	Apparatus TX: seq=901, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+48.9236 	INFO 	Apparatus RX: ACK for seq=901
+48.9347 	INFO 	Apparatus TX: seq=902, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+48.9468 	INFO 	Apparatus RX: ACK for seq=902
+49.0276 	INFO 	Apparatus TX: seq=903, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+49.0377 	INFO 	Apparatus RX: ACK for seq=903
+49.0486 	INFO 	Apparatus TX: seq=904, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.0618 	INFO 	Apparatus RX: ACK for seq=904
+49.1429 	INFO 	Apparatus TX: seq=905, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+49.1540 	INFO 	Apparatus RX: ACK for seq=905
+49.1652 	INFO 	Apparatus TX: seq=906, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.1776 	INFO 	Apparatus RX: ACK for seq=906
+49.2604 	INFO 	Apparatus TX: seq=907, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+49.2704 	INFO 	Apparatus RX: ACK for seq=907
+49.2815 	INFO 	Apparatus TX: seq=908, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.2946 	INFO 	Apparatus RX: ACK for seq=908
+49.3764 	INFO 	Apparatus TX: seq=909, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+49.3868 	INFO 	Apparatus RX: ACK for seq=909
+49.3969 	INFO 	Apparatus TX: seq=910, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.4101 	INFO 	Apparatus RX: ACK for seq=910
+49.4769 	INFO 	Apparatus TX: seq=911, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+49.4870 	INFO 	Apparatus RX: ACK for seq=911
+49.4980 	INFO 	Apparatus TX: seq=912, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.5112 	INFO 	Apparatus RX: ACK for seq=912
+49.5947 	INFO 	Apparatus TX: seq=913, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+49.6051 	INFO 	Apparatus RX: ACK for seq=913
+49.6160 	INFO 	Apparatus TX: seq=914, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.6297 	INFO 	Apparatus RX: ACK for seq=914
+49.7109 	INFO 	Apparatus TX: seq=915, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+49.7224 	INFO 	Apparatus RX: ACK for seq=915
+49.7334 	INFO 	Apparatus TX: seq=916, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.7455 	INFO 	Apparatus RX: ACK for seq=916
+49.8282 	INFO 	Apparatus TX: seq=917, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+49.8386 	INFO 	Apparatus RX: ACK for seq=917
+49.8498 	INFO 	Apparatus TX: seq=918, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.8628 	INFO 	Apparatus RX: ACK for seq=918
+49.9288 	INFO 	Apparatus TX: seq=919, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+49.9399 	INFO 	Apparatus RX: ACK for seq=919
+49.9514 	INFO 	Apparatus TX: seq=920, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+49.9634 	INFO 	Apparatus RX: ACK for seq=920
+50.0461 	INFO 	Apparatus TX: seq=921, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+50.0561 	INFO 	Apparatus RX: ACK for seq=921
+50.0663 	INFO 	Apparatus TX: seq=922, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.0790 	INFO 	Apparatus RX: ACK for seq=922
+50.1603 	INFO 	Apparatus TX: seq=923, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+50.1720 	INFO 	Apparatus RX: ACK for seq=923
+50.1836 	INFO 	Apparatus TX: seq=924, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.1980 	INFO 	Apparatus RX: ACK for seq=924
+50.2604 	INFO 	Apparatus TX: seq=925, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+50.2720 	INFO 	Apparatus RX: ACK for seq=925
+50.2827 	INFO 	Apparatus TX: seq=926, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.2957 	INFO 	Apparatus RX: ACK for seq=926
+50.3779 	INFO 	Apparatus TX: seq=927, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+50.3890 	INFO 	Apparatus RX: ACK for seq=927
+50.3993 	INFO 	Apparatus TX: seq=928, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.4134 	INFO 	Apparatus RX: ACK for seq=928
+50.4936 	INFO 	Apparatus TX: seq=929, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+50.5040 	INFO 	Apparatus RX: ACK for seq=929
+50.5150 	INFO 	Apparatus TX: seq=930, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.5276 	INFO 	Apparatus RX: ACK for seq=930
+50.5954 	INFO 	Apparatus TX: seq=931, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+50.6065 	INFO 	Apparatus RX: ACK for seq=931
+50.6169 	INFO 	Apparatus TX: seq=932, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.6308 	INFO 	Apparatus RX: ACK for seq=932
+50.7097 	INFO 	Apparatus TX: seq=933, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+50.7197 	INFO 	Apparatus RX: ACK for seq=933
+50.7308 	INFO 	Apparatus TX: seq=934, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.7440 	INFO 	Apparatus RX: ACK for seq=934
+50.8111 	INFO 	Apparatus TX: seq=935, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+50.8222 	INFO 	Apparatus RX: ACK for seq=935
+50.8328 	INFO 	Apparatus TX: seq=936, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.8452 	INFO 	Apparatus RX: ACK for seq=936
+50.9279 	INFO 	Apparatus TX: seq=937, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+50.9393 	INFO 	Apparatus RX: ACK for seq=937
+50.9505 	INFO 	Apparatus TX: seq=938, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+50.9625 	INFO 	Apparatus RX: ACK for seq=938
+51.0434 	INFO 	Apparatus TX: seq=939, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+51.0528 	INFO 	Apparatus RX: ACK for seq=939
+51.0636 	INFO 	Apparatus TX: seq=940, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.0776 	INFO 	Apparatus RX: ACK for seq=940
+51.1610 	INFO 	Apparatus TX: seq=941, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+51.1734 	INFO 	Apparatus RX: ACK for seq=941
+51.1842 	INFO 	Apparatus TX: seq=942, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.1964 	INFO 	Apparatus RX: ACK for seq=942
+51.2616 	INFO 	Apparatus TX: seq=943, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+51.2721 	INFO 	Apparatus RX: ACK for seq=943
+51.2828 	INFO 	Apparatus TX: seq=944, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.2968 	INFO 	Apparatus RX: ACK for seq=944
+51.3782 	INFO 	Apparatus TX: seq=945, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+51.3892 	INFO 	Apparatus RX: ACK for seq=945
+51.4000 	INFO 	Apparatus TX: seq=946, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.4137 	INFO 	Apparatus RX: ACK for seq=946
+51.4787 	INFO 	Apparatus TX: seq=947, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+51.4889 	INFO 	Apparatus RX: ACK for seq=947
+51.5005 	INFO 	Apparatus TX: seq=948, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.5131 	INFO 	Apparatus RX: ACK for seq=948
+51.5944 	INFO 	Apparatus TX: seq=949, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+51.6064 	INFO 	Apparatus RX: ACK for seq=949
+51.6177 	INFO 	Apparatus TX: seq=950, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.6298 	INFO 	Apparatus RX: ACK for seq=950
+51.7099 	INFO 	Apparatus TX: seq=951, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+51.7199 	INFO 	Apparatus RX: ACK for seq=951
+51.7310 	INFO 	Apparatus TX: seq=952, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.7435 	INFO 	Apparatus RX: ACK for seq=952
+51.8280 	INFO 	Apparatus TX: seq=953, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+51.8398 	INFO 	Apparatus RX: ACK for seq=953
+51.8513 	INFO 	Apparatus TX: seq=954, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.8642 	INFO 	Apparatus RX: ACK for seq=954
+51.9435 	INFO 	Apparatus TX: seq=955, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+51.9538 	INFO 	Apparatus RX: ACK for seq=955
+51.9650 	INFO 	Apparatus TX: seq=956, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+51.9777 	INFO 	Apparatus RX: ACK for seq=956
+52.0599 	INFO 	Apparatus TX: seq=957, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+52.0700 	INFO 	Apparatus RX: ACK for seq=957
+52.0808 	INFO 	Apparatus TX: seq=958, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.0935 	INFO 	Apparatus RX: ACK for seq=958
+52.1685 	INFO 	Apparatus TX: seq=959, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+52.1795 	INFO 	Apparatus RX: ACK for seq=959
+52.1897 	INFO 	Apparatus TX: seq=960, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.2030 	INFO 	Apparatus RX: ACK for seq=960
+52.2766 	INFO 	Apparatus TX: seq=961, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+52.2880 	INFO 	Apparatus RX: ACK for seq=961
+52.2988 	INFO 	Apparatus TX: seq=962, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.3126 	INFO 	Apparatus RX: ACK for seq=962
+52.3935 	INFO 	Apparatus TX: seq=963, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+52.4035 	INFO 	Apparatus RX: ACK for seq=963
+52.4140 	INFO 	Apparatus TX: seq=964, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.4268 	INFO 	Apparatus RX: ACK for seq=964
+52.5090 	INFO 	Apparatus TX: seq=965, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+52.5205 	INFO 	Apparatus RX: ACK for seq=965
+52.5308 	INFO 	Apparatus TX: seq=966, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.5435 	INFO 	Apparatus RX: ACK for seq=966
+52.6089 	INFO 	Apparatus TX: seq=967, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+52.6196 	INFO 	Apparatus RX: ACK for seq=967
+52.6311 	INFO 	Apparatus TX: seq=968, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.6445 	INFO 	Apparatus RX: ACK for seq=968
+52.7271 	INFO 	Apparatus TX: seq=969, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+52.7372 	INFO 	Apparatus RX: ACK for seq=969
+52.7482 	INFO 	Apparatus TX: seq=970, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.7610 	INFO 	Apparatus RX: ACK for seq=970
+52.8429 	INFO 	Apparatus TX: seq=971, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+52.8530 	INFO 	Apparatus RX: ACK for seq=971
+52.8634 	INFO 	Apparatus TX: seq=972, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.8757 	INFO 	Apparatus RX: ACK for seq=972
+52.9588 	INFO 	Apparatus TX: seq=973, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+52.9693 	INFO 	Apparatus RX: ACK for seq=973
+52.9799 	INFO 	Apparatus TX: seq=974, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+52.9929 	INFO 	Apparatus RX: ACK for seq=974
+53.0772 	INFO 	Apparatus TX: seq=975, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+53.0882 	INFO 	Apparatus RX: ACK for seq=975
+53.0989 	INFO 	Apparatus TX: seq=976, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.1119 	INFO 	Apparatus RX: ACK for seq=976
+53.1933 	INFO 	Apparatus TX: seq=977, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+53.2041 	INFO 	Apparatus RX: ACK for seq=977
+53.2157 	INFO 	Apparatus TX: seq=978, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.2285 	INFO 	Apparatus RX: ACK for seq=978
+53.3104 	INFO 	Apparatus TX: seq=979, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+53.3209 	INFO 	Apparatus RX: ACK for seq=979
+53.3323 	INFO 	Apparatus TX: seq=980, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.3451 	INFO 	Apparatus RX: ACK for seq=980
+53.4259 	INFO 	Apparatus TX: seq=981, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+53.4372 	INFO 	Apparatus RX: ACK for seq=981
+53.4476 	INFO 	Apparatus TX: seq=982, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.4607 	INFO 	Apparatus RX: ACK for seq=982
+53.5266 	INFO 	Apparatus TX: seq=983, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+53.5367 	INFO 	Apparatus RX: ACK for seq=983
+53.5476 	INFO 	Apparatus TX: seq=984, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.5604 	INFO 	Apparatus RX: ACK for seq=984
+53.6430 	INFO 	Apparatus TX: seq=985, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+53.6545 	INFO 	Apparatus RX: ACK for seq=985
+53.6649 	INFO 	Apparatus TX: seq=986, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.6781 	INFO 	Apparatus RX: ACK for seq=986
+53.7435 	INFO 	Apparatus TX: seq=987, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+53.7539 	INFO 	Apparatus RX: ACK for seq=987
+53.7642 	INFO 	Apparatus TX: seq=988, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.7767 	INFO 	Apparatus RX: ACK for seq=988
+53.8599 	INFO 	Apparatus TX: seq=989, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+53.8720 	INFO 	Apparatus RX: ACK for seq=989
+53.8833 	INFO 	Apparatus TX: seq=990, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+53.8968 	INFO 	Apparatus RX: ACK for seq=990
+53.9752 	INFO 	Apparatus TX: seq=991, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+53.9867 	INFO 	Apparatus RX: ACK for seq=991
+53.9969 	INFO 	Apparatus TX: seq=992, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.0103 	INFO 	Apparatus RX: ACK for seq=992
+54.0769 	INFO 	Apparatus TX: seq=993, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+54.0879 	INFO 	Apparatus RX: ACK for seq=993
+54.0995 	INFO 	Apparatus TX: seq=994, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.1122 	INFO 	Apparatus RX: ACK for seq=994
+54.1769 	INFO 	Apparatus TX: seq=995, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+54.1881 	INFO 	Apparatus RX: ACK for seq=995
+54.1985 	INFO 	Apparatus TX: seq=996, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.2125 	INFO 	Apparatus RX: ACK for seq=996
+54.2931 	INFO 	Apparatus TX: seq=997, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+54.3036 	INFO 	Apparatus RX: ACK for seq=997
+54.3139 	INFO 	Apparatus TX: seq=998, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.3278 	INFO 	Apparatus RX: ACK for seq=998
+54.4094 	INFO 	Apparatus TX: seq=999, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+54.4204 	INFO 	Apparatus RX: ACK for seq=999
+54.4306 	INFO 	Apparatus TX: seq=1000, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.4437 	INFO 	Apparatus RX: ACK for seq=1000
+54.5262 	INFO 	Apparatus TX: seq=1001, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+54.5366 	INFO 	Apparatus RX: ACK for seq=1001
+54.5482 	INFO 	Apparatus TX: seq=1002, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.5612 	INFO 	Apparatus RX: ACK for seq=1002
+54.6262 	INFO 	Apparatus TX: seq=1003, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+54.6364 	INFO 	Apparatus RX: ACK for seq=1003
+54.6466 	INFO 	Apparatus TX: seq=1004, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.6596 	INFO 	Apparatus RX: ACK for seq=1004
+54.7423 	INFO 	Apparatus TX: seq=1005, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+54.7534 	INFO 	Apparatus RX: ACK for seq=1005
+54.7639 	INFO 	Apparatus TX: seq=1006, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.7762 	INFO 	Apparatus RX: ACK for seq=1006
+54.8426 	INFO 	Apparatus TX: seq=1007, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+54.8539 	INFO 	Apparatus RX: ACK for seq=1007
+54.8639 	INFO 	Apparatus TX: seq=1008, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.8772 	INFO 	Apparatus RX: ACK for seq=1008
+54.9596 	INFO 	Apparatus TX: seq=1009, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+54.9712 	INFO 	Apparatus RX: ACK for seq=1009
+54.9816 	INFO 	Apparatus TX: seq=1010, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+54.9943 	INFO 	Apparatus RX: ACK for seq=1010
+55.0758 	INFO 	Apparatus TX: seq=1011, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+55.0860 	INFO 	Apparatus RX: ACK for seq=1011
+55.0961 	INFO 	Apparatus TX: seq=1012, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.1092 	INFO 	Apparatus RX: ACK for seq=1012
+55.1769 	INFO 	Apparatus TX: seq=1013, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+55.1870 	INFO 	Apparatus RX: ACK for seq=1013
+55.1981 	INFO 	Apparatus TX: seq=1014, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.2100 	INFO 	Apparatus RX: ACK for seq=1014
+55.2926 	INFO 	Apparatus TX: seq=1015, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+55.3026 	INFO 	Apparatus RX: ACK for seq=1015
+55.3138 	INFO 	Apparatus TX: seq=1016, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.3279 	INFO 	Apparatus RX: ACK for seq=1016
+55.3940 	INFO 	Apparatus TX: seq=1017, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+55.4041 	INFO 	Apparatus RX: ACK for seq=1017
+55.4149 	INFO 	Apparatus TX: seq=1018, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.4269 	INFO 	Apparatus RX: ACK for seq=1018
+55.5099 	INFO 	Apparatus TX: seq=1019, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+55.5211 	INFO 	Apparatus RX: ACK for seq=1019
+55.5321 	INFO 	Apparatus TX: seq=1020, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.5448 	INFO 	Apparatus RX: ACK for seq=1020
+55.6113 	INFO 	Apparatus TX: seq=1021, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+55.6219 	INFO 	Apparatus RX: ACK for seq=1021
+55.6330 	INFO 	Apparatus TX: seq=1022, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.6451 	INFO 	Apparatus RX: ACK for seq=1022
+55.7263 	INFO 	Apparatus TX: seq=1023, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+55.7364 	INFO 	Apparatus RX: ACK for seq=1023
+55.7474 	INFO 	Apparatus TX: seq=1024, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.7603 	INFO 	Apparatus RX: ACK for seq=1024
+55.8279 	INFO 	Apparatus TX: seq=1025, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+55.8380 	INFO 	Apparatus RX: ACK for seq=1025
+55.8491 	INFO 	Apparatus TX: seq=1026, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.8625 	INFO 	Apparatus RX: ACK for seq=1026
+55.9428 	INFO 	Apparatus TX: seq=1027, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+55.9533 	INFO 	Apparatus RX: ACK for seq=1027
+55.9642 	INFO 	Apparatus TX: seq=1028, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+55.9771 	INFO 	Apparatus RX: ACK for seq=1028
+56.0437 	INFO 	Apparatus TX: seq=1029, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+56.0547 	INFO 	Apparatus RX: ACK for seq=1029
+56.0662 	INFO 	Apparatus TX: seq=1030, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.0783 	INFO 	Apparatus RX: ACK for seq=1030
+56.1446 	INFO 	Apparatus TX: seq=1031, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+56.1552 	INFO 	Apparatus RX: ACK for seq=1031
+56.1666 	INFO 	Apparatus TX: seq=1032, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.1787 	INFO 	Apparatus RX: ACK for seq=1032
+56.2602 	INFO 	Apparatus TX: seq=1033, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+56.2710 	INFO 	Apparatus RX: ACK for seq=1033
+56.2815 	INFO 	Apparatus TX: seq=1034, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.2954 	INFO 	Apparatus RX: ACK for seq=1034
+56.3613 	INFO 	Apparatus TX: seq=1035, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+56.3711 	INFO 	Apparatus RX: ACK for seq=1035
+56.3822 	INFO 	Apparatus TX: seq=1036, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.3945 	INFO 	Apparatus RX: ACK for seq=1036
+56.4759 	INFO 	Apparatus TX: seq=1037, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+56.4861 	INFO 	Apparatus RX: ACK for seq=1037
+56.4978 	INFO 	Apparatus TX: seq=1038, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.5117 	INFO 	Apparatus RX: ACK for seq=1038
+56.5769 	INFO 	Apparatus TX: seq=1039, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+56.5874 	INFO 	Apparatus RX: ACK for seq=1039
+56.5982 	INFO 	Apparatus TX: seq=1040, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.6123 	INFO 	Apparatus RX: ACK for seq=1040
+56.6945 	INFO 	Apparatus TX: seq=1041, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+56.7047 	INFO 	Apparatus RX: ACK for seq=1041
+56.7157 	INFO 	Apparatus TX: seq=1042, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.7298 	INFO 	Apparatus RX: ACK for seq=1042
+56.7963 	INFO 	Apparatus TX: seq=1043, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+56.8065 	INFO 	Apparatus RX: ACK for seq=1043
+56.8173 	INFO 	Apparatus TX: seq=1044, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.8296 	INFO 	Apparatus RX: ACK for seq=1044
+56.9092 	INFO 	Apparatus TX: seq=1045, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+56.9197 	INFO 	Apparatus RX: ACK for seq=1045
+56.9312 	INFO 	Apparatus TX: seq=1046, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+56.9443 	INFO 	Apparatus RX: ACK for seq=1046
+57.0116 	INFO 	Apparatus TX: seq=1047, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+57.0221 	INFO 	Apparatus RX: ACK for seq=1047
+57.0337 	INFO 	Apparatus TX: seq=1048, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.0458 	INFO 	Apparatus RX: ACK for seq=1048
+57.1267 	INFO 	Apparatus TX: seq=1049, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+57.1377 	INFO 	Apparatus RX: ACK for seq=1049
+57.1485 	INFO 	Apparatus TX: seq=1050, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.1616 	INFO 	Apparatus RX: ACK for seq=1050
+57.2271 	INFO 	Apparatus TX: seq=1051, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+57.2368 	INFO 	Apparatus RX: ACK for seq=1051
+57.2479 	INFO 	Apparatus TX: seq=1052, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.2608 	INFO 	Apparatus RX: ACK for seq=1052
+57.3282 	INFO 	Apparatus TX: seq=1053, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+57.3399 	INFO 	Apparatus RX: ACK for seq=1053
+57.3507 	INFO 	Apparatus TX: seq=1054, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.3651 	INFO 	Apparatus RX: ACK for seq=1054
+57.4444 	INFO 	Apparatus TX: seq=1055, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+57.4563 	INFO 	Apparatus RX: ACK for seq=1055
+57.4673 	INFO 	Apparatus TX: seq=1056, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.4801 	INFO 	Apparatus RX: ACK for seq=1056
+57.5447 	INFO 	Apparatus TX: seq=1057, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+57.5548 	INFO 	Apparatus RX: ACK for seq=1057
+57.5654 	INFO 	Apparatus TX: seq=1058, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.5779 	INFO 	Apparatus RX: ACK for seq=1058
+57.6595 	INFO 	Apparatus TX: seq=1059, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+57.6699 	INFO 	Apparatus RX: ACK for seq=1059
+57.6807 	INFO 	Apparatus TX: seq=1060, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.6933 	INFO 	Apparatus RX: ACK for seq=1060
+57.7608 	INFO 	Apparatus TX: seq=1061, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+57.7713 	INFO 	Apparatus RX: ACK for seq=1061
+57.7823 	INFO 	Apparatus TX: seq=1062, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.7952 	INFO 	Apparatus RX: ACK for seq=1062
+57.8764 	INFO 	Apparatus TX: seq=1063, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+57.8874 	INFO 	Apparatus RX: ACK for seq=1063
+57.8985 	INFO 	Apparatus TX: seq=1064, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+57.9115 	INFO 	Apparatus RX: ACK for seq=1064
+57.9776 	INFO 	Apparatus TX: seq=1065, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+57.9877 	INFO 	Apparatus RX: ACK for seq=1065
+57.9983 	INFO 	Apparatus TX: seq=1066, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.0113 	INFO 	Apparatus RX: ACK for seq=1066
+58.0943 	INFO 	Apparatus TX: seq=1067, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+58.1052 	INFO 	Apparatus RX: ACK for seq=1067
+58.1164 	INFO 	Apparatus TX: seq=1068, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.1290 	INFO 	Apparatus RX: ACK for seq=1068
+58.2099 	INFO 	Apparatus TX: seq=1069, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+58.2210 	INFO 	Apparatus RX: ACK for seq=1069
+58.2320 	INFO 	Apparatus TX: seq=1070, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.2449 	INFO 	Apparatus RX: ACK for seq=1070
+58.3252 	INFO 	Apparatus TX: seq=1071, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+58.3364 	INFO 	Apparatus RX: ACK for seq=1071
+58.3473 	INFO 	Apparatus TX: seq=1072, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.3598 	INFO 	Apparatus RX: ACK for seq=1072
+58.4271 	INFO 	Apparatus TX: seq=1073, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+58.4378 	INFO 	Apparatus RX: ACK for seq=1073
+58.4489 	INFO 	Apparatus TX: seq=1074, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.4625 	INFO 	Apparatus RX: ACK for seq=1074
+58.5452 	INFO 	Apparatus TX: seq=1075, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+58.5563 	INFO 	Apparatus RX: ACK for seq=1075
+58.5668 	INFO 	Apparatus TX: seq=1076, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.5808 	INFO 	Apparatus RX: ACK for seq=1076
+58.6599 	INFO 	Apparatus TX: seq=1077, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+58.6700 	INFO 	Apparatus RX: ACK for seq=1077
+58.6810 	INFO 	Apparatus TX: seq=1078, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.6937 	INFO 	Apparatus RX: ACK for seq=1078
+58.7775 	INFO 	Apparatus TX: seq=1079, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+58.7880 	INFO 	Apparatus RX: ACK for seq=1079
+58.7979 	INFO 	Apparatus TX: seq=1080, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.8108 	INFO 	Apparatus RX: ACK for seq=1080
+58.8929 	INFO 	Apparatus TX: seq=1081, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+58.9042 	INFO 	Apparatus RX: ACK for seq=1081
+58.9153 	INFO 	Apparatus TX: seq=1082, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+58.9295 	INFO 	Apparatus RX: ACK for seq=1082
+58.9936 	INFO 	Apparatus TX: seq=1083, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+59.0045 	INFO 	Apparatus RX: ACK for seq=1083
+59.0146 	INFO 	Apparatus TX: seq=1084, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.0291 	INFO 	Apparatus RX: ACK for seq=1084
+59.0953 	INFO 	Apparatus TX: seq=1085, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+59.1060 	INFO 	Apparatus RX: ACK for seq=1085
+59.1175 	INFO 	Apparatus TX: seq=1086, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.1308 	INFO 	Apparatus RX: ACK for seq=1086
+59.2093 	INFO 	Apparatus TX: seq=1087, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+59.2203 	INFO 	Apparatus RX: ACK for seq=1087
+59.2319 	INFO 	Apparatus TX: seq=1088, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.2458 	INFO 	Apparatus RX: ACK for seq=1088
+59.3095 	INFO 	Apparatus TX: seq=1089, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+59.3199 	INFO 	Apparatus RX: ACK for seq=1089
+59.3307 	INFO 	Apparatus TX: seq=1090, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.3431 	INFO 	Apparatus RX: ACK for seq=1090
+59.4096 	INFO 	Apparatus TX: seq=1091, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+59.4208 	INFO 	Apparatus RX: ACK for seq=1091
+59.4310 	INFO 	Apparatus TX: seq=1092, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.4432 	INFO 	Apparatus RX: ACK for seq=1092
+59.5104 	INFO 	Apparatus TX: seq=1093, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+59.5202 	INFO 	Apparatus RX: ACK for seq=1093
+59.5311 	INFO 	Apparatus TX: seq=1094, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.5442 	INFO 	Apparatus RX: ACK for seq=1094
+59.6267 	INFO 	Apparatus TX: seq=1095, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+59.6370 	INFO 	Apparatus RX: ACK for seq=1095
+59.6473 	INFO 	Apparatus TX: seq=1096, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.6613 	INFO 	Apparatus RX: ACK for seq=1096
+59.7267 	INFO 	Apparatus TX: seq=1097, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213008000
+59.7372 	INFO 	Apparatus RX: ACK for seq=1097
+59.7475 	INFO 	Apparatus TX: seq=1098, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.7605 	INFO 	Apparatus RX: ACK for seq=1098
+59.8428 	INFO 	Apparatus TX: seq=1099, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f101112130000ff
+59.8536 	INFO 	Apparatus RX: ACK for seq=1099
+59.8652 	INFO 	Apparatus TX: seq=1100, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.8774 	INFO 	Apparatus RX: ACK for seq=1100
+59.9444 	INFO 	Apparatus TX: seq=1101, type=CMD_LED_SET_N, dst=CLIENT, payload=14000102030405060708090a0b0c0d0e0f10111213ff0000
+59.9540 	INFO 	Apparatus RX: ACK for seq=1101
+59.9641 	INFO 	Apparatus TX: seq=1102, type=CMD_LED_SHOW, dst=CLIENT, payload=(empty)
+59.9782 	INFO 	Apparatus RX: ACK for seq=1102
+60.0268 	EXP 	maxForce: status = STOPPED
+60.0408 	INFO 	saved data to 'C:\\Users\\Maik Bieleke\\My Drive\\Labor\\psychopy-apparatus\\experiments\\experiment-1\\data\\pilot_maxForce_2026-02-27_13h38.03.522.csv'
+60.0414 	INFO 	saved data to C:\Users\Maik Bieleke\My Drive\Labor\psychopy-apparatus\experiments\experiment-1\data\pilot_maxForce_2026-02-27_13h38.03.522.psydat
+60.3050 	DEBUG 	Saving data for maxForce ExperimentHandler
+60.3071 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
