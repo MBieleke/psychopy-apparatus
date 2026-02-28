@@ -284,7 +284,7 @@ class Apparatus(AttributeGetSetMixin):
         """
         raise NotImplementedError("Hand dynamometer configuration not yet ported to new protocol")
 
-    def startForceMeasurement(self, rate: float, device: str) -> bool:
+    def startForceMeasurement(self, rate: float, dynamometer: str) -> bool:
         """
         Start force measurement on the apparatus device.
         
@@ -296,7 +296,7 @@ class Apparatus(AttributeGetSetMixin):
         ----------
         rate : float
             Sampling rate in Hz (e.g., 100 for 100 Hz sampling).
-        device : str
+        dynamometer : str
             Dynamometer selector:
             - 'white': Right/white dynamometer only
             - 'blue': Left/blue dynamometer only
@@ -324,12 +324,12 @@ class Apparatus(AttributeGetSetMixin):
         self._force_start_response_count = self._device.getNumberOfResponses()
         
         # Start measurement on device
-        success = self._device.startForceMeasurement(rate, device, wait_ack=True)
+        success = self._device.startForceMeasurement(rate, dynamometer, wait_ack=True)
         
         if success:
             self._force_measuring = True
             self.status = STARTED
-            logging.info(f"Force measurement started: {rate} Hz, device '{device}'")
+            logging.info(f"Force measurement started: {rate} Hz, dynamometer '{dynamometer}'")
         else:
             logging.error("Failed to start force measurement")
             

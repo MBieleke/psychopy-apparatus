@@ -61,9 +61,9 @@ class ApparatusResponse(BaseResponse):
             try:
                 force_data = parse_force_data_payload(payload)
                 # Map device ID to force field
-                if force_data['device'] == 0:
+                if force_data['dynamometer'] == 0:
                     self.whiteForce = force_data['value']
-                elif force_data['device'] == 1:
+                elif force_data['dynamometer'] == 1:
                     self.blueForce = force_data['value']
             except Exception as e:
                 logging.warning(f"Failed to parse force data: {e}")
@@ -452,7 +452,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
     # ===== Force Measurement Methods =====
 
-    def startForceMeasurement(self, rate_hz: float, device: str, wait_ack: bool = True) -> bool:
+    def startForceMeasurement(self, rate_hz: float, dynamometer: str, wait_ack: bool = True) -> bool:
         """
         Start streaming force measurements from handgrip dynamometer(s).
         
@@ -463,7 +463,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         ----------
         rate_hz : float
             Sampling rate in Hz (e.g., 100 for 100 Hz)
-        device : str
+        dynamometer : str
             Dynamometer selector:
             - 'white': Right/white dynamometer only
             - 'blue': Left/blue dynamometer only
@@ -476,7 +476,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         bool
             True if successful (or if wait_ack=False), False if NACK or timeout
         """
-        payload = encode_force_start_payload(rate_hz, device)
+        payload = encode_force_start_payload(rate_hz, dynamometer)
         seq = self._send_message(CMD_FORCE_START, payload, dst=ADDR_SERVER)
         
         if wait_ack:

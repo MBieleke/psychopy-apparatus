@@ -28,7 +28,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         # basic
         name = "apparatusForce",
         rate = 100,
-        device = "both",
+        dynamometer = "both",
         saveRawData = True,
         rawDataId = "",
         # device
@@ -46,7 +46,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         # appearance
         self.order += [
             "rate",
-            "device",
+            "dynamometer",
             "saveRawData",
             "rawDataId"
         ]
@@ -54,10 +54,10 @@ class ApparatusForceComponent(BaseDeviceComponent):
             rate, valType="code", inputType="single", categ="Basic",
             label="Rate (Hz)", hint="Sampling rate in Hz (e.g., 100 for 100 Hz)."
         )
-        self.params['device'] = Param(
-            device, valType="str", inputType="choice", categ="Basic",
+        self.params['dynamometer'] = Param(
+            dynamometer, valType="str", inputType="choice", categ="Basic",
             allowedVals=["white", "blue", "both"],
-            label="Device", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
+            label="Dynamometer", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
         )
         self.params['saveRawData'] = Param(
             saveRawData, valType="code", inputType="bool", categ="Basic",
@@ -120,7 +120,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
             code = (
-                "%(name)s.startForceMeasurement(%(rate)s, %(device)s)\n"
+                "%(name)s.startForceMeasurement(%(rate)s, %(dynamometer)s)\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -165,7 +165,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
-            "%(currentLoop)s.addData('%(name)s.device', %(device)s)\n"
+            "%(currentLoop)s.addData('%(name)s.dynamometer', %(dynamometer)s)\n"
             "%(currentLoop)s.addData('%(name)s.maxWhiteForce', %(name)s.maxWhiteForce)\n"
             "%(currentLoop)s.addData('%(name)s.maxBlueForce', %(name)s.maxBlueForce)\n"
             "if %(saveRawData)s:\n"
