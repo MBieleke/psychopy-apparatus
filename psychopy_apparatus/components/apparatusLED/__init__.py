@@ -26,7 +26,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         self, exp, parentName, 
         # basic
         name="apparatusLED",
-        holes="all",
+        holes='"all"',
         holeColor="black",
         turnOffOnStop=True,
         turnOffOnRoutineEnd=True,

@@ -27,7 +27,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
         self, exp, parentName, 
         # basic
         name = "apparatusReed",
-        holes = "'all'",
+        holes = '"all"',
         rate = 100,
         endRoutineOnResponse = False,
         # device
