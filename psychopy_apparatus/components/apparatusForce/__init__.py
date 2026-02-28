@@ -29,8 +29,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         name = "apparatusForce",
         rate = 100,
         device = "both",
-        endRoutineOnResponse = False,
-        saveRawData = False,
+        saveRawData = True,
         rawDataId = "",
         # device
         deviceLabel = "",
@@ -48,7 +47,6 @@ class ApparatusForceComponent(BaseDeviceComponent):
         self.order += [
             "rate",
             "device",
-            "endRoutineOnResponse",
             "saveRawData",
             "rawDataId"
         ]
@@ -60,10 +58,6 @@ class ApparatusForceComponent(BaseDeviceComponent):
             device, valType="str", inputType="choice", categ="Basic",
             allowedVals=["white", "blue", "both"],
             label="Device", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
-        )
-        self.params['endRoutineOnResponse'] = Param(
-            endRoutineOnResponse, valType="code", inputType="bool", categ="Basic",
-            label="End Routine On Response", hint="If checked, the routine will end when a response is received."
         )
         self.params['saveRawData'] = Param(
             saveRawData, valType="code", inputType="bool", categ="Basic",
@@ -138,9 +132,6 @@ class ApparatusForceComponent(BaseDeviceComponent):
             # Update force measurement data each frame
             code = (
                 "%(name)s.updateForceMeasurement()\n"
-                "if %(endRoutineOnResponse)s and %(name)s.getNumberOfResponses() > 0:\n"
-                "    %(name)s.stopForceMeasurement()\n"
-                "    continueRoutine = False\n"
             )   
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -183,7 +174,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "    _loop = %(currentLoop)s\n"
             "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
             "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
-            "    _identifier = %(rawDataId)s if %(rawDataId)s != None else ''\n"
+            "    _identifier = %(rawDataId)s"
             "    _times = %(name)s.times\n"
             "    _white = %(name)s.whiteForceValues\n"
             "    _blue = %(name)s.blueForceValues\n"
