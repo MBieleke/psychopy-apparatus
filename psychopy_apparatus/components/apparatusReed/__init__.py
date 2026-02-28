@@ -19,7 +19,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
     # Text to display when this Component is hovered over
     tooltip = "Controls Apparatus reed measurement."
     # what is the earliest version of PsychoPy this Component works with?
-    version = "2025.2.1"
+    version = "0.0.1"
     # is this Component still in beta?
     beta = True
 
