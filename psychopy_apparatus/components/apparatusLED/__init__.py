@@ -14,7 +14,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
     # specify what category (or categories) to list this Component under in Builder
     categories = ['Apparatus']
     # path to this Component's icon file - ignoring the light/dark/classic folder and any @2x in the filename (PsychoPy will add these accordingly)
-    iconFile = Path(__file__).parent / "example.png"
+    iconFile = Path(__file__).parent / "led.png"
     # Text to display when this Component is hovered over
     tooltip = "Controls Apparatus LEDs."
     # what is the earliest version of PsychoPy this Component works with?
