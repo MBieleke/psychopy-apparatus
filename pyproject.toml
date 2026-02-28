@@ -2,9 +2,9 @@
 # the name of your plugin (required)
 name = "psychopy-apparatus"
 # the current version of the plugin (required)
-version = "0.0.0" 
+version = "0.0.1" 
 # a brief description of what your plugin does
-description = "PsychoPy plugin to control the \"Apparatus,\" a custom device for measuring and manipulating physical and cognitive effort."
+description = "PsychoPy plugin to operate the \"Apparatus,\" a custom device for measuring and manipulating physical and cognitive effort."
 # link to the README.md file for a longer description of the project
 readme = "README.md"
 # contact information for yourself and anyone else who worked on the plugin 
