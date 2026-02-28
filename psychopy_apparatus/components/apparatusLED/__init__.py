@@ -57,7 +57,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
             hint="Keywords (quoted): 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'. Or explicit: 0, [0,1,2]. Can use $variable from loops."
         )
         self.params['holeColor'] = Param(
-            holeColor, valType='color', inputType="single", categ='Basic',
+            holeColor, valType='color', inputType="color", categ='Basic',
             label="Hole Color(s)",
             updates='constant',
             allowedUpdates=['constant', 'set every repeat'],
