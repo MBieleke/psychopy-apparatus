@@ -1,6 +1,5 @@
-from psychopy.experiment.components import BaseDeviceComponent, Param, getInitVals
 from pathlib import Path
-
+from psychopy.experiment.components import BaseDeviceComponent, Param, getInitVals
 from psychopy_apparatus.components.apparatusDeviceBackend import ApparatusDeviceBackend
 
 class ApparatusLEDComponent(BaseDeviceComponent):
@@ -25,16 +24,25 @@ class ApparatusLEDComponent(BaseDeviceComponent):
     def __init__(
         self, exp, parentName, 
         # basic
-        name="apparatusLED",
-        holes='"all"',
-        holeColor="black",
-        turnOffOnStop=True,
-        turnOffOnRoutineEnd=True,
+        name = "apparatusLED",
+        startType = 'time (s)', startVal = 0.0,
+        stopType = 'duration (s)', stopVal = 1.0,
+        startEstim = '', durationEstim = '',
+        holes = '"all"',
+        holeColor = "black",
+        turnOffOnStop = True,
+        turnOffOnRoutineEnd = True,
         # device
-        deviceLabel="",
+        deviceLabel = "",
     ):
         # initialise the base component class
-        BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
+        BaseDeviceComponent.__init__(
+            self, exp, parentName, 
+            name = name, 
+            startType = startType, startVal = startVal,
+            stopType = stopType, stopVal = stopVal,
+            startEstim = startEstim, durationEstim = durationEstim,
+            deviceLabel = deviceLabel)
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         self.exp.requireImport("Color", "psychopy.colors")
@@ -94,6 +102,53 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         # write the code to the string buffer (with params inserted)
         buff.writeIndentedLines(code % inits)
 
+    def _getColorUpdateCode(self):
+        """
+        Generate the code for updating colors (single or multiple).
+        
+        Returns
+        -------
+        str
+            Python code string for color updating logic
+        """
+        return (
+            "# Handle colors: single or multiple\n"
+            "_colors = %(holeColor)s\n"
+            "\n"
+            "# Detect if we have multiple colors (list of lists/tuples or list of strings)\n"
+            "_is_multiple_colors = (\n"
+            "    isinstance(_colors, (list, tuple)) and\n"
+            "    len(_colors) > 0 and\n"
+            "    (isinstance(_colors[0], (list, tuple)) or isinstance(_colors[0], str))\n"
+            ")\n"
+            "\n"
+            "if _is_multiple_colors:\n"
+            "    # Multiple colors per hole - use setColors with mapping\n"
+            "    # Note: holes parameter must match the number of colors\n"
+            "    _holes_spec = %(holes)s\n"
+            "    _color_dict = {}\n"
+            "    # If holes is a keyword, we can't map individual colors; warn user\n"
+            "    if isinstance(_holes_spec, str):\n"
+            "        logging.warning('Cannot use keyword holes with multiple colors. Use explicit list of holes instead.')\n"
+            "    else:\n"
+            "        # Map each hole to its color\n"
+            "        _holes_list = [_holes_spec] if isinstance(_holes_spec, int) else list(_holes_spec)\n"
+            "        if len(_holes_list) == len(_colors):\n"
+            "            for _hole, _color_spec in zip(_holes_list, _colors):\n"
+            "                if isinstance(_color_spec, str):\n"
+            "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
+            "                else:\n"
+            "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
+            "            %(name)s.setColors(_color_dict)\n"
+            "else:\n"
+            "    # Single color for all holes (Apparatus will handle hole parsing)\n"
+            "    if isinstance(_colors, str):\n"
+            "        _color = Color(_colors, space='rgb')\n"
+            "    else:\n"
+            "        _color = Color(_colors, space='rgb')\n"
+            "    %(name)s.setHoleLights(%(holes)s, _color)\n"
+        )
+
     def writeRoutineStartCode(self, buff):
         """
         Write the Python code which is called at the start of this Component's Routine
@@ -103,8 +158,11 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
+        code = self._getColorUpdateCode()
+        buff.writeIndentedLines(code % self.params)
+
         # update any parameters which need updating
-        self.writeParamUpdates(buff, updateType="set every repeat")
+        # self.writeParamUpdates(buff, updateType="set every repeat")
         # aaaaand that's all you need! unless you want anything else to happen here - it's essentially the equivalent of the Begin Routine tab in a Code Component
     
     def writeFrameCode(self, buff):
@@ -123,43 +181,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         # we only want the following code written if an if loop actually was opened, not if the start time is None! so make sure to use dedent as a boolean to avoid writing broken code
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
-            code = (
-                "# Handle colors: single or multiple\n"
-                "_colors = %(holeColor)s\n"
-                "\n"
-                "# Detect if we have multiple colors (list of lists/tuples or list of strings)\n"
-                "_is_multiple_colors = (\n"
-                "    isinstance(_colors, (list, tuple)) and\n"
-                "    len(_colors) > 0 and\n"
-                "    (isinstance(_colors[0], (list, tuple)) or isinstance(_colors[0], str))\n"
-                ")\n"
-                "\n"
-                "if _is_multiple_colors:\n"
-                "    # Multiple colors per hole - use setColors with mapping\n"
-                "    # Note: holes parameter must match the number of colors\n"
-                "    _holes_spec = %(holes)s\n"
-                "    _color_dict = {}\n"
-                "    # If holes is a keyword, we can't map individual colors; warn user\n"
-                "    if isinstance(_holes_spec, str):\n"
-                "        logging.warning('Cannot use keyword holes with multiple colors. Use explicit list of holes instead.')\n"
-                "    else:\n"
-                "        # Map each hole to its color\n"
-                "        _holes_list = [_holes_spec] if isinstance(_holes_spec, int) else list(_holes_spec)\n"
-                "        if len(_holes_list) == len(_colors):\n"
-                "            for _hole, _color_spec in zip(_holes_list, _colors):\n"
-                "                if isinstance(_color_spec, str):\n"
-                "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
-                "                else:\n"
-                "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
-                "            %(name)s.setColors(_color_dict)\n"
-                "else:\n"
-                "    # Single color for all holes (Apparatus will handle hole parsing)\n"
-                "    if isinstance(_colors, str):\n"
-                "        _color = Color(_colors, space='rgb')\n"
-                "    else:\n"
-                "        _color = Color(_colors, space='rgb')\n"
-                "    %(name)s.setHoleLights(%(holes)s, _color)\n"
-            )
+            code = self._getColorUpdateCode()
             buff.writeIndentedLines(code % self.params)
             # dedent after!
             buff.setIndentLevel(-dedent, relative=True)
