@@ -60,6 +60,82 @@ def _parse_holes(holes_spec):
             )
 
 
+def _parse_colors(color_spec, holes_spec=None):
+    """
+    Convert color specification to Color object(s) (internal helper).
+    
+    Handles single colors (applied to all holes) and multiple colors (one per hole).
+    
+    Parameters
+    ----------
+    color_spec : str, list, Color, or list of those
+        Color specification:
+        - String: 'red', 'blue', etc.
+        - List/tuple: [1, 0, 0] or (255, 0, 0) in RGB format
+        - Color object: psychopy.colors.Color instance
+        - List of above: ['red', [0, 1, 0], Color(...)] for multiple colors
+    holes_spec : str, int, or list, optional
+        Holes specification (required if color_spec is a list of colors):
+        - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
+        - Single hole: 0, 5
+        - Multiple holes: [0, 1, 2]
+        
+    Returns
+    -------
+    Color or dict
+        - Single Color object if color_spec is a single color
+        - Dict mapping hole indices to Color objects if color_spec is multiple colors
+    """
+    # Helper to convert any color spec to Color object
+    def _to_color(color_val):
+        if isinstance(color_val, Color):
+            return color_val
+        elif isinstance(color_val, str):
+            return Color(color_val, space='rgb')
+        elif isinstance(color_val, (list, tuple)):
+            # Assume RGB format (0-1 or 0-255)
+            return Color(color_val, space='rgb')
+        else:
+            raise TypeError(
+                f"Invalid color type: {type(color_val).__name__}. "
+                "Expected: string ('red'), RGB list/tuple ([1,0,0]), or Color object."
+            )
+    
+    # Check if we have multiple colors (list of lists/tuples or list of strings)
+    is_multiple_colors = (
+        isinstance(color_spec, (list, tuple)) and
+        len(color_spec) > 0 and
+        (isinstance(color_spec[0], (list, tuple, str)) or isinstance(color_spec[0], Color))
+    )
+    
+    if is_multiple_colors:
+        # Multiple colors per hole - need holes_spec
+        if holes_spec is None:
+            raise ValueError(
+                "holes_spec must be provided when using multiple colors. "
+                "Number of colors must match number of holes."
+            )
+        
+        # Parse holes and create mapping
+        holes_list = _parse_holes(holes_spec)
+        
+        if len(holes_list) != len(color_spec):
+            raise ValueError(
+                f"Number of holes ({len(holes_list)}) does not match number of colors ({len(color_spec)}). "
+                "Each hole must have exactly one color."
+            )
+        
+        # Build dict mapping holes to Color objects
+        color_dict = {}
+        for hole, color_val in zip(holes_list, color_spec):
+            color_dict[hole] = _to_color(color_val)
+        
+        return color_dict
+    else:
+        # Single color for all holes
+        return _to_color(color_spec)
+
+
 class Apparatus(AttributeGetSetMixin):
     """
     A class representing a Apparatus device.
@@ -115,80 +191,35 @@ class Apparatus(AttributeGetSetMixin):
         self._reed_active_durations = {}  # Total active time per hole
         self._reed_last_insert_time = {}  # When each hole was last inserted (for duration calc)  # Last update timestamp
 
-    def setHoleLights(self, holes, color: Color, rate_limited: bool = False) -> bool:
+    def setLights(self, holes, color) -> bool:
         """
-        Set the color of specific holes on the apparatus.
+        Set color(s) for specified holes.
         
         Parameters
         ----------
         holes : str, int, or list[int]
-            Holes to control:
-            - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
-            - Single hole: 0, 5
-            - Multiple holes: [0, 1, 2]
-        color : Color
-            RGB color value as a Color object.
+            Holes to control
+        color : Color, str, list, or list of those
+            Single color or list of colors (one per hole)
         rate_limited : bool
-            If True, skip command if sent too soon after previous command.
-            
-        Returns
-        -------
-        bool
-            True if successful, False if skipped due to rate limiting or error.
+            Rate limit flag.
         """
-        # Parse holes intelligently
         holes_list = _parse_holes(holes)
-        
         if not holes_list:
-            return True  # No holes to update
-        
-        if rate_limited:
-            # Check rate limiting
-            if time.monotonic() - self._device._last_send_time < self._device._rate_limit_interval:
-                return False
-        
-        # Convert color to RGB255
-        color255 = tuple(int(c.item()) for c in color.rgb255)
-        
-        # Send LED command with auto show
-        return self._device.setLedColors(holes_list, color255, show=True, wait_ack=True)
-    
-    def setColors(self, colors: dict[int, Color], rate_limited: bool = False) -> bool:
-        """
-        Set the color of multiple holes on the apparatus (each with a different color).
-        
-        Parameters
-        ----------
-        colors : dict
-            Dictionary mapping hole spec to Color object. Hole specs can be:
-            - Keywords: 'all', 'inner', 'outer', 'none'
-            - Single hole: 0, 5
-            - Multiple holes: (0, 1, 2) as tuple/list key
-            Or simply: {0: Color(...), 1: Color(...), ...}
-        rate_limited : bool
-            If True, skip command if sent too soon after previous command.
-            
-        Returns
-        -------
-        bool
-            True if successful, False if skipped due to rate limiting or error.
-        """
-        if rate_limited:
-            # Check rate limiting
-            if time.monotonic() - self._device._last_send_time < self._device._rate_limit_interval:
-                return False
-        
-        if not colors:
             return True
         
-        # Convert to lists of holes and colors
-        holes = list(colors.keys())
-        color_tuples = [tuple(int(c.item()) for c in color.rgb255) for color in colors.values()]
+        parsed_colors = _parse_colors(color, holes)
         
-        # Send LED command with auto show
-        return self._device.setLedColors(holes, color_tuples, show=True, wait_ack=True)
+        if isinstance(parsed_colors, dict):
+            # Multiple colors
+            color_tuples = [tuple(int(parsed_colors[h].rgb255[i].item()) for i in range(3)) for h in holes_list]
+        else:
+            # Single color
+            color_tuples = tuple(int(c.item()) for c in parsed_colors.rgb255)
+        
+        return self._device.setLedColors(holes_list, color_tuples, show=True, wait_ack=True)
 
-    def turnOffHoleLights(self, holes, rate_limited: bool = False) -> bool:
+    def turnOffLights(self, holes) -> bool:
         """
         Turn off the lights for specific holes on the apparatus.
         
@@ -199,36 +230,8 @@ class Apparatus(AttributeGetSetMixin):
             - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
             - Single hole: 0, 5
             - Multiple holes: [0, 1, 2]
-        rate_limited : bool
-            If True, skip command if sent too soon after previous command.
-            
-        Returns
-        -------
-        bool
-            True if successful, False if skipped due to rate limiting or error.
         """
-        return self.setHoleLights(holes, Color([0, 0, 0], 'rgb255'), rate_limited=rate_limited)
-
-    def turnOffAllLights(self, rate_limited: bool = False) -> bool:
-        """
-        Turn off all lights on the apparatus.
-        
-        Parameters
-        ----------
-        rate_limited : bool
-            If True, skip command if sent too soon after previous command.
-            
-        Returns
-        -------
-        bool
-            True if successful, False if skipped due to rate limiting or error.
-        """
-        if rate_limited:
-            # Check rate limiting
-            if time.monotonic() - self._device._last_send_time < self._device._rate_limit_interval:
-                return False
-        
-        return self._device.clearLeds(wait_ack=True)
+        return self.setLights(holes, Color([0, 0, 0], 'rgb255'))
 
     # ===== DORMANT: Motor control (not yet ported to new protocol) =====
     

@@ -28,8 +28,8 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         startType = 'time (s)', startVal = 0.0,
         stopType = 'duration (s)', stopVal = 1.0,
         startEstim = '', durationEstim = '',
-        holes = '"all"',
-        holeColor = "black",
+        lightHoles = '"all"',
+        lightColors = "black",
         turnOffOnStop = True,
         turnOffOnRoutineEnd = True,
         # device
@@ -45,39 +45,38 @@ class ApparatusLEDComponent(BaseDeviceComponent):
             deviceLabel = deviceLabel)
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
-        self.exp.requireImport("Color", "psychopy.colors")
         self.exp.requireImport("Apparatus", "psychopy_apparatus.hardware.apparatus")
 
         # --- Params ---
 
         # appearance
         self.order += [
-            "holes",
-            "holeColor",
+            "lightHoles",
+            "lightColors",
             "turnOffOnStop",
             "turnOffOnRoutineEnd"
         ]
-        self.params['holes'] = Param(   
-            holes, valType="code", inputType="single", categ="Basic",
-            label="Holes",
-            updates='constant',
-            allowedUpdates=['constant', 'set every repeat'],
-            hint="Keywords (quoted): 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'. Or explicit: 0, [0,1,2]. Can use $variable from loops."
+        self.params['lightHoles'] = Param(   
+            lightHoles, valType = "code", inputType = "single", categ = "Basic",
+            label = "Holes",
+            updates = 'constant',
+            allowedUpdates = ['constant', 'set every repeat'],
+            hint = "Keywords (quoted): 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'. Or explicit: 0, [0,1,2]. Can use $variable from loops."
         )
-        self.params['holeColor'] = Param(
-            holeColor, valType='color', inputType="color", categ='Basic',
-            label="Hole Color(s)",
-            updates='constant',
-            allowedUpdates=['constant', 'set every repeat'],
-            hint="Single color: black, red, [1,0,0], [255,0,0]. Or list: ['red', 'green']. Can use $variable from loops."
+        self.params['lightColors'] = Param(
+            lightColors, valType = 'color', inputType = "color", categ = 'Basic',
+            label = "Hole Color(s)",
+            updates = 'constant',
+            allowedUpdates = ['constant', 'set every repeat'],
+            hint = "Single color: black, red, [1,0,0], [255,0,0]. Or list: ['red', 'green']. Can use $variable from loops."
         )
         self.params['turnOffOnStop'] = Param(
-            turnOffOnStop, valType="code", inputType="bool", categ="Basic",
-            label="Turn Off Hole Lights On Stop", hint="Whether to turn off the selected hole lights when the component stops."
+            turnOffOnStop, valType = "code", inputType = "bool", categ = "Basic",
+            label = "Turn Off Hole Lights On Stop", hint = "Whether to turn off the selected hole lights when the component stops."
         )
         self.params['turnOffOnRoutineEnd'] = Param(
-            turnOffOnRoutineEnd, valType="code", inputType="bool", categ="Basic",
-            label="Turn Off Hole Lights On Routine End", hint="Whether to turn off the selected hole lights when the routine ends."
+            turnOffOnRoutineEnd, valType = "code", inputType = "bool", categ = "Basic",
+            label = "Turn Off Hole Lights On Routine End", hint = "Whether to turn off the selected hole lights when the routine ends."
         )
     
     def writeInitCode(self, buff):
@@ -102,53 +101,6 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         # write the code to the string buffer (with params inserted)
         buff.writeIndentedLines(code % inits)
 
-    def _getColorUpdateCode(self):
-        """
-        Generate the code for updating colors (single or multiple).
-        
-        Returns
-        -------
-        str
-            Python code string for color updating logic
-        """
-        return (
-            "# Handle colors: single or multiple\n"
-            "_colors = %(holeColor)s\n"
-            "\n"
-            "# Detect if we have multiple colors (list of lists/tuples or list of strings)\n"
-            "_is_multiple_colors = (\n"
-            "    isinstance(_colors, (list, tuple)) and\n"
-            "    len(_colors) > 0 and\n"
-            "    (isinstance(_colors[0], (list, tuple)) or isinstance(_colors[0], str))\n"
-            ")\n"
-            "\n"
-            "if _is_multiple_colors:\n"
-            "    # Multiple colors per hole - use setColors with mapping\n"
-            "    # Note: holes parameter must match the number of colors\n"
-            "    _holes_spec = %(holes)s\n"
-            "    _color_dict = {}\n"
-            "    # If holes is a keyword, we can't map individual colors; warn user\n"
-            "    if isinstance(_holes_spec, str):\n"
-            "        logging.warning('Cannot use keyword holes with multiple colors. Use explicit list of holes instead.')\n"
-            "    else:\n"
-            "        # Map each hole to its color\n"
-            "        _holes_list = [_holes_spec] if isinstance(_holes_spec, int) else list(_holes_spec)\n"
-            "        if len(_holes_list) == len(_colors):\n"
-            "            for _hole, _color_spec in zip(_holes_list, _colors):\n"
-            "                if isinstance(_color_spec, str):\n"
-            "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
-            "                else:\n"
-            "                    _color_dict[_hole] = Color(_color_spec, space='rgb')\n"
-            "            %(name)s.setColors(_color_dict)\n"
-            "else:\n"
-            "    # Single color for all holes (Apparatus will handle hole parsing)\n"
-            "    if isinstance(_colors, str):\n"
-            "        _color = Color(_colors, space='rgb')\n"
-            "    else:\n"
-            "        _color = Color(_colors, space='rgb')\n"
-            "    %(name)s.setHoleLights(%(holes)s, _color)\n"
-        )
-
     def writeRoutineStartCode(self, buff):
         """
         Write the Python code which is called at the start of this Component's Routine
@@ -158,12 +110,13 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
-        code = self._getColorUpdateCode()
-        buff.writeIndentedLines(code % self.params)
-
-        # update any parameters which need updating
-        # self.writeParamUpdates(buff, updateType="set every repeat")
-        # aaaaand that's all you need! unless you want anything else to happen here - it's essentially the equivalent of the Begin Routine tab in a Code Component
+        # Only apply colors if at least one parameter is 'set every repeat'
+        if (self.params['lightHoles'].val != 'constant' or 
+            self.params['lightColors'].val != 'constant'):
+            code = (
+                "%(name)s.setLights(%(lightHoles)s, %(lightColors)s)\n"
+            )
+            buff.writeIndentedLines(code % self.params)
     
     def writeFrameCode(self, buff):
         """
@@ -174,28 +127,8 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
-        # update any parameters which need updating
-        self.writeParamUpdates(buff, updateType="set every frame")
-        # some code we want to run just once on the first frame of the Component - so we'll use the writeStartTestCode function to open an if statement and then dedent after
-        dedent = self.writeStartTestCode(buff)
-        # we only want the following code written if an if loop actually was opened, not if the start time is None! so make sure to use dedent as a boolean to avoid writing broken code
-        if dedent:
-            # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
-            code = self._getColorUpdateCode()
-            buff.writeIndentedLines(code % self.params)
-            # dedent after!
-            buff.setIndentLevel(-dedent, relative=True)
-        
-        # # use the same principle as we used for first-frame-of-Component code to add code which only runs while the Component is active
-        dedent = self.writeActiveTestCode(buff)
-        if dedent:
-            # here we can just add anything we want to happen each frame - let's update some arbitrary variable for fun
-            code = (
-                ""
-            )
-            buff.writeIndentedLines(code % self.params)
-            # dedent after!
-            buff.setIndentLevel(-dedent, relative=True)
+        # No frame-specific updates needed; holes and colors are set at routine start
+        # via writeParamUpdates() in writeRoutineStartCode()
         
         # use the same principles again for last-frame-of-Component code
         dedent = self.writeStopTestCode(buff)
@@ -203,7 +136,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
             # aaaaaaand some extra code for when the Component stops
             code = (
                 "if %(turnOffOnStop)s:\n"
-                "    %(name)s.turnOffHoleLights(%(holes)s)\n"
+                "    %(name)s.turnOffLights(%(lightHoles)s)\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -225,7 +158,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "if %(turnOffOnRoutineEnd)s:\n"
-            "    %(name)s.turnOffHoleLights(%(holes)s)\n"
+            "    %(name)s.turnOffLights(%(lightHoles)s)\n"
         )
         buff.writeIndentedLines(code % params)
 
