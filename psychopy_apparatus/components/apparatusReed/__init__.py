@@ -27,14 +27,22 @@ class ApparatusReedComponent(BaseDeviceComponent):
         self, exp, parentName, 
         # basic
         name = "apparatusReed",
-        holes = '"all"',
+        startType = 'time (s)', startVal = 0.0,
+        stopType = 'duration (s)', stopVal = 1.0,
+        startEstim = '', durationEstim = '',
+        reedHoles = '"all"',
         rate = 100,
         endRoutineOnResponse = False,
         # device
         deviceLabel = "",
     ):
         # initialise the base component class
-        BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
+        BaseDeviceComponent.__init__(
+            self, exp, parentName, name=name, 
+            startType = startType, startVal = startVal,
+            stopType = stopType, stopVal = stopVal,
+            startEstim = startEstim, durationEstim = durationEstim,
+            deviceLabel=deviceLabel)
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         self.exp.requireImport("Apparatus", "psychopy_apparatus.hardware.apparatus")
@@ -43,13 +51,15 @@ class ApparatusReedComponent(BaseDeviceComponent):
 
         # appearance
         self.order += [
-            "holes",
+            "reedHoles",
             "rate",
             "endRoutineOnResponse"
         ]
-        self.params['holes'] = Param(   
-            holes, valType="code", inputType="single", categ="Basic",
+        self.params['reedHoles'] = Param(   
+            reedHoles, valType="code", inputType="single", categ="Basic",
             label="Holes",
+            updates = 'constant',
+            allowedUpdates = ['constant', 'set every repeat'],
             hint="Keywords: 'all', 'inner', 'outer', 'none' (MUST use quotes!). Or: 0, [0,1,2], $loopVar"
         )
         self.params['rate'] = Param(
@@ -93,8 +103,14 @@ class ApparatusReedComponent(BaseDeviceComponent):
             String buffer to write to, i.e. the .py file
         """
         # update any parameters which need updating
-        self.writeParamUpdates(buff, updateType="set every repeat")
+        # self.writeParamUpdates(buff, updateType="set every repeat")
         # aaaaand that's all you need! unless you want anything else to happen here - it's essentially the equivalent of the Begin Routine tab in a Code Component
+
+        if (self.params['reedHoles'].val != 'constant'):
+            code = (
+                "%(name)s.startReedMeasurement(%(rate)s, %(reedHoles)s)\n"
+            )
+            buff.writeIndentedLines(code % self.params)
     
     def writeFrameCode(self, buff):
         """
@@ -113,7 +129,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
             code = (
-                "%(name)s.startReedMeasurement(%(rate)s, %(holes)s)\n"
+                ""
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -168,7 +184,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
-            "%(currentLoop)s.addData('%(name)s.holes', %(holes)s)\n"
+            "%(currentLoop)s.addData('%(name)s.holes', %(reedHoles)s)\n"
             "%(currentLoop)s.addData('%(name)s.reedTimes', %(name)s.reedTimes)\n"
             "%(currentLoop)s.addData('%(name)s.reedHoles', %(name)s.reedHoles)\n"
             "%(currentLoop)s.addData('%(name)s.reedActions', %(name)s.reedActions)\n"
