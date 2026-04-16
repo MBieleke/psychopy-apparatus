@@ -86,11 +86,17 @@ class Apparatus(AttributeGetSetMixin):
         # Human-readable force data (for data output)
         self.whiteForceValues = []  # List of white force samples
         self.blueForceValues = []   # List of blue force samples
+        self.whiteForceRawCountValues = []  # List of white raw ADC samples
+        self.blueForceRawCountValues = []   # List of blue raw ADC samples
         self.whiteForceTimestamps = []  # Timestamps for white force samples
         self.blueForceTimestamps = []   # Timestamps for blue force samples
+        self.whiteForceRawCountTimestamps = []  # Timestamps for white raw ADC samples
+        self.blueForceRawCountTimestamps = []   # Timestamps for blue raw ADC samples
 
         self.whiteForce = 0
         self.blueForce = 0
+        self.whiteForceRawCounts = None
+        self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
         
@@ -312,10 +318,16 @@ class Apparatus(AttributeGetSetMixin):
         self.responses.clear()
         self.whiteForceValues.clear()
         self.blueForceValues.clear()
+        self.whiteForceRawCountValues.clear()
+        self.blueForceRawCountValues.clear()
         self.whiteForceTimestamps.clear()
         self.blueForceTimestamps.clear()
+        self.whiteForceRawCountTimestamps.clear()
+        self.blueForceRawCountTimestamps.clear()
         self.whiteForce = 0
         self.blueForce = 0
+        self.whiteForceRawCounts = None
+        self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
         
@@ -395,6 +407,10 @@ class Apparatus(AttributeGetSetMixin):
                     self.whiteForceTimestamps.append(response.t)
                     if response.whiteForce > self.maxWhiteForce:
                         self.maxWhiteForce = response.whiteForce
+                if response.whiteForceRawCounts is not None:
+                    self.whiteForceRawCounts = response.whiteForceRawCounts
+                    self.whiteForceRawCountValues.append(response.whiteForceRawCounts)
+                    self.whiteForceRawCountTimestamps.append(response.t)
                         
                 if response.blueForce is not None:
                     self.blueForce = response.blueForce
@@ -402,6 +418,10 @@ class Apparatus(AttributeGetSetMixin):
                     self.blueForceTimestamps.append(response.t)
                     if response.blueForce > self.maxBlueForce:
                         self.maxBlueForce = response.blueForce
+                if response.blueForceRawCounts is not None:
+                    self.blueForceRawCounts = response.blueForceRawCounts
+                    self.blueForceRawCountValues.append(response.blueForceRawCounts)
+                    self.blueForceRawCountTimestamps.append(response.t)
         
         # Update the response counter
         self._force_start_response_count = len(all_responses)

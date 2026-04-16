@@ -1,6 +1,6 @@
 import time
 import struct
-from serial import Serial
+from serial import Serial, SerialException, SerialTimeoutException
 from serial.threaded import ReaderThread, Protocol
 from psychopy import logging, core
 from psychopy.hardware.base import BaseResponseDevice, BaseResponse
@@ -38,7 +38,10 @@ class ApparatusResponse(BaseResponse):
     fields = ['t', 'value', 'msg_type', 'seq', 'payload']
 
     # Extended fields for sensor data (populated if applicable, kept dormant for LED-only phase)
-    extended_fields = ['pluggedIn', 'reactionTime', 'holes', 'whiteForce', 'blueForce', 'reed_bits', 'reed_holes']
+    extended_fields = [
+        'pluggedIn', 'reactionTime', 'holes', 'whiteForce', 'blueForce',
+        'whiteForceRawCounts', 'blueForceRawCounts', 'reed_bits', 'reed_holes'
+    ]
 
     def __init__(self, t, value, msg_type, seq, payload, device=None):
         super().__init__(t=t, value=value, device=device)
@@ -53,18 +56,22 @@ class ApparatusResponse(BaseResponse):
         self.holes = None
         self.whiteForce = None
         self.blueForce = None
+        self.whiteForceRawCounts = None
+        self.blueForceRawCounts = None
         self.reed_bits = None
         self.reed_holes = None
         
         # Parse force data if this is a DATA_FORCE message
-        if msg_type == DATA_FORCE and len(payload) == 7:
+        if msg_type == DATA_FORCE:
             try:
                 force_data = parse_force_data_payload(payload)
                 # Map device ID to force field
                 if force_data['device'] == 0:
                     self.whiteForce = force_data['value']
+                    self.whiteForceRawCounts = force_data['adc_raw_counts']
                 elif force_data['device'] == 1:
                     self.blueForce = force_data['value']
+                    self.blueForceRawCounts = force_data['adc_raw_counts']
             except Exception as e:
                 logging.warning(f"Failed to parse force data: {e}")
         
@@ -106,6 +113,7 @@ class ApparatusProtocol(Protocol):
         self._buffer = bytearray()
         self._responses = []
         self._clock = core.Clock()
+        self._connection_error = None
 
     def data_received(self, data: bytes):
         """Process incoming serial data byte by byte, looking for 0x00 delimiters."""
@@ -117,6 +125,12 @@ class ApparatusProtocol(Protocol):
                     self._buffer.clear()
             else:
                 self._buffer.append(byte)
+
+    def connection_lost(self, exc):
+        """Record serial thread failures without re-raising inside the reader thread."""
+        self._connection_error = exc
+        if exc is not None:
+            logging.warning(f"Apparatus: serial connection lost: {exc}")
 
     def _process_frame(self, frame: bytes):
         """Decode COBS frame and parse message."""
@@ -131,7 +145,9 @@ class ApparatusProtocol(Protocol):
             # Parse message header and payload
             result = parse_message(decoded)
             if result is None:
-                logging.warning("Apparatus: Invalid message (checksum failed)")
+                logging.warning(
+                    f"Apparatus: Invalid message (length/checksum mismatch, decoded={len(decoded)} bytes)"
+                )
                 return
             
             header, payload = result
@@ -146,7 +162,8 @@ class ApparatusProtocol(Protocol):
             )
             
             self._responses.append(response)
-            
+        except ValueError as e:
+            logging.warning(f"Apparatus: Invalid frame ({e})")
         except Exception as e:
             logging.warning(f"Apparatus: Frame processing error: {e}")
 
@@ -191,7 +208,8 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     """
     responseClass = ApparatusResponse
 
-    def __init__(self, port, baudrate=115200, simulate=False, debug=False, ack_timeout=2.0, **kwargs):
+    def __init__(self, port, baudrate=115200, simulate=False, debug=False, ack_timeout=5.0,
+                 startup_delay=4.0, **kwargs):
         """
         Initialize the ApparatusDevice.
 
@@ -206,7 +224,11 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         debug : bool
             If True, enable debug logging.
         ack_timeout : float
-            Timeout in seconds for waiting for ACK/NACK responses (default: 2.0).
+            Timeout in seconds for waiting for ACK/NACK responses (default: 5.0).
+        startup_delay : float
+            Delay after opening the serial port before sending commands. Gives the
+            ESP32 time to reboot after port-open auto-reset and lets us flush any
+            boot-time serial garbage before protocol traffic starts.
         """
         super().__init__(**kwargs)
         self._port = port
@@ -214,6 +236,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         self._simulate = simulate
         self._debug = debug
         self._ack_timeout = ack_timeout
+        self._startup_delay = startup_delay
 
         self._reader_thread = None
         self._protocol = None
@@ -221,7 +244,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         # Rate limiting for commands
         self._last_send_time = time.monotonic()
-        self._rate_limit_interval = 0.05
+        self._rate_limit_interval = 0.1
 
         if not self._simulate:
             self._com = Serial(port, baudrate=baudrate, timeout=None)
@@ -232,13 +255,30 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
                     "Try restarting and reconnecting the device."
                 )
 
-            # Start threaded reader with protocol handler
+            # Many ESP32 boards auto-reset when the serial port opens. Wait for the
+            # firmware to come back, then drop any boot-time bytes so the binary
+            # protocol starts on a clean frame boundary.
+            if self._startup_delay > 0:
+                time.sleep(self._startup_delay)
+            self._com.reset_input_buffer()
+            self._com.reset_output_buffer()
+
+            # Start threaded reader only after the port is settled and buffers are clean.
             thread = ReaderThread(self._com, ApparatusProtocol)
             thread.start()
             self._reader_thread, self._protocol = thread.connect()
-            
+            self._protocol.clear_responses()
+             
             if self._debug:
                 logging.info(f"Apparatus device initialized on {port} at {baudrate} baud")
+
+    def _connection_failed(self) -> bool:
+        """Check whether the background serial reader has already failed."""
+        return (
+            not self._simulate and
+            self._protocol is not None and
+            getattr(self._protocol, "_connection_error", None) is not None
+        )
 
     def __del__(self):
         """Clean up serial connection on deletion."""
@@ -284,13 +324,29 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             Sequence number of the sent message
         """
         seq = self._get_next_seq()
-        
+
+        if not self._simulate:
+            if self._connection_failed():
+                logging.warning(f"Apparatus: serial connection already lost, skipping TX seq={seq}")
+                return seq
+            now = time.monotonic()
+            elapsed = now - self._last_send_time
+            if elapsed < self._rate_limit_interval:
+                time.sleep(self._rate_limit_interval - elapsed)
+         
         # Build and encode message
         raw_msg = build_message(msg_type, seq, payload, dst=dst)
         encoded = cobs_encode(raw_msg)
-        
+         
         if not self._simulate:
-            self._reader_thread.write(encoded)
+            try:
+                self._reader_thread.write(encoded)
+                self._last_send_time = time.monotonic()
+            except (SerialException, SerialTimeoutException, OSError) as exc:
+                if self._protocol is not None:
+                    self._protocol._connection_error = exc
+                logging.warning(f"Apparatus: serial write failed for seq={seq}: {exc}")
+                return seq
         
         if self._debug:
             msg_names = {
@@ -335,6 +391,9 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         start_time = time.time()
         
         while time.time() - start_time < timeout:
+            if self._connection_failed():
+                logging.warning(f"Apparatus: serial connection lost while waiting for ACK/NACK (seq={expected_seq})")
+                return False
             responses = self._protocol.get_responses()
             
             # Look for response with matching sequence number

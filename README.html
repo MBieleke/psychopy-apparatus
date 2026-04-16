@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>psychopy-apparatus</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: rgba(255, 252, 246, 0.9);
+      --ink: #1e1c18;
+      --muted: #605748;
+      --line: rgba(51, 42, 28, 0.14);
+      --accent: #b44f2a;
+      --accent-2: #1a6b6b;
+      --shadow: 0 18px 60px rgba(48, 35, 18, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(180, 79, 42, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(26, 107, 107, 0.16), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 100%);
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+
+    .hero,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(180, 79, 42, 0.18), rgba(180, 79, 42, 0));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(26, 107, 107, 0.1);
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .hero p {
+      max-width: 70ch;
+      font-size: 1.05rem;
+    }
+
+    .stack {
+      display: grid;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .kpi {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--ink);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 246, 0.72);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 12px 18px;
+      font: inherit;
+      cursor: pointer;
+      transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(26, 107, 107, 0.35);
+    }
+
+    .tab-button[aria-selected="true"] {
+      background: linear-gradient(135deg, rgba(180, 79, 42, 0.14), rgba(26, 107, 107, 0.16));
+      border-color: rgba(26, 107, 107, 0.35);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.is-active {
+      display: block;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .file-card {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--line);
+    }
+
+    .file-card + .file-card {
+      margin-top: 14px;
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    code {
+      font-family: "Consolas", "SFMono-Regular", monospace;
+      font-size: 0.92em;
+      background: rgba(30, 28, 24, 0.06);
+      padding: 0.12em 0.34em;
+      border-radius: 6px;
+      color: var(--ink);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.96rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ink);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: rgba(180, 79, 42, 0.08);
+      border-radius: 14px;
+      color: var(--ink);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent-2);
+    }
+
+    @media (max-width: 860px) {
+      .grid.two,
+      .kpis,
+      .file-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .panel {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">PsychoPy Plugin + ESP32 Firmware</span>
+      <h1>psychopy-apparatus</h1>
+      <p>
+        A combined software and firmware stack for the Apparatus: a custom setup for
+        measuring force, driving actuators, reading pegboard state, and exposing all of it
+        to PsychoPy experiments on the PC.
+      </p>
+      <div class="kpis">
+        <div class="kpi"><strong>2</strong>ESP32 nodes: server + client</div>
+        <div class="kpi"><strong>250 SPS</strong>ADS1115 force backend target rate</div>
+        <div class="kpi"><strong>21</strong>logical pegboard holes</div>
+        <div class="kpi"><strong>ESP-NOW</strong>paired wireless link between nodes</div>
+      </div>
+    </section>
+
+    <div class="tabs" role="tablist" aria-label="README sections">
+      <button class="tab-button" type="button" role="tab" id="tab-overview" aria-selected="true" aria-controls="panel-overview" data-tab-target="panel-overview">System Overview</button>
+      <button class="tab-button" type="button" role="tab" id="tab-files" aria-selected="false" aria-controls="panel-files" data-tab-target="panel-files">What Is Where</button>
+    </div>
+
+    <section class="tab-panel is-active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="stack">
+        <section class="grid two">
+          <article class="panel">
+            <h2>Repository Layout</h2>
+            <ul>
+              <li><code>psychopy_apparatus/</code>: PsychoPy plugin package</li>
+              <li><code>firmware/esp_server/</code>: server ESP32 firmware</li>
+              <li><code>firmware/esp_client/</code>: client ESP32 firmware</li>
+              <li><code>firmware/tests/</code>: serial, force, LED, and reed utilities</li>
+              <li><code>experiments/</code>: notes and application documentation</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h2>Installation</h2>
+            <ol>
+              <li>Install PsychoPy <code>2025.2.1</code> or later.</li>
+              <li>If the plugin manager is broken, open <code>2025.1.1</code> once before upgrading.</li>
+              <li>Clone this repository.</li>
+              <li>In Builder, open Plugins &amp; Packages Manager.</li>
+              <li>Install from <code>pyproject.toml</code> using the Python project filter.</li>
+            </ol>
+          </article>
+        </section>
+
+        <section class="grid two">
+          <article class="panel">
+            <h2>Server Role</h2>
+            <p>The server is the PC-facing bridge. It handles local actuation and force sensing, then relays client traffic over ESP-NOW.</p>
+            <ul>
+              <li><code>CMD_MOTOR (0x01)</code></li>
+              <li><code>CMD_LIGHT (0x02)</code></li>
+              <li><code>CMD_FORCE_START (0x03)</code></li>
+              <li><code>CMD_FORCE_STOP (0x04)</code></li>
+              <li><code>CMD_MAGNET (0x05)</code></li>
+              <li><code>DATA_FORCE (0x90)</code> as <code>time_us + value(0.1N) + device</code></li>
+            </ul>
+            <div class="callout">
+              Default force acquisition uses an ADS1115 over I2C on GPIO <code>25/26</code>, scanning
+              addresses <code>0x48</code> through <code>0x4B</code>.
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>Client Role</h2>
+            <p>The client is the pegboard node. It controls LEDs, streams reed states, and performs hole-specific hall measurements.</p>
+            <ul>
+              <li><code>CMD_LED_SET_N (0x10)</code></li>
+              <li><code>CMD_LED_SHOW (0x11)</code></li>
+              <li><code>CMD_HOLE_START (0x12)</code></li>
+              <li><code>CMD_HOLE_STOP (0x13)</code></li>
+              <li><code>CMD_REED_START (0x14)</code></li>
+              <li><code>CMD_REED_STOP (0x15)</code></li>
+              <li><code>DATA_REED (0x91)</code></li>
+              <li><code>DATA_HALL (0x92)</code></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>Pairing and Data Flow</h2>
+          <p>
+            The PC talks to the server over USB serial. The server and client talk over ESP-NOW on
+            fixed channel <code>1</code>. Pairing state is stored in ESP32 NVS, so it usually
+            survives reboot and normal reflashing.
+          </p>
+          <ol>
+            <li>Unpaired devices broadcast <code>HELLO</code> every <code>500 ms</code>.</li>
+            <li>The server sends <code>PAIR_OFFER</code>.</li>
+            <li>The client replies with <code>PAIR_ACCEPT</code>.</li>
+            <li>The server sends <code>PAIR_CONFIRM</code> and both sides persist the pairing.</li>
+          </ol>
+          <p class="footer">
+            If a replaced device refuses normal traffic, erase NVS or fully erase flash before re-pairing.
+          </p>
+        </section>
+
+        <section class="grid two">
+          <article class="panel">
+            <h2>Server Pinout</h2>
+            <table>
+              <thead>
+                <tr><th>Function</th><th>GPIO</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Motor step</td><td>22</td><td>Stepper pulse output</td></tr>
+                <tr><td>Motor direction</td><td>23</td><td>Stepper direction</td></tr>
+                <tr><td>Motor enable</td><td>21</td><td>Stepper enable</td></tr>
+                <tr><td>Light sensor</td><td>4</td><td>Digital input</td></tr>
+                <tr><td>Force sensor right</td><td>32</td><td>Legacy ADC1 path</td></tr>
+                <tr><td>Force sensor left</td><td>33</td><td>Legacy ADC1 path</td></tr>
+                <tr><td>Magnet right</td><td>18</td><td>Digital output</td></tr>
+                <tr><td>Magnet left</td><td>19</td><td>Digital output</td></tr>
+                <tr><td>ADS1115 SDA</td><td>25</td><td>Force I2C bus</td></tr>
+                <tr><td>ADS1115 SCL</td><td>26</td><td>Force I2C bus</td></tr>
+              </tbody>
+            </table>
+            <p class="footer"><span class="accent">Force channels:</span> ADS1115 channel 0 = right, channel 1 = left.</p>
+          </article>
+
+          <article class="panel">
+            <h2>Client Pinout</h2>
+            <table>
+              <thead>
+                <tr><th>Function</th><th>GPIO / Address</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Main I2C SDA</td><td>21</td><td>Client sensor bus</td></tr>
+                <tr><td>Main I2C SCL</td><td>22</td><td>Client sensor bus</td></tr>
+                <tr><td>LED strip data</td><td>2</td><td>NeoPixel output</td></tr>
+                <tr><td>Reed interrupt</td><td>12</td><td>Input pull-up</td></tr>
+                <tr><td>Group A</td><td>27</td><td>Hole selector</td></tr>
+                <tr><td>Group B</td><td>26</td><td>Hole selector</td></tr>
+                <tr><td>Group C</td><td>25</td><td>Hole selector</td></tr>
+                <tr><td>Group D</td><td>33</td><td>Hole selector</td></tr>
+                <tr><td>Group E</td><td>32</td><td>Hole selector</td></tr>
+                <tr><td>Group F</td><td>35</td><td>Hole selector</td></tr>
+                <tr><td>Hall sensor</td><td>0x0C</td><td>I2C device</td></tr>
+                <tr><td>Sub-hole selectors</td><td>0x20 / 0x22 / 0x24 / 0x26</td><td>I2C devices</td></tr>
+                <tr><td>Reed expanders</td><td>0x21 / 0x23 / 0x25</td><td>I2C devices</td></tr>
+              </tbody>
+            </table>
+            <p class="footer"><span class="accent">LED layout:</span> 21 logical holes, 8 LEDs per hole, addressed as holes 0 through 20.</p>
+          </article>
+        </section>
+
+        <section class="grid two">
+          <article class="panel">
+            <h2>Force Pipeline</h2>
+            <ol>
+              <li>Read filtered ADS1115 millivolts.</li>
+              <li>Subtract tare baseline.</li>
+              <li>Convert to volts.</li>
+              <li>Apply calibration: <code>176.8325 N/V</code>, intercept <code>-19.5057 N</code>.</li>
+              <li>Encode as signed <code>int16</code> in <code>0.1 N</code> units.</li>
+            </ol>
+            <p class="footer">Tare uses 12 warmup cycles, 96 accumulation cycles, and a 1.5 s timeout.</p>
+          </article>
+
+          <article class="panel">
+            <h2>Debug Priorities</h2>
+            <ul>
+              <li>No force stream: verify ADS1115 wiring, power, and address first.</li>
+              <li>Bad force values: inspect tare stability and calibration assumptions.</li>
+              <li>Discovery works but commands do not: check for stale pairing info in NVS.</li>
+              <li>Force works but client data does not: inspect the client I2C path and devices.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-files" role="tabpanel" aria-labelledby="tab-files" hidden>
+      <div class="stack">
+        <section class="panel">
+          <h2>Quick Orientation</h2>
+          <p>
+            The repo splits cleanly into two halves: PC-side PsychoPy integration in
+            <code>psychopy_apparatus/</code> and embedded code in <code>firmware/</code>.
+            If you need the shortest route into the codebase, start with the overview doc in
+            <code>firmware/EXPERIMENTAL_CLIENT_SERVER_OVERVIEW.md</code>, then open the matching
+            sketch or package.
+          </p>
+          <div class="callout">
+            Use this tab as a fast map: where code lives, which file is the entry point, and
+            which scripts are meant for testing rather than production firmware.
+          </div>
+        </section>
+
+        <section class="file-grid">
+          <article class="panel">
+            <h2>Root Files</h2>
+            <div class="file-card">
+              <h3><code>README.md</code></h3>
+              <p>Main Markdown documentation for the whole project.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>README.html</code></h3>
+              <p>Styled HTML version of the docs with tabbed navigation and hardware summaries.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>pyproject.toml</code></h3>
+              <p>Python packaging metadata used by PsychoPy to install the plugin from source.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>experiments/</code></h3>
+              <p>Application notes and experiment-facing documentation, including secure pairing notes.</p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>Python Side</h2>
+            <div class="file-card">
+              <h3><code>psychopy_apparatus/</code></h3>
+              <p>Main plugin package. Start here for Builder integration, runtime PC control, and apparatus-facing Python logic.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>psychopy_apparatus.egg-info/</code></h3>
+              <p>Generated packaging metadata. Normally useful for inspection, not for manual edits.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="file-grid">
+          <article class="panel">
+            <h2>Firmware Entry Points</h2>
+            <div class="file-card">
+              <h3><code>firmware/esp_server/esp_server.ino</code></h3>
+              <p>Main server firmware. This is the file for force streaming, motor control, magnets, light input, serial framing, and server-side pairing behavior.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/esp_client/esp_client.ino</code></h3>
+              <p>Main client firmware. This is the file for peg LEDs, reed readout, hall sensing, and hole-selection behavior.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/esp_server_experimental/esp_server_experimental.ino</code></h3>
+              <p>Alternate server branch for experiments that should not immediately replace the main server sketch.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/EXPERIMENTAL_CLIENT_SERVER_OVERVIEW.md</code></h3>
+              <p>Fast architecture document covering protocol, pairing, ADS1115 behavior, client responsibilities, and common debug paths.</p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>Tests and Utilities</h2>
+            <div class="file-card">
+              <h3><code>firmware/tests/test_force.py</code></h3>
+              <p>Quick serial-side force check for starting and validating force measurement.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/tests/test_led.py</code></h3>
+              <p>LED command exerciser for the client, routed through the server.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/tests/test_reed.py</code></h3>
+              <p>Standalone reed monitor with optional GUI and LED mirroring.</p>
+            </div>
+            <div class="file-card">
+              <h3><code>firmware/tests/esp_server_ads1115_test/esp_server_ads1115_test.ino</code></h3>
+              <p>Lower-level ADS1115 test sketch for isolated force-acquisition debugging.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>Rule of Thumb</h2>
+          <ul>
+            <li>If the issue is PsychoPy setup or packaging, start in <code>psychopy_apparatus/</code> and <code>pyproject.toml</code>.</li>
+            <li>If the issue is force, pairing, or server-side command handling, start in <code>firmware/esp_server/esp_server.ino</code>.</li>
+            <li>If the issue is peg LEDs, reed switches, or hall sensing, start in <code>firmware/esp_client/esp_client.ino</code>.</li>
+            <li>If you need context before opening code, read <code>firmware/EXPERIMENTAL_CLIENT_SERVER_OVERVIEW.md</code> first.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".tab-button"));
+      var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
+
+      function activateTab(targetId) {
+        buttons.forEach(function (button) {
+          var active = button.getAttribute("data-tab-target") === targetId;
+          button.setAttribute("aria-selected", active ? "true" : "false");
+          button.tabIndex = active ? 0 : -1;
+        });
+
+        panels.forEach(function (panel) {
+          var active = panel.id === targetId;
+          panel.classList.toggle("is-active", active);
+          panel.hidden = !active;
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          activateTab(button.getAttribute("data-tab-target"));
+        });
+      });
+
+      activateTab("panel-overview");
+    }());
+  </script>
+</body>
+</html>

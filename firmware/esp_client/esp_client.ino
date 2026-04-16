@@ -6,7 +6,9 @@
 // ================================================
 #include <esp_now.h>
 #include <WiFi.h>
+#include <esp_wifi.h>
 #include <Adafruit_NeoPixel.h>
+#include <Preferences.h>
 #include <Wire.h>
 
 /*
@@ -77,8 +79,12 @@ Error codes:
 #define NUMBER_OF_HOLES 21
 #define LEDS_PER_HOLE 8
 
-// ESP-NOW MAC addresses
-#define MAC_SERVER {0x14, 0x33, 0x5C, 0x5B, 0xE3, 0x14}  // Server: 14:33:5C:5B:E3:14
+// ESP-NOW pairing control plane
+#define CONTROL_VERSION 1
+#define CONTROL_MAGIC_0 0x41  // 'A'
+#define CONTROL_MAGIC_1 0x50  // 'P'
+#define CONTROL_MAGIC_2 0x50  // 'P'
+#define CONTROL_MAGIC_3 0x31  // '1'
 
 // ----- Routing addresses -----
 enum {
@@ -124,7 +130,10 @@ typedef struct __attribute__((packed)) {
 } MessageHeader;
 
 // ----- Hardware state -----
-static const uint8_t kServerMacAddress[] = MAC_SERVER;
+static const uint8_t kBroadcastMacAddress[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+static bool server_peer_known = false;
+static uint8_t server_peer_mac[6] = {0};
+static const uint8_t ESPNOW_FIXED_CHANNEL = 1;
 static const size_t MAX_MSG_SIZE = 256;
 static const size_t ESPNOW_QUEUE_SIZE = 8;
 
@@ -143,7 +152,75 @@ static const uint8_t hole_sub_addresses[] = {
 typedef struct {
   uint8_t data[MAX_MSG_SIZE];
   uint8_t len;
+  uint8_t src_mac[6];
 } EspNowPacket;
+
+enum {
+  DISCOVERY_ROLE_SERVER = 1,
+  DISCOVERY_ROLE_CLIENT = 2
+};
+
+enum { PAIR_STATE_UNPAIRED = 0, PAIR_STATE_PAIRED = 1 };
+enum {
+  CTRL_HELLO = 1,
+  CTRL_PAIR_OFFER = 2,
+  CTRL_PAIR_ACCEPT = 3,
+  CTRL_PAIR_CONFIRM = 4
+};
+
+typedef struct __attribute__((packed)) {
+  uint8_t magic[4];
+  uint8_t version;
+  uint8_t packet_type;
+  uint8_t role;
+  uint8_t pair_state;
+  uint64_t uid;
+} PairHelloPacket;
+
+typedef struct __attribute__((packed)) {
+  uint8_t magic[4];
+  uint8_t version;
+  uint8_t packet_type;
+  uint8_t from_role;
+  uint64_t from_uid;
+  uint64_t to_uid;
+  uint32_t nonce_a;
+} PairOfferPacket;
+
+typedef struct __attribute__((packed)) {
+  uint8_t magic[4];
+  uint8_t version;
+  uint8_t packet_type;
+  uint8_t from_role;
+  uint64_t from_uid;
+  uint64_t to_uid;
+  uint32_t nonce_a;
+  uint32_t nonce_b;
+} PairAcceptPacket;
+
+typedef struct __attribute__((packed)) {
+  uint8_t magic[4];
+  uint8_t version;
+  uint8_t packet_type;
+  uint8_t from_role;
+  uint64_t from_uid;
+  uint64_t to_uid;
+  uint32_t nonce_b;
+} PairConfirmPacket;
+
+static Preferences pairing_preferences;
+static uint64_t device_uid = 0;
+static uint64_t paired_server_uid = 0;
+static uint64_t pending_server_uid = 0;
+static uint8_t pending_server_mac[6] = {0};
+static uint32_t pending_nonce_a = 0;
+static uint32_t pending_nonce_b = 0;
+static uint32_t pending_handshake_deadline_ms = 0;
+static bool pairing_handshake_active = false;
+static uint32_t next_pairing_broadcast_ms = 0;
+static const uint32_t PAIRING_HELLO_UNPAIRED_INTERVAL_MS = 500;
+static const uint32_t PAIRING_HELLO_PAIRED_INTERVAL_MS = 2000;
+static const uint32_t PAIRING_HANDSHAKE_TIMEOUT_MS = 3000;
 
 static volatile uint8_t espnow_queue_head = 0;
 static volatile uint8_t espnow_queue_tail = 0;
@@ -184,10 +261,287 @@ static uint8_t calculate_checksum(const uint8_t *header_ptr, size_t header_len, 
   return checksum;
 }
 
+static bool mac_is_broadcast(const uint8_t *mac) {
+  for (int i = 0; i < 6; i++) {
+    if (mac[i] != 0xFF) {
+      return false;
+    }
+  }
+  return true;
+}
+
+static bool mac_equals(const uint8_t *a, const uint8_t *b) {
+  if (a == NULL || b == NULL) {
+    return false;
+  }
+  return memcmp(a, b, 6) == 0;
+}
+
+static void clear_server_peer_runtime(void) {
+  server_peer_known = false;
+  memset(server_peer_mac, 0, sizeof(server_peer_mac));
+}
+
+static bool register_espnow_peer(const uint8_t *mac) {
+  if (mac == NULL || mac_is_broadcast(mac)) {
+    return false;
+  }
+  if (esp_now_is_peer_exist(mac)) {
+    return true;
+  }
+  esp_now_peer_info_t peerInfo;
+  memset(&peerInfo, 0, sizeof(peerInfo));
+  memcpy(peerInfo.peer_addr, mac, 6);
+  peerInfo.channel = ESPNOW_FIXED_CHANNEL;
+  peerInfo.encrypt = false;
+
+  esp_err_t add_result = esp_now_add_peer(&peerInfo);
+  return (add_result == ESP_OK || add_result == ESP_ERR_ESPNOW_EXIST);
+}
+
+static bool ensure_server_peer(const uint8_t *mac) {
+  if (!register_espnow_peer(mac)) {
+    return false;
+  }
+
+  bool changed = !server_peer_known || memcmp(server_peer_mac, mac, 6) != 0;
+  memcpy(server_peer_mac, mac, 6);
+  server_peer_known = true;
+
+  if (changed) {
+    Serial.printf("Discovered server: %02X:%02X:%02X:%02X:%02X:%02X\n",
+                  mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  }
+  return true;
+}
+
+static void clear_pending_pairing(void) {
+  pairing_handshake_active = false;
+  pending_server_uid = 0;
+  memset(pending_server_mac, 0, sizeof(pending_server_mac));
+  pending_nonce_a = 0;
+  pending_nonce_b = 0;
+  pending_handshake_deadline_ms = 0;
+}
+
+static bool prefs_load_u64(const char *key, uint64_t *value) {
+  if (!value) return false;
+  if (pairing_preferences.getBytesLength(key) != sizeof(uint64_t)) return false;
+  return pairing_preferences.getBytes(key, value, sizeof(uint64_t)) == sizeof(uint64_t);
+}
+
+static bool prefs_load_mac(const char *key, uint8_t *mac_out) {
+  if (!mac_out) return false;
+  if (pairing_preferences.getBytesLength(key) != 6) return false;
+  return pairing_preferences.getBytes(key, mac_out, 6) == 6;
+}
+
+static uint64_t generate_device_uid(void) {
+  uint64_t uid = 0;
+  while (uid == 0) {
+    uid = ((uint64_t)esp_random() << 32) | (uint64_t)esp_random();
+  }
+  return uid;
+}
+
+static bool pairing_is_paired(void) {
+  return (paired_server_uid != 0 && server_peer_known);
+}
+
+static bool pairing_send_packet(const uint8_t *target_mac, const uint8_t *data, size_t len) {
+  if (target_mac == NULL || data == NULL || len == 0 || len > 250) {
+    return false;
+  }
+  if (!mac_is_broadcast(target_mac) && !register_espnow_peer(target_mac)) {
+    return false;
+  }
+  return esp_now_send(target_mac, data, len) == ESP_OK;
+}
+
+static void fill_control_prefix(uint8_t *magic, uint8_t *version, uint8_t *packet_type, uint8_t type) {
+  magic[0] = CONTROL_MAGIC_0;
+  magic[1] = CONTROL_MAGIC_1;
+  magic[2] = CONTROL_MAGIC_2;
+  magic[3] = CONTROL_MAGIC_3;
+  *version = CONTROL_VERSION;
+  *packet_type = type;
+}
+
+static void send_pair_hello(void) {
+  PairHelloPacket pkt;
+  fill_control_prefix(pkt.magic, &pkt.version, &pkt.packet_type, CTRL_HELLO);
+  pkt.role = DISCOVERY_ROLE_CLIENT;
+  pkt.pair_state = pairing_is_paired() ? PAIR_STATE_PAIRED : PAIR_STATE_UNPAIRED;
+  pkt.uid = device_uid;
+  pairing_send_packet(kBroadcastMacAddress, (const uint8_t *)&pkt, sizeof(pkt));
+}
+
+static bool send_pair_accept(const uint8_t *target_mac, uint64_t target_uid, uint32_t nonce_a, uint32_t nonce_b) {
+  PairAcceptPacket pkt;
+  fill_control_prefix(pkt.magic, &pkt.version, &pkt.packet_type, CTRL_PAIR_ACCEPT);
+  pkt.from_role = DISCOVERY_ROLE_CLIENT;
+  pkt.from_uid = device_uid;
+  pkt.to_uid = target_uid;
+  pkt.nonce_a = nonce_a;
+  pkt.nonce_b = nonce_b;
+  return pairing_send_packet(target_mac, (const uint8_t *)&pkt, sizeof(pkt));
+}
+
+static void pairing_commit_server(const uint8_t *mac, uint64_t uid) {
+  if (!ensure_server_peer(mac)) {
+    return;
+  }
+  paired_server_uid = uid;
+  pairing_preferences.putBytes("peer_uid", &paired_server_uid, sizeof(paired_server_uid));
+  pairing_preferences.putBytes("peer_mac", server_peer_mac, sizeof(server_peer_mac));
+  pairing_preferences.putUChar("pair_state", PAIR_STATE_PAIRED);
+  clear_pending_pairing();
+  Serial.printf("Paired server uid=%08lX%08lX mac=%02X:%02X:%02X:%02X:%02X:%02X\n",
+                (unsigned long)(paired_server_uid >> 32), (unsigned long)(paired_server_uid & 0xFFFFFFFFULL),
+                server_peer_mac[0], server_peer_mac[1], server_peer_mac[2],
+                server_peer_mac[3], server_peer_mac[4], server_peer_mac[5]);
+}
+
+static void pairing_refresh_server_mac(const uint8_t *mac) {
+  if (mac == NULL || paired_server_uid == 0) {
+    return;
+  }
+  if (mac_equals(server_peer_mac, mac)) {
+    return;
+  }
+  if (!ensure_server_peer(mac)) {
+    return;
+  }
+  pairing_preferences.putBytes("peer_mac", server_peer_mac, sizeof(server_peer_mac));
+  Serial.printf("Updated paired server MAC to %02X:%02X:%02X:%02X:%02X:%02X\n",
+                server_peer_mac[0], server_peer_mac[1], server_peer_mac[2],
+                server_peer_mac[3], server_peer_mac[4], server_peer_mac[5]);
+}
+
+static void pairing_begin_storage(void) {
+  pairing_preferences.begin("pairing", false);
+
+  if (!prefs_load_u64("device_uid", &device_uid) || device_uid == 0) {
+    device_uid = generate_device_uid();
+    pairing_preferences.putBytes("device_uid", &device_uid, sizeof(device_uid));
+  }
+
+  clear_server_peer_runtime();
+  paired_server_uid = 0;
+  clear_pending_pairing();
+
+  uint8_t stored_pair_state = pairing_preferences.getUChar("pair_state", PAIR_STATE_UNPAIRED);
+  uint64_t stored_uid = 0;
+  uint8_t stored_mac[6] = {0};
+  if (stored_pair_state == PAIR_STATE_PAIRED &&
+      prefs_load_u64("peer_uid", &stored_uid) &&
+      prefs_load_mac("peer_mac", stored_mac) &&
+      stored_uid != 0 &&
+      !mac_is_broadcast(stored_mac)) {
+    paired_server_uid = stored_uid;
+    ensure_server_peer(stored_mac);
+  } else {
+    pairing_preferences.putUChar("pair_state", PAIR_STATE_UNPAIRED);
+  }
+
+  Serial.printf("Device UID=%08lX%08lX\n",
+                (unsigned long)(device_uid >> 32), (unsigned long)(device_uid & 0xFFFFFFFFULL));
+  if (pairing_is_paired()) {
+    Serial.println("Pair state: paired");
+  } else {
+    Serial.println("Pair state: unpaired");
+  }
+}
+
+static bool is_control_packet(const uint8_t *data, size_t len) {
+  if (data == NULL || len < 6) return false;
+  return data[0] == CONTROL_MAGIC_0 &&
+         data[1] == CONTROL_MAGIC_1 &&
+         data[2] == CONTROL_MAGIC_2 &&
+         data[3] == CONTROL_MAGIC_3 &&
+         data[4] == CONTROL_VERSION;
+}
+
+static void handle_pairing_tasks(void) {
+  uint32_t now_ms = millis();
+  if (pairing_handshake_active && (int32_t)(now_ms - pending_handshake_deadline_ms) >= 0) {
+    clear_pending_pairing();
+  }
+
+  uint32_t interval_ms = pairing_is_paired() ? PAIRING_HELLO_PAIRED_INTERVAL_MS : PAIRING_HELLO_UNPAIRED_INTERVAL_MS;
+  if ((int32_t)(now_ms - next_pairing_broadcast_ms) >= 0) {
+    next_pairing_broadcast_ms = now_ms + interval_ms;
+    send_pair_hello();
+  }
+}
+
+static bool process_pairing_packet(const uint8_t *data, size_t len, const uint8_t *src_mac) {
+  if (!is_control_packet(data, len) || src_mac == NULL) {
+    return false;
+  }
+
+  uint8_t packet_type = data[5];
+  switch (packet_type) {
+    case CTRL_HELLO: {
+      if (len != sizeof(PairHelloPacket)) return true;
+      const PairHelloPacket *pkt = (const PairHelloPacket *)data;
+      if (pkt->role != DISCOVERY_ROLE_SERVER || pkt->uid == 0 || pkt->uid == device_uid) return true;
+      if (pairing_is_paired() && pkt->uid == paired_server_uid) {
+        pairing_refresh_server_mac(src_mac);
+      }
+      return true;
+    }
+    case CTRL_PAIR_OFFER: {
+      if (len != sizeof(PairOfferPacket)) return true;
+      const PairOfferPacket *pkt = (const PairOfferPacket *)data;
+      if (pkt->from_role != DISCOVERY_ROLE_SERVER) return true;
+      if (pkt->to_uid != device_uid || pkt->from_uid == 0) return true;
+
+      if (pairing_is_paired()) {
+        if (pkt->from_uid == paired_server_uid) pairing_refresh_server_mac(src_mac);
+        return true;
+      }
+
+      if (pairing_handshake_active) {
+        if (pkt->from_uid == pending_server_uid &&
+            pkt->nonce_a == pending_nonce_a &&
+            mac_equals(src_mac, pending_server_mac)) {
+          send_pair_accept(src_mac, pending_server_uid, pending_nonce_a, pending_nonce_b);
+        }
+        return true;
+      }
+
+      if (!register_espnow_peer(src_mac)) return true;
+      pending_server_uid = pkt->from_uid;
+      memcpy(pending_server_mac, src_mac, sizeof(pending_server_mac));
+      pending_nonce_a = pkt->nonce_a;
+      pending_nonce_b = esp_random();
+      pending_handshake_deadline_ms = millis() + PAIRING_HANDSHAKE_TIMEOUT_MS;
+      pairing_handshake_active = true;
+      send_pair_accept(src_mac, pending_server_uid, pending_nonce_a, pending_nonce_b);
+      return true;
+    }
+    case CTRL_PAIR_CONFIRM: {
+      if (len != sizeof(PairConfirmPacket)) return true;
+      const PairConfirmPacket *pkt = (const PairConfirmPacket *)data;
+      if (pkt->from_role != DISCOVERY_ROLE_SERVER) return true;
+      if (!pairing_handshake_active) return true;
+      if (pkt->to_uid != device_uid || pkt->from_uid != pending_server_uid) return true;
+      if (pkt->nonce_b != pending_nonce_b || !mac_equals(src_mac, pending_server_mac)) return true;
+      pairing_commit_server(src_mac, pending_server_uid);
+      return true;
+    }
+    case CTRL_PAIR_ACCEPT:
+      return true;
+    default:
+      return false;
+  }
+}
+
 // ----- ESP-NOW TX: send to Server (which will relay to PC) -----
 static void espnow_send_to_server(const uint8_t *data, size_t len) {
-  if (len > 0 && len <= 250) {
-    esp_now_send(kServerMacAddress, data, len);
+  if (len > 0 && len <= 250 && server_peer_known) {
+    esp_now_send(server_peer_mac, data, len);
   }
 }
 
@@ -555,7 +909,10 @@ static void handle_decoded_frame(const uint8_t *frame, size_t len) {
 
 // ----- ESP-NOW RX callback (ISR context: queue only) -----
 static void IRAM_ATTR on_espnow_recv(const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
-  (void)recv_info;
+  const uint8_t *src_mac = NULL;
+  if (recv_info != NULL) {
+    src_mac = recv_info->src_addr;
+  }
   if (len <= 0 || len > (int)MAX_MSG_SIZE) {
     return;
   }
@@ -565,6 +922,11 @@ static void IRAM_ATTR on_espnow_recv(const esp_now_recv_info_t *recv_info, const
   if (next_head != espnow_queue_tail) {
     espnow_queue[espnow_queue_head].len = (uint8_t)len;
     memcpy(espnow_queue[espnow_queue_head].data, data, len);
+    if (src_mac != NULL) {
+      memcpy(espnow_queue[espnow_queue_head].src_mac, src_mac, 6);
+    } else {
+      memset(espnow_queue[espnow_queue_head].src_mac, 0, 6);
+    }
     espnow_queue_head = next_head;
   }
   portEXIT_CRITICAL_ISR(&espnow_queue_mutex);
@@ -581,6 +943,13 @@ static void handle_espnow_queue(void) {
     EspNowPacket packet = espnow_queue[espnow_queue_tail];
     espnow_queue_tail = (espnow_queue_tail + 1) % ESPNOW_QUEUE_SIZE;
     portEXIT_CRITICAL(&espnow_queue_mutex);
+
+    if (process_pairing_packet(packet.data, packet.len, packet.src_mac)) {
+      continue;
+    }
+    if (!pairing_is_paired() || !mac_equals(packet.src_mac, server_peer_mac)) {
+      continue;
+    }
 
     handle_decoded_frame(packet.data, packet.len);
   }
@@ -693,18 +1062,25 @@ void setup() {
 
   // ESP-NOW
   WiFi.mode(WIFI_STA);
+  esp_wifi_set_promiscuous(true);
+  esp_wifi_set_channel(ESPNOW_FIXED_CHANNEL, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_promiscuous(false);
   if (esp_now_init() != ESP_OK) {
     Serial.println("ESP-NOW init failed");
     return;
   }
   esp_now_register_recv_cb(on_espnow_recv);
 
+  // Add broadcast peer so discovery HELLO messages can be sent.
   esp_now_peer_info_t peerInfo;
   memset(&peerInfo, 0, sizeof(peerInfo));
-  memcpy(peerInfo.peer_addr, kServerMacAddress, 6);
-  peerInfo.channel = 0;
+  memcpy(peerInfo.peer_addr, kBroadcastMacAddress, 6);
+  peerInfo.channel = ESPNOW_FIXED_CHANNEL;
   peerInfo.encrypt = false;
   esp_now_add_peer(&peerInfo);
+
+  pairing_begin_storage();
+  next_pairing_broadcast_ms = millis();
 
   Serial.println("Client ready");
   Serial.print("MAC: ");
@@ -717,8 +1093,11 @@ void setup() {
 void loop() {
   // Process incoming commands
   handle_espnow_queue();
+  handle_pairing_tasks();
 
   // Run measurement tasks if enabled
   handle_reed_stream();
   handle_hole_measurement();
 }
+
+
