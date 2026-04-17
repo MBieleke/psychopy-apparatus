@@ -126,7 +126,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
             code = (
-                "%(name)s.startForceMeasurement(%(rate)s, %(device)s)\n"
+                "%(name)s.startForceMeasurement(%(rate)s, 'both')\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -183,12 +183,12 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "    _loop = %(currentLoop)s\n"
             "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
             "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
-            "    _identifier = %(rawDataId)s if %(rawDataId)s != None else ''\n"
-            "    _responses = %(name)s.responses\n"
+            "    _identifier = str(%(rawDataId)s) if %(rawDataId)s is not None else ''\n"
+            "    _records = %(name)s.forceRows if hasattr(%(name)s, 'forceRows') else []\n"
             "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
             "        if _write_header:\n"
-            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\ttime\twhite_force\tblue_force\twhite_force_raw_counts\tblue_force_raw_counts\\n')\n"
-            "        for _i, _response in enumerate(_responses):\n"
+            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\twhite_time\tblue_time\ttime\twhite_force\tblue_force\twhite_force_raw_counts\tblue_force_raw_counts\\n')\n"
+            "        for _i, _record in enumerate(_records):\n"
             "            _row = [\n"
             "                expInfo.get(\"participant\", \"\"),\n"
             "                expInfo.get(\"session\", \"\"),\n"
@@ -198,11 +198,13 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "                _trial_name,\n"
             "                _identifier,\n"
             "                _i,\n"
-            "                _response.t,\n"
-            "                _response.whiteForce if _response.whiteForce is not None else '',\n"
-            "                _response.blueForce if _response.blueForce is not None else '',\n"
-            "                _response.whiteForceRawCounts if _response.whiteForceRawCounts is not None else '',\n"
-            "                _response.blueForceRawCounts if _response.blueForceRawCounts is not None else '',\n"
+            "                _record['white_time'],\n"
+            "                _record['blue_time'],\n"
+            "                _record['time'],\n"
+            "                _record['white_force'],\n"
+            "                _record['blue_force'],\n"
+            "                _record['white_force_raw_counts'] if _record['white_force_raw_counts'] is not None else '',\n"
+            "                _record['blue_force_raw_counts'] if _record['blue_force_raw_counts'] is not None else '',\n"
             "            ]\n"
             "            _f.write('\t'.join(str(_v) for _v in _row) + '\\n')\n"
         )

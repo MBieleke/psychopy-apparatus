@@ -99,7 +99,11 @@ class Apparatus(AttributeGetSetMixin):
         self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
-        
+        self.forceRows = []
+        self._force_pending_white = None
+        self._force_pending_blue = None
+        self._force_device_mode = 'both'
+
         # Force measurement state
         self._force_measuring = False
         self._force_start_response_count = 0
@@ -330,7 +334,11 @@ class Apparatus(AttributeGetSetMixin):
         self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
-        
+        self.forceRows.clear()
+        self._force_pending_white = None
+        self._force_pending_blue = None
+        self._force_device_mode = device
+
         # Clear device responses to start fresh
         self._device.clearResponses()
         self._force_start_response_count = self._device.getNumberOfResponses()
@@ -364,6 +372,7 @@ class Apparatus(AttributeGetSetMixin):
         
         # Collect any remaining responses before stopping
         self._collectForceResponses()
+        self._flush_force_pending_row(allow_partial=True)
         
         # Stop measurement on device
         success = self._device.stopForceMeasurement(wait_ack=True)
@@ -371,11 +380,52 @@ class Apparatus(AttributeGetSetMixin):
         if success:
             self._force_measuring = False
             self.status = FINISHED
-            logging.info(f"Force measurement stopped. Collected {len(self.responses)} samples.")
+            logging.info(f"Force measurement stopped. Collected {len(self.forceRows)} complete rows.")
         else:
             logging.error("Failed to stop force measurement")
             
         return success
+
+    def _flush_force_pending_row(self, allow_partial: bool = False):
+        """
+        Emit the latest white/blue pair as a complete export row.
+
+        If allow_partial is True, a missing side is filled from the latest
+        known value so a final sample is not dropped on stop.
+        """
+        if self._force_pending_white is None and self._force_pending_blue is None:
+            return
+
+        white = self._force_pending_white
+        blue = self._force_pending_blue
+
+        if white is None and allow_partial:
+            white = {
+                'time': self.whiteForceTimestamps[-1] if self.whiteForceTimestamps else 0.0,
+                'force': self.whiteForce,
+                'raw_counts': self.whiteForceRawCounts,
+            }
+        if blue is None and allow_partial:
+            blue = {
+                'time': self.blueForceTimestamps[-1] if self.blueForceTimestamps else 0.0,
+                'force': self.blueForce,
+                'raw_counts': self.blueForceRawCounts,
+            }
+
+        if white is None or blue is None:
+            return
+
+        self.forceRows.append({
+            'time': max(white['time'], blue['time']),
+            'white_time': white['time'],
+            'blue_time': blue['time'],
+            'white_force': white['force'],
+            'blue_force': blue['force'],
+            'white_force_raw_counts': white['raw_counts'],
+            'blue_force_raw_counts': blue['raw_counts'],
+        })
+        self._force_pending_white = None
+        self._force_pending_blue = None
 
     def _collectForceResponses(self):
         """
@@ -399,9 +449,19 @@ class Apparatus(AttributeGetSetMixin):
                 # Store response and timestamp
                 self.times.append(response.t)
                 self.responses.append(response)
-                
+
                 # Extract and store force values
                 if response.whiteForce is not None:
+                    # In 'both' mode: if white arrives again before blue was seen,
+                    # the previous white would be silently overwritten — flush it
+                    # as a partial row first so no sample is lost.
+                    if self._force_device_mode == 'both' and self._force_pending_white is not None:
+                        self._flush_force_pending_row(allow_partial=True)
+                    self._force_pending_white = {
+                        'time': response.t,
+                        'force': response.whiteForce,
+                        'raw_counts': response.whiteForceRawCounts,
+                    }
                     self.whiteForce = response.whiteForce
                     self.whiteForceValues.append(response.whiteForce)
                     self.whiteForceTimestamps.append(response.t)
@@ -411,8 +471,16 @@ class Apparatus(AttributeGetSetMixin):
                     self.whiteForceRawCounts = response.whiteForceRawCounts
                     self.whiteForceRawCountValues.append(response.whiteForceRawCounts)
                     self.whiteForceRawCountTimestamps.append(response.t)
-                        
+
                 if response.blueForce is not None:
+                    # Same burst-guard for blue arriving before white.
+                    if self._force_device_mode == 'both' and self._force_pending_blue is not None:
+                        self._flush_force_pending_row(allow_partial=True)
+                    self._force_pending_blue = {
+                        'time': response.t,
+                        'force': response.blueForce,
+                        'raw_counts': response.blueForceRawCounts,
+                    }
                     self.blueForce = response.blueForce
                     self.blueForceValues.append(response.blueForce)
                     self.blueForceTimestamps.append(response.t)
@@ -422,6 +490,16 @@ class Apparatus(AttributeGetSetMixin):
                     self.blueForceRawCounts = response.blueForceRawCounts
                     self.blueForceRawCountValues.append(response.blueForceRawCounts)
                     self.blueForceRawCountTimestamps.append(response.t)
+
+                # Flush strategy depends on device mode:
+                # 'both'  — wait until both sides are ready, then emit one paired row.
+                # single  — emit one row immediately per sample; the missing side is
+                #           filled with the last known value (or zero on first sample).
+                if self._force_device_mode == 'both':
+                    if self._force_pending_white is not None and self._force_pending_blue is not None:
+                        self._flush_force_pending_row()
+                else:
+                    self._flush_force_pending_row(allow_partial=True)
         
         # Update the response counter
         self._force_start_response_count = len(all_responses)

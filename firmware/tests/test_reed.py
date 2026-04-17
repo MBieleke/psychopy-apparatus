@@ -244,7 +244,7 @@ class ReedMatrixGUI:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Standalone reed switch readout with circular matrix GUI.")
     parser.add_argument("port", help="Serial port, e.g. COM4")
-    parser.add_argument("--baud", type=int, default=115200)
+    parser.add_argument("--baud", type=int, default=921600)
     parser.add_argument("--rate-hz", type=float, default=100.0)
     parser.add_argument("--startup-delay", type=float, default=2.0)
     parser.add_argument("--duration", type=float, default=0.0, help="0 = run until Ctrl+C")
