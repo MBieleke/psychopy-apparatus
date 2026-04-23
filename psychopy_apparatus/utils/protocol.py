@@ -1,4 +1,4 @@
-"""
+﻿"""
 Protocol utilities for Apparatus communication.
 
 Implements the binary message protocol with COBS encoding and XOR checksum
@@ -66,6 +66,9 @@ MSG_NACK = 0x81
 DATA_REED = 0x91
 DATA_HALL = 0x92
 DATA_FORCE = 0x90
+
+# Force payload scaling: i16 value is sent in 0.1 N units.
+FORCE_VALUE_SCALE = 10.0
 
 # Flags
 FLAG_ACK_REQUIRED = 0x01
@@ -135,6 +138,11 @@ def cobs_decode(data: bytes) -> bytes:
     -------
     bytes
         Decoded data
+
+    Raises
+    ------
+    ValueError
+        If the COBS frame is malformed or truncated.
     """
     if not data:
         return b''
@@ -145,12 +153,12 @@ def cobs_decode(data: bytes) -> bytes:
     while i < len(data):
         code = data[i]
         if code == 0:
-            return bytes(output)
+            raise ValueError("COBS frame contains an unexpected delimiter byte")
         
         i += 1
         for _ in range(code - 1):
             if i >= len(data):
-                return bytes(output)
+                raise ValueError("COBS frame is truncated")
             output.append(data[i])
             i += 1
         
@@ -249,6 +257,11 @@ def parse_message(data: bytes) -> Optional[Tuple[dict, bytes]]:
     
     # Extract payload
     payload = data[HEADER_SIZE:HEADER_SIZE + payload_len]
+
+    if len(payload) != payload_len:
+        return None
+    if len(data) != HEADER_SIZE + payload_len:
+        return None
     
     # Verify checksum
     header_temp = data[:HEADER_SIZE - 1]  # Header without checksum byte
@@ -297,7 +310,7 @@ def encode_led_payload_format_b(holes: list[int], colors: list[tuple[int, int, i
     """
     Encode LED payload in Format B (individual colors per hole).
     
-    Format B: count(u8) + [hole(u8), r(u8), g(u8), b(u8)] × count
+    Format B: count(u8) + [hole(u8), r(u8), g(u8), b(u8)] Ã— count
     
     Parameters
     ----------
@@ -342,16 +355,16 @@ def encode_led_payload_auto(holes: list[int], colors) -> bytes:
     
     # Check if colors is a single tuple or list of tuples
     if isinstance(colors, (tuple, list)) and len(colors) == 3 and isinstance(colors[0], int):
-        # Single (r, g, b) tuple → Format A
+        # Single (r, g, b) tuple â†’ Format A
         return encode_led_payload_format_a(holes, colors[0], colors[1], colors[2])
     
     # List of tuples - check if all are the same
     if all(c == colors[0] for c in colors):
-        # All colors identical → Format A
+        # All colors identical â†’ Format A
         r, g, b = colors[0]
         return encode_led_payload_format_a(holes, r, g, b)
     else:
-        # Different colors → Format B
+        # Different colors â†’ Format B
         return encode_led_payload_format_b(holes, colors)
 
 
@@ -402,32 +415,42 @@ def parse_force_data_payload(payload: bytes) -> dict:
     """
     Parse DATA_FORCE payload.
     
-    Payload format: time_us(u32) + value(i16) + dynamometer(u8)
+    Payload format:
+    - legacy: time_us(u32) + value(i16, 0.1N units) + dynamometer(u8)
+    - experimental3: time_us(u32) + value(i16, 0.1N units) + adc_raw_counts(i16) + dynamometer(u8)
     
     Parameters
     ----------
     payload : bytes
-        Raw payload bytes (7 bytes)
+        Raw payload bytes (7 or 9 bytes)
         
     Returns
     -------
     dict
-        Dictionary with keys: 'time_us', 'value', 'dynamometer'
+        Dictionary with keys: 'time_us', 'value', 'raw_value', 'dynamometer', 'adc_raw_counts'
         - time_us: Timestamp in microseconds
-        - value: Force value in Newtons (int16)
+        - value: Force value in Newtons (float)
+        - raw_value: Raw signed i16 payload value (0.1N units)
         - dynamometer: Dynamometer identifier (0=right/white, 1=left/blue)
+        - adc_raw_counts: Raw signed i16 ADC reading, or None for legacy payloads
     """
-    if len(payload) != 7:
-        raise ValueError(f"Invalid force data payload length: {len(payload)} (expected 7)")
-    
-    time_us, value, dynamometer = struct.unpack('<IhB', payload)
+    if len(payload) == 7:
+        time_us, raw_value, dynamometer = struct.unpack('<IhB', payload)
+        adc_raw_counts = None
+    elif len(payload) == 9:
+        time_us, raw_value, adc_raw_counts, dynamometer = struct.unpack('<IhhB', payload)
+    else:
+        raise ValueError(f"Invalid force data payload length: {len(payload)} (expected 7 or 9)")
+
+    value = float(raw_value) / FORCE_VALUE_SCALE
     
     return {
         'time_us': time_us,
         'value': value,
-        'dynamometer': dynamometer
+        'raw_value': raw_value,
+        'dynamometer': dynamometer,
+        'adc_raw_counts': adc_raw_counts,
     }
-
 
 def encode_reed_start_payload(rate_hz: float) -> bytes:
     """
@@ -493,3 +516,5 @@ def parse_reed_data_payload(payload: bytes) -> dict:
         'reed_bits': reed_bits,
         'holes': holes
     }
+
+

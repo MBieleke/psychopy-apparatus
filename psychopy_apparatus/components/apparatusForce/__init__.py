@@ -61,7 +61,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         )
         self.params['saveRawData'] = Param(
             saveRawData, valType="code", inputType="bool", categ="Basic",
-            label="Save Raw Data", hint="If checked, save raw force samples to a long-format file per experiment."
+            label="Save Raw Data", hint="If checked, save raw force samples and ADC counts to a long-format file per experiment."
         )
         self.params['rawDataId'] = Param(
             rawDataId, valType="code", inputType="single", categ="Basic",
@@ -174,18 +174,16 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "    _loop = %(currentLoop)s\n"
             "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
             "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
-            "    _identifier = %(rawDataId)s"
+            "    _identifier = str(%(rawDataId)s) if %(rawDataId)s is not None else ''\n"
+            "    _records = %(name)s.forceRows if hasattr(%(name)s, 'forceRows') else []\n"
             "    _times = %(name)s.times\n"
             "    _white = %(name)s.whiteForceValues\n"
             "    _blue = %(name)s.blueForceValues\n"
             "    _n = max(len(_times), len(_white), len(_blue))\n"
             "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
             "        if _write_header:\n"
-            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\ttime\twhite_force\tblue_force\\n')\n"
-            "        for _i in range(_n):\n"
-            "            _t = _times[_i] if _i < len(_times) else ''\n"
-            "            _w = _white[_i] if _i < len(_white) else ''\n"
-            "            _b = _blue[_i] if _i < len(_blue) else ''\n"
+            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\twhite_time\tblue_time\ttime\twhite_force\tblue_force\twhite_force_raw_counts\tblue_force_raw_counts\\n')\n"
+            "        for _i, _record in enumerate(_records):\n"
             "            _row = [\n"
             "                expInfo.get(\"participant\", \"\"),\n"
             "                expInfo.get(\"session\", \"\"),\n"
@@ -195,9 +193,13 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "                _trial_name,\n"
             "                _identifier,\n"
             "                _i,\n"
-            "                _t,\n"
-            "                _w,\n"
-            "                _b,\n"
+            "                _record['white_time'],\n"
+            "                _record['blue_time'],\n"
+            "                _record['time'],\n"
+            "                _record['white_force'],\n"
+            "                _record['blue_force'],\n"
+            "                _record['white_force_raw_counts'] if _record['white_force_raw_counts'] is not None else '',\n"
+            "                _record['blue_force_raw_counts'] if _record['blue_force_raw_counts'] is not None else '',\n"
             "            ]\n"
             "            _f.write('\t'.join(str(_v) for _v in _row) + '\\n')\n"
         )
