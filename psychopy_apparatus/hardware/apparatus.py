@@ -86,14 +86,24 @@ class Apparatus(AttributeGetSetMixin):
         # Human-readable force data (for data output)
         self.whiteForceValues = []  # List of white force samples
         self.blueForceValues = []   # List of blue force samples
+        self.whiteForceRawCountValues = []  # List of white raw ADC samples
+        self.blueForceRawCountValues = []   # List of blue raw ADC samples
         self.whiteForceTimestamps = []  # Timestamps for white force samples
         self.blueForceTimestamps = []   # Timestamps for blue force samples
+        self.whiteForceRawCountTimestamps = []  # Timestamps for white raw ADC samples
+        self.blueForceRawCountTimestamps = []   # Timestamps for blue raw ADC samples
 
         self.whiteForce = 0
         self.blueForce = 0
+        self.whiteForceRawCounts = None
+        self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
-        
+        self.forceRows = []
+        self._force_pending_white = None
+        self._force_pending_blue = None
+        self._force_device_mode = 'both'
+
         # Force measurement state
         self._force_measuring = False
         self._force_start_response_count = 0
@@ -103,6 +113,14 @@ class Apparatus(AttributeGetSetMixin):
         self.reedHoles = []  # List of hole numbers (parallel to reedTimes)
         self.reedActions = []  # List of actions: 1=insert, 0=remove (parallel to reedTimes)
         self.reedSummary = []  # Per-hole summary: [{'hole': h, 'insertions': n, 'removals': m, 'duration': s}, ...]
+        self.reedCurrentStates = {}  # Live state per monitored hole: {hole: 0/1}
+        self.reedActiveHoles = []  # Live list of holes that are currently inserted/closed
+        self.reedNewInsertions = []  # Holes that changed to inserted in the latest update
+        self.reedNewRemovals = []  # Holes that changed to removed in the latest update
+        self.reedLatestEvent = None  # Most recent transition: {'time': t, 'hole': h, 'action': 0/1}
+        self.reedFrameTimes = []  # Per-frame timestamps for reed snapshots
+        self.reedFrameStates = []  # Per-frame snapshots of reedCurrentStates
+        self.reedFrameActiveHoles = []  # Per-frame snapshots of reedActiveHoles
         
         # Reed measurement state (internal tracking)
         self._reed_measuring = False
@@ -312,13 +330,23 @@ class Apparatus(AttributeGetSetMixin):
         self.responses.clear()
         self.whiteForceValues.clear()
         self.blueForceValues.clear()
+        self.whiteForceRawCountValues.clear()
+        self.blueForceRawCountValues.clear()
         self.whiteForceTimestamps.clear()
         self.blueForceTimestamps.clear()
+        self.whiteForceRawCountTimestamps.clear()
+        self.blueForceRawCountTimestamps.clear()
         self.whiteForce = 0
         self.blueForce = 0
+        self.whiteForceRawCounts = None
+        self.blueForceRawCounts = None
         self.maxWhiteForce = 0
         self.maxBlueForce = 0
-        
+        self.forceRows.clear()
+        self._force_pending_white = None
+        self._force_pending_blue = None
+        self._force_device_mode = device
+
         # Clear device responses to start fresh
         self._device.clearResponses()
         self._force_start_response_count = self._device.getNumberOfResponses()
@@ -352,6 +380,7 @@ class Apparatus(AttributeGetSetMixin):
         
         # Collect any remaining responses before stopping
         self._collectForceResponses()
+        self._flush_force_pending_row(allow_partial=True)
         
         # Stop measurement on device
         success = self._device.stopForceMeasurement(wait_ack=True)
@@ -359,11 +388,52 @@ class Apparatus(AttributeGetSetMixin):
         if success:
             self._force_measuring = False
             self.status = FINISHED
-            logging.info(f"Force measurement stopped. Collected {len(self.responses)} samples.")
+            logging.info(f"Force measurement stopped. Collected {len(self.forceRows)} complete rows.")
         else:
             logging.error("Failed to stop force measurement")
             
         return success
+
+    def _flush_force_pending_row(self, allow_partial: bool = False):
+        """
+        Emit the latest white/blue pair as a complete export row.
+
+        If allow_partial is True, a missing side is filled from the latest
+        known value so a final sample is not dropped on stop.
+        """
+        if self._force_pending_white is None and self._force_pending_blue is None:
+            return
+
+        white = self._force_pending_white
+        blue = self._force_pending_blue
+
+        if white is None and allow_partial:
+            white = {
+                'time': self.whiteForceTimestamps[-1] if self.whiteForceTimestamps else 0.0,
+                'force': self.whiteForce,
+                'raw_counts': self.whiteForceRawCounts,
+            }
+        if blue is None and allow_partial:
+            blue = {
+                'time': self.blueForceTimestamps[-1] if self.blueForceTimestamps else 0.0,
+                'force': self.blueForce,
+                'raw_counts': self.blueForceRawCounts,
+            }
+
+        if white is None or blue is None:
+            return
+
+        self.forceRows.append({
+            'time': max(white['time'], blue['time']),
+            'white_time': white['time'],
+            'blue_time': blue['time'],
+            'white_force': white['force'],
+            'blue_force': blue['force'],
+            'white_force_raw_counts': white['raw_counts'],
+            'blue_force_raw_counts': blue['raw_counts'],
+        })
+        self._force_pending_white = None
+        self._force_pending_blue = None
 
     def _collectForceResponses(self):
         """
@@ -387,21 +457,57 @@ class Apparatus(AttributeGetSetMixin):
                 # Store response and timestamp
                 self.times.append(response.t)
                 self.responses.append(response)
-                
+
                 # Extract and store force values
                 if response.whiteForce is not None:
+                    # In 'both' mode: if white arrives again before blue was seen,
+                    # the previous white would be silently overwritten — flush it
+                    # as a partial row first so no sample is lost.
+                    if self._force_device_mode == 'both' and self._force_pending_white is not None:
+                        self._flush_force_pending_row(allow_partial=True)
+                    self._force_pending_white = {
+                        'time': response.t,
+                        'force': response.whiteForce,
+                        'raw_counts': response.whiteForceRawCounts,
+                    }
                     self.whiteForce = response.whiteForce
                     self.whiteForceValues.append(response.whiteForce)
                     self.whiteForceTimestamps.append(response.t)
                     if response.whiteForce > self.maxWhiteForce:
                         self.maxWhiteForce = response.whiteForce
-                        
+                if response.whiteForceRawCounts is not None:
+                    self.whiteForceRawCounts = response.whiteForceRawCounts
+                    self.whiteForceRawCountValues.append(response.whiteForceRawCounts)
+                    self.whiteForceRawCountTimestamps.append(response.t)
+
                 if response.blueForce is not None:
+                    # Same burst-guard for blue arriving before white.
+                    if self._force_device_mode == 'both' and self._force_pending_blue is not None:
+                        self._flush_force_pending_row(allow_partial=True)
+                    self._force_pending_blue = {
+                        'time': response.t,
+                        'force': response.blueForce,
+                        'raw_counts': response.blueForceRawCounts,
+                    }
                     self.blueForce = response.blueForce
                     self.blueForceValues.append(response.blueForce)
                     self.blueForceTimestamps.append(response.t)
                     if response.blueForce > self.maxBlueForce:
                         self.maxBlueForce = response.blueForce
+                if response.blueForceRawCounts is not None:
+                    self.blueForceRawCounts = response.blueForceRawCounts
+                    self.blueForceRawCountValues.append(response.blueForceRawCounts)
+                    self.blueForceRawCountTimestamps.append(response.t)
+
+                # Flush strategy depends on device mode:
+                # 'both'  — wait until both sides are ready, then emit one paired row.
+                # single  — emit one row immediately per sample; the missing side is
+                #           filled with the last known value (or zero on first sample).
+                if self._force_device_mode == 'both':
+                    if self._force_pending_white is not None and self._force_pending_blue is not None:
+                        self._flush_force_pending_row()
+                else:
+                    self._flush_force_pending_row(allow_partial=True)
         
         # Update the response counter
         self._force_start_response_count = len(all_responses)
@@ -446,6 +552,14 @@ class Apparatus(AttributeGetSetMixin):
         self.reedHoles.clear()
         self.reedActions.clear()
         self.reedSummary.clear()
+        self.reedCurrentStates = {hole: 0 for hole in self._reed_monitored_holes}
+        self.reedActiveHoles = []
+        self.reedNewInsertions = []
+        self.reedNewRemovals = []
+        self.reedLatestEvent = None
+        self.reedFrameTimes = []
+        self.reedFrameStates = []
+        self.reedFrameActiveHoles = []
         
         # Initialize tracking for each monitored hole
         self._reed_last_states = {hole: 0 for hole in self._reed_monitored_holes}
@@ -529,6 +643,10 @@ class Apparatus(AttributeGetSetMixin):
         """
         if not self._reed_measuring:
             return
+
+        # Clear per-frame transition buffers before consuming new data.
+        self.reedNewInsertions = []
+        self.reedNewRemovals = []
         
         # Get all responses from device
         all_responses = self._device.getResponses()
@@ -541,12 +659,21 @@ class Apparatus(AttributeGetSetMixin):
             if response.msg_type != DATA_REED:
                 continue
             
+            reed_holes = None
             if hasattr(response, 'reed_holes') and response.reed_holes is not None:
+                reed_holes = response.reed_holes
+            elif hasattr(response, 'reed_bits') and response.reed_bits is not None:
+                reed_holes = {
+                    hole: (int(response.reed_bits) >> hole) & 1
+                    for hole in self._reed_monitored_holes
+                }
+
+            if reed_holes is not None:
                 timestamp = response.t
                 
                 # Check each monitored hole for state changes
                 for hole in self._reed_monitored_holes:
-                    new_state = response.reed_holes.get(hole, 0)
+                    new_state = reed_holes.get(hole, 0)
                     old_state = self._reed_last_states[hole]
                     
                     # Detect state change
@@ -556,6 +683,7 @@ class Apparatus(AttributeGetSetMixin):
                             action = 1
                             self._reed_insertion_counts[hole] += 1
                             self._reed_last_insert_time[hole] = timestamp
+                            self.reedNewInsertions.append(hole)
                         else:
                             # Removal detected
                             action = 0
@@ -565,17 +693,36 @@ class Apparatus(AttributeGetSetMixin):
                                 duration = timestamp - self._reed_last_insert_time[hole]
                                 self._reed_active_durations[hole] += duration
                                 self._reed_last_insert_time[hole] = None
+                            self.reedNewRemovals.append(hole)
                         
                         # Record event in parallel lists
                         self.reedTimes.append(timestamp)
                         self.reedHoles.append(hole)
                         self.reedActions.append(action)
+                        self.reedLatestEvent = {
+                            'time': timestamp,
+                            'hole': hole,
+                            'action': action,
+                        }
                         
                         # Update last known state
                         self._reed_last_states[hole] = new_state
+                        self.reedCurrentStates[hole] = new_state
+
+                self.reedActiveHoles = [
+                    hole for hole in self._reed_monitored_holes
+                    if self._reed_last_states.get(hole, 0) == 1
+                ]
         
         # Update the response counter
         self._reed_start_response_count = len(all_responses)
+
+        # Snapshot the current state on every poll so the frame-by-frame history
+        # can be reconstructed later, even if no transition occurred in this frame.
+        snapshot_time = core.getTime()
+        self.reedFrameTimes.append(snapshot_time)
+        self.reedFrameStates.append(self.reedCurrentStates.copy())
+        self.reedFrameActiveHoles.append(list(self.reedActiveHoles))
 
     def updateReedMeasurement(self):
         """

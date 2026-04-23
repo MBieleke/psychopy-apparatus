@@ -173,6 +173,14 @@ class ApparatusReedComponent(BaseDeviceComponent):
             "%(currentLoop)s.addData('%(name)s.reedHoles', %(name)s.reedHoles)\n"
             "%(currentLoop)s.addData('%(name)s.reedActions', %(name)s.reedActions)\n"
             "%(currentLoop)s.addData('%(name)s.reedSummary', %(name)s.reedSummary)\n"
+            "%(currentLoop)s.addData('%(name)s.reedCurrentStates', %(name)s.reedCurrentStates)\n"
+            "%(currentLoop)s.addData('%(name)s.reedActiveHoles', %(name)s.reedActiveHoles)\n"
+            "%(currentLoop)s.addData('%(name)s.reedNewInsertions', %(name)s.reedNewInsertions)\n"
+            "%(currentLoop)s.addData('%(name)s.reedNewRemovals', %(name)s.reedNewRemovals)\n"
+            "%(currentLoop)s.addData('%(name)s.reedLatestEvent', %(name)s.reedLatestEvent)\n"
+            "%(currentLoop)s.addData('%(name)s.reedFrameTimes', %(name)s.reedFrameTimes)\n"
+            "%(currentLoop)s.addData('%(name)s.reedFrameStates', %(name)s.reedFrameStates)\n"
+            "%(currentLoop)s.addData('%(name)s.reedFrameActiveHoles', %(name)s.reedFrameActiveHoles)\n"
         )
         buff.writeIndentedLines(code % params)
 

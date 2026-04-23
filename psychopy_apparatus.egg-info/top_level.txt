@@ -1,3 +1,0 @@
-experiments
-firmware
-psychopy_apparatus
