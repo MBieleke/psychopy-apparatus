@@ -1,0 +1,1270 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2026.1.3">
+  <Settings>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
+    <Param val="" valType="str" updates="None" name="Completed URL"/>
+    <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
+    <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
+    <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
+    <Param val="Thank you for your patience." valType="str" updates="None" name="End Message"/>
+    <Param val="{'participant': 'f&quot;{randint(0, 999999):06.0f}&quot;', 'session': '001'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="True" valType="bool" updates="None" name="Force stereo"/>
+    <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
+    <Param val="" valType="str" updates="None" name="HTML path"/>
+    <Param val="" valType="str" updates="None" name="Incomplete URL"/>
+    <Param val="testMonitor" valType="str" updates="None" name="Monitor"/>
+    <Param val="[]" valType="list" updates="None" name="Resources"/>
+    <Param val="False" valType="bool" updates="None" name="Save csv file"/>
+    <Param val="False" valType="bool" updates="None" name="Save excel file"/>
+    <Param val="False" valType="bool" updates="None" name="Save hdf5 file"/>
+    <Param val="True" valType="bool" updates="None" name="Save log file"/>
+    <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
+    <Param val="True" valType="bool" updates="None" name="Save wide csv file"/>
+    <Param val="2" valType="num" updates="None" name="Screen"/>
+    <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
+    <Param val="True" valType="bool" updates="None" name="Show mouse"/>
+    <Param val="height" valType="str" updates="None" name="Units"/>
+    <Param val="" valType="str" updates="None" name="Use version"/>
+    <Param val="[1280, 800]" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+    <Param val="" valType="str" updates="None" name="backgroundImg"/>
+    <Param val="avg" valType="str" updates="None" name="blendMode"/>
+    <Param val="float" valType="str" updates="None" name="clockFormat"/>
+    <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
+    <Param val="$(-1.0000, -1.0000, -1.0000)" valType="color" updates="None" name="color"/>
+    <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+    <Param val="warning" valType="code" updates="None" name="consoleLoggingLevel"/>
+    <Param val="default" valType="str" updates="None" name="ecSampleRate"/>
+    <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
+    <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
+    <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
+    <Param val="EYELINK 1000 DESKTOP" valType="str" updates="None" name="elModel"/>
+    <Param val="ELLIPSE_FIT" valType="str" updates="None" name="elPupilAlgorithm"/>
+    <Param val="PUPIL_AREA" valType="str" updates="None" name="elPupilMeasure"/>
+    <Param val="1000" valType="num" updates="None" name="elSampleRate"/>
+    <Param val="False" valType="bool" updates="None" name="elSimMode"/>
+    <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
+    <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
+    <Param val="maxForce" valType="str" updates="None" name="expName"/>
+    <Param val="" valType="str" updates="None" name="expVersion"/>
+    <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
+    <Param val="None" valType="str" updates="None" name="eyetracker"/>
+    <Param val="" valType="code" updates="None" name="frameRate"/>
+    <Param val="Experiment wird vorbereitet..." valType="str" updates="None" name="frameRateMsg"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
+    <Param val="4242" valType="num" updates="None" name="gpPort"/>
+    <Param val="PsychToolbox" valType="str" updates="None" name="keyboardBackend"/>
+    <Param val="debug" valType="code" updates="None" name="logging level"/>
+    <Param val="True" valType="bool" updates="None" name="measureFrameRate"/>
+    <Param val="['MIDDLE_BUTTON']" valType="list" updates="None" name="mgBlink"/>
+    <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
+    <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
+    <Param val="neon.local" valType="str" updates="None" name="plCompanionAddress"/>
+    <Param val="8080" valType="num" updates="None" name="plCompanionPort"/>
+    <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
+    <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="plPupilRemoteAddress"/>
+    <Param val="50020" valType="num" updates="None" name="plPupilRemotePort"/>
+    <Param val="1000" valType="num" updates="None" name="plPupilRemoteTimeoutMs"/>
+    <Param val="False" valType="bool" updates="None" name="plPupillometryOnly"/>
+    <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
+    <Param val="1" valType="code" updates="None" name="runMode"/>
+    <Param val="False" valType="bool" updates="None" name="rush"/>
+    <Param val="time" valType="str" updates="None" name="sortColumns"/>
+    <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
+    <Param val="" valType="str" updates="None" name="tbModel"/>
+    <Param val="60" valType="num" updates="None" name="tbSampleRate"/>
+    <Param val="" valType="str" updates="None" name="tbSerialNo"/>
+    <Param val="pyglet" valType="str" updates="None" name="winBackend"/>
+  </Settings>
+  <Routines>
+    <Routine name="blockBreak">
+      <RoutineSettingsComponent name="blockBreak" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="blockBreak" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="blockBreakText" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="blockBreakText" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="45" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="45s Pause" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="domainBreak">
+      <RoutineSettingsComponent name="domainBreak" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="domainBreak" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <KeyboardComponent name="keyRespDomainBreak" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="keyRespDomainBreak" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="120.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <TextComponent name="domainBreakText" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="domainBreakText" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="2min Pause&amp;#10;mit Drücken auf Leertaste dann weiter" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="forceRoutine">
+      <RoutineSettingsComponent name="forceRoutine" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="forceRoutine" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <ApparatusForceComponent name="forceRoutineForce" plugin="psychopy-apparatus">
+        <Param val="white" valType="str" updates="None" plugin="psychopy-apparatus" name="device"/>
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="both" valType="str" updates="None" name="dynamometer"/>
+        <Param val="False" valType="code" updates="None" plugin="psychopy-apparatus" name="endRoutineOnResponse"/>
+        <Param val="forceRoutineForce" valType="code" updates="None" name="name"/>
+        <Param val="10" valType="code" updates="None" name="rate"/>
+        <Param val="&quot;rest&quot;" valType="code" updates="None" name="rawDataId"/>
+        <Param val="True" valType="code" updates="None" name="saveRawData"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </ApparatusForceComponent>
+      <TextComponent name="textForce" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="textForce" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$f&quot; Force: {forceRoutineForce.WhiteForce}&quot;" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <CodeComponent name="forceCode_2" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="#mvc_max_trial&amp;#10;# mvc Level&amp;#10;#forceThreshold = mvc_max_trial * mvcLevel" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="forceCode_2" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="rr_setup">
+      <RoutineSettingsComponent name="rr_setup" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_setup" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="setup_constants" plugin="None">
+        <Param val="# IMPORT MODULES ----&amp;#10;import random&amp;#10;import math&amp;#10;import numpy as np&amp;#10;import sounddevice as sd&amp;#10;import threading&amp;#10;import pandas as pd&amp;#10;&amp;#10;# IMPORT SUBMODULES ----&amp;#10;# from scipy.stats import truncnorm, nur bei truncated normal distribution&amp;#10;from psychopy.colors import Color&amp;#10;from scipy.stats import norm&amp;#10;from itertools import product&amp;#10;from openpyxl import Workbook&amp;#10;from openpyxl.styles import PatternFill" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as random from 'random';&amp;#10;import * as math from 'math';&amp;#10;import * as np from 'numpy';&amp;#10;import * as sd from 'sounddevice';&amp;#10;import * as threading from 'threading';&amp;#10;import {Color} from 'psychopy/colors';&amp;#10;import {norm} from 'scipy/stats';&amp;#10;import {product} from 'itertools';&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# DEFINITIONS AND CONSTANTS ----&amp;#10;NUM_MVC      = 3  # How many MVC trials to conduct&amp;#10;NUM_DOMAINS  = 0 #1  # How often each domain is repeated&amp;#10;NUM_BLOCKS   = 3  # How often each block within the domain is repeated&amp;#10;NUM_LEVELS   = 6  # How often each level within the block is repeated&amp;#10;NUM_PALETTES = 24 # How many palettes are generated per trial&amp;#10;NUM_TARGETS  = 4  # How many targets appear in NUM_PALETTES palettes&amp;#10;NUM_DISTRACTORS = 8&amp;#10;&amp;#10;# MIN, MAX, AND RANGE OF COGNITIVE AND PHYSICAL DEMAND&amp;#10;PHYSICAL_DEMAND_MIN     = 0.03&amp;#10;PHYSICAL_DEMAND_MAX     = 0.40&amp;#10;COGNITIVE_DEMAND_MIN    = 10&amp;#10;COGNITIVE_DEMAND_MAX    = 60&amp;#10;PHYSICAL_DEMAND_LEVELS  = np.round(np.linspace(PHYSICAL_DEMAND_MIN, PHYSICAL_DEMAND_MAX, 4), 2).tolist()&amp;#10;COGNITIVE_DEMAND_LEVELS = np.round(np.linspace(COGNITIVE_DEMAND_MIN, COGNITIVE_DEMAND_MAX, 4), 2).tolist()&amp;#10;&amp;#10;TOLERANCE = 15.0&amp;#10;&amp;#10;# TARGET COLORS ----&amp;#10;TARGET_COLORS_RGB255 = [[255, 0, 0], [0, 255, 0], [0, 0, 255]]&amp;#10;COLOR_NAMES = {&amp;#10;    (255, 0, 0):   &quot;Red&quot;,&amp;#10;    (0, 255, 0):   &quot;Green&quot;,&amp;#10;    (0, 0, 255):   &quot;Blue&quot;,&amp;#10;}&amp;#10;&amp;#10;INNER_HOLES = list(range(8))&amp;#10;OUTER_HOLES = list(range(9, 21))&amp;#10;&amp;#10;# TIMING CONSTANTS ----&amp;#10;PALETTE_DURATION_SEC = 0.416&amp;#10;COUNTDOWN_STEP_SEC = 0.5&amp;#10;&amp;#10;# AUDIO CONSTANTS ----&amp;#10;FS          = 48000&amp;#10;CHANNELS    = 1&amp;#10;FREQ_LOW    = 440.0&amp;#10;FREQ_HIGH   = 880.0&amp;#10;AMP_MAX     = 1.0&amp;#10;AMP_SMOOTH  = 0.1&amp;#10;STATE_HOLD  = 0.1" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="setup_constants" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="setup_color_utils" plugin="None">
+        <Param val="def rgb_to_lab(rgb):&amp;#10;    &quot;&quot;&quot;&amp;#10;    Convert color from RGB to CIELAB space. &amp;#10;    &amp;#10;    Parameters&amp;#10;    ----------&amp;#10;    rgb : tuple or list&amp;#10;        A tuple/list of three values representing the RGB color.&amp;#10;        Accepts either normalized (0-1) or rgb255 (0-255) format.&amp;#10;        Auto-detects format: if any value &gt; 1, assumes 0-255 range.&amp;#10;    &quot;&quot;&quot;&amp;#10;    # Auto-normalize if input is in 0-255 range&amp;#10;    if any(c &gt; 1 for c in rgb):&amp;#10;        rgb = tuple(c / 255 for c in rgb)&amp;#10;    &amp;#10;    def pivot_rgb(c):&amp;#10;        return ((c + 0.055)/1.055)**2.4 if c &gt; 0.04045 else c/12.92&amp;#10;    &amp;#10;    R, G, B = [pivot_rgb(v) for v in rgb]&amp;#10;    &amp;#10;    X = 0.4124564*R + 0.3575761*G + 0.1804375*B&amp;#10;    Y = 0.2126729*R + 0.7151522*G + 0.0721750*B&amp;#10;    Z = 0.0193339*R + 0.1191920*G + 0.9503041*B&amp;#10;    &amp;#10;    X /= 0.95047&amp;#10;    Z /= 1.08883&amp;#10;    &amp;#10;    def f(t):&amp;#10;        return t**(1/3) if t &gt; 0.008856 else (7.787*t + 16/116)&amp;#10;    &amp;#10;    L = 116 * f(Y) - 16&amp;#10;    a = 500 * (f(X) - f(Y))&amp;#10;    b = 200 * (f(Y) - f(Z))&amp;#10;    &amp;#10;    return (L, a, b)&amp;#10;&amp;#10;def delta_e2000(lab1, lab2):&amp;#10;    &quot;&quot;&quot;&amp;#10;    Calculate the Delta E 2000 color difference between two CIELAB colors.&amp;#10;    &amp;#10;    Parameters&amp;#10;    ----------&amp;#10;    lab1 : tuple&amp;#10;        A tuple of three floats representing the first CIELAB color (L, a, b).&amp;#10;    lab2 : tuple&amp;#10;        A tuple of three floats representing the second CIELAB color (L, a, b).&amp;#10;    &quot;&quot;&quot;&amp;#10;    L1, a1, b1 = lab1&amp;#10;    L2, a2, b2 = lab2&amp;#10;    &amp;#10;    avg_L = (L1 + L2) / 2&amp;#10;    C1 = math.sqrt(a1*a1 + b1*b1)&amp;#10;    C2 = math.sqrt(a2*a2 + b2*b2)&amp;#10;    avg_C = (C1 + C2) / 2&amp;#10;    &amp;#10;    G = 0.5 * (1 - math.sqrt((avg_C**7)/((avg_C**7) + (25**7))))&amp;#10;    a1p = a1 * (1 + G)&amp;#10;    a2p = a2 * (1 + G)&amp;#10;    &amp;#10;    C1p = math.sqrt(a1p*a1p + b1*b1)&amp;#10;    C2p = math.sqrt(a2p*a2p + b2*b2)&amp;#10;    avg_Cp = (C1p + C2p) / 2&amp;#10;    &amp;#10;    h1p = (math.degrees(math.atan2(b1, a1p)) + 360) % 360&amp;#10;    h2p = (math.degrees(math.atan2(b2, a2p)) + 360) % 360&amp;#10;    &amp;#10;    dhp = h2p - h1p&amp;#10;    if abs(dhp) &gt; 180:&amp;#10;        dhp -= 360 * math.copysign(1, dhp)&amp;#10;    dHp = 2 * math.sqrt(C1p*C2p) * math.sin(math.radians(dhp/2))&amp;#10;    &amp;#10;    avg_hp = (h1p + dhp/2) % 360&amp;#10;    &amp;#10;    T = 1 - 0.17*math.cos(math.radians(avg_hp - 30)) \&amp;#10;          + 0.24*math.cos(math.radians(2*avg_hp)) \&amp;#10;          + 0.32*math.cos(math.radians(3*avg_hp + 6)) \&amp;#10;          - 0.20*math.cos(math.radians(4*avg_hp - 63))&amp;#10;    &amp;#10;    Sl = 1 + (0.015*((avg_L - 50)**2)) / math.sqrt(20 + (avg_L - 50)**2)&amp;#10;    Sc = 1 + 0.045 * avg_Cp&amp;#10;    Sh = 1 + 0.015 * avg_Cp * T&amp;#10;    &amp;#10;    Rt = -2 * math.sqrt((avg_Cp**7)/((avg_Cp**7)+(25**7))) * \&amp;#10;         math.sin(math.radians(60 * math.exp(-(((avg_hp - 275)/25)**2))))&amp;#10;    &amp;#10;    dE = math.sqrt(&amp;#10;        (L2-L1)**2 / (Sl**2) +&amp;#10;        (C2p-C1p)**2 / (Sc**2) +&amp;#10;        (dHp)**2 / (Sh**2) +&amp;#10;        Rt * (C2p-C1p)/Sc * dHp/Sh&amp;#10;    )&amp;#10;    return dE&amp;#10;&amp;#10;def generate_distractors(target_rgb, deltaE_mid, n):&amp;#10;    &quot;&quot;&quot;&amp;#10;    Generate n distractor colors that are approximately deltaE_mid away from target.&amp;#10;    &amp;#10;    Parameters&amp;#10;    ----------&amp;#10;    target_rgb : tuple/list&amp;#10;        RGB color in 0-1 (normalized) or 0-255 format (auto-detected).&amp;#10;    deltaE_mid : float&amp;#10;        Target Delta E 2000 distance from target color.&amp;#10;    n : int&amp;#10;        Number of distractor colors to generate.&amp;#10;    &amp;#10;    Returns&amp;#10;    -------&amp;#10;    list of lists&amp;#10;        Distractor colors in rgb255 format (0-255 ints).&amp;#10;    &quot;&quot;&quot;&amp;#10;    target_lab = rgb_to_lab(target_rgb)&amp;#10;    distractors = []&amp;#10;    attempts = 0&amp;#10;    &amp;#10;    while len(distractors) &lt; n and attempts &lt; 50000:&amp;#10;        attempts += 1&amp;#10;        rgb = (random.random(), random.random(), random.random())&amp;#10;        lab = rgb_to_lab(rgb)&amp;#10;        dE = delta_e2000(target_lab, lab)&amp;#10;        &amp;#10;        if abs(dE - deltaE_mid) &lt;= 1.5:&amp;#10;            distractors.append([int(c * 255) for c in rgb])  # Convert to rgb255&amp;#10;    &amp;#10;    if len(distractors) &lt; n:&amp;#10;        print(&quot;WARNUNG: nicht genug Farben im DeltaE-Band gefunden.&quot;)&amp;#10;        while len(distractors) &lt; n:&amp;#10;            distractors.append([int(c * 255) for c in (random.random(), random.random(), random.random())])&amp;#10;    &amp;#10;    return distractors" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="setup_color_utils" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="setup_audio" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="global _state_lock, _target_freq, _target_amp, _cur_amp, _phase, _stream&amp;#10;&amp;#10;# Audio parameters&amp;#10;FS          = 48000&amp;#10;CHANNELS    = 1&amp;#10;FREQ_LOW    = 440.0&amp;#10;FREQ_HIGH   = 880.0&amp;#10;AMP_MAX     = 1.0&amp;#10;AMP_SMOOTH  = 0.1&amp;#10;STATE_HOLD  = 0.1&amp;#10;&amp;#10;# Shared state&amp;#10;_state_lock  = threading.Lock()&amp;#10;_target_freq = FREQ_LOW&amp;#10;_target_amp  = 0.0&amp;#10;_cur_amp     = 0.0&amp;#10;_phase       = 0.0&amp;#10;&amp;#10;def audio_callback(outdata, frames, time, status):&amp;#10;    global _phase, _cur_amp, _target_amp, _target_freq&amp;#10;    with _state_lock:&amp;#10;        tf = float(_target_freq)&amp;#10;        ta = float(_target_amp)&amp;#10;    _cur_amp  = (1.0 - AMP_SMOOTH) * _cur_amp + AMP_SMOOTH * ta&amp;#10;    t         = (np.arange(frames) / FS).astype(np.float32)&amp;#10;    phase_inc = 2.0 * np.pi * tf&amp;#10;    y         = np.sin(_phase + phase_inc * t).astype(np.float32)&amp;#10;    _phase    = float((_phase + phase_inc * (frames / FS)) % (2.0 * np.pi))&amp;#10;    outdata[:] = (_cur_amp * AMP_MAX * y).reshape(-1, 1)&amp;#10;&amp;#10;_stream = sd.OutputStream(&amp;#10;    samplerate = FS,&amp;#10;    channels   = CHANNELS,&amp;#10;    dtype      = &quot;float32&quot;,&amp;#10;    callback   = audio_callback,&amp;#10;)&amp;#10;if not _stream.active:&amp;#10;    _stream.start()" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="setup_audio" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="setup_random" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# =============================================================================&amp;#10;# PALETTE GENERATION&amp;#10;# =============================================================================&amp;#10;def generate_trial_palettes(target_color_rgb255, cognitive_demand_level,&amp;#10;                             n_palettes = NUM_PALETTES, n_targets = NUM_TARGETS,&amp;#10;                             n_holes = NUM_DISTRACTORS):&amp;#10;    &quot;&quot;&quot;&amp;#10;    Generate all palettes for one trial.&amp;#10;    - n_targets palettes contain the target color at a random hole position&amp;#10;    - remaining palettes contain only distractors&amp;#10;    &quot;&quot;&quot;&amp;#10;    target_palette_indices = set(random.sample(range(n_palettes), n_targets))&amp;#10;&amp;#10;    palettes = []&amp;#10;    for i in range(n_palettes):&amp;#10;        if i in target_palette_indices:&amp;#10;            distractors = generate_distractors(target_color_rgb255, cognitive_demand_level, n=n_holes - 1)&amp;#10;            target_pos  = random.randint(0, n_holes - 1)&amp;#10;            palette     = distractors.copy()&amp;#10;            palette.insert(target_pos, target_color_rgb255)&amp;#10;        else:&amp;#10;            palette = generate_distractors(target_color_rgb255, cognitive_demand_level, n=n_holes)&amp;#10;        palettes.append(palette)&amp;#10;&amp;#10;    return palettes&amp;#10;&amp;#10;# =============================================================================&amp;#10;# CREATE TRIALS&amp;#10;# =============================================================================&amp;#10;blocks = {b: [] for b in range(NUM_BLOCKS)}&amp;#10;for physical_demand_level, cognitive_demand_level in product(PHYSICAL_DEMAND_LEVELS, COGNITIVE_DEMAND_LEVELS):&amp;#10;    for block, target_color_rgb255 in zip(blocks, random.sample(TARGET_COLORS_RGB255, 3)):&amp;#10;        blocks[block].append({&amp;#10;            &quot;physical_demand_level&quot;:  physical_demand_level,&amp;#10;            &quot;cognitive_demand_level&quot;: cognitive_demand_level,&amp;#10;            &quot;target_color_rgb255&quot;:    target_color_rgb255,&amp;#10;        })&amp;#10;&amp;#10;for block in blocks.values():&amp;#10;    random.shuffle(block)&amp;#10;&amp;#10;# =============================================================================&amp;#10;# CREATE PALETTES&amp;#10;# =============================================================================&amp;#10;for b, trials in blocks.items():&amp;#10;    for trial in trials:&amp;#10;        palettes = generate_trial_palettes(&amp;#10;            target_color_rgb255    = trial[&quot;target_color_rgb255&quot;],&amp;#10;            cognitive_demand_level = trial[&quot;cognitive_demand_level&quot;],&amp;#10;        )&amp;#10;        target = trial[&quot;target_color_rgb255&quot;]&amp;#10;        target_palettes = [i for i, p in enumerate(palettes) if target in p]&amp;#10;        target_holes    = [p.index(target) for i, p in enumerate(palettes) if target in p]&amp;#10;        &amp;#10;        trial[&quot;palettes&quot;]            = palettes&amp;#10;        trial[&quot;palette_has_target&quot;]  = [target in p for p in palettes]&amp;#10;        trial[&quot;palette_target_hole&quot;] = [p.index(target) if target in p else None for p in palettes]&amp;#10;&amp;#10;# =============================================================================&amp;#10;# BALANCE CHECK&amp;#10;# =============================================================================&amp;#10;all_trials = []&amp;#10;for b, trials in blocks.items():&amp;#10;    for t in trials:&amp;#10;        all_trials.append({**{k: v for k, v in t.items() if k != &quot;palettes&quot;}, &quot;block&quot;: b})&amp;#10;df_check = pd.DataFrame(all_trials)&amp;#10;df_check[&quot;color&quot;] = df_check[&quot;target_color_rgb255&quot;].apply(tuple)&amp;#10;&amp;#10;lines = [&quot;=&quot; * 50, &quot;TRIAL BALANCE CHECK&quot;, &quot;=&quot; * 50]&amp;#10;for factor in [&quot;physical_demand_level&quot;, &quot;cognitive_demand_level&quot;, &quot;color&quot;]:&amp;#10;    lines.append(f&quot;\n--- {factor} ---&quot;)&amp;#10;    table = df_check.groupby([&quot;block&quot;, factor]).size().unstack(fill_value=0)&amp;#10;    lines.append(table.to_string())&amp;#10;    lines.append(f&quot;Totals: {df_check[factor].value_counts().sort_index().to_dict()}&quot;)&amp;#10;lines.append(&quot;\nTotal trials per block:&quot;)&amp;#10;lines.append(df_check.groupby(&quot;block&quot;).size().to_string())&amp;#10;print(&quot;\n&quot;.join(lines))&amp;#10;&amp;#10;# =============================================================================&amp;#10;# BUILD LONG FORMAT ROWS&amp;#10;# =============================================================================&amp;#10;rows = []&amp;#10;for b, trials in blocks.items():&amp;#10;    for trial_idx, trial in enumerate(trials):&amp;#10;        for palette_idx, palette in enumerate(trial[&quot;palettes&quot;]):&amp;#10;            has_target = trial[&quot;target_color_rgb255&quot;] in palette&amp;#10;            for hole_idx, color in enumerate(palette):&amp;#10;                rows.append({&amp;#10;                    &quot;block&quot;:                  b,&amp;#10;                    &quot;trial_idx&quot;:              trial_idx,&amp;#10;                    &quot;physical_demand_level&quot;:  trial[&quot;physical_demand_level&quot;],&amp;#10;                    &quot;cognitive_demand_level&quot;: trial[&quot;cognitive_demand_level&quot;],&amp;#10;                    &quot;target_color_rgb255&quot;:    trial[&quot;target_color_rgb255&quot;],&amp;#10;                    &quot;palette_idx&quot;:            palette_idx,&amp;#10;                    &quot;is_target_palette&quot;:      has_target,&amp;#10;                    &quot;hole_idx&quot;:               hole_idx,&amp;#10;                    &quot;hole_color_rgb255&quot;:      color,&amp;#10;                    &quot;is_target_hole&quot;:         color == trial[&quot;target_color_rgb255&quot;],&amp;#10;                    # Placeholders for data&amp;#10;                    &quot;is_selected&quot;:              None,&amp;#10;                    &quot;selected_rt&quot;:              None,&amp;#10;                    &quot;is_hit&quot;:                   None,&amp;#10;                    &quot;is_false_alarm&quot;:           None,&amp;#10;                    &quot;is_miss&quot;:                  None,&amp;#10;                    &quot;is_correct_rejection&quot;:     None,&amp;#10;                    &quot;hits&quot;:                     None,&amp;#10;                    &quot;false_alarms&quot;:             None,&amp;#10;                    &quot;misses&quot;:                   None,&amp;#10;                    &quot;correct_rejections&quot;:       None,&amp;#10;                    &quot;d_prime&quot;:                  None&amp;#10;                })&amp;#10;&amp;#10;# Create an index for fast lookup&amp;#10;row_index = {}&amp;#10;palette_row_index = {}&amp;#10;for i, row in enumerate(rows):&amp;#10;    hole_key = (row[&quot;block&quot;], row[&quot;trial_idx&quot;], row[&quot;palette_idx&quot;], row[&quot;hole_idx&quot;])&amp;#10;    row_index[hole_key] = i&amp;#10;    palette_key = (row[&quot;block&quot;], row[&quot;trial_idx&quot;], row[&quot;palette_idx&quot;])&amp;#10;    if palette_key not in palette_row_index:&amp;#10;        palette_row_index[palette_key] = []&amp;#10;    palette_row_index[palette_key].append(i)&amp;#10;&amp;#10;# =============================================================================&amp;#10;# EXPORT TO EXCEL WITH COLOR PREVIEW&amp;#10;# =============================================================================&amp;#10;# wb = Workbook()&amp;#10;# ws = wb.active&amp;#10;&amp;#10;# headers = list(rows[0].keys()) + [&quot;color_preview&quot;]&amp;#10;# ws.append(headers)&amp;#10;&amp;#10;# for row in rows:&amp;#10;#     converted = {k: str(v) if isinstance(v, list) else v for k, v in row.items()}&amp;#10;#     ws.append(list(converted.values()) + [&quot;&quot;])&amp;#10;# &amp;#10;#     color = row[&quot;hole_color_rgb255&quot;]&amp;#10;#     hex_color = &quot;{:02X}{:02X}{:02X}&quot;.format(color[0], color[1], color[2])&amp;#10;#     ws.cell(row=ws.max_row, column=len(headers)).fill = PatternFill(&amp;#10;#         start_color=hex_color, end_color=hex_color, fill_type=&quot;solid&quot;&amp;#10;#     )&amp;#10;# &amp;#10;# wb.save(thisExp.dataFileName + '_design.xlsx')&amp;#10;&amp;#10;pd.DataFrame(rows).to_csv(thisExp.dataFileName + '_design.csv', index=False)&amp;#10;# print(f&quot;\nSaved {len(rows)} rows to _design.csv&quot;)&amp;#10;# print(f&quot;Expected: {NUM_BLOCKS} blocks × 16 trials × {NUM_PALETTES} palettes × {NUM_DISTRACTORS} holes = {NUM_BLOCKS * 16 * NUM_PALETTES * NUM_DISTRACTORS} rows&quot;)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="setup_random" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="setup_ring" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Main ring parameters&amp;#10;ring_radius = 0.075  # distance of small circles from center&amp;#10;hole_radius = 0.02   # size of each small circle&amp;#10;&amp;#10;# Create the 8 hole stimuli&amp;#10;hole_stimuli = []&amp;#10;ring_center = (0.5, 0.0)&amp;#10;for i in range(NUM_DISTRACTORS):&amp;#10;    angle = np.pi - 2 * np.pi * i / NUM_DISTRACTORS&amp;#10;    x = ring_center[0] + ring_radius * np.cos(angle)&amp;#10;    y = ring_center[1] + ring_radius * np.sin(angle)&amp;#10;    circle = visual.Circle(&amp;#10;        win,&amp;#10;        radius=hole_radius,&amp;#10;        pos=(x, y),&amp;#10;        fillColor=[128, 128, 128],&amp;#10;        colorSpace='rgb255',&amp;#10;        lineColor=None,&amp;#10;    )&amp;#10;    hole_stimuli.append(circle)&amp;#10;&amp;#10;# Create the labels&amp;#10;hole_labels = []&amp;#10;for i in range(NUM_DISTRACTORS):&amp;#10;    angle = np.pi - 2 * np.pi * i / NUM_DISTRACTORS&amp;#10;    x = ring_center[0] + ring_radius * np.cos(angle)&amp;#10;    y = ring_center[1] + ring_radius * np.sin(angle)&amp;#10;    label = visual.TextStim(&amp;#10;        win,&amp;#10;        text=str(i),&amp;#10;        pos=(x, y),&amp;#10;        height=0.02,&amp;#10;        color='white',&amp;#10;        bold=True,&amp;#10;    )&amp;#10;    hole_labels.append(label)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="ring_radius = 0.075;&amp;#10;hole_radius = 0.02;&amp;#10;hole_stimuli = [];&amp;#10;ring_center = [0.5, 0.0];&amp;#10;for (var i, _pj_c = 0, _pj_a = util.range(NUM_DISTRACTORS), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    i = _pj_a[_pj_c];&amp;#10;    angle = (np.pi - (((2 * np.pi) * i) / NUM_DISTRACTORS));&amp;#10;    x = (ring_center[0] + (ring_radius * np.cos(angle)));&amp;#10;    y = (ring_center[1] + (ring_radius * np.sin(angle)));&amp;#10;    circle = new visual.Circle(psychoJS.window, {&quot;radius&quot;: hole_radius, &quot;pos&quot;: [x, y], &quot;fillColor&quot;: [128, 128, 128], &quot;colorSpace&quot;: &quot;rgb255&quot;, &quot;lineColor&quot;: null});&amp;#10;    hole_stimuli.push(circle);&amp;#10;}&amp;#10;hole_labels = [];&amp;#10;for (var i, _pj_c = 0, _pj_a = util.range(NUM_DISTRACTORS), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    i = _pj_a[_pj_c];&amp;#10;    angle = (np.pi - (((2 * np.pi) * i) / NUM_DISTRACTORS));&amp;#10;    x = (ring_center[0] + (ring_radius * np.cos(angle)));&amp;#10;    y = (ring_center[1] + (ring_radius * np.sin(angle)));&amp;#10;    label = new visual.TextStim(psychoJS.window, {&quot;text&quot;: i.toString(), &quot;pos&quot;: [x, y], &quot;height&quot;: 0.02, &quot;color&quot;: &quot;white&quot;, &quot;bold&quot;: true});&amp;#10;    hole_labels.push(label);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="setup_ring" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="rr_maxforce">
+      <RoutineSettingsComponent name="rr_maxforce" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_maxforce" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="maxforce_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Initialize value for maximum voluntary contraction (MVC)&amp;#10;mvc = 0" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="mvc = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="cur_mvc = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Initialize current value of MVC&amp;#10;cur_mvc = maxforce_force.whiteForce = 0&amp;#10;&amp;#10;# Improve display appearance&amp;#10;maxforce_display.alignText = &quot;left&quot;&amp;#10;maxforce_display.bold = True" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Update current MVC value based on dynamometer measurement&amp;#10;cur_mvc = max(cur_mvc, maxforce_force.whiteForce)&amp;#10;&amp;#10;# Update MVC only if we are in a calibration trial&amp;#10;if cond_maxforce_type == &quot;calibration&quot;:&amp;#10;    mvc = max(mvc, cur_mvc)&amp;#10;&amp;#10;# Display text&amp;#10;maxforce_display_text = (&amp;#10;    f&quot;============ TRIAL INFO ============\n&quot;&amp;#10;    f&quot;Trial Type:        {cond_maxforce_type}\n&quot;&amp;#10;    f&quot;Current Force:     {maxforce_force.whiteForce:.2f} N\n&quot;&amp;#10;    f&quot;MVC (cur / max):   {cur_mvc:.2f} / {mvc:.2f} N\n&quot;&amp;#10;    f&quot;====================================\n&quot;&amp;#10;)" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="console.log(`Maximum force across all experimental trials: ${mvc}`);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="maxforce_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <ApparatusLEDComponent name="maxforce_lights" plugin="psychopy-apparatus">
+        <Param val="apparatus" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="lightColors"/>
+        <Param val="&quot;all&quot;" valType="code" updates="constant" name="lightHoles"/>
+        <Param val="maxforce_lights" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.5" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnRoutineEnd"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnStop"/>
+      </ApparatusLEDComponent>
+      <ApparatusForceComponent name="maxforce_force" plugin="psychopy-apparatus">
+        <Param val="white" valType="str" updates="None" plugin="psychopy-apparatus" name="device"/>
+        <Param val="apparatus" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="both" valType="str" updates="None" name="dynamometer"/>
+        <Param val="False" valType="code" updates="None" plugin="psychopy-apparatus" name="endRoutineOnResponse"/>
+        <Param val="maxforce_force" valType="code" updates="None" name="name"/>
+        <Param val="60" valType="code" updates="None" name="rate"/>
+        <Param val="&quot;test&quot;" valType="code" updates="None" name="rawDataId"/>
+        <Param val="True" valType="code" updates="None" name="saveRawData"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.5" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </ApparatusForceComponent>
+      <TextComponent name="maxforce_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Courier New" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="maxforce_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$maxforce_display_text" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="rr_target">
+      <RoutineSettingsComponent name="rr_target" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_target" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="target_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# ===== CONDITION SETUP =====&amp;#10;&amp;#10;# Get data for current block and trial&amp;#10;cur_physical_demand_level  = blocks[oo_block.thisN][oo_level.thisN]['physical_demand_level']&amp;#10;cur_cognitive_demand_level = blocks[oo_block.thisN][oo_level.thisN]['cognitive_demand_level']&amp;#10;cur_target_color_rgb255    = blocks[oo_block.thisN][oo_level.thisN]['target_color_rgb255']&amp;#10;&amp;#10;# ===== PERFORMANCE SETUP =====&amp;#10;&amp;#10;# Reset hits/misses/fa/cr for dprime calculation later in slider Routine&amp;#10;hits = misses = false_alarms = correct_rejections = 0&amp;#10;&amp;#10;# =============================================================================&amp;#10;# AUDIO - BEGIN ROUTINE&amp;#10;# =============================================================================&amp;#10;with _state_lock:&amp;#10;    _target_amp  = 0.0&amp;#10;    _target_freq = FREQ_LOW&amp;#10;&amp;#10;targetForce     = cur_physical_demand_level * mvc&amp;#10;lower_threshold = max(targetForce - TOLERANCE, 0)&amp;#10;upper_threshold = targetForce + TOLERANCE&amp;#10;&amp;#10;toneState    = 0&amp;#10;_lastSwitchT = -1e9&amp;#10;_last_beep_t = -1e9  # tracks last beep time&amp;#10;&amp;#10;&amp;#10;# ===== DISPLAY SETUP =====&amp;#10;&amp;#10;target_display.alignText = &quot;left&quot;&amp;#10;target_display.bold = True&amp;#10;cur_target_color_name = COLOR_NAMES.get(tuple(cur_target_color_rgb255), &quot;Unknown&quot;)&amp;#10;&amp;#10;# Color the display circle&amp;#10;for i, circle in enumerate(hole_stimuli):&amp;#10;    circle.fillColor = cur_target_color_rgb255&amp;#10;&amp;#10;# ===== DATA DUMPING =====&amp;#10;pd.DataFrame(rows).to_csv(thisExp.dataFileName + '_design.csv', index=False)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# =============================================================================&amp;#10;# AUDIO - EACH FRAME&amp;#10;# =============================================================================&amp;#10;if target_force.whiteForce is not None:&amp;#10;    if target_force.whiteForce &gt; upper_threshold:&amp;#10;        proposed = 2&amp;#10;    elif target_force.whiteForce &lt; lower_threshold:&amp;#10;        proposed = 1&amp;#10;    else:&amp;#10;        proposed = 0&amp;#10;&amp;#10;    if proposed != toneState and (t - _lastSwitchT) &gt;= STATE_HOLD:&amp;#10;        toneState    = proposed&amp;#10;        _lastSwitchT = t&amp;#10;        if toneState == 2:&amp;#10;            freq, amp = FREQ_HIGH, AMP_MAX&amp;#10;        elif toneState == 1:&amp;#10;            freq, amp = FREQ_LOW, AMP_MAX&amp;#10;        else:&amp;#10;            freq, amp = FREQ_LOW, 0.0&amp;#10;        with _state_lock:&amp;#10;            _target_freq = freq&amp;#10;            _target_amp  = amp&amp;#10;else:&amp;#10;    print(&quot;Force is None!&quot;)&amp;#10;&amp;#10;# Create the target display text&amp;#10;if target_force.whiteForce &gt; upper_threshold:&amp;#10;    deviation_symbol = &quot;\u2191\u2191\u2191&quot;  # ↑&amp;#10;elif target_force.whiteForce &lt; lower_threshold:&amp;#10;    deviation_symbol = &quot;\u2193\u2193\u2193&quot;  # ↓&amp;#10;else:&amp;#10;    deviation_symbol = &quot;\u2013\u2013\u2013&quot;  # – (on target)&amp;#10;&amp;#10;target_display_text = (&amp;#10;    f&quot;============ TRIAL INFO ============\n&quot;&amp;#10;    f&quot;Target Color:      {cur_target_color_name}\n&quot;&amp;#10;    f&quot;Physical demand:   {cur_physical_demand_level}\n&quot;&amp;#10;    f&quot;Cognitive demand:  {cur_cognitive_demand_level}\n&quot;&amp;#10;    f&quot;------------------------------------\n&quot;&amp;#10;    f&quot;MVC:               {mvc:&gt;4.0f} N\n&quot;&amp;#10;    f&quot;Target:            {lower_threshold:&gt;3.0f} \u007C {targetForce:&gt;3.0f} \u007C {upper_threshold:&gt;3.0f} N\n&quot;&amp;#10;    f&quot;Force:                   {target_force.whiteForce:&gt;3.0f} N\n&quot;&amp;#10;    f&quot;Deviation:         {deviation_symbol}\n&quot;&amp;#10;    f&quot;====================================\n&quot;&amp;#10;)&amp;#10;&amp;#10;# Display monitoring circle&amp;#10;for circle, label in zip(hole_stimuli, hole_labels):&amp;#10;    circle.draw()&amp;#10;    label.draw()" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="target_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <ApparatusLEDComponent name="target_lights" plugin="psychopy-apparatus">
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="" valType="color" updates="constant" plugin="psychopy-apparatus" name="holeColor"/>
+        <Param val="'none'" valType="code" updates="constant" plugin="psychopy-apparatus" name="holes"/>
+        <Param val="$cur_target_color_rgb255" valType="color" updates="set every repeat" name="lightColors"/>
+        <Param val="&quot;inner&quot;" valType="code" updates="constant" name="lightHoles"/>
+        <Param val="target_lights" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnRoutineEnd"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnStop"/>
+      </ApparatusLEDComponent>
+      <ApparatusForceComponent name="target_force" plugin="psychopy-apparatus">
+        <Param val="white" valType="str" updates="None" plugin="psychopy-apparatus" name="device"/>
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="both" valType="str" updates="None" name="dynamometer"/>
+        <Param val="False" valType="code" updates="None" plugin="psychopy-apparatus" name="endRoutineOnResponse"/>
+        <Param val="target_force" valType="code" updates="None" name="name"/>
+        <Param val="50" valType="code" updates="None" name="rate"/>
+        <Param val="target_force" valType="code" updates="None" name="rawDataId"/>
+        <Param val="True" valType="code" updates="None" name="saveRawData"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </ApparatusForceComponent>
+      <TextComponent name="target_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Courier New" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="target_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="3.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$target_display_text" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="rr_trial">
+      <RoutineSettingsComponent name="rr_trial" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_trial" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="trial_color_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# ===== CONDITION SETUP =====&amp;#10;cur_palette             = blocks[oo_block.thisN][oo_level.thisN]['palettes'][oo_palette.thisN]&amp;#10;cur_palette_has_target  = blocks[oo_block.thisN][oo_level.thisN]['palette_has_target'][oo_palette.thisN]&amp;#10;cur_palette_target_hole = blocks[oo_block.thisN][oo_level.thisN]['palette_target_hole'][oo_palette.thisN]&amp;#10;&amp;#10;prev_reed_holes = None&amp;#10;prev_reed_actions = None&amp;#10;&amp;#10;&amp;#10;# =============================================================================&amp;#10;# AUDIO - BEGIN ROUTINE&amp;#10;# =============================================================================&amp;#10;with _state_lock:&amp;#10;    _target_amp  = 0.0&amp;#10;    _target_freq = FREQ_LOW&amp;#10;&amp;#10;targetForce     = cur_physical_demand_level * mvc&amp;#10;lower_threshold = max(targetForce - TOLERANCE, 0)&amp;#10;upper_threshold = targetForce + TOLERANCE&amp;#10;&amp;#10;toneState    = 0&amp;#10;_lastSwitchT = -1e9&amp;#10;_last_beep_t = -1e9  # tracks last beep time&amp;#10;&amp;#10;&amp;#10;# ===== DISPLAY SETUP =====&amp;#10;&amp;#10;trial_display.alignText = &quot;left&quot;&amp;#10;trial_display.bold = True&amp;#10;&amp;#10;# Color the display circle&amp;#10;for i, circle in enumerate(hole_stimuli):&amp;#10;    circle.fillColor = cur_palette[i]" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# =============================================================================&amp;#10;# AUDIO - EACH FRAME&amp;#10;# =============================================================================&amp;#10;if trial_force.whiteForce is not None:&amp;#10;    if trial_force.whiteForce &gt; upper_threshold:&amp;#10;        proposed = 2&amp;#10;    elif trial_force.whiteForce &lt; lower_threshold:&amp;#10;        proposed = 1&amp;#10;    else:&amp;#10;        proposed = 0&amp;#10;&amp;#10;    if proposed != toneState and (t - _lastSwitchT) &gt;= STATE_HOLD:&amp;#10;        toneState    = proposed&amp;#10;        _lastSwitchT = t&amp;#10;        if toneState == 2:&amp;#10;            freq, amp = FREQ_HIGH, AMP_MAX&amp;#10;        elif toneState == 1:&amp;#10;            freq, amp = FREQ_LOW, AMP_MAX&amp;#10;        else:&amp;#10;            freq, amp = FREQ_LOW, 0.0&amp;#10;        with _state_lock:&amp;#10;            _target_freq = freq&amp;#10;            _target_amp  = amp&amp;#10;else:&amp;#10;    print(&quot;Force is None!&quot;)&amp;#10;&amp;#10;&amp;#10;# ===== DISPLAY SETUP =====&amp;#10;if trial_force.whiteForce &gt; upper_threshold:&amp;#10;    deviation_symbol = &quot;\u2191\u2191\u2191&quot;  # ↑&amp;#10;elif trial_force.whiteForce &lt; lower_threshold:&amp;#10;    deviation_symbol = &quot;\u2193\u2193\u2193&quot;  # ↓&amp;#10;else:&amp;#10;    deviation_symbol = &quot;\u2013\u2013\u2013&quot;  # – (on target)&amp;#10;&amp;#10;trial_display_text = (&amp;#10;    f&quot;============ TRIAL INFO ============\n&quot;&amp;#10;    f&quot;Target Color:      {cur_target_color_name}\n&quot;&amp;#10;    f&quot;Physical demand:   {cur_physical_demand_level}\n&quot;&amp;#10;    f&quot;Cognitive demand:  {cur_cognitive_demand_level}\n&quot;&amp;#10;    f&quot;------------------------------------\n&quot;&amp;#10;    f&quot;MVC:               {mvc:&gt;4.0f} N\n&quot;&amp;#10;    f&quot;Target:            {lower_threshold:&gt;3.0f} \u007C {targetForce:&gt;3.0f} \u007C {upper_threshold:&gt;3.0f} N\n&quot;&amp;#10;    f&quot;Force:                   {trial_force.whiteForce:&gt;3.0f} N\n&quot;&amp;#10;    f&quot;Deviation:         {deviation_symbol}\n&quot;&amp;#10;    f&quot;====================================\n&quot;&amp;#10;)&amp;#10;&amp;#10;for circle, label in zip(hole_stimuli, hole_labels):&amp;#10;    circle.draw()&amp;#10;    label.draw()&amp;#10;&amp;#10;# Highlights reed contacts&amp;#10;last_selected = trial_reed.reedHoles[-1] if trial_reed.reedHoles else None&amp;#10;&amp;#10;for i, (circle, label) in enumerate(zip(hole_stimuli, hole_labels)):&amp;#10;    # target highlight&amp;#10;    if cur_palette_has_target and i == cur_palette_target_hole:&amp;#10;        circle.lineColor = 'yellow'&amp;#10;        circle.lineWidth = 3&amp;#10;    # last selected highlight&amp;#10;    elif i == last_selected:&amp;#10;        circle.lineColor = 'white'&amp;#10;        circle.lineWidth = 3&amp;#10;    else:&amp;#10;        circle.lineColor = None&amp;#10;    circle.draw()&amp;#10;    label.draw()" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="# Determine d-prime metrics&amp;#10;is_hit               = int(cur_palette_has_target and cur_palette_target_hole in trial_reed.reedHoles)&amp;#10;is_false_alarm       = int(not cur_palette_has_target and len(trial_reed.reedHoles) &gt; 0)&amp;#10;is_miss              = int(cur_palette_has_target and cur_palette_target_hole not in trial_reed.reedHoles)&amp;#10;is_correct_rejection = int(not cur_palette_has_target and len(trial_reed.reedHoles) == 0)&amp;#10;&amp;#10;# Accumulate d-prime metrics&amp;#10;hits               += is_hit&amp;#10;false_alarms       += is_false_alarm&amp;#10;misses             += is_miss&amp;#10;correct_rejections += is_correct_rejection&amp;#10;&amp;#10;# Get the first insertion event (action == 1) across all reed events&amp;#10;first_insert_idx = next((h for h, a in zip(trial_reed.reedHoles, trial_reed.reedActions) if a == 1), None)&amp;#10;first_insert_rt  = next((t for t, a in zip(trial_reed.reedTimes,  trial_reed.reedActions) if a == 1), None)&amp;#10;&amp;#10;# Write hole-level data: mark which hole was first selected and its RT&amp;#10;for hole_idx in range(NUM_DISTRACTORS):&amp;#10;    i = row_index[(oo_block.thisN, oo_level.thisN, oo_palette.thisN, hole_idx)]&amp;#10;    rows[i][&quot;is_selected&quot;] = int(hole_idx == first_insert_idx)&amp;#10;    rows[i][&quot;selected_rt&quot;] = first_insert_rt if hole_idx == first_insert_idx else None&amp;#10;&amp;#10;first_insert_rt = next((t for t, a in zip(trial_reed.reedTimes, trial_reed.reedActions) if a == 1), None)&amp;#10;rows[i][&quot;selected_rt&quot;] = first_insert_rt&amp;#10;&amp;#10;# Write palette-level data&amp;#10;for i in palette_row_index[(oo_block.thisN, oo_level.thisN, oo_palette.thisN)]:&amp;#10;    rows[i][&quot;is_hit&quot;]               = is_hit&amp;#10;    rows[i][&quot;is_false_alarm&quot;]       = is_false_alarm&amp;#10;    rows[i][&quot;is_miss&quot;]              = is_miss&amp;#10;    rows[i][&quot;is_correct_rejection&quot;] = is_correct_rejection&amp;#10;&amp;#10;#Daten anhängen&amp;#10;# paletteResponseList = sorted(paletteResponses)&amp;#10;# currentLoop.addData('paletteResponseCount', len(paletteResponseList))&amp;#10;# currentLoop.addData('paletteResponses', paletteResponseList)&amp;#10;# currentLoop.addData('paletteResponseEvents', paletteResponseEvents)&amp;#10;# currentLoop.addData('hit', hit)&amp;#10;# currentLoop.addData('falsealarm', fa)&amp;#10;# currentLoop.addData('correct rejection', cr)&amp;#10;# currentLoop.addData('miss', miss)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="trial_color_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <ApparatusReedComponent name="trial_reed" plugin="psychopy-apparatus">
+        <Param val="apparatus" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="endRoutineOnResponse"/>
+        <Param val="'all'" valType="code" updates="None" plugin="psychopy-apparatus" name="holes"/>
+        <Param val="trial_reed" valType="code" updates="None" name="name"/>
+        <Param val="100" valType="code" updates="None" name="rate"/>
+        <Param val="&quot;inner&quot;" valType="code" updates="set every repeat" name="reedHoles"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="PALETTE_DURATION_SEC + 1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </ApparatusReedComponent>
+      <ApparatusLEDComponent name="trial_lights" plugin="psychopy-apparatus">
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="black" valType="color" updates="constant" plugin="psychopy-apparatus" name="holeColor"/>
+        <Param val="'none'" valType="code" updates="constant" plugin="psychopy-apparatus" name="holes"/>
+        <Param val="$cur_palette" valType="color" updates="set every repeat" name="lightColors"/>
+        <Param val="&quot;inner&quot;" valType="code" updates="constant" name="lightHoles"/>
+        <Param val="trial_lights" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="PALETTE_DURATION_SEC" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnRoutineEnd"/>
+        <Param val="True" valType="code" updates="None" name="turnOffOnStop"/>
+      </ApparatusLEDComponent>
+      <ApparatusForceComponent name="trial_force" plugin="psychopy-apparatus">
+        <Param val="white" valType="str" updates="None" plugin="psychopy-apparatus" name="device"/>
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="both" valType="str" updates="None" name="dynamometer"/>
+        <Param val="False" valType="code" updates="None" plugin="psychopy-apparatus" name="endRoutineOnResponse"/>
+        <Param val="trial_force" valType="code" updates="None" name="name"/>
+        <Param val="50" valType="code" updates="None" name="rate"/>
+        <Param val="trial_force" valType="code" updates="None" name="rawDataId"/>
+        <Param val="True" valType="code" updates="None" name="saveRawData"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="PALETTE_DURATION_SEC + 1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </ApparatusForceComponent>
+      <TextComponent name="trial_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Courier New" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="trial_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="PALETTE_DURATION_SEC + 1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$trial_display_text" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="rr_rating">
+      <RoutineSettingsComponent name="rr_rating" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_rating" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <SliderComponent name="rating_slider" plugin="None">
+        <Param val="White" valType="color" updates="constant" name="borderColor"/>
+        <Param val="LightGray" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="Red" valType="color" updates="constant" name="fillColor"/>
+        <Param val="False" valType="bool" updates="constant" name="flip"/>
+        <Param val="Noto Sans" valType="str" updates="constant" name="font"/>
+        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="1" valType="num" updates="constant" name="granularity"/>
+        <Param val="" valType="code" updates="None" name="initVal"/>
+        <Param val="(0,1,2,3,4,5,6,7,8,9,10)" valType="list" updates="constant" name="labels"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="rating_slider" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, -0.2)" valType="list" updates="constant" name="pos"/>
+        <Param val="False" valType="bool" updates="constant" name="readOnly"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(1.0, 0.1)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="condition" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="constant" name="storeHistory"/>
+        <Param val="True" valType="bool" updates="constant" name="storeRating"/>
+        <Param val="True" valType="bool" updates="constant" name="storeRatingTime"/>
+        <Param val="[]" valType="list" updates="constant" name="styleTweaks"/>
+        <Param val="rating" valType="str" updates="constant" name="styles"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="(0,1,2,3,4,5,6,7,8,9,10)" valType="list" updates="constant" name="ticks"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </SliderComponent>
+      <KeyboardComponent name="rating_keyboard" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="rating_keyboard" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <TextComponent name="rating_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="rating_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$cond_slider" valType="str" updates="set every repeat" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <CodeComponent name="rating_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="# Write trial-level data&amp;#10;for palette_idx in range(NUM_PALETTES):&amp;#10;    for i in palette_row_index[(oo_block.thisN, oo_level.thisN, palette_idx)]:&amp;#10;        if cond_slider == &quot;cognitive&quot;:&amp;#10;            rows[i][&quot;rpe_cognitive&quot;] = rating_slider.getRating()&amp;#10;        elif cond_slider == &quot;physical&quot;:&amp;#10;            rows[i][&quot;rpe_physical&quot;] = rating_slider.getRating()" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="rating_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="rr_countdown">
+      <RoutineSettingsComponent name="rr_countdown" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_countdown" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="countdown_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="counter_index = inner_holes.length;&amp;#10;counter_last_update = null;&amp;#10;counter_interval = 0.5;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if ((counter_index &gt; 0)) {&amp;#10;    active_holes = counter_holes.slice(0, counter_index);&amp;#10;    mvc_counter_led.setLights(active_holes, new Color(&quot;white&quot;));&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Countdown setup&amp;#10;cur_countdown_idx = len(INNER_HOLES)&amp;#10;cur_countdown_last_update_sec = None&amp;#10;&amp;#10;# DEBUG&amp;#10;countdown_lights.turnOffLights(&quot;all&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Check if it's time to update the countdown&amp;#10;if cur_countdown_last_update_sec is None:&amp;#10;    cur_countdown_last_update_sec = t  # t is the routine timer&amp;#10;&amp;#10;if t - cur_countdown_last_update_sec &gt;= COUNTDOWN_STEP_SEC:&amp;#10;    if cur_countdown_idx &gt;= 0:&amp;#10;        # Turn off the current light&amp;#10;        countdown_lights.turnOffLights(cur_countdown_idx)&amp;#10;    else:&amp;#10;        continueRoutine = False&amp;#10;    &amp;#10;    # Decrease the number of active lights&amp;#10;    cur_countdown_idx -= 1&amp;#10;    cur_countdown_last_update_sec = t" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if ((counter_last_update === null)) {&amp;#10;    counter_last_update = t;&amp;#10;}&amp;#10;if (((t - counter_last_update) &gt;= counter_interval)) {&amp;#10;    counter_index -= 1;&amp;#10;    counter_last_update = t;&amp;#10;    if ((counter_index &gt;= 0)) {&amp;#10;        mvc_counter_led.turnOffLights([counter_holes[counter_index]]);&amp;#10;    } else {&amp;#10;        continueRoutine = false;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="countdown_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <ApparatusLEDComponent name="countdown_lights" plugin="psychopy-apparatus">
+        <Param val="apparatus" valType="device" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="4" valType="code" updates="None" name="durationEstim"/>
+        <Param val="black" valType="color" updates="constant" plugin="psychopy-apparatus" name="holeColor"/>
+        <Param val="'none'" valType="code" updates="constant" plugin="psychopy-apparatus" name="holes"/>
+        <Param val="white" valType="color" updates="set every repeat" name="lightColors"/>
+        <Param val="&quot;inner&quot;" valType="code" updates="set every repeat" name="lightHoles"/>
+        <Param val="countdown_lights" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="4" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="False" valType="code" updates="None" name="turnOffOnRoutineEnd"/>
+        <Param val="False" valType="code" updates="None" name="turnOffOnStop"/>
+      </ApparatusLEDComponent>
+      <TextComponent name="countdown_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.15" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="countdown_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$cur_countdown_idx + 1" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="rr_domain">
+      <RoutineSettingsComponent name="rr_domain" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_domain" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="domain_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Define shared resources outside the condition&amp;#10;#def build_level_color_map(levels, num_blocks, colors):&amp;#10;#    order_per_block = {}&amp;#10;#    for block in range(num_blocks):&amp;#10;#        lvls = levels.copy()&amp;#10;#        random.shuffle(lvls)&amp;#10;#        order_per_block[block] = lvls&amp;#10;&amp;#10;#    color_map = {}&amp;#10;#    for lvl in levels:&amp;#10;#        shuffled = random.sample(colors, num_blocks)&amp;#10;#        color_map[lvl] = {block: shuffled[block] for block in range(NUM_BLOCKS)}&amp;#10;&amp;#10;#    return order_per_block, color_map&amp;#10;&amp;#10;#def print_design_check(label, order_per_block, color_map):&amp;#10;#    print(f&quot;\n===== {label} DESIGN CHECK =====&quot;)&amp;#10;#    for block, levels in order_per_block.items():&amp;#10;#        print(f&quot;\nBlock {block + 1} order:&quot;)&amp;#10;#        for lvl in levels:&amp;#10;#            print(f&quot;  Level {lvl:.3f} -&gt; Color {color_map[lvl][block]}&quot;)&amp;#10;#    print(&quot;=&quot; * 34 + &quot;\n&quot;)&amp;#10;&amp;#10;#if domain == 'cognitive':&amp;#10;#    levels = np.linspace(DELTA_E_MIN, DELTA_E_MAX, NUM_LEVELS).tolist()&amp;#10;#    order_per_block, color_map = build_level_color_map(levels, NUM_BLOCKS, TARGET_COLORS)&amp;#10;#    print_design_check(&quot;DELTA E&quot;, order_per_block, color_map)&amp;#10;    # deltaE_order_per_block = order_per_block&amp;#10;    # deltaE_color_map = color_map&amp;#10;#    deltaE = DELTA_E_PHYSICAL&amp;#10;#if domain == 'physical':&amp;#10;#    levels = np.linspace(PERCENT_MVC_MIN, PERCENT_MVC_MAX, NUM_LEVELS).tolist()&amp;#10;#    order_per_block, color_map = build_level_color_map(levels, NUM_BLOCKS, TARGET_COLORS)&amp;#10;#    print_design_check(&quot;MVC&quot;, order_per_block, color_map)&amp;#10;    # mvc_order_per_block = order_per_block&amp;#10;    # mvc_color_map = color_map&amp;#10;    # mvc_level = PERCENT_MVC_COGNITIVE" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="domain_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="rr_dprime">
+      <RoutineSettingsComponent name="rr_dprime" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_dprime" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="feedback_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="#dprime Calculation&amp;#10;H = hits + misses&amp;#10;F = false_alarms + correct_rejections&amp;#10;&amp;#10;hit_rate = (hits+0.5)/(H+1) if H&gt;0 else 0.5&amp;#10;fa_rate = (false_alarms+0.5)/(F+1) if F&gt;0 else 0.5&amp;#10;d_prime = norm.ppf(hit_rate) - norm.ppf(fa_rate)&amp;#10;&amp;#10;currentLoop.addData('d_prime', d_prime)&amp;#10;&amp;#10;# Write trial-level data&amp;#10;for palette_idx in range(NUM_PALETTES):&amp;#10;    for i in palette_row_index[(oo_block.thisN, oo_level.thisN, palette_idx)]:&amp;#10;        rows[i][&quot;hits&quot;]               = hits&amp;#10;        rows[i][&quot;false_alarms&quot;]       = false_alarms&amp;#10;        rows[i][&quot;misses&quot;]             = misses&amp;#10;        rows[i][&quot;correct_rejections&quot;] = correct_rejections&amp;#10;        rows[i][&quot;d_prime&quot;]            = d_prime&amp;#10;&amp;#10;# ===== DISPLAY SETUP =====&amp;#10;&amp;#10;feedback_display.alignText = &quot;left&quot;&amp;#10;feedback_display.bold = True&amp;#10;&amp;#10;feedback_display_text = (&amp;#10;    f&quot;=========== FEEDBACK ===========\n&quot;&amp;#10;    f&quot;d-prime:           {d_prime:.2f}\n&quot;&amp;#10;    f&quot;Hits:              {hits}\n&quot;&amp;#10;    f&quot;Misses:            {misses}\n&quot;&amp;#10;    f&quot;False Alarms:      {false_alarms}\n&quot;&amp;#10;    f&quot;Correct Rej.:      {correct_rejections}\n&quot;&amp;#10;    f&quot;================================\n&quot;&amp;#10;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="feedback_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <KeyboardComponent name="feedback_keyboard" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="feedback_keyboard" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <TextComponent name="feedback_display" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Courier New" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="feedback_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$feedback_display_text" valType="str" updates="set every repeat" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="rr_mvc">
+      <RoutineSettingsComponent name="rr_mvc" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_mvc" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="mvc_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="mvc_display.alignText = &quot;left&quot;;&amp;#10;mvc_display.bold = true;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Improve display appearance&amp;#10;mvc_display.alignText = &quot;left&quot;&amp;#10;mvc_display.bold = True" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="mvc_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <TextComponent name="mvc_display" plugin="None">
+        <Param val="$(-1.0000, -0.2157, -1.0000)" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Courier New" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="mvc_display" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$maxforce_display_text" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <ButtonComponent name="mvc_continue" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="True" valType="bool" updates="constant" name="bold"/>
+        <Param val="None" valType="color" updates="constant" name="borderColor"/>
+        <Param val="0" valType="num" updates="constant" name="borderWidth"/>
+        <Param val="" valType="extendedCode" updates="constant" name="callback"/>
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$(-1.0000, -0.2157, -1.0000)" valType="color" updates="constant" name="fillColor"/>
+        <Param val="Arvo" valType="str" updates="constant" name="font"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="False" valType="bool" updates="constant" name="italic"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="mvc_continue" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="constant" name="oncePerClick"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="" valType="num" updates="constant" name="padding"/>
+        <Param val="(0, -0.3)" valType="list" updates="constant" name="pos"/>
+        <Param val="every click" valType="str" updates="None" name="save"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.25, 0.1)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Weiter" valType="str" updates="constant" name="text"/>
+        <Param val="button onset" valType="str" updates="constant" name="timeRelativeTo"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ButtonComponent>
+    </Routine>
+    <Routine name="rr_start">
+      <RoutineSettingsComponent name="rr_start" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="rr_start" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="start_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="start_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Fertig - es kann losgehen!" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <ButtonComponent name="start_button" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="True" valType="bool" updates="constant" name="bold"/>
+        <Param val="None" valType="color" updates="constant" name="borderColor"/>
+        <Param val="0" valType="num" updates="constant" name="borderWidth"/>
+        <Param val="" valType="extendedCode" updates="constant" name="callback"/>
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="$(-1.0000, -0.2157, -1.0000)" valType="color" updates="constant" name="fillColor"/>
+        <Param val="Arvo" valType="str" updates="constant" name="font"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="False" valType="bool" updates="constant" name="italic"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="start_button" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="constant" name="oncePerClick"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="" valType="num" updates="constant" name="padding"/>
+        <Param val="(0, -0.2)" valType="list" updates="constant" name="pos"/>
+        <Param val="every click" valType="str" updates="None" name="save"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.25, 0.1)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="START" valType="str" updates="constant" name="text"/>
+        <Param val="button onset" valType="str" updates="constant" name="timeRelativeTo"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ButtonComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="rr_setup"/>
+    <Routine name="rr_start"/>
+    <LoopInitiator loopType="TrialHandler" name="oo_mvc_type">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'cond_maxforce_type': 'practice', 'cond_num_maxforce': 1, 'cond_maxforce_duration': 450}, {'cond_maxforce_type': 'calibration', 'cond_num_maxforce': 2, 'cond_maxforce_duration': 45}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="oo_mvc_type.xlsx" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="oo_mvc_type" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <LoopInitiator loopType="TrialHandler" name="oo_mvc_rep">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'mvc_trial_nrepeat': 1, 'mvc_trial_duration': None}, {'mvc_trial_nrepeat': 3, 'mvc_trial_duration': 45}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="cond_num_maxforce" valType="code"/>
+      <Param name="name" updates="None" val="oo_mvc_rep" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="rr_countdown"/>
+    <Routine name="rr_maxforce"/>
+    <Routine name="rr_mvc"/>
+    <LoopTerminator name="oo_mvc_rep"/>
+    <LoopTerminator name="oo_mvc_type"/>
+    <LoopInitiator loopType="TrialHandler" name="oo_block">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="NUM_BLOCKS" valType="code"/>
+      <Param name="name" updates="None" val="oo_block" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="rr_countdown"/>
+    <LoopInitiator loopType="TrialHandler" name="oo_level">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'cond_level_cognitive': 10, 'cond_level_physical': 0.1, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 10, 'cond_level_physical': 0.1, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 10, 'cond_level_physical': 0.1, 'cond_target_color_rgb255': [0, 255, 0]}, {'cond_level_cognitive': 20, 'cond_level_physical': 0.16, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 20, 'cond_level_physical': 0.16, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 20, 'cond_level_physical': 0.16, 'cond_target_color_rgb255': [0, 255, 0]}, {'cond_level_cognitive': 30, 'cond_level_physical': 0.22, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 30, 'cond_level_physical': 0.22, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 30, 'cond_level_physical': 0.22, 'cond_target_color_rgb255': [0, 255, 0]}, {'cond_level_cognitive': 40, 'cond_level_physical': 0.28, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 40, 'cond_level_physical': 0.28, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 40, 'cond_level_physical': 0.28, 'cond_target_color_rgb255': [0, 255, 0]}, {'cond_level_cognitive': 50, 'cond_level_physical': 0.34, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 50, 'cond_level_physical': 0.34, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 50, 'cond_level_physical': 0.34, 'cond_target_color_rgb255': [0, 255, 0]}, {'cond_level_cognitive': 60, 'cond_level_physical': 0.4, 'cond_target_color_rgb255': [0, 0, 255]}, {'cond_level_cognitive': 60, 'cond_level_physical': 0.4, 'cond_target_color_rgb255': [255, 0, 0]}, {'cond_level_cognitive': 60, 'cond_level_physical': 0.4, 'cond_target_color_rgb255': [0, 255, 0]}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="oo_level.xlsx" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="NUM_LEVELS" valType="code"/>
+      <Param name="name" updates="None" val="oo_level" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="rr_target"/>
+    <LoopInitiator loopType="TrialHandler" name="oo_palette">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="NUM_PALETTES" valType="code"/>
+      <Param name="name" updates="None" val="oo_palette" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="rr_trial"/>
+    <LoopTerminator name="oo_palette"/>
+    <Routine name="rr_dprime"/>
+    <LoopInitiator loopType="TrialHandler" name="oo_slider">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'cond_slider': 'cognitive'}, {'cond_slider': 'physical'}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="oo_slider.xlsx" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="oo_slider" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="rr_rating"/>
+    <LoopTerminator name="oo_slider"/>
+    <LoopTerminator name="oo_level"/>
+    <Routine name="blockBreak"/>
+    <LoopTerminator name="oo_block"/>
+    <Routine name="domainBreak"/>
+  </Flow>
+</PsychoPy2experiment>
