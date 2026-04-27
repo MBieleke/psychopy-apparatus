@@ -94,7 +94,7 @@ def _parse_colors(color_spec, holes_spec=None):
             return Color(color_val, space='rgb')
         elif isinstance(color_val, (list, tuple)):
             # Assume RGB format (0-1 or 0-255)
-            return Color(color_val, space='rgb255')
+            return Color(color_val, space='rgb')
         else:
             raise TypeError(
                 f"Invalid color type: {type(color_val).__name__}. "

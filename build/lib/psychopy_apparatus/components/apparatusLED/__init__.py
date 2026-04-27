@@ -110,8 +110,13 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
-        # update any parameters which need updating
-        # self.writeParamUpdates(buff, updateType="set every repeat")
+        # Only apply colors if at least one parameter is 'set every repeat'
+        if (self.params['lightHoles'].val != 'constant' or 
+            self.params['lightColors'].val != 'constant'):
+            code = (
+                "%(name)s.setLights(%(lightHoles)s, %(lightColors)s)\n"
+            )
+            buff.writeIndentedLines(code % self.params)
     
     def writeFrameCode(self, buff):
         """
@@ -122,47 +127,22 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
-
-        # update any parameters which need updating
-        self.writeParamUpdates(buff, updateType="set every frame")
+        # No frame-specific updates needed; holes and colors are set at routine start
+        # via writeParamUpdates() in writeRoutineStartCode()
         
-        # use the same principles again for last-frame-of-Component code
-        dedent = self.writeStartTestCode(buff)
-        # we only want the following code written if an if loop actually was opened, not if the start time is None! so make sure to use dedent as a boolean to avoid writing broken code
-        if dedent:
-            # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
-            if (self.params['lightHoles'].val != 'constant' or 
-                self.params['lightColors'].val != 'constant'):
-                code = (
-                    "%(name)s.setLights(%(lightHoles)s, %(lightColors)s)\n"
-                )
-            buff.writeIndentedLines(code % self.params)
-            # dedent after!
-            buff.setIndentLevel(-dedent, relative=True)
-
-        # use the same principle as we used for first-frame-of-Component code to add code which only runs while the Component is active
-        dedent = self.writeActiveTestCode(buff)
-        if dedent:
-            # Update force measurement data each frame
-            code = (
-                ""
-            )   
-            buff.writeIndentedLines(code % self.params)
-            # dedent after!
-            buff.setIndentLevel(-dedent, relative=True)
-
         # use the same principles again for last-frame-of-Component code
         dedent = self.writeStopTestCode(buff)
         if dedent:
             # aaaaaaand some extra code for when the Component stops
             code = (
                 "if %(turnOffOnStop)s:\n"
-                "   %(name)s.turnOffLights(%(lightHoles)s)\n"
+                "    print('turnOffOnStop in place!')\n"
+                "    %(name)s.turnOffLights(%(lightHoles)s)\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
             buff.setIndentLevel(-dedent, relative=True)
-
+    
     def writeRoutineEndCode(self, buff):
         """
         Write the Python code which is called at the end of this Component's Routine
@@ -179,6 +159,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "if %(turnOffOnRoutineEnd)s:\n"
+            "    print('turnOffOnRoutineEnd in place!')\n"
             "    %(name)s.turnOffLights(%(lightHoles)s)\n"
         )
         buff.writeIndentedLines(code % params)

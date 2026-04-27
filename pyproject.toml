@@ -12,7 +12,7 @@ authors = [
   { name = "Maik Bieleke", email = "maik.bieleke@uni-konstanz.de" },
 ]
 # a license tells other people how to use your code and protects you from stealing
-license = { text = "MIT" }
+license = "MIT"
 # add any packages which your plugin needs in order to run
 dependencies = []
 

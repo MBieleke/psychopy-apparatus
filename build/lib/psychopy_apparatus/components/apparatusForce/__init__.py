@@ -4,9 +4,9 @@ from pathlib import Path
 from psychopy_apparatus.components.apparatusDeviceBackend import ApparatusDeviceBackend
 from psychopy.experiment.devices import DeviceBackend
 
-class ApparatusReedComponent(BaseDeviceComponent):
+class ApparatusForceComponent(BaseDeviceComponent):
     """
-    Controls Apparatus reed measurement.
+    Controls Apparatus force measurement.
     """
     # mark it as coming from this plugin
     plugin = "psychopy-apparatus"
@@ -15,9 +15,9 @@ class ApparatusReedComponent(BaseDeviceComponent):
     # specify what category (or categories) to list this Component under in Builder
     categories = ['Apparatus']
     # path to this Component's icon file - ignoring the light/dark/classic folder and any @2x in the filename (PsychoPy will add these accordingly)
-    iconFile = Path(__file__).parent / "reed.png"
+    iconFile = Path(__file__).parent / "force.png"
     # Text to display when this Component is hovered over
-    tooltip = "Controls Apparatus reed measurement."
+    tooltip = "Controls Apparatus force measurement."
     # what is the earliest version of PsychoPy this Component works with?
     version = "0.0.1"
     # is this Component still in beta?
@@ -26,50 +26,47 @@ class ApparatusReedComponent(BaseDeviceComponent):
     def __init__(
         self, exp, parentName, 
         # basic
-        name = "apparatusReed",
-        startType = 'time (s)', startVal = 0.0,
-        stopType = 'duration (s)', stopVal = 1.0,
-        startEstim = '', durationEstim = '',
-        reedHoles = '"all"',
+        name = "apparatusForce",
         rate = 100,
-        endRoutineOnResponse = False,
+        dynamometer = "both",
+        saveRawData = True,
+        rawDataId = "",
         # device
         deviceLabel = "",
     ):
         # initialise the base component class
-        BaseDeviceComponent.__init__(
-            self, exp, parentName, name=name, 
-            startType = startType, startVal = startVal,
-            stopType = stopType, stopVal = stopVal,
-            startEstim = startEstim, durationEstim = durationEstim,
-            deviceLabel=deviceLabel)
+        BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         self.exp.requireImport("Apparatus", "psychopy_apparatus.hardware.apparatus")
+        self.exp.requireImport("os")
 
         # --- Params ---
 
         # appearance
         self.order += [
-            "reedHoles",
             "rate",
-            "endRoutineOnResponse"
+            "dynamometer",
+            "saveRawData",
+            "rawDataId"
         ]
-        self.params['reedHoles'] = Param(   
-            reedHoles, valType="code", inputType="single", categ="Basic",
-            label="Holes",
-            updates = 'constant',
-            allowedUpdates = ['constant', 'set every repeat'],
-            hint="Keywords: 'all', 'inner', 'outer', 'none' (MUST use quotes!). Or: 0, [0,1,2], $loopVar"
-        )
         self.params['rate'] = Param(
             rate, valType="code", inputType="single", categ="Basic",
             label="Rate (Hz)", hint="Sampling rate in Hz (e.g., 100 for 100 Hz)."
         )
-        self.params['endRoutineOnResponse'] = Param(
-            endRoutineOnResponse, valType="code", inputType="bool", categ="Basic",
-            label="End Routine On State Change", hint="If checked, the routine will end when any monitored hole changes state."
-        )   
+        self.params['dynamometer'] = Param(
+            dynamometer, valType="str", inputType="choice", categ="Basic",
+            allowedVals=["white", "blue", "both"],
+            label="Dynamometer", hint="Which dynamometer to measure: 'white' (right), 'blue' (left), or 'both'."
+        )
+        self.params['saveRawData'] = Param(
+            saveRawData, valType="code", inputType="bool", categ="Basic",
+            label="Save Raw Data", hint="If checked, save raw force samples and ADC counts to a long-format file per experiment."
+        )
+        self.params['rawDataId'] = Param(
+            rawDataId, valType="code", inputType="single", categ="Basic",
+            label="Raw Data Identifier", hint="Optional identifier to tag rows (string or variable)."
+        )
 
     def writeInitCode(self, buff):
         """
@@ -103,7 +100,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
             String buffer to write to, i.e. the .py file
         """
         # update any parameters which need updating
-        # self.writeParamUpdates(buff, updateType="set every repeat")
+        self.writeParamUpdates(buff, updateType="set every repeat")
         # aaaaand that's all you need! unless you want anything else to happen here - it's essentially the equivalent of the Begin Routine tab in a Code Component
     
     def writeFrameCode(self, buff):
@@ -122,10 +119,9 @@ class ApparatusReedComponent(BaseDeviceComponent):
         # we only want the following code written if an if loop actually was opened, not if the start time is None! so make sure to use dedent as a boolean to avoid writing broken code
         if dedent:
             # status setting is already written by writeStartTestCode, so here we can just worry about extra stuff
-            if (self.params['reedHoles'].val != 'constant'):
-                code = (
-                    "%(name)s.startReedMeasurement(%(rate)s, %(reedHoles)s)\n"
-                )
+            code = (
+                "%(name)s.startForceMeasurement(%(rate)s, %(dynamometer)s)\n"
+            )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
             buff.setIndentLevel(-dedent, relative=True)
@@ -133,12 +129,9 @@ class ApparatusReedComponent(BaseDeviceComponent):
         # # use the same principle as we used for first-frame-of-Component code to add code which only runs while the Component is active
         dedent = self.writeActiveTestCode(buff)
         if dedent:
-            # Update reed measurement data each frame
+            # Update force measurement data each frame
             code = (
-                "%(name)s.updateReedMeasurement()\n"
-                "if %(endRoutineOnResponse)s and len(%(name)s.reedTimes) > 0:\n"
-                "    %(name)s.stopReedMeasurement()\n"
-                "    continueRoutine = False\n"
+                "%(name)s.updateForceMeasurement()\n"
             )   
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -149,7 +142,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
         if dedent:
             # aaaaaaand some extra code for when the Component stops
             code = (
-                "%(name)s.stopReedMeasurement()\n"
+                "%(name)s.stopForceMeasurement()\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -164,34 +157,53 @@ class ApparatusReedComponent(BaseDeviceComponent):
         buff : 
             String buffer to write to, i.e. the .py file
         """
-        # Stop measurement if it's still running (ensures summary is populated)
-        code = (
-            "%(name)s.stopReedMeasurement()\n"
-        )
-        buff.writeIndentedLines(code % self.params)
-        
         # create a copy of params so that we can safely edit stuff
         params = self.params.copy()
         # add reference to the current loop (handy for data writing)
         params['currentLoop'] = self.currentLoop
+        params['parentName'] = self.parentName
         # store any data we'd like to store (start/stop are already handled)
         code = (
             "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
-            "%(currentLoop)s.addData('%(name)s.holes', %(reedHoles)s)\n"
-            "%(currentLoop)s.addData('%(name)s.reedTimes', %(name)s.reedTimes)\n"
-            "%(currentLoop)s.addData('%(name)s.reedHoles', %(name)s.reedHoles)\n"
-            "%(currentLoop)s.addData('%(name)s.reedActions', %(name)s.reedActions)\n"
-            "%(currentLoop)s.addData('%(name)s.reedSummary', %(name)s.reedSummary)\n"
-            "%(currentLoop)s.addData('%(name)s.reedCurrentStates', %(name)s.reedCurrentStates)\n"
-            "%(currentLoop)s.addData('%(name)s.reedActiveHoles', %(name)s.reedActiveHoles)\n"
-            "%(currentLoop)s.addData('%(name)s.reedNewInsertions', %(name)s.reedNewInsertions)\n"
-            "%(currentLoop)s.addData('%(name)s.reedNewRemovals', %(name)s.reedNewRemovals)\n"
-            "%(currentLoop)s.addData('%(name)s.reedLatestEvent', %(name)s.reedLatestEvent)\n"
-            "%(currentLoop)s.addData('%(name)s.reedFrameTimes', %(name)s.reedFrameTimes)\n"
-            "%(currentLoop)s.addData('%(name)s.reedFrameStates', %(name)s.reedFrameStates)\n"
-            "%(currentLoop)s.addData('%(name)s.reedFrameActiveHoles', %(name)s.reedFrameActiveHoles)\n"
+            "%(currentLoop)s.addData('%(name)s.dynamometer', %(dynamometer)s)\n"
+            "%(currentLoop)s.addData('%(name)s.maxWhiteForce', %(name)s.maxWhiteForce)\n"
+            "%(currentLoop)s.addData('%(name)s.maxBlueForce', %(name)s.maxBlueForce)\n"
+            "if %(saveRawData)s:\n"
+            "    _raw_path = thisExp.dataFileName + '_force_long.tsv'\n"
+            "    _write_header = not os.path.exists(_raw_path)\n"
+            "    _loop = %(currentLoop)s\n"
+            "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
+            "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
+            "    _identifier = str(%(rawDataId)s) if %(rawDataId)s is not None else ''\n"
+            "    _records = %(name)s.forceRows if hasattr(%(name)s, 'forceRows') else []\n"
+            "    _times = %(name)s.times\n"
+            "    _white = %(name)s.whiteForceValues\n"
+            "    _blue = %(name)s.blueForceValues\n"
+            "    _n = max(len(_times), len(_white), len(_blue))\n"
+            "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
+            "        if _write_header:\n"
+            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\twhite_time\tblue_time\ttime\twhite_force\tblue_force\twhite_force_raw_counts\tblue_force_raw_counts\\n')\n"
+            "        for _i, _record in enumerate(_records):\n"
+            "            _row = [\n"
+            "                expInfo.get(\"participant\", \"\"),\n"
+            "                expInfo.get(\"session\", \"\"),\n"
+            "                '%(parentName)s',\n"
+            "                '%(name)s',\n"
+            "                _trial_index,\n"
+            "                _trial_name,\n"
+            "                _identifier,\n"
+            "                _i,\n"
+            "                _record['white_time'],\n"
+            "                _record['blue_time'],\n"
+            "                _record['time'],\n"
+            "                _record['white_force'],\n"
+            "                _record['blue_force'],\n"
+            "                _record['white_force_raw_counts'] if _record['white_force_raw_counts'] is not None else '',\n"
+            "                _record['blue_force_raw_counts'] if _record['blue_force_raw_counts'] is not None else '',\n"
+            "            ]\n"
+            "            _f.write('\t'.join(str(_v) for _v in _row) + '\\n')\n"
         )
         buff.writeIndentedLines(code % params)
 
 # Register device backend for this component
-ApparatusReedComponent.registerBackend(ApparatusDeviceBackend)
+ApparatusForceComponent.registerBackend(ApparatusDeviceBackend)
