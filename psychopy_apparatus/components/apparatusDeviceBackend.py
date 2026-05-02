@@ -26,7 +26,7 @@ class ApparatusDeviceBackend(DeviceBackend):
         )
 
         self.params['baudrate'] = Param(
-            115200,
+            921600,
             valType="str",
             inputType="single",
             hint="Baudrate for the serial connection to Apparatus",

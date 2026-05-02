@@ -194,6 +194,7 @@ class Apparatus(AttributeGetSetMixin):
         self.reedNewInsertions = []  # Holes that changed to inserted in the latest update
         self.reedNewRemovals = []  # Holes that changed to removed in the latest update
         self.reedLatestEvent = None  # Most recent transition: {'time': t, 'hole': h, 'action': 0/1}
+        self.reedMeasurementStart = None  # Absolute time when measurement started (core.getTime())
         self.reedFrameTimes = []  # Per-frame timestamps for reed snapshots
         self.reedFrameStates = []  # Per-frame snapshots of reedCurrentStates
         self.reedFrameActiveHoles = []  # Per-frame snapshots of reedActiveHoles
@@ -581,6 +582,7 @@ class Apparatus(AttributeGetSetMixin):
         
         if success:
             self._reed_measuring = True
+            self.reedMeasurementStart = self._device.getClockTime()
             self.status = STARTED
             logging.info(f"Reed measurement started: {rate} Hz, monitoring holes {self._reed_monitored_holes}")
         else:
@@ -735,6 +737,20 @@ class Apparatus(AttributeGetSetMixin):
         to collect new reed sensor data from the device.
         """
         self._collectReedResponses()
+
+    @property
+    def reedTimesRelative(self):
+        """
+        Event timestamps relative to the start of the current measurement.
+        
+        Returns a list parallel to `reedTimes` and `reedActions` where each
+        value is the time (in seconds) between `reedMeasurementStart` and the
+        corresponding event.  Returns an empty list if no measurement has been
+        started yet.
+        """
+        if self.reedMeasurementStart is None:
+            return []
+        return [t - self.reedMeasurementStart for t in self.reedTimes]
 
     def startMeasurement(self, hole, method, light_feedback):
         """

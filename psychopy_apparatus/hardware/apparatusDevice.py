@@ -190,6 +190,10 @@ class ApparatusProtocol(Protocol):
         """Reset the internal timestamp clock."""
         self._clock.reset()
 
+    def get_clock_time(self):
+        """Return the current time on the internal timestamp clock."""
+        return self._clock.getTime()
+
 
 class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     """
@@ -670,6 +674,17 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         """
         if not self._simulate:
             self._protocol.reset_clock()
+
+    def getClockTime(self) -> float:
+        """
+        Return the current time on the device's internal timestamp clock.
+
+        This clock is the same one used to timestamp responses (``response.t``),
+        so values are directly comparable to ``reedTimes`` / ``forceTimes``.
+        """
+        if not self._simulate and self._protocol is not None:
+            return self._protocol.get_clock_time()
+        return 0.0
 
     def isSameDevice(self, other) -> bool:
         """

@@ -149,7 +149,8 @@ class ApparatusReedComponent(BaseDeviceComponent):
         if dedent:
             # aaaaaaand some extra code for when the Component stops
             code = (
-                "%(name)s.stopReedMeasurement()\n"
+                "if %(name)s._reed_measuring:"
+                "   %(name)s.stopReedMeasurement()\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -166,7 +167,8 @@ class ApparatusReedComponent(BaseDeviceComponent):
         """
         # Stop measurement if it's still running (ensures summary is populated)
         code = (
-            "%(name)s.stopReedMeasurement()\n"
+            "if %(name)s._reed_measuring:"
+            "   %(name)s.stopReedMeasurement()\n"
         )
         buff.writeIndentedLines(code % self.params)
         
@@ -178,7 +180,9 @@ class ApparatusReedComponent(BaseDeviceComponent):
         code = (
             "%(currentLoop)s.addData('%(name)s.rate', %(rate)s)\n"
             "%(currentLoop)s.addData('%(name)s.holes', %(reedHoles)s)\n"
+            "%(currentLoop)s.addData('%(name)s.reedMeasurementStart', %(name)s.reedMeasurementStart)\n"
             "%(currentLoop)s.addData('%(name)s.reedTimes', %(name)s.reedTimes)\n"
+            "%(currentLoop)s.addData('%(name)s.reedTimesRelative', %(name)s.reedTimesRelative)\n"
             "%(currentLoop)s.addData('%(name)s.reedHoles', %(name)s.reedHoles)\n"
             "%(currentLoop)s.addData('%(name)s.reedActions', %(name)s.reedActions)\n"
             "%(currentLoop)s.addData('%(name)s.reedSummary', %(name)s.reedSummary)\n"
