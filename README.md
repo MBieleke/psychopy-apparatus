@@ -69,7 +69,7 @@ Please cite this repositorium if you use the Apparatus in academic work.
 ### APA style
 
 ```text
-Albrecht, M., Heinzelmann, L., Tessari, R., & Bieleke, M. (2026). *PsychoPy Apparatus* (v1.0.0). Zenodo. <https://doi.org/10.5281/zenodo.20133062>
+Albrecht, M., Heinzelmann, L., Tessari, R., & Bieleke, M. (2026). PsychoPy Apparatus (v1.0.0). Zenodo. <https://doi.org/10.5281/zenodo.20133062>
 ```
 
 ### BibTeX
