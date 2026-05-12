@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "PsychoPy Apparatus"
+version: 1.0.0
+date-released: 2026-05-12
+repository-code: "https://github.com/MBieleke/psychopy-apparatus"
+license: MIT
+abstract: "Firmware and PsychoPy plugin to control the 'Apparatus,' a custom device for measuring and manipulating physical and cognitive effort."
+keywords:
+  - psychology
+  - experiment
+  - effort
+authors:
+  - family-names: "Bieleke"
+    given-names: "Maik"
+    orcid: "https://orcid.org/0000-0003-2586-1416"
+    affiliation: "University of Konstanz"
+  - family-names: "Heinzelmann"
+    given-names: "Lukas"
+    affiliation: "University of Konstanz"
+  - family-names: "Tessari"
+    given-names: "Ralf"
+    affiliation: "University of Konstanz"
+  - family-names: "Albrecht"
+    given-names: "Matthias"
+    orcid: "https://orcid.org/0000-0001-7444-6863"
+    affiliation: "University of Konstanz"

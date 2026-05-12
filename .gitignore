@@ -8,14 +8,10 @@ __pycache__/
 .codex/
 
 # Local experiment outputs
-experiments/experiment-1/data/
-experiments/application-note-opsec-pairing.md
-experiments/experiment-1/lib/
-experiments/experiment-1/experiment-1_lastrun.py
-experiments/tests/
+experiments/
+build/
 psychopy_apparatus.egg-info/
 psychopy_apparatus/hardware/__pycache__/
-README.md
 README.html
 firmware/esp_server_experimental3_modular/README.md
 /.tmp_compare
