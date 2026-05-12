@@ -2,7 +2,7 @@
 
 This plugin enables PsychoPy to operate the "Apparatus," a custom device designed for measuring and manipulating physical and cognitive effort in experimental settings.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/MBieleke/psychopy-apparatus/releases/tag/v1.0.0)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://github.com/MBieleke/psychopy-apparatus/releases/tag/v1.0.1)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/MBieleke/psychopy-apparatus/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.20133061.svg)](https://doi.org/10.5281/zenodo.20133061)
 [![Firmware](https://img.shields.io/badge/firmware-Arduino%20%7C%20ESP32-teal)](https://www.arduino.cc)
