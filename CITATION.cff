@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "PsychoPy Apparatus"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-05-12
 repository-code: "https://github.com/MBieleke/psychopy-apparatus"
 license: MIT
@@ -26,4 +26,4 @@ authors:
     given-names: "Maik"
     orcid: "https://orcid.org/0000-0003-2586-1416"
     affiliation: "University of Konstanz"
-doi: "10.5281/zenodo.20133062"
+doi: "10.5281/zenodo.20133061"

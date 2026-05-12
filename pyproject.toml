@@ -10,8 +10,8 @@ readme = "README.md"
 # contact information for yourself and anyone else who worked on the plugin 
 authors = [
   { name = "Matthias Albrecht", email = "matthias.albrecht@uni-konstanz.de" },
-  { name = "Lukas Heinzelmann", email = "lukas.heinzelmann@uni-konstanz.de" },
   { name = "Ralf Tessari", email = "ralf.tessari@uni-konstanz.de" },
+  { name = "Lukas Heinzelmann", email = "lukas.heinzelmann@uni-konstanz.de" },
   { name = "Maik Bieleke", email = "maik.bieleke@uni-konstanz.de" },
 
 ]
@@ -23,6 +23,7 @@ dependencies = []
 [project.urls]
 # some handy links to help people find your plugin's documentation
 homepage = "https://github.com/MBieleke/psychopy-apparatus"
+DOI = "https://doi.org/10.5281/zenodo.20133061"
 # changelog = "https://github.com/MBieleke/psychopy-apparatus/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]

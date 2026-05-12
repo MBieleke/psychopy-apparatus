@@ -4,7 +4,7 @@ This plugin enables PsychoPy to operate the "Apparatus," a custom device designe
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/MBieleke/psychopy-apparatus/releases/tag/v1.0.0)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/MBieleke/psychopy-apparatus/blob/main/LICENSE)
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.20133062.svg)](https://doi.org/10.5281/zenodo.20133062)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.20133061.svg)](https://doi.org/10.5281/zenodo.20133061)
 [![Firmware](https://img.shields.io/badge/firmware-Arduino%20%7C%20ESP32-teal)](https://www.arduino.cc)
 [![Plugin](https://img.shields.io/badge/plugin-PsychoPy%20%7C%20Python-E83B3B)](https://www.psychopy.org)
 
@@ -69,7 +69,7 @@ Please cite this repositorium if you use the Apparatus in academic work.
 ### APA style
 
 ```text
-Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Apparatus (v1.0.0). Zenodo. <https://doi.org/10.5281/zenodo.20133062>
+Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Apparatus (v1.0.1). Zenodo. <https://doi.org/10.5281/zenodo.20133061>
 ```
 
 ### BibTeX
@@ -78,10 +78,10 @@ Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Appar
 @software{Albrecht:2026,
   author  = {Albrecht, Matthias and Tessari, Ralf and Heinzelmann, Lukas and Bieleke, Maik},
   title   = {PsychoPy Apparatus},
-  version = {1.0.0},
+  version = {1.0.1},
   year    = {2026},
-  doi     = {10.5281/zenodo.20133062},
-  url     = {https://doi.org/10.5281/zenodo.20133062}
+  doi     = {10.5281/zenodo.20133061},
+  url     = {https://doi.org/10.5281/zenodo.20133061}
 }
 ```
 
