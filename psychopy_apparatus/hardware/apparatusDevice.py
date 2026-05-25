@@ -253,12 +253,12 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         self._ack_tracking_lock = Lock()
         
         # Command pacing (seconds) to avoid overrunning the serial link/firmware.
-        # Keep force/reed conservative, allow LEDs to be near-immediate.
+        # Use near-immediate pacing for LED/force/reed to minimize experiment timing skew.
         self._last_send_time = time.monotonic()
         self._rate_limit_interval = 0.02
         self._rate_limit_led_interval = 0.0
         self._rate_limit_force_interval = 0.0
-        self._rate_limit_reed_interval = 0.1
+        self._rate_limit_reed_interval = 0.0
 
         if not self._simulate:
             self._com = Serial(port, baudrate=baudrate, timeout=None)
