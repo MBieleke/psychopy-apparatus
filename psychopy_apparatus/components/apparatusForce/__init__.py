@@ -204,8 +204,10 @@ class ApparatusForceComponent(BaseDeviceComponent):
         code = (
             "if %(saveRawData)s and %(name)s_raw_buffer:\n"
             "    _raw_path = thisExp.dataFileName + '_force_long.tsv'\n"
-            "    with open(_raw_path, 'w', encoding='utf-8') as _f:\n"
-            "        _f.write('participant\\tsession\\troutine\\tcomponent\\ttrial_index\\ttrial_name\\tidentifier\\tsample_index\\twhite_time\\tblue_time\\ttime\\twhite_force\\tblue_force\\twhite_force_raw_counts\\tblue_force_raw_counts\\n')\n"
+            "    _write_header = not os.path.exists(_raw_path)\n"
+            "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
+            "        if _write_header:\n"
+            "            _f.write('participant\\tsession\\troutine\\tcomponent\\ttrial_index\\ttrial_name\\tidentifier\\tsample_index\\twhite_time\\tblue_time\\ttime\\twhite_force\\tblue_force\\twhite_force_raw_counts\\tblue_force_raw_counts\\n')\n"
             "        for _row in %(name)s_raw_buffer:\n"
             "            _f.write('\\t'.join(str(_row[_k]) for _k in ['participant','session','routine','component','trial_index','trial_name','identifier','sample_index','white_time','blue_time','time','white_force','blue_force','white_force_raw_counts','blue_force_raw_counts']) + '\\n')\n"
         )

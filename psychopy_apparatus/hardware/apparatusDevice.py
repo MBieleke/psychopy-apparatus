@@ -216,6 +216,16 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     """
     responseClass = ApparatusResponse
 
+    @staticmethod
+    def _format_transport_log(event: str, **fields) -> str:
+        """Build a consistent transport log line as key=value pairs."""
+        parts = ["APP", "layer=transport", f"event={event}"]
+        for key, value in fields.items():
+            if isinstance(value, bool):
+                value = int(value)
+            parts.append(f"{key}={value}")
+        return " ".join(parts)
+
     def __init__(self, port, baudrate=115200, simulate=False, debug=False, ack_timeout=5.0,
                  startup_delay=4.0, **kwargs):
         """
@@ -360,9 +370,13 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
         if response.is_ack():
             if rtt_ms is not None:
-                logging.info(f"Apparatus RX: ACK for seq={response.seq}, cmd={cmd_name}, rtt={rtt_ms:.1f} ms")
+                logging.info(self._format_transport_log(
+                    'ack', seq=response.seq, cmd=cmd_name, rtt_ms=f"{rtt_ms:.1f}"
+                ))
             else:
-                logging.info(f"Apparatus RX: ACK for seq={response.seq}, cmd={cmd_name}, rtt=unknown")
+                logging.info(self._format_transport_log(
+                    'ack', seq=response.seq, cmd=cmd_name, rtt_ms='unknown'
+                ))
             return
 
         error_code = response.get_error_code()
@@ -373,13 +387,13 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         }
         error_name = error_names.get(error_code, f'UNKNOWN({error_code})')
         if rtt_ms is not None:
-            logging.warning(
-                f"Apparatus RX: NACK for seq={response.seq}, cmd={cmd_name}, error={error_name}, rtt={rtt_ms:.1f} ms"
-            )
+            logging.warning(self._format_transport_log(
+                'nack', seq=response.seq, cmd=cmd_name, error=error_name, rtt_ms=f"{rtt_ms:.1f}"
+            ))
         else:
-            logging.warning(
-                f"Apparatus RX: NACK for seq={response.seq}, cmd={cmd_name}, error={error_name}, rtt=unknown"
-            )
+            logging.warning(self._format_transport_log(
+                'nack', seq=response.seq, cmd=cmd_name, error=error_name, rtt_ms='unknown'
+            ))
 
     def _send_message(self, msg_type: int, payload: bytes = b'', dst: int = ADDR_CLIENT, expect_ack: bool = True) -> int:
         """
@@ -405,7 +419,9 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
         if not self._simulate:
             if self._connection_failed():
-                logging.warning(f"Apparatus: serial connection already lost, skipping TX seq={seq}")
+                logging.warning(self._format_transport_log(
+                    'tx_skipped', seq=seq, reason='connection_lost'
+                ))
                 return seq
             interval = self._get_rate_limit_interval_for_command(msg_type)
             now = time.monotonic()
@@ -430,14 +446,17 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             except (SerialException, SerialTimeoutException, OSError) as exc:
                 if self._protocol is not None:
                     self._protocol._connection_error = exc
-                logging.warning(f"Apparatus: serial write failed for seq={seq}: {exc}")
+                logging.warning(self._format_transport_log(
+                    'tx_error', seq=seq, cmd=self._msg_type_name(msg_type), error=exc
+                ))
                 return seq
-        
-        if self._debug:
-            msg_name = self._msg_type_name(msg_type)
-            payload_hex = payload.hex() if payload else '(empty)'
-            dst_name = 'CLIENT' if dst == ADDR_CLIENT else 'SERVER'
-            logging.info(f"Apparatus TX: seq={seq}, type={msg_name}, dst={dst_name}, payload={payload_hex[:60]}")
+
+        msg_name = self._msg_type_name(msg_type)
+        dst_name = 'CLIENT' if dst == ADDR_CLIENT else 'SERVER'
+        logging.info(self._format_transport_log(
+            'tx_send', seq=seq, cmd=msg_name, dst=dst_name,
+            payload_len=len(payload), expect_ack=expect_ack
+        ))
         
         return seq
 
@@ -467,7 +486,9 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         while time.time() - start_time < timeout:
             if self._connection_failed():
-                logging.warning(f"Apparatus: serial connection lost while waiting for ACK/NACK (seq={expected_seq})")
+                logging.warning(self._format_transport_log(
+                    'wait_failed', seq=expected_seq, reason='connection_lost'
+                ))
                 return False
             responses = self._protocol.get_responses()
             
@@ -484,7 +505,9 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             
             time.sleep(0.001)  # Small sleep to avoid busy-waiting
         
-        logging.warning(f"Apparatus: Timeout waiting for ACK/NACK (seq={expected_seq})")
+        logging.warning(self._format_transport_log(
+            'wait_timeout', seq=expected_seq, timeout_s=timeout
+        ))
         return False
 
     # ===== LED Control Methods =====

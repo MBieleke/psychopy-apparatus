@@ -9,6 +9,21 @@ from psychopy_apparatus.hardware.apparatusDevice import ApparatusResponse
 from psychopy_apparatus.utils.protocol import DATA_FORCE, DATA_REED
 
 
+def _format_component_log(component: str, action: str, status: str, **fields) -> str:
+    """Build a consistent component log line as key=value pairs."""
+    parts = [
+        "APP",
+        f"component={component}",
+        f"action={action}",
+        f"status={status}",
+    ]
+    for key, value in fields.items():
+        if isinstance(value, bool):
+            value = int(value)
+        parts.append(f"{key}={value}")
+    return " ".join(parts)
+
+
 def _parse_holes(holes_spec):
     """
     Convert hole specification to list of hole indices (internal helper).
@@ -238,12 +253,20 @@ class Apparatus(AttributeGetSetMixin):
 
         success = self._device.setLedColors(holes_list, color_tuples, show=True, wait_ack=wait_ack)
         if success:
-            if wait_ack:
-                logging.info(f"LED update acknowledged for holes {holes_list}.")
-            else:
-                logging.info(f"LED update command sent for holes {holes_list} (wait_ack=False).")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'led', 'set', status,
+                wait_ack=wait_ack,
+                holes=holes_list,
+                hole_count=len(holes_list),
+            ))
         else:
-            logging.error(f"Failed to set LEDs for holes {holes_list}")
+            logging.error(_format_component_log(
+                'led', 'set', 'error',
+                wait_ack=wait_ack,
+                holes=holes_list,
+                hole_count=len(holes_list),
+            ))
         return success
 
     def turnOffLights(self, holes, wait_ack: bool = False) -> bool:
@@ -265,12 +288,20 @@ class Apparatus(AttributeGetSetMixin):
             return True
         success = self._device.setLedColors(holes_list, (0, 0, 0), show=True, wait_ack=wait_ack)
         if success:
-            if wait_ack:
-                logging.info(f"LED off acknowledged for holes {holes_list}.")
-            else:
-                logging.info(f"LED off command sent for holes {holes_list} (wait_ack=False).")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'led', 'off', status,
+                wait_ack=wait_ack,
+                holes=holes_list,
+                hole_count=len(holes_list),
+            ))
         else:
-            logging.error(f"Failed to turn off LEDs for holes {holes_list}")
+            logging.error(_format_component_log(
+                'led', 'off', 'error',
+                wait_ack=wait_ack,
+                holes=holes_list,
+                hole_count=len(holes_list),
+            ))
         return success
 
     # ===== DORMANT: Motor control (not yet ported to new protocol) =====
@@ -384,12 +415,20 @@ class Apparatus(AttributeGetSetMixin):
         if success:
             self._force_measuring = True
             self.status = STARTED
-            if wait_ack:
-                logging.info(f"Force measurement started (ACK): {rate} Hz, dynamometer '{dynamometer}'")
-            else:
-                logging.info(f"Force measurement start command sent: {rate} Hz, dynamometer '{dynamometer}' (wait_ack=False)")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'force', 'start', status,
+                wait_ack=wait_ack,
+                rate_hz=rate,
+                dynamometer=dynamometer,
+            ))
         else:
-            logging.error("Failed to start force measurement")
+            logging.error(_format_component_log(
+                'force', 'start', 'error',
+                wait_ack=wait_ack,
+                rate_hz=rate,
+                dynamometer=dynamometer,
+            ))
             
         return success
 
@@ -405,7 +444,11 @@ class Apparatus(AttributeGetSetMixin):
             True if measurement stopped successfully, False otherwise.
         """
         if not self._force_measuring:
-            logging.warning("Force measurement was not running")
+            logging.warning(_format_component_log(
+                'force', 'stop', 'skipped',
+                reason='not_running',
+                wait_ack=wait_ack,
+            ))
             return True
         
         # Collect any remaining responses before stopping
@@ -418,12 +461,18 @@ class Apparatus(AttributeGetSetMixin):
         if success:
             self._force_measuring = False
             self.status = FINISHED
-            if wait_ack:
-                logging.info(f"Force measurement stopped (ACK). Collected {len(self.forceRows)} complete rows.")
-            else:
-                logging.info(f"Force measurement stop command sent. Collected {len(self.forceRows)} complete rows so far (wait_ack=False).")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'force', 'stop', status,
+                wait_ack=wait_ack,
+                rows=len(self.forceRows),
+            ))
         else:
-            logging.error("Failed to stop force measurement")
+            logging.error(_format_component_log(
+                'force', 'stop', 'error',
+                wait_ack=wait_ack,
+                rows=len(self.forceRows),
+            ))
             
         return success
 
@@ -615,12 +664,22 @@ class Apparatus(AttributeGetSetMixin):
             self._reed_measuring = True
             self.reedMeasurementStart = self._device.getClockTime()
             self.status = STARTED
-            if wait_ack:
-                logging.info(f"Reed measurement started (ACK): {rate} Hz, monitoring holes {self._reed_monitored_holes}")
-            else:
-                logging.info(f"Reed measurement start command sent: {rate} Hz, monitoring holes {self._reed_monitored_holes} (wait_ack=False)")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'reed', 'start', status,
+                wait_ack=wait_ack,
+                rate_hz=rate,
+                holes=self._reed_monitored_holes,
+                hole_count=len(self._reed_monitored_holes),
+            ))
         else:
-            logging.error("Failed to start reed measurement")
+            logging.error(_format_component_log(
+                'reed', 'start', 'error',
+                wait_ack=wait_ack,
+                rate_hz=rate,
+                holes=self._reed_monitored_holes,
+                hole_count=len(self._reed_monitored_holes),
+            ))
             
         return success
 
@@ -636,7 +695,11 @@ class Apparatus(AttributeGetSetMixin):
             True if measurement stopped successfully, False otherwise.
         """
         if not self._reed_measuring:
-            logging.warning("Reed measurement was not running")
+            logging.warning(_format_component_log(
+                'reed', 'stop', 'skipped',
+                reason='not_running',
+                wait_ack=wait_ack,
+            ))
             return True
         
         # Collect any remaining responses before stopping
@@ -667,12 +730,20 @@ class Apparatus(AttributeGetSetMixin):
         if success:
             self._reed_measuring = False
             self.status = FINISHED
-            if wait_ack:
-                logging.info(f"Reed measurement stopped (ACK). Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes.")
-            else:
-                logging.info(f"Reed measurement stop command sent. Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes so far (wait_ack=False).")
+            status = 'ack' if wait_ack else 'sent'
+            logging.info(_format_component_log(
+                'reed', 'stop', status,
+                wait_ack=wait_ack,
+                events=len(self.reedTimes),
+                active_holes=len(self.reedSummary),
+            ))
         else:
-            logging.error("Failed to stop reed measurement")
+            logging.error(_format_component_log(
+                'reed', 'stop', 'error',
+                wait_ack=wait_ack,
+                events=len(self.reedTimes),
+                active_holes=len(self.reedSummary),
+            ))
             
         return success
 
