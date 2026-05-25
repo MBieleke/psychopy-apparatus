@@ -10,18 +10,21 @@ from psychopy_apparatus.utils.protocol import DATA_FORCE, DATA_REED
 
 
 def _format_component_log(component: str, action: str, status: str, **fields) -> str:
-    """Build a consistent component log line as key=value pairs."""
-    parts = [
-        "APP",
-        f"component={component}",
-        f"action={action}",
-        f"status={status}",
-    ]
+    """Build a human-readable component log line."""
+    parts = ['APP', component.upper(), action, status]
+    if 'rate_hz' in fields:
+        parts.append(f"rate={fields['rate_hz']}Hz")
+    if 'dynamometer' in fields:
+        parts.append(f"dyn={fields['dynamometer']}")
+    if 'hole_count' in fields:
+        parts.append(f"holes={fields['hole_count']}")
+    skip = {'rate_hz', 'dynamometer', 'hole_count', 'holes', 'wait_ack'}
     for key, value in fields.items():
-        if isinstance(value, bool):
-            value = int(value)
-        parts.append(f"{key}={value}")
-    return " ".join(parts)
+        if key not in skip:
+            if isinstance(value, bool):
+                value = int(value)
+            parts.append(f"{key}={value}")
+    return '  '.join(parts)
 
 
 def _parse_holes(holes_spec):

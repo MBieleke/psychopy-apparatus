@@ -218,13 +218,35 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
     @staticmethod
     def _format_transport_log(event: str, **fields) -> str:
-        """Build a consistent transport log line as key=value pairs."""
-        parts = ["APP", "layer=transport", f"event={event}"]
+        """Build a human-readable transport log line."""
+        event_labels = {
+            'tx_send':    'TX',
+            'ack':        'ACK',
+            'nack':       'NACK',
+            'tx_skipped': 'SKIP',
+            'tx_error':   'ERR',
+            'timeout':    'TIMEOUT',
+        }
+        label = event_labels.get(event, event.upper())
+        parts = ['APP', 'serial', label]
+        if 'seq' in fields:
+            parts.append(f"#{fields['seq']}")
+        if 'cmd' in fields:
+            cmd = str(fields['cmd'])
+            parts.append(cmd[4:] if cmd.startswith('CMD_') else cmd)
+        if 'payload_len' in fields:
+            parts.append(f"{fields['payload_len']}B")
+        if 'dst' in fields:
+            parts.append(str(fields['dst']))
+        if 'rtt_ms' in fields:
+            parts.append(f"rtt={fields['rtt_ms']}ms")
+        skip = {'seq', 'cmd', 'payload_len', 'dst', 'rtt_ms', 'expect_ack'}
         for key, value in fields.items():
-            if isinstance(value, bool):
-                value = int(value)
-            parts.append(f"{key}={value}")
-        return " ".join(parts)
+            if key not in skip:
+                if isinstance(value, bool):
+                    value = int(value)
+                parts.append(f"{key}={value}")
+        return '  '.join(parts)
 
     def __init__(self, port, baudrate=115200, simulate=False, debug=False, ack_timeout=5.0,
                  startup_delay=4.0, **kwargs):
@@ -264,7 +286,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         # Command pacing (seconds) to avoid overrunning the serial link/firmware.
         # Use near-immediate pacing for LED/force/reed to minimize experiment timing skew.
-        self._last_send_time = time.monotonic()
+        self._last_send_time = time.perf_counter()
         self._rate_limit_interval = 0.02
         self._rate_limit_led_interval = 0.0
         self._rate_limit_force_interval = 0.0
@@ -366,7 +388,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         if ack_info is not None:
             sent_time = ack_info['sent_monotonic']
             cmd_name = ack_info['msg_name']
-            rtt_ms = (time.monotonic() - sent_time) * 1000.0
+            rtt_ms = (time.perf_counter() - sent_time) * 1000.0
 
         if response.is_ack():
             if rtt_ms is not None:
@@ -424,7 +446,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
                 ))
                 return seq
             interval = self._get_rate_limit_interval_for_command(msg_type)
-            now = time.monotonic()
+            now = time.perf_counter()
             elapsed = now - self._last_send_time
             if elapsed < interval:
                 time.sleep(interval - elapsed)
@@ -436,7 +458,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         if not self._simulate:
             try:
                 self._reader_thread.write(encoded)
-                self._last_send_time = time.monotonic()
+                self._last_send_time = time.perf_counter()
                 if expect_ack:
                     with self._ack_tracking_lock:
                         self._pending_ack_info[seq] = {
