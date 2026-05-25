@@ -257,7 +257,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         self._last_send_time = time.monotonic()
         self._rate_limit_interval = 0.02
         self._rate_limit_led_interval = 0.0
-        self._rate_limit_force_interval = 0.1
+        self._rate_limit_force_interval = 0.0
         self._rate_limit_reed_interval = 0.1
 
         if not self._simulate:
