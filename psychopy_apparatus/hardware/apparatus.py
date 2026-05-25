@@ -210,7 +210,7 @@ class Apparatus(AttributeGetSetMixin):
         self._reed_active_durations = {}  # Total active time per hole
         self._reed_last_insert_time = {}  # When each hole was last inserted (for duration calc)  # Last update timestamp
 
-    def setLights(self, holes, color) -> bool:
+    def setLights(self, holes, color, wait_ack: bool = False) -> bool:
         """
         Set color(s) for specified holes.
         
@@ -220,8 +220,8 @@ class Apparatus(AttributeGetSetMixin):
             Holes to control
         color : Color, str, list, or list of those
             Single color or list of colors (one per hole)
-        rate_limited : bool
-            Rate limit flag.
+        wait_ack : bool
+            If True, wait for device ACK before returning.
         """
         holes_list = _parse_holes(holes)
         if not holes_list:
@@ -235,10 +235,18 @@ class Apparatus(AttributeGetSetMixin):
         else:
             # Single color
             color_tuples = tuple(int(c.item()) for c in parsed_colors.rgb255)
-        
-        return self._device.setLedColors(holes_list, color_tuples, show=True, wait_ack=True)
 
-    def turnOffLights(self, holes) -> bool:
+        success = self._device.setLedColors(holes_list, color_tuples, show=True, wait_ack=wait_ack)
+        if success:
+            if wait_ack:
+                logging.info(f"LED update acknowledged for holes {holes_list}.")
+            else:
+                logging.info(f"LED update command sent for holes {holes_list} (wait_ack=False).")
+        else:
+            logging.error(f"Failed to set LEDs for holes {holes_list}")
+        return success
+
+    def turnOffLights(self, holes, wait_ack: bool = False) -> bool:
         """
         Turn off the lights for specific holes on the apparatus.
         
@@ -249,8 +257,18 @@ class Apparatus(AttributeGetSetMixin):
             - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
             - Single hole: 0, 5
             - Multiple holes: [0, 1, 2]
+        wait_ack : bool
+            If True, wait for device ACK before returning.
         """
-        return self.setLights(holes, Color([0, 0, 0], 'rgb255'))
+        success = self.setLights(holes, Color([0, 0, 0], 'rgb255'), wait_ack=wait_ack)
+        if success:
+            if wait_ack:
+                logging.info(f"LED off acknowledged for holes {_parse_holes(holes)}.")
+            else:
+                logging.info(f"LED off command sent for holes {_parse_holes(holes)} (wait_ack=False).")
+        else:
+            logging.error(f"Failed to turn off LEDs for holes {_parse_holes(holes)}")
+        return success
 
     # ===== DORMANT: Motor control (not yet ported to new protocol) =====
     
@@ -306,7 +324,7 @@ class Apparatus(AttributeGetSetMixin):
         """
         raise NotImplementedError("Hand dynamometer configuration not yet ported to new protocol")
 
-    def startForceMeasurement(self, rate: float, dynamometer: str) -> bool:
+    def startForceMeasurement(self, rate: float, dynamometer: str, wait_ack: bool = False) -> bool:
         """
         Start force measurement on the apparatus device.
         
@@ -323,6 +341,8 @@ class Apparatus(AttributeGetSetMixin):
             - 'white': Right/white dynamometer only
             - 'blue': Left/blue dynamometer only
             - 'both': Both dynamometers
+        wait_ack : bool
+            If True, wait for device ACK before returning.
             
         Returns
         -------
@@ -356,18 +376,21 @@ class Apparatus(AttributeGetSetMixin):
         self._force_start_response_count = self._device.getNumberOfResponses()
         
         # Start measurement on device
-        success = self._device.startForceMeasurement(rate, dynamometer, wait_ack=True)
+        success = self._device.startForceMeasurement(rate, dynamometer, wait_ack=wait_ack)
         
         if success:
             self._force_measuring = True
             self.status = STARTED
-            logging.info(f"Force measurement started: {rate} Hz, dynamometer '{dynamometer}'")
+            if wait_ack:
+                logging.info(f"Force measurement started (ACK): {rate} Hz, dynamometer '{dynamometer}'")
+            else:
+                logging.info(f"Force measurement start command sent: {rate} Hz, dynamometer '{dynamometer}' (wait_ack=False)")
         else:
             logging.error("Failed to start force measurement")
             
         return success
 
-    def stopForceMeasurement(self) -> bool:
+    def stopForceMeasurement(self, wait_ack: bool = False) -> bool:
         """
         Stop force measurement on the apparatus device.
         
@@ -387,12 +410,15 @@ class Apparatus(AttributeGetSetMixin):
         self._flush_force_pending_row(allow_partial=True)
         
         # Stop measurement on device
-        success = self._device.stopForceMeasurement(wait_ack=True)
+        success = self._device.stopForceMeasurement(wait_ack=wait_ack)
         
         if success:
             self._force_measuring = False
             self.status = FINISHED
-            logging.info(f"Force measurement stopped. Collected {len(self.forceRows)} complete rows.")
+            if wait_ack:
+                logging.info(f"Force measurement stopped (ACK). Collected {len(self.forceRows)} complete rows.")
+            else:
+                logging.info(f"Force measurement stop command sent. Collected {len(self.forceRows)} complete rows so far (wait_ack=False).")
         else:
             logging.error("Failed to stop force measurement")
             
@@ -525,7 +551,7 @@ class Apparatus(AttributeGetSetMixin):
         """
         self._collectForceResponses()
 
-    def startReedMeasurement(self, rate: float, holes) -> bool:
+    def startReedMeasurement(self, rate: float, holes, wait_ack: bool = False) -> bool:
         """
         Start reed sensor measurement on the apparatus device.
         
@@ -542,6 +568,8 @@ class Apparatus(AttributeGetSetMixin):
             - Keyword: 'all' (0-20), 'inner' (0-7), 'outer' (8-20), 'none'
             - Single hole: 0, 5
             - Multiple holes: [0, 1, 2]
+        wait_ack : bool
+            If True, wait for device ACK before returning.
             
         Returns
         -------
@@ -578,19 +606,22 @@ class Apparatus(AttributeGetSetMixin):
         self._reed_start_response_count = self._device.getNumberOfResponses()
         
         # Start measurement on device
-        success = self._device.startReedMeasurement(rate, wait_ack=True)
+        success = self._device.startReedMeasurement(rate, wait_ack=wait_ack)
         
         if success:
             self._reed_measuring = True
             self.reedMeasurementStart = self._device.getClockTime()
             self.status = STARTED
-            logging.info(f"Reed measurement started: {rate} Hz, monitoring holes {self._reed_monitored_holes}")
+            if wait_ack:
+                logging.info(f"Reed measurement started (ACK): {rate} Hz, monitoring holes {self._reed_monitored_holes}")
+            else:
+                logging.info(f"Reed measurement start command sent: {rate} Hz, monitoring holes {self._reed_monitored_holes} (wait_ack=False)")
         else:
             logging.error("Failed to start reed measurement")
             
         return success
 
-    def stopReedMeasurement(self) -> bool:
+    def stopReedMeasurement(self, wait_ack: bool = False) -> bool:
         """
         Stop reed sensor measurement on the apparatus device.
         
@@ -628,12 +659,15 @@ class Apparatus(AttributeGetSetMixin):
                 })
         
         # Stop measurement on device
-        success = self._device.stopReedMeasurement(wait_ack=True)
+        success = self._device.stopReedMeasurement(wait_ack=wait_ack)
         
         if success:
             self._reed_measuring = False
             self.status = FINISHED
-            logging.info(f"Reed measurement stopped. Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes.")
+            if wait_ack:
+                logging.info(f"Reed measurement stopped (ACK). Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes.")
+            else:
+                logging.info(f"Reed measurement stop command sent. Collected {len(self.reedTimes)} events across {len(self.reedSummary)} active holes so far (wait_ack=False).")
         else:
             logging.error("Failed to stop reed measurement")
             
