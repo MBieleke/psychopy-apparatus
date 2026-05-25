@@ -31,7 +31,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         lightHoles = '"all"',
         lightColors = "black",
         turnOffOnStop = True,
-        turnOffOnRoutineEnd = True,
+        turnOffOnRoutineEnd = False,
         # device
         deviceLabel = "",
     ):
@@ -112,6 +112,10 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         """
         # update any parameters which need updating
         # self.writeParamUpdates(buff, updateType="set every repeat")
+        code = (
+            "%(name)s_led_off_sent = False\n"
+        )
+        buff.writeIndentedLines(code % self.params)
     
     def writeFrameCode(self, buff):
         """
@@ -158,6 +162,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
             code = (
                 "if %(turnOffOnStop)s:\n"
                 "   %(name)s.turnOffLights(%(lightHoles)s)\n"
+                "   %(name)s_led_off_sent = True\n"
             )
             buff.writeIndentedLines(code % self.params)
             # dedent after!
@@ -178,7 +183,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         params['currentLoop'] = self.currentLoop
         # store any data we'd like to store (start/stop are already handled)
         code = (
-            "if %(turnOffOnRoutineEnd)s:\n"
+            "if %(turnOffOnRoutineEnd)s and not %(name)s_led_off_sent:\n"
             "    %(name)s.turnOffLights(%(lightHoles)s)\n"
         )
         buff.writeIndentedLines(code % params)

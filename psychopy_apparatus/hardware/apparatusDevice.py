@@ -252,9 +252,13 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         self._pending_ack_info = {}
         self._ack_tracking_lock = Lock()
         
-        # Rate limiting for commands
+        # Command pacing (seconds) to avoid overrunning the serial link/firmware.
+        # Keep force/reed conservative, allow LEDs to be near-immediate.
         self._last_send_time = time.monotonic()
-        self._rate_limit_interval = 0.1
+        self._rate_limit_interval = 0.02
+        self._rate_limit_led_interval = 0.0
+        self._rate_limit_force_interval = 0.1
+        self._rate_limit_reed_interval = 0.1
 
         if not self._simulate:
             self._com = Serial(port, baudrate=baudrate, timeout=None)
@@ -305,6 +309,16 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     def rateLimitInterval(self, value: float):
         """Set the rate limit interval (in seconds) for sending commands."""
         self._rate_limit_interval = value
+
+    def _get_rate_limit_interval_for_command(self, msg_type: int) -> float:
+        """Return per-command pacing interval in seconds."""
+        if msg_type in (CMD_LED_SET_N, CMD_LED_SHOW):
+            return self._rate_limit_led_interval
+        if msg_type in (CMD_FORCE_START, CMD_FORCE_STOP):
+            return self._rate_limit_force_interval
+        if msg_type in (CMD_REED_START, CMD_REED_STOP):
+            return self._rate_limit_reed_interval
+        return self._rate_limit_interval
 
     def _get_next_seq(self) -> int:
         """Get the next sequence number for a command."""
@@ -393,10 +407,11 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             if self._connection_failed():
                 logging.warning(f"Apparatus: serial connection already lost, skipping TX seq={seq}")
                 return seq
+            interval = self._get_rate_limit_interval_for_command(msg_type)
             now = time.monotonic()
             elapsed = now - self._last_send_time
-            if elapsed < self._rate_limit_interval:
-                time.sleep(self._rate_limit_interval - elapsed)
+            if elapsed < interval:
+                time.sleep(interval - elapsed)
          
         # Build and encode message
         raw_msg = build_message(msg_type, seq, payload, dst=dst)
@@ -515,7 +530,6 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         # Send show command if requested
         if show:
-            time.sleep(0.01)  # Small delay between commands
             return self.showLeds(wait_ack=wait_ack)
         
         return True

@@ -260,14 +260,17 @@ class Apparatus(AttributeGetSetMixin):
         wait_ack : bool
             If True, wait for device ACK before returning.
         """
-        success = self.setLights(holes, Color([0, 0, 0], 'rgb255'), wait_ack=wait_ack)
+        holes_list = _parse_holes(holes)
+        if not holes_list:
+            return True
+        success = self._device.setLedColors(holes_list, (0, 0, 0), show=True, wait_ack=wait_ack)
         if success:
             if wait_ack:
-                logging.info(f"LED off acknowledged for holes {_parse_holes(holes)}.")
+                logging.info(f"LED off acknowledged for holes {holes_list}.")
             else:
-                logging.info(f"LED off command sent for holes {_parse_holes(holes)} (wait_ack=False).")
+                logging.info(f"LED off command sent for holes {holes_list} (wait_ack=False).")
         else:
-            logging.error(f"Failed to turn off LEDs for holes {_parse_holes(holes)}")
+            logging.error(f"Failed to turn off LEDs for holes {holes_list}")
         return success
 
     # ===== DORMANT: Motor control (not yet ported to new protocol) =====
