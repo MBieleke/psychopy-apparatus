@@ -2,7 +2,7 @@
 
 This plugin enables PsychoPy to operate the "Apparatus," a custom device designed for measuring and manipulating physical and cognitive effort in experimental settings.
 
-[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://github.com/MBieleke/psychopy-apparatus/releases/tag/v1.0.1)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://github.com/MBieleke/psychopy-apparatus/releases/tag/v1.0.2)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/MBieleke/psychopy-apparatus/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.20133061.svg)](https://doi.org/10.5281/zenodo.20133061)
 [![Firmware](https://img.shields.io/badge/firmware-Arduino%20%7C%20ESP32-teal)](https://www.arduino.cc)
@@ -69,7 +69,7 @@ Please cite this repositorium if you use the Apparatus in academic work.
 ### APA style
 
 ```text
-Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Apparatus (v1.0.1). Zenodo. <https://doi.org/10.5281/zenodo.20133061>
+Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Apparatus (v1.0.2). Zenodo. <https://doi.org/10.5281/zenodo.20133061>
 ```
 
 ### BibTeX
@@ -78,7 +78,7 @@ Albrecht, M., Tessari, R., Heinzelmann, L., & Bieleke, M. (2026). PsychoPy Appar
 @software{Albrecht:2026,
   author  = {Albrecht, Matthias and Tessari, Ralf and Heinzelmann, Lukas and Bieleke, Maik},
   title   = {PsychoPy Apparatus},
-  version = {1.0.1},
+  version = {1.0.2},
   year    = {2026},
   doi     = {10.5281/zenodo.20133061},
   url     = {https://doi.org/10.5281/zenodo.20133061}
