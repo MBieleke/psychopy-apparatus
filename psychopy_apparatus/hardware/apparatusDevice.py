@@ -1,5 +1,6 @@
 import time
 import struct
+from threading import Lock
 from serial import Serial, SerialException, SerialTimeoutException
 from serial.threaded import ReaderThread, Protocol
 from psychopy import logging, core
@@ -114,6 +115,7 @@ class ApparatusProtocol(Protocol):
         self._responses = []
         self._clock = core.Clock()
         self._connection_error = None
+        self._on_response = None
 
     def data_received(self, data: bytes):
         """Process incoming serial data byte by byte, looking for 0x00 delimiters."""
@@ -162,6 +164,8 @@ class ApparatusProtocol(Protocol):
             )
             
             self._responses.append(response)
+            if self._on_response is not None:
+                self._on_response(response)
         except ValueError as e:
             logging.warning(f"Apparatus: Invalid frame ({e})")
         except Exception as e:
@@ -212,6 +216,38 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
     """
     responseClass = ApparatusResponse
 
+    @staticmethod
+    def _format_transport_log(event: str, **fields) -> str:
+        """Build a human-readable transport log line."""
+        event_labels = {
+            'tx_send':    'TX',
+            'ack':        'ACK',
+            'nack':       'NACK',
+            'tx_skipped': 'SKIP',
+            'tx_error':   'ERR',
+            'timeout':    'TIMEOUT',
+        }
+        label = event_labels.get(event, event.upper())
+        parts = ['APP', 'serial', label]
+        if 'seq' in fields:
+            parts.append(f"#{fields['seq']}")
+        if 'cmd' in fields:
+            cmd = str(fields['cmd'])
+            parts.append(cmd[4:] if cmd.startswith('CMD_') else cmd)
+        if 'payload_len' in fields:
+            parts.append(f"{fields['payload_len']}B")
+        if 'dst' in fields:
+            parts.append(str(fields['dst']))
+        if 'rtt_ms' in fields:
+            parts.append(f"rtt={fields['rtt_ms']}ms")
+        skip = {'seq', 'cmd', 'payload_len', 'dst', 'rtt_ms', 'expect_ack'}
+        for key, value in fields.items():
+            if key not in skip:
+                if isinstance(value, bool):
+                    value = int(value)
+                parts.append(f"{key}={value}")
+        return '  '.join(parts)
+
     def __init__(self, port, baudrate=115200, simulate=False, debug=False, ack_timeout=5.0,
                  startup_delay=4.0, **kwargs):
         """
@@ -245,10 +281,16 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         self._reader_thread = None
         self._protocol = None
         self._seq_counter = 1
+        self._pending_ack_info = {}
+        self._ack_tracking_lock = Lock()
         
-        # Rate limiting for commands
-        self._last_send_time = time.monotonic()
-        self._rate_limit_interval = 0.1
+        # Command pacing (seconds) to avoid overrunning the serial link/firmware.
+        # Use near-immediate pacing for LED/force/reed to minimize experiment timing skew.
+        self._last_send_time = time.perf_counter()
+        self._rate_limit_interval = 0.02
+        self._rate_limit_led_interval = 0.0
+        self._rate_limit_force_interval = 0.0
+        self._rate_limit_reed_interval = 0.0
 
         if not self._simulate:
             self._com = Serial(port, baudrate=baudrate, timeout=None)
@@ -272,6 +314,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
             thread.start()
             self._reader_thread, self._protocol = thread.connect()
             self._protocol.clear_responses()
+            self._protocol._on_response = self._handle_protocol_response
              
             if self._debug:
                 logging.info(f"Apparatus device initialized on {port} at {baudrate} baud")
@@ -299,6 +342,16 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         """Set the rate limit interval (in seconds) for sending commands."""
         self._rate_limit_interval = value
 
+    def _get_rate_limit_interval_for_command(self, msg_type: int) -> float:
+        """Return per-command pacing interval in seconds."""
+        if msg_type in (CMD_LED_SET_N, CMD_LED_SHOW):
+            return self._rate_limit_led_interval
+        if msg_type in (CMD_FORCE_START, CMD_FORCE_STOP):
+            return self._rate_limit_force_interval
+        if msg_type in (CMD_REED_START, CMD_REED_STOP):
+            return self._rate_limit_reed_interval
+        return self._rate_limit_interval
+
     def _get_next_seq(self) -> int:
         """Get the next sequence number for a command."""
         seq = self._seq_counter
@@ -306,6 +359,63 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         if self._seq_counter > 0xFFFFFFFF:  # 32-bit wrap around
             self._seq_counter = 1
         return seq
+
+    @staticmethod
+    def _msg_type_name(msg_type: int) -> str:
+        """Return a readable protocol command name for logging."""
+        msg_names = {
+            CMD_LED_SET_N: 'CMD_LED_SET_N',
+            CMD_LED_SHOW: 'CMD_LED_SHOW',
+            CMD_HOLE_START: 'CMD_HOLE_START',
+            CMD_HOLE_STOP: 'CMD_HOLE_STOP',
+            CMD_REED_START: 'CMD_REED_START',
+            CMD_REED_STOP: 'CMD_REED_STOP',
+            CMD_FORCE_START: 'CMD_FORCE_START',
+            CMD_FORCE_STOP: 'CMD_FORCE_STOP',
+        }
+        return msg_names.get(msg_type, f'0x{msg_type:02X}')
+
+    def _handle_protocol_response(self, response: ApparatusResponse):
+        """Handle parsed responses as they arrive (reader-thread callback)."""
+        if response.msg_type not in (MSG_ACK, MSG_NACK):
+            return
+
+        with self._ack_tracking_lock:
+            ack_info = self._pending_ack_info.pop(response.seq, None)
+
+        rtt_ms = None
+        cmd_name = 'unknown'
+        if ack_info is not None:
+            sent_time = ack_info['sent_monotonic']
+            cmd_name = ack_info['msg_name']
+            rtt_ms = (time.perf_counter() - sent_time) * 1000.0
+
+        if response.is_ack():
+            if rtt_ms is not None:
+                logging.info(self._format_transport_log(
+                    'ack', seq=response.seq, cmd=cmd_name, rtt_ms=f"{rtt_ms:.1f}"
+                ))
+            else:
+                logging.info(self._format_transport_log(
+                    'ack', seq=response.seq, cmd=cmd_name, rtt_ms='unknown'
+                ))
+            return
+
+        error_code = response.get_error_code()
+        error_names = {
+            ERR_BAD_LEN: 'BAD_LEN',
+            ERR_BAD_MSG: 'BAD_MSG',
+            ERR_BAD_PAYLOAD: 'BAD_PAYLOAD'
+        }
+        error_name = error_names.get(error_code, f'UNKNOWN({error_code})')
+        if rtt_ms is not None:
+            logging.warning(self._format_transport_log(
+                'nack', seq=response.seq, cmd=cmd_name, error=error_name, rtt_ms=f"{rtt_ms:.1f}"
+            ))
+        else:
+            logging.warning(self._format_transport_log(
+                'nack', seq=response.seq, cmd=cmd_name, error=error_name, rtt_ms='unknown'
+            ))
 
     def _send_message(self, msg_type: int, payload: bytes = b'', dst: int = ADDR_CLIENT, expect_ack: bool = True) -> int:
         """
@@ -331,12 +441,15 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
         if not self._simulate:
             if self._connection_failed():
-                logging.warning(f"Apparatus: serial connection already lost, skipping TX seq={seq}")
+                logging.warning(self._format_transport_log(
+                    'tx_skipped', seq=seq, reason='connection_lost'
+                ))
                 return seq
-            now = time.monotonic()
+            interval = self._get_rate_limit_interval_for_command(msg_type)
+            now = time.perf_counter()
             elapsed = now - self._last_send_time
-            if elapsed < self._rate_limit_interval:
-                time.sleep(self._rate_limit_interval - elapsed)
+            if elapsed < interval:
+                time.sleep(interval - elapsed)
          
         # Build and encode message
         raw_msg = build_message(msg_type, seq, payload, dst=dst)
@@ -345,28 +458,27 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         if not self._simulate:
             try:
                 self._reader_thread.write(encoded)
-                self._last_send_time = time.monotonic()
+                self._last_send_time = time.perf_counter()
+                if expect_ack:
+                    with self._ack_tracking_lock:
+                        self._pending_ack_info[seq] = {
+                            'sent_monotonic': self._last_send_time,
+                            'msg_name': self._msg_type_name(msg_type),
+                        }
             except (SerialException, SerialTimeoutException, OSError) as exc:
                 if self._protocol is not None:
                     self._protocol._connection_error = exc
-                logging.warning(f"Apparatus: serial write failed for seq={seq}: {exc}")
+                logging.warning(self._format_transport_log(
+                    'tx_error', seq=seq, cmd=self._msg_type_name(msg_type), error=exc
+                ))
                 return seq
-        
-        if self._debug:
-            msg_names = {
-                CMD_LED_SET_N: 'CMD_LED_SET_N',
-                CMD_LED_SHOW: 'CMD_LED_SHOW',
-                CMD_HOLE_START: 'CMD_HOLE_START',
-                CMD_HOLE_STOP: 'CMD_HOLE_STOP',
-                CMD_REED_START: 'CMD_REED_START',
-                CMD_REED_STOP: 'CMD_REED_STOP',
-                CMD_FORCE_START: 'CMD_FORCE_START',
-                CMD_FORCE_STOP: 'CMD_FORCE_STOP',
-            }
-            msg_name = msg_names.get(msg_type, f'0x{msg_type:02X}')
-            payload_hex = payload.hex() if payload else '(empty)'
-            dst_name = 'CLIENT' if dst == ADDR_CLIENT else 'SERVER'
-            logging.info(f"Apparatus TX: seq={seq}, type={msg_name}, dst={dst_name}, payload={payload_hex[:60]}")
+
+        msg_name = self._msg_type_name(msg_type)
+        dst_name = 'CLIENT' if dst == ADDR_CLIENT else 'SERVER'
+        logging.info(self._format_transport_log(
+            'tx_send', seq=seq, cmd=msg_name, dst=dst_name,
+            payload_len=len(payload), expect_ack=expect_ack
+        ))
         
         return seq
 
@@ -396,7 +508,9 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         while time.time() - start_time < timeout:
             if self._connection_failed():
-                logging.warning(f"Apparatus: serial connection lost while waiting for ACK/NACK (seq={expected_seq})")
+                logging.warning(self._format_transport_log(
+                    'wait_failed', seq=expected_seq, reason='connection_lost'
+                ))
                 return False
             responses = self._protocol.get_responses()
             
@@ -407,28 +521,20 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
                     self._protocol._responses.remove(response)
                     
                     if response.is_ack():
-                        if self._debug:
-                            logging.info(f"Apparatus RX: ACK for seq={expected_seq}")
                         return True
                     else:
-                        error_code = response.get_error_code()
-                        error_names = {
-                            ERR_BAD_LEN: 'BAD_LEN',
-                            ERR_BAD_MSG: 'BAD_MSG',
-                            ERR_BAD_PAYLOAD: 'BAD_PAYLOAD'
-                        }
-                        error_name = error_names.get(error_code, f'UNKNOWN({error_code})')
-                        logging.warning(f"Apparatus RX: NACK for seq={expected_seq}, error={error_name}")
                         return False
             
             time.sleep(0.001)  # Small sleep to avoid busy-waiting
         
-        logging.warning(f"Apparatus: Timeout waiting for ACK/NACK (seq={expected_seq})")
+        logging.warning(self._format_transport_log(
+            'wait_timeout', seq=expected_seq, timeout_s=timeout
+        ))
         return False
 
     # ===== LED Control Methods =====
 
-    def setLedColors(self, holes: list[int], colors, show: bool = True, wait_ack: bool = True) -> bool:
+    def setLedColors(self, holes: list[int], colors, show: bool = True, wait_ack: bool = False) -> bool:
         """
         Set LED colors for specified holes.
         
@@ -469,12 +575,11 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         # Send show command if requested
         if show:
-            time.sleep(0.01)  # Small delay between commands
             return self.showLeds(wait_ack=wait_ack)
         
         return True
 
-    def showLeds(self, wait_ack: bool = True) -> bool:
+    def showLeds(self, wait_ack: bool = False) -> bool:
         """
         Update LED strip to display the colors set by setLedColors.
         
@@ -495,7 +600,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         return True
 
-    def clearLeds(self, wait_ack: bool = True) -> bool:
+    def clearLeds(self, wait_ack: bool = False) -> bool:
         """
         Turn off all LEDs (convenience method).
         
@@ -515,7 +620,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
 
     # ===== Force Measurement Methods =====
 
-    def startForceMeasurement(self, rate_hz: float, dynamometer: str, wait_ack: bool = True) -> bool:
+    def startForceMeasurement(self, rate_hz: float, dynamometer: str, wait_ack: bool = False) -> bool:
         """
         Start streaming force measurements from handgrip dynamometer(s).
         
@@ -547,7 +652,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         return True
 
-    def stopForceMeasurement(self, wait_ack: bool = True) -> bool:
+    def stopForceMeasurement(self, wait_ack: bool = False) -> bool:
         """
         Stop streaming force measurements.
         
@@ -570,7 +675,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         return True
 
-    def startReedMeasurement(self, rate_hz: float, wait_ack: bool = True) -> bool:
+    def startReedMeasurement(self, rate_hz: float, wait_ack: bool = False) -> bool:
         """
         Start streaming reed sensor measurements from the client.
         
@@ -597,7 +702,7 @@ class ApparatusDevice(BaseResponseDevice, aliases=["apparatus"]):
         
         return True
 
-    def stopReedMeasurement(self, wait_ack: bool = True) -> bool:
+    def stopReedMeasurement(self, wait_ack: bool = False) -> bool:
         """
         Stop streaming reed sensor measurements.
         

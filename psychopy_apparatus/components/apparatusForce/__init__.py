@@ -39,7 +39,6 @@ class ApparatusForceComponent(BaseDeviceComponent):
         # base params like start and stop time are already added by BaseComponent, so add any other params in here...
 
         self.exp.requireImport("Apparatus", "psychopy_apparatus.hardware.apparatus")
-        self.exp.requireImport("os")
 
         # --- Params ---
 
@@ -85,6 +84,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         code = (
             "\n"
             "%(name)s = Apparatus(%(deviceLabel)s)\n"
+            "%(name)s_raw_buffer = []\n"
         )
 
         # write the code to the string buffer (with params inserted)
@@ -169,39 +169,47 @@ class ApparatusForceComponent(BaseDeviceComponent):
             "%(currentLoop)s.addData('%(name)s.maxWhiteForce', %(name)s.maxWhiteForce)\n"
             "%(currentLoop)s.addData('%(name)s.maxBlueForce', %(name)s.maxBlueForce)\n"
             "if %(saveRawData)s:\n"
-            "    _raw_path = thisExp.dataFileName + '_force_long.tsv'\n"
-            "    _write_header = not os.path.exists(_raw_path)\n"
             "    _loop = %(currentLoop)s\n"
             "    _trial_index = _loop.thisN if _loop is not None and hasattr(_loop, 'thisN') else -1\n"
             "    _trial_name = _loop.name if _loop is not None and hasattr(_loop, 'name') else ''\n"
             "    _identifier = str(%(rawDataId)s) if %(rawDataId)s is not None else ''\n"
             "    _records = %(name)s.forceRows if hasattr(%(name)s, 'forceRows') else []\n"
-            "    _times = %(name)s.times\n"
-            "    _white = %(name)s.whiteForceValues\n"
-            "    _blue = %(name)s.blueForceValues\n"
-            "    _n = max(len(_times), len(_white), len(_blue))\n"
+            "    for _i, _record in enumerate(_records):\n"
+            "        %(name)s_raw_buffer.append({\n"
+            "            'participant': expInfo.get('participant', ''),\n"
+            "            'session': expInfo.get('session', ''),\n"
+            "            'routine': '%(parentName)s',\n"
+            "            'component': '%(name)s',\n"
+            "            'trial_index': _trial_index,\n"
+            "            'trial_name': _trial_name,\n"
+            "            'identifier': _identifier,\n"
+            "            'sample_index': _i,\n"
+            "            'white_time': _record['white_time'],\n"
+            "            'blue_time': _record['blue_time'],\n"
+            "            'time': _record['time'],\n"
+            "            'white_force': _record['white_force'],\n"
+            "            'blue_force': _record['blue_force'],\n"
+            "            'white_force_raw_counts': _record['white_force_raw_counts'] if _record['white_force_raw_counts'] is not None else '',\n"
+            "            'blue_force_raw_counts': _record['blue_force_raw_counts'] if _record['blue_force_raw_counts'] is not None else '',\n"
+            "        })\n"
+        )
+        buff.writeIndentedLines(code % params)
+
+    def writeExperimentEndCode(self, buff):
+        """
+        Write code that runs once at the very end of the experiment.
+        Flushes the in-memory force buffer to disk in a single write.
+        """
+        params = self.params.copy()
+        code = (
+            "if %(saveRawData)s and %(name)s_raw_buffer:\n"
+            "    _raw_path = thisExp.dataFileName + '_force_long.tsv'\n"
+            "    _write_header = not os.path.exists(_raw_path)\n"
             "    with open(_raw_path, 'a', encoding='utf-8') as _f:\n"
             "        if _write_header:\n"
-            "            _f.write('participant\tsession\troutine\tcomponent\ttrial_index\ttrial_name\tidentifier\tsample_index\twhite_time\tblue_time\ttime\twhite_force\tblue_force\twhite_force_raw_counts\tblue_force_raw_counts\\n')\n"
-            "        for _i, _record in enumerate(_records):\n"
-            "            _row = [\n"
-            "                expInfo.get(\"participant\", \"\"),\n"
-            "                expInfo.get(\"session\", \"\"),\n"
-            "                '%(parentName)s',\n"
-            "                '%(name)s',\n"
-            "                _trial_index,\n"
-            "                _trial_name,\n"
-            "                _identifier,\n"
-            "                _i,\n"
-            "                _record['white_time'],\n"
-            "                _record['blue_time'],\n"
-            "                _record['time'],\n"
-            "                _record['white_force'],\n"
-            "                _record['blue_force'],\n"
-            "                _record['white_force_raw_counts'] if _record['white_force_raw_counts'] is not None else '',\n"
-            "                _record['blue_force_raw_counts'] if _record['blue_force_raw_counts'] is not None else '',\n"
-            "            ]\n"
-            "            _f.write('\t'.join(str(_v) for _v in _row) + '\\n')\n"
+            "            _f.write('participant\\tsession\\troutine\\tcomponent\\ttrial_index\\ttrial_name\\tidentifier\\tsample_index\\twhite_time\\tblue_time\\ttime\\twhite_force\\tblue_force\\twhite_force_raw_counts\\tblue_force_raw_counts\\n')\n"
+            "        for _row in %(name)s_raw_buffer:\n"
+            "            _f.write('\\t'.join(str(_row[_k]) for _k in ['participant','session','routine','component','trial_index','trial_name','identifier','sample_index','white_time','blue_time','time','white_force','blue_force','white_force_raw_counts','blue_force_raw_counts']) + '\\n')\n"
         )
         buff.writeIndentedLines(code % params)
 
