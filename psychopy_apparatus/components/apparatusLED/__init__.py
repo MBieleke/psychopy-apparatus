@@ -183,7 +183,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         params['currentLoop'] = self.currentLoop
         # store any data we'd like to store (start/stop are already handled)
         code = (
-            "if %(turnOffOnRoutineEnd)s and not %(name)s_led_off_sent:\n"
+            "if (%(turnOffOnStop)s or %(turnOffOnRoutineEnd)s) and not %(name)s_led_off_sent:\n"
             "    %(name)s.turnOffLights(%(lightHoles)s)\n"
         )
         buff.writeIndentedLines(code % params)
