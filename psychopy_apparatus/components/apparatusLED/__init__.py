@@ -33,7 +33,7 @@ class ApparatusLEDComponent(BaseDeviceComponent):
         turnOffOnStop = True,
         turnOffOnRoutineEnd = False,
         # device
-        deviceLabel = "",
+        deviceLabel = "apparatus",
     ):
         # initialise the base component class
         BaseDeviceComponent.__init__(
