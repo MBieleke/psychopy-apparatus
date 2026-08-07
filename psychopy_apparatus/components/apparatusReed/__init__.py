@@ -34,7 +34,7 @@ class ApparatusReedComponent(BaseDeviceComponent):
         rate = 100,
         endRoutineOnResponse = False,
         # device
-        deviceLabel = "",
+        deviceLabel = "apparatus",
     ):
         # initialise the base component class
         BaseDeviceComponent.__init__(

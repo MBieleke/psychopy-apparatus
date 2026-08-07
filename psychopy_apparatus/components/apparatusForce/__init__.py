@@ -32,7 +32,7 @@ class ApparatusForceComponent(BaseDeviceComponent):
         saveRawData = True,
         rawDataId = "",
         # device
-        deviceLabel = "",
+        deviceLabel = "apparatus",
     ):
         # initialise the base component class
         BaseDeviceComponent.__init__(self, exp, parentName, name=name, deviceLabel=deviceLabel)
