@@ -41,17 +41,23 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 | **21** | `I2C_SDA` | Main Client I2C Data Line | **Active** |
 | **22** | `I2C_SCL` | Main Client I2C Clock Line | **Active** |
 | **2** | `LED_PIN` | Main WS2812 LED Strip Data Output | **Active** |
-| **12** | `REED_INT` | Reed/PCF Expander Interrupt Input (`INPUT_PULLUP`) | **Active** |
+| **12** | `REED_INT` | Reed/PCF8574 Expander Interrupt Input (`INPUT_PULLUP`) | **Active** |
 | **25, 26, 27** | `GROUP_C, B, A` | Hall Group Select Channels | *Unused in current study* |
 | **32, 33, 35** | `GROUP_E, D, F` | Hall Group Select Channels | *Unused in current study* |
 
 #### Client I2C Device Addresses
 
 - **`0x0C`**: Hall Sensor (Active)
-- **`0x21`**: Reed/PCF Expander 0 (Active)
-- **`0x23`**: Reed/PCF Expander 1 (Active)
-- **`0x25`**: Reed/PCF Expander 2 (Active)
+- **`0x21`**: PCF8574 I/O Expander 0 (Active)
+- **`0x23`**: PCF8574 I/O Expander 1 (Active)
+- **`0x25`**: PCF8574 I/O Expander 2 (Active)
 - *Note: Sub-hole selectors 0 to 3 (`0x20, 0x22, 0x24, 0x26`) are currently physically present but software-unused.*
+
+------------------------------------------------------------------------
+
+*Hardware Variant Note: The pinout configuration detailed above corresponds strictly to the production-grade hardware currently deployed inside the physical Apparatus casing. It does NOT match the standalone development kits (Devkits) distributed for testing or prototyping. Researchers testing software on Devkits must cross-reference their specific board layouts as they differ from this primary experimental setup.*
+
+*Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
 ### 2.2.2 ESP32 Server Configuration
 
@@ -76,6 +82,33 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
+# 3. Software Installation & Environment Setup
+
+This section details the step-by-step configuration required to prepare a local Windows computer to recognize, interface with, and control the physical apparatus.
+
+## 3.1 USB-to-Serial Driver Installation (CP210x)
+
+The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART Bridge chip. Windows requires the specific hardware driver to map the device to a virtual COM port.
+
+1.  **Download**: Download the official **CP210x Universal Windows Driver** from Silicon Labs.
+2.  **Installation**: Extract the `.zip` folder, right-click on `silabser.inf`, and select **Install**. Follow the desktop prompts.
+3.  **Verification**:
+    - Connect the ESP32 Server to the PC using a USB data cable.
+    - Open the Windows **Device Manager** (`devmgmt.msc`).
+    - Expand the **Ports (COM & LPT)** section.
+    - Verify that **"Silicon Labs CP210x USB to UART Bridge (COMx)"** is listed without any yellow warning triangles. Note down the specific `COM` port number assigned (e.g., `COM3`).
+
+## 3.2 PsychoPy Environment & Version Constraints
+
+Due to a known upstream issue in the PsychoPy software framework, strict version control must be enforced to ensure plugin compatibility.
+
+- **The PsychoPy Bug**: As of late 2025, PsychoPy releases *after* version **2025.1.1** contain a critical Plugin Manager bug that prevents the university-designed apparatus components from loading correctly.
+- **Required Version**: The experimental setup **must** be deployed exclusively on **PsychoPy 2025.1.1**. Do not update the software past this release unless a patch is explicitly pushed to the main repository.
+
+### 3.2.1 Installing the Apparatus Plugin
+
+Once PsychoPy 2025.1.1 is active on Windows: 1. Open the PsychoPy application. 2. Navigate to the **Tools** menu and open the **Plugin Manager**. 3. Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
+
 *#####Modifications in progress - Extract from previous Documentation*
 
 ***The Apparatus Interfaces - ESP32 Modules***
@@ -84,13 +117,13 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 *The second microcontroller is located in the stationary housing. In addition to communicating with the turntable and the control laptop, it is responsible for controlling the motor, the speaker, and the LED control of the comparison hole. Just like the Raspberry Pi, it is powered by the wall power adapter (labeled/coded with 2 and 3).*
 
-*\*
+\*\*
 
 ***The Pegs & Sensors***
 
 *The cylindrical pegs are made of balsa wood and feature an embedded magnet at one end. In combination with the reed switch built into the holes, this magnet confirms when a peg has entered a hole. In addition to measurements using the reed sensors, there is also the option to use the built-in Hall sensors. (However, in practice, this highly sensitive and extremely accurate measurement methodology has proven impractical so far due to the massive volume of data generated.) At the other end of the peg, a metal plate is embedded, which is attracted by the electromagnet of the hand dynamometer.*
 
-*\*
+\*\*
 
 ***Hand Dynamometer***
 
@@ -132,7 +165,7 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 *Due to the high number of inputs required for the 20 holes, I2C port expanders are utilized to multiply the available inputs:*
 
-- ***Addresses 0x21, 0x23, 0x25:** Connected to the Reed/PCF expander modules responsible for detecting the magnetic insertion of the balsa wood pegs.*
+- ***Addresses 0x21, 0x23, 0x25:** Connected to the Reed/PCF8574 expander modules responsible for detecting the magnetic insertion of the balsa wood pegs.*
 
 - ***Addresses 0x0C and 0x20 to 0x26:** Associated with the Hall sensors and sub-hole selectors. These components are currently unused.*
 
