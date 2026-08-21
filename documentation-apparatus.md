@@ -12,7 +12,11 @@ date: "2026-08-02"
 
 *#####Modifications in progress*
 
-*The Apparatus is a rotating pegboard equipped with 20 holes featuring LED light rings and sensors, which can be controlled using the Pegboard software. In addition to visual stimuli, auditory stimuli can also be played back through a built-in speaker. The Apparatus was developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff and built by the scientific workshops at the University of Konstanz. The experimental setup allows for the continuous manipulation of various independent variables and can be programmed completely freely.*
+***OLD:** The Apparatus is a rotating pegboard equipped with 20 holes featuring LED light rings and sensors, which can be controlled using the Pegboard software. In addition to visual stimuli, auditory stimuli can also be played back through a built-in speaker. The Apparatus was developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff and built by the scientific workshops at the University of Konstanz. The experimental setup allows for the continuous manipulation of various independent variables and can be programmed completely freely.*
+
+The Apparatus is a rotating pegboard equipped with 20 holes featuring integrated LED light rings and sensors, controlled directly within the PsychoPy framework via a custom plugin. In addition to dynamic visual stimuli, the system delivers auditory feedback through a built-in speaker.
+
+Developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff, and precision-built by the scientific workshops at the University of Konstanz, this versatile experimental setup allows for the continuous manipulation of multiple independent variables. Operating within an open-source programming architecture, the entire ecosystem can be programmed completely freely to accommodate complex physical and cognitive effort protocols.
 
 ## 2. System Architecture & Hardware Foundations
 
@@ -51,7 +55,8 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 - **`0x21`**: PCF8574 I/O Expander 0 (Active)
 - **`0x23`**: PCF8574 I/O Expander 1 (Active)
 - **`0x25`**: PCF8574 I/O Expander 2 (Active)
-- *Note: Sub-hole selectors 0 to 3 (`0x20, 0x22, 0x24, 0x26`) are currently physically present but software-unused.*
+
+*Note: Sub-hole selectors 0 to 3 (`0x20, 0x22, 0x24, 0x26`) are currently physically present but software-unused.*
 
 ------------------------------------------------------------------------
 
@@ -102,12 +107,50 @@ The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART 
 
 Due to a known upstream issue in the PsychoPy software framework, strict version control must be enforced to ensure plugin compatibility.
 
-- **The PsychoPy Bug**: As of late 2025, PsychoPy releases *after* version **2025.1.1** contain a critical Plugin Manager bug that prevents the university-designed apparatus components from loading correctly.
-- **Required Version**: The experimental setup **must** be deployed exclusively on **PsychoPy 2025.1.1**. Do not update the software past this release unless a patch is explicitly pushed to the main repository.
+- The PsychoPy Bug: As of late 2025, PsychoPy releases after version 2025.1.1 contain a critical Plugin Manager bug that prevents the university-designed apparatus components from loading correctly.
+- Required Version: The experimental setup must be deployed exclusively on PsychoPy 2025.1.1. Do not update the software past this release unless a patch is explicitly pushed to the main repository.
 
 ### 3.2.1 Installing the Apparatus Plugin
 
-Once PsychoPy 2025.1.1 is active on Windows: 1. Open the PsychoPy application. 2. Navigate to the **Tools** menu and open the **Plugin Manager**. 3. Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
+Once PsychoPy 2025.1.1 is active on Windows:
+
+- 1\. Open the PsychoPy application.
+
+- 2\. Navigate to the **Tools** menu and open the **Plugin Manager**.
+
+- 3\. Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
+
+## 3.3 Serial Connection Mapping
+
+The connection and raw data exchange between Windows and the physical hardware are managed by the core script `apparatusDevice.py`. This implementation wraps the `pySerial` library to build a non-blocking, multi-threaded serial interface.
+
+#### 3.3.1 Port Initialization & Handshaking
+
+When an experiment initiates the `ApparatusDevice` class, the framework executes the following hardware initialization sequence:
+
+1\. Port Allocation: The device binds to a designated Windows port (e.g., `COM3`) at a hardcoded transmission speed of 115200 baud (`baudrate=115200`).
+
+2\. Hardware Auto-Reset Mitigation: Many ESP32 development boards automatically reboot when a serial connection is established. To prevent data corruption, the script enforces a mandatory 4-second startup delay (`startup_delay=4.0`). This pause allows the microcontrollers to complete their boot sequence safely.
+
+3\. Buffer Flushing: Immediately following the delay, the system calls `reset_input_buffer()` and `reset_output_buffer()` to purge any electrical noise or boot-time garbage text generated during power-up, ensuring the protocol starts on a clean frame boundary.
+
+#### 3.3.2 Multi-Threaded Ingestion Background Process
+
+To ensure that high-frequency sensor tracking does not cause visual lag or frame drops in PsychoPy, serial monitoring is decoupled from the main thread:
+
+- The Reader Thread: The script deploys a background `ReaderThread` utilizing an `ApparatusProtocol` class.
+
+- Byte Asynchrony: This background routine constantly scans incoming binary traffic byte-by-byte. It intercepts raw data packets, checks for the `0x00` frame delimiter, and instantly pushes parsed metrics into a central asynchronous data queue (`_responses`).
+
+#### 3.3.3 Object-Oriented Event Handling
+
+Every valid incoming signal is encapsulated into an `ApparatusResponse` object. The class exposes standardized high-level properties that map directly to physical behavioral sensors:
+
+- `whiteForce` / `whiteForceRawCounts`: Real-time grip force data from the white dynamometer (Device ID 0).
+
+-  `blueForce` / `blueForceRawCounts`: Real-time grip force data from the blue dynamometer (Device ID 1).
+
+-  `reed_bits` / `reed_holes`: Positional array tracking which specific pegboard holes are currently plugged or unplugged by the participant.
 
 *#####Modifications in progress - Extract from previous Documentation*
 
