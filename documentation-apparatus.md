@@ -6,7 +6,7 @@ date: "2026-08-02"
 
 # Apparatus
 
-## 1. The Apparatus: Fundamentals & Structure
+# 1. The Apparatus: Fundamentals
 
 **What is the Apparatus?**
 
@@ -22,7 +22,7 @@ Developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanj
 
 This section outlines the physical hardware design, microcontroller roles, and the pinout mapping configuration of the university-designed apparatus.
 
-### 2.1 High-Level Architecture (USB Control)
+## 2.1 High-Level Architecture (USB Control)
 
 The system operates under a streamlined Direct USB Control topology:
 
@@ -32,7 +32,7 @@ The system operates under a streamlined Direct USB Control topology:
 
 - PC Integration: The ESP32 Server establishes a direct Serial USB connection with the experimental computer. PsychoPy interacts exclusively with the Server via this serial interface to log data and dispatch high-level control commands.
 
-### 2.2 Hardware Pinout & Component Mapping
+## 2.2 Hardware Pinout & Component Mapping
 
 The following tables define the active physical pin connections (GPIO) and I2C addresses for both microcontrollers.
 
@@ -60,7 +60,7 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 
 ------------------------------------------------------------------------
 
-*Hardware Variant Note: The pinout configuration detailed above corresponds strictly to the production-grade hardware currently deployed inside the physical Apparatus casing. It does NOT match the standalone development kits (Devkits) distributed for testing or prototyping. Researchers testing software on Devkits must cross-reference their specific board layouts as they differ from this primary experimental setup.*
+*Hardware Note: The pinout configuration detailed above corresponds strictly to the production-grade hardware currently deployed inside the physical Apparatus casing. It does NOT match the standalone development kits (Devkits) distributed for testing or prototyping. Researchers testing software on Devkits must cross-reference their specific board layouts as they differ from this primary experimental setup.*
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
@@ -89,21 +89,23 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 # 3. Software Installation & Environment Setup
 
+*#####Modifications in progress*
+
 This section details the step-by-step configuration required to prepare a local Windows computer to recognize, interface with, and control the physical apparatus.
 
 ## 3.1 USB-to-Serial Driver Installation (CP210x)
 
 The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART Bridge chip. Windows requires the specific hardware driver to map the device to a virtual COM port.
 
-1.  **Download**: Download the official **CP210x Universal Windows Driver** from Silicon Labs.
-2.  **Installation**: Extract the `.zip` folder, right-click on `silabser.inf`, and select **Install**. Follow the desktop prompts.
-3.  **Verification**:
+1.  Download: Download the official CP210x Universal Windows Driver from Silicon Labs.
+2.  Installation: Extract the `.zip` folder, right-click on `silabser.inf`, and select Install. Follow the desktop prompts.
+3.  Verification:
     - Connect the ESP32 Server to the PC using a USB data cable.
-    - Open the Windows **Device Manager** (`devmgmt.msc`).
-    - Expand the **Ports (COM & LPT)** section.
-    - Verify that **"Silicon Labs CP210x USB to UART Bridge (COMx)"** is listed without any yellow warning triangles. Note down the specific `COM` port number assigned (e.g., `COM3`).
+    - Open the Windows Device Manager (`devmgmt.msc`).
+    - Expand the Ports (COM & LPT) section.
+    - Verify that "Silicon Labs CP210x USB to UART Bridge (COMx)" is listed without any yellow warning triangles. Note down the specific `COM` port number assigned (e.g., `COM3`).
 
-## 3.2 PsychoPy Environment & Version Constraints
+## 3.2 PsychoPy Environment
 
 Due to a known upstream issue in the PsychoPy software framework, strict version control must be enforced to ensure plugin compatibility.
 
@@ -114,27 +116,27 @@ Due to a known upstream issue in the PsychoPy software framework, strict version
 
 Once PsychoPy 2025.1.1 is active on Windows:
 
-- 1\. Open the PsychoPy application.
+1.  Open the PsychoPy application.
 
-- 2\. Navigate to the **Tools** menu and open the **Plugin Manager**.
+2.  Navigate to the Tools menu and open the Plugin Manager.
 
-- 3\. Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
+3.  Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
 
-## 3.3 Serial Connection Mapping
+## 3.3 Serial Connection 
 
 The connection and raw data exchange between Windows and the physical hardware are managed by the core script `apparatusDevice.py`. This implementation wraps the `pySerial` library to build a non-blocking, multi-threaded serial interface.
 
-#### 3.3.1 Port Initialization & Handshaking
+### 3.3.1 Port Initialization
 
 When an experiment initiates the `ApparatusDevice` class, the framework executes the following hardware initialization sequence:
 
-1\. Port Allocation: The device binds to a designated Windows port (e.g., `COM3`) at a hardcoded transmission speed of 115200 baud (`baudrate=115200`).
+1.  Port Allocation: The device binds to a designated Windows port (e.g., `COM3`) at a hardcoded transmission speed of 115200 baud (`baudrate=115200`).
 
-2\. Hardware Auto-Reset Mitigation: Many ESP32 development boards automatically reboot when a serial connection is established. To prevent data corruption, the script enforces a mandatory 4-second startup delay (`startup_delay=4.0`). This pause allows the microcontrollers to complete their boot sequence safely.
+2.  Hardware Auto-Reset Mitigation: Many ESP32 development boards automatically reboot when a serial connection is established. To prevent data corruption, the script enforces a mandatory 4-second startup delay (`startup_delay=4.0`). This pause allows the microcontrollers to complete their boot sequence safely.
 
-3\. Buffer Flushing: Immediately following the delay, the system calls `reset_input_buffer()` and `reset_output_buffer()` to purge any electrical noise or boot-time garbage text generated during power-up, ensuring the protocol starts on a clean frame boundary.
+3.  Buffer Flushing: Immediately following the delay, the system calls `reset_input_buffer()` and `reset_output_buffer()` to purge any electrical noise or boot-time garbage text generated during power-up, ensuring the protocol starts on a clean frame boundary.
 
-#### 3.3.2 Multi-Threaded Ingestion Background Process
+### 3.3.2 Multi-Threaded Ingestion Background Process
 
 To ensure that high-frequency sensor tracking does not cause visual lag or frame drops in PsychoPy, serial monitoring is decoupled from the main thread:
 
@@ -142,15 +144,15 @@ To ensure that high-frequency sensor tracking does not cause visual lag or frame
 
 - Byte Asynchrony: This background routine constantly scans incoming binary traffic byte-by-byte. It intercepts raw data packets, checks for the `0x00` frame delimiter, and instantly pushes parsed metrics into a central asynchronous data queue (`_responses`).
 
-#### 3.3.3 Object-Oriented Event Handling
+### 3.3.3 Object-Oriented Event Handling
 
 Every valid incoming signal is encapsulated into an `ApparatusResponse` object. The class exposes standardized high-level properties that map directly to physical behavioral sensors:
 
 - `whiteForce` / `whiteForceRawCounts`: Real-time grip force data from the white dynamometer (Device ID 0).
 
--  `blueForce` / `blueForceRawCounts`: Real-time grip force data from the blue dynamometer (Device ID 1).
+- `blueForce` / `blueForceRawCounts`: Real-time grip force data from the blue dynamometer (Device ID 1).
 
--  `reed_bits` / `reed_holes`: Positional array tracking which specific pegboard holes are currently plugged or unplugged by the participant.
+- `reed_bits` / `reed_holes`: Positional array tracking which specific pegboard holes are currently plugged or unplugged by the participant.
 
 *#####Modifications in progress - Extract from previous Documentation*
 
