@@ -22,25 +22,33 @@ Developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanj
 ## 1. Physical Specifications and Device Structure
 
 ### 1.1 External Dimensions and Materials
-The Apparatus is constructed with a rigid, custom-milled university casing designed for desktop laboratory deployment. 
 
-*   **Total Width**: [Insert measurement, e.g., 45.0 cm]
-*   **Total Length/Height**: [Insert measurement, e.g., 50.0 cm]
-*   **Chassis Depth**: [Insert measurement, e.g., 12.0 cm]
-*   **Primary Materials**: High-density polymer pegboard panel mounted on an aluminum and reinforced acrylic housing.
+The Apparatus is constructed with a rigid, custom-milled university casing designed for desktop laboratory deployment.
+
+- **Total Width**: 90 cm
+- **Total Length**: 90 cm
+- **Chassis Depth**: 21 cm
+- **Primary Materials**: High-density polymer pegboard panel mounted on an aluminum and reinforced acrylic housing
 
 ### 1.2 Component Layout Description
-At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame. 
-*   **The Pegboard**: Features exactly 20 precision-drilled holes arranged in a concentric circular matrix.
-*   **Visual Feedback**: Every single hole is surrounded by an integrated, flush-mounted circular LED light ring containing programmable WS2812 addressable components.
-*   **Physical Ingestion Points**: Two external handgrip dynamometers (color-coded as White and Blue) connect via dedicated port interfaces to the chassis base. These transducers measure linear grip force exerted by the participant.
+
+At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame.
+
+- **The Pegboard**: Features exactly 20 precision-drilled holes arranged in a concentric circular matrix.
+
+- **Visual Feedback**: Every single hole is surrounded by an integrated, flush-mounted circular LED light ring containing programmable WS2812 addressable components.
+
+- **Physical Ingestion Points**: Two external handgrip dynamometers (color-coded as White and Blue) connect via dedicated port interfaces to the chassis base. These transducers measure linear grip force exerted by the participant.
 
 ### 1.3 Silent Hardware Features
-The apparatus includes non-visual auxiliary components to support multi-sensory experimental protocols:
-*   **Acoustic System**: A built-in internal audio speaker mounted within the chassis, capable of playing back auditory stimuli and error tones directly from the hardware layer.
-*   **Mechanical Motion**: An internal motion rotator assembly that allows the centralized pegboard matrix to spin or adjust orientation continuously during experimental trial transitions.
 
----
+The apparatus includes non-visual auxiliary components to support multi-sensory experimental protocols:
+
+- **Acoustic System**: A built-in internal audio speaker mounted within the chassis, capable of playing back auditory stimuli and error tones directly from the hardware layer.
+
+- **Mechanical Motion**: An internal motion rotator assembly that allows the centralized pegboard matrix to spin or adjust orientation continuously during experimental trial transitions.
+
+------------------------------------------------------------------------
 
 ## 2. Visual Component Log and Labels
 
@@ -48,11 +56,16 @@ The apparatus includes non-visual auxiliary components to support multi-sensory 
 
 *#####Images in progress*
 
-Figure 1: Full Frontal View of the Apparatus.
-Labels to include in graphic:
+![Figure 1: Full Frontal View of the Apparatus](images/3.png){width="435"}
+
+*####Labels to include in graphic:*
+
 Label A: 20-Hole Rotating Pegboard Matrix
+
 Label B: Flush-Mounted WS2812 LED Rings
+
 Label C: Mechanical Motion Rotator Border
+
 Label D: Built-In Speaker Grille Output
 
 ### 2.2 Input Transducers (Handgrips)
@@ -60,9 +73,13 @@ Label D: Built-In Speaker Grille Output
 *#####Images in progress*
 
 Figure 2: External Force Transducers.
+
 Labels to include in graphic:
+
 Label E: White Dynamometer (Device ID 0)
+
 Label F: Blue Dynamometer (Device ID 1)
+
 Label G: Main Strain-Gauge Signal Cable Connection
 
 ## 3. System Architecture & Hardware Foundations
@@ -83,8 +100,7 @@ The system operates under a streamlined Direct USB Control topology:
 
 The following tables define the active physical pin connections (GPIO) and I2C addresses for both microcontrollers.
 
-*#####Images in progress*
-Figure 3: Main Circuit Board and ESP32 Microcontroller Interconnects.
+*#####Images in progress* Figure 3: Main Circuit Board and ESP32 Microcontroller Interconnects.
 
 ### 3.2.1 ESP32 Client Configuration
 
@@ -172,7 +188,7 @@ Once PsychoPy 2025.1.1 is active on Windows:
 
 3.  Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
 
-## 4.3 Serial Connection 
+## 4.3 Serial Connection
 
 The connection and raw data exchange between Windows and the physical hardware are managed by the core script `apparatusDevice.py`. This implementation wraps the `pySerial` library to build a non-blocking, multi-threaded serial interface.
 
