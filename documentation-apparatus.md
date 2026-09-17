@@ -1,6 +1,5 @@
 ---
 title: "Apparatus Setup Guide"
-author: "Carolina"
 date: "2026-08-02"
 ---
 
@@ -18,11 +17,59 @@ The Apparatus is a rotating pegboard equipped with 20 holes featuring integrated
 
 Developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff, and precision-built by the scientific workshops at the University of Konstanz, this versatile experimental setup allows for the continuous manipulation of multiple independent variables. Operating within an open-source programming architecture, the entire ecosystem can be programmed completely freely to accommodate complex physical and cognitive effort protocols.
 
-## 2. System Architecture & Hardware Foundations
+# Apparatus Technical Manual and Specifications
+
+## 1. Physical Specifications and Device Structure
+
+### 1.1 External Dimensions and Materials
+The Apparatus is constructed with a rigid, custom-milled university casing designed for desktop laboratory deployment. 
+
+*   **Total Width**: [Insert measurement, e.g., 45.0 cm]
+*   **Total Length/Height**: [Insert measurement, e.g., 50.0 cm]
+*   **Chassis Depth**: [Insert measurement, e.g., 12.0 cm]
+*   **Primary Materials**: High-density polymer pegboard panel mounted on an aluminum and reinforced acrylic housing.
+
+### 1.2 Component Layout Description
+At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame. 
+*   **The Pegboard**: Features exactly 20 precision-drilled holes arranged in a concentric circular matrix.
+*   **Visual Feedback**: Every single hole is surrounded by an integrated, flush-mounted circular LED light ring containing programmable WS2812 addressable components.
+*   **Physical Ingestion Points**: Two external handgrip dynamometers (color-coded as White and Blue) connect via dedicated port interfaces to the chassis base. These transducers measure linear grip force exerted by the participant.
+
+### 1.3 Silent Hardware Features
+The apparatus includes non-visual auxiliary components to support multi-sensory experimental protocols:
+*   **Acoustic System**: A built-in internal audio speaker mounted within the chassis, capable of playing back auditory stimuli and error tones directly from the hardware layer.
+*   **Mechanical Motion**: An internal motion rotator assembly that allows the centralized pegboard matrix to spin or adjust orientation continuously during experimental trial transitions.
+
+---
+
+## 2. Visual Component Log and Labels
+
+### 2.1 Front Panel Interface
+
+*#####Images in progress*
+
+Figure 1: Full Frontal View of the Apparatus.
+Labels to include in graphic:
+Label A: 20-Hole Rotating Pegboard Matrix
+Label B: Flush-Mounted WS2812 LED Rings
+Label C: Mechanical Motion Rotator Border
+Label D: Built-In Speaker Grille Output
+
+### 2.2 Input Transducers (Handgrips)
+
+*#####Images in progress*
+
+Figure 2: External Force Transducers.
+Labels to include in graphic:
+Label E: White Dynamometer (Device ID 0)
+Label F: Blue Dynamometer (Device ID 1)
+Label G: Main Strain-Gauge Signal Cable Connection
+
+## 3. System Architecture & Hardware Foundations
 
 This section outlines the physical hardware design, microcontroller roles, and the pinout mapping configuration of the university-designed apparatus.
 
-## 2.1 High-Level Architecture (USB Control)
+## 3.1 High-Level Architecture (USB Control)
 
 The system operates under a streamlined Direct USB Control topology:
 
@@ -32,11 +79,14 @@ The system operates under a streamlined Direct USB Control topology:
 
 - PC Integration: The ESP32 Server establishes a direct Serial USB connection with the experimental computer. PsychoPy interacts exclusively with the Server via this serial interface to log data and dispatch high-level control commands.
 
-## 2.2 Hardware Pinout & Component Mapping
+## 3.2 Hardware Pinout & Component Mapping
 
 The following tables define the active physical pin connections (GPIO) and I2C addresses for both microcontrollers.
 
-### 2.2.1 ESP32 Client Configuration
+*#####Images in progress*
+Figure 3: Main Circuit Board and ESP32 Microcontroller Interconnects.
+
+### 3.2.1 ESP32 Client Configuration
 
 The Client microcontroller manages visual feedback (LEDs) and primary input sensors.
 
@@ -64,7 +114,7 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
-### 2.2.2 ESP32 Server Configuration
+### 3.2.2 ESP32 Server Configuration
 
 The Server microcontroller acts as the central hub, managing force transducers, magnetic loads, and PC communication.
 
@@ -87,13 +137,13 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
-# 3. Software Installation & Environment Setup
+# 4. Software Installation & Environment Setup
 
 *#####Modifications in progress*
 
 This section details the step-by-step configuration required to prepare a local Windows computer to recognize, interface with, and control the physical apparatus.
 
-## 3.1 USB-to-Serial Driver Installation (CP210x)
+## 4.1 USB-to-Serial Driver Installation (CP210x)
 
 The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART Bridge chip. Windows requires the specific hardware driver to map the device to a virtual COM port.
 
@@ -105,14 +155,14 @@ The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART 
     - Expand the Ports (COM & LPT) section.
     - Verify that "Silicon Labs CP210x USB to UART Bridge (COMx)" is listed without any yellow warning triangles. Note down the specific `COM` port number assigned (e.g., `COM3`).
 
-## 3.2 PsychoPy Environment
+## 4.2 PsychoPy Environment
 
 Due to a known upstream issue in the PsychoPy software framework, strict version control must be enforced to ensure plugin compatibility.
 
 - The PsychoPy Bug: As of late 2025, PsychoPy releases after version 2025.1.1 contain a critical Plugin Manager bug that prevents the university-designed apparatus components from loading correctly.
 - Required Version: The experimental setup must be deployed exclusively on PsychoPy 2025.1.1. Do not update the software past this release unless a patch is explicitly pushed to the main repository.
 
-### 3.2.1 Installing the Apparatus Plugin
+### 4.2.1 Installing the Apparatus Plugin
 
 Once PsychoPy 2025.1.1 is active on Windows:
 
@@ -122,11 +172,11 @@ Once PsychoPy 2025.1.1 is active on Windows:
 
 3.  Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
 
-## 3.3 Serial Connection 
+## 4.3 Serial Connection 
 
 The connection and raw data exchange between Windows and the physical hardware are managed by the core script `apparatusDevice.py`. This implementation wraps the `pySerial` library to build a non-blocking, multi-threaded serial interface.
 
-### 3.3.1 Port Initialization
+### 4.3.1 Port Initialization
 
 When an experiment initiates the `ApparatusDevice` class, the framework executes the following hardware initialization sequence:
 
@@ -136,7 +186,7 @@ When an experiment initiates the `ApparatusDevice` class, the framework executes
 
 3.  Buffer Flushing: Immediately following the delay, the system calls `reset_input_buffer()` and `reset_output_buffer()` to purge any electrical noise or boot-time garbage text generated during power-up, ensuring the protocol starts on a clean frame boundary.
 
-### 3.3.2 Multi-Threaded Ingestion Background Process
+### 4.3.2 Multi-Threaded Ingestion Background Process
 
 To ensure that high-frequency sensor tracking does not cause visual lag or frame drops in PsychoPy, serial monitoring is decoupled from the main thread:
 
@@ -144,7 +194,7 @@ To ensure that high-frequency sensor tracking does not cause visual lag or frame
 
 - Byte Asynchrony: This background routine constantly scans incoming binary traffic byte-by-byte. It intercepts raw data packets, checks for the `0x00` frame delimiter, and instantly pushes parsed metrics into a central asynchronous data queue (`_responses`).
 
-### 3.3.3 Object-Oriented Event Handling
+### 4.3.3 Object-Oriented Event Handling
 
 Every valid incoming signal is encapsulated into an `ApparatusResponse` object. The class exposes standardized high-level properties that map directly to physical behavioral sensors:
 
