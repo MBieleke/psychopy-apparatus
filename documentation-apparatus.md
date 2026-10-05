@@ -7,16 +7,17 @@ date: "2026-08-02"
 
 ## Table of Contents
 
-- **1. Device Introduction and Fundamentals**
+- **1. Introduction and Fundamentals**
   - 1.1 System Purpose and High-Level Description
   - 1.2 High-Level Architecture (USB Topology)
 - **2. External Physical Specifications**
   - 2.1 Chassis Dimensions and Materials
-  - 2.2 Component Layout Description
-  - 2.3 Peripheral Inventory and Cable Interface
+  - 2.2 Figure 1: Full Frontal View of the Apparatus
+  - 2.3 Component Layout Description
+  - 2.4 Inventory and Cable Interface
 - **3. Visual Component Log and Labels**
-  - 3.1 Figure 1: Front Panel Interface
-  - 3.2 Figure 2: Input Transducers (Handgrips)
+  - 3.1 Figure 2: Front Panel Interface
+  - 3.2 Figure 3: Input Transducers (Handgrips)
 - **4. System Architecture & Hardware Foundations**
   - 4.1 High-Level Architecture (USB Control)
   - 4.2 Hardware Pinout & Component Mapping
