@@ -39,9 +39,10 @@ This versatile experimental setup allows for the continuous manipulation of mult
 
 ## 2. External Physical Specifications
 
-The Apparatus is constructed within a rigid, custom-milled university housing designed specifically for desktop laboratory deployment.
+The Apparatus is constructed within a solid, custom made wood case designed specifically for desktop laboratory deployment.
 
-The Apparatus housing and structural panels are custom crafted from precision clear wood, specifically engineered for stable desktop laboratory setups.
+
+The panels and outer case are custom made from precision cut clear wood, creating a stable and solid frame designed to sit on a laboratory desk.
 
 - **Total Outer Panel Dimensions**: 90 cm x 90 cm
 - **Rotator Spin Diameter**: 70 cm
