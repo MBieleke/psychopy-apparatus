@@ -244,4 +244,9 @@ Every valid incoming signal is encapsulated into an `ApparatusResponse` object. 
 
 ### 6.1 Step-by-Step Power-Up Sequence
 
-To avoid port synchronization errors or packet drop during initialization, users must strictly follow this external deployment recipe: 1. **Peripheral Connection**: Connect both the White and Blue Vernier handgrips to their respective chassis sockets using the external British telephone jack interfaces before powering the unit. 2. **PC Data Link**: Connect the main Serial-USB data cable from the stationary base port to an active USB interface on the Windows workstation. 3. **Hardware Activation**: Toggle the primary power switch on the housing. 4. **Boot Wait-Time**: Wait a mandatory **4 seconds** without opening any software. This allows the ESP32 Server to stabilize its wireless ESP-NOW link with the Client and flush power-up transmission noise. 5. **Software Execution**: Open PsychoPy 2025.1.1 and launch your experimental protocol script.
+To avoid port synchronization errors or packet drop during initialization, users must strictly follow this external deployment recipe: 
+1. **Peripheral Connection**: Connect both the White and Blue Vernier handgrips to their respective chassis sockets using the external British telephone jack interfaces before powering the unit. 
+2. **PC Data Link**: Connect the main Serial-USB data cable from the stationary base port to an active USB interface on the Windows workstation. 
+3. **Hardware Activation**: Toggle the primary power switch on the housing. 
+4. **Boot Wait-Time**: Wait a mandatory **4 seconds** without opening any software. This allows the ESP32 Server to stabilize its wireless ESP-NOW link with the Client and flush power-up transmission noise. 
+5. **Software Execution**: Open PsychoPy 2025.1.1 and launch your experimental protocol script.
