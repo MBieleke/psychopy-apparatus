@@ -52,7 +52,7 @@ The Apparatus housing and structural panels are custom crafted from precision cl
 ### 2.2 Figure 1: Full Frontal View of the Apparatus
 
 
-<img src="images/figure%200.png" width="400">
+<img src="images/figure%200.png" width="480">
 
 
 ### 2.3 Component Layout Description
@@ -82,7 +82,7 @@ Connection of external accessories is restricted to the dedicated outer ports of
 
 ### 3.1 Figure 2: Lateral View of the Apparatus
 
-<img src="images/figure%201.png" width="463">
+<img src="images/figure%201.png" width="480">
 
 ### 3.2 Input Transducers (Handgrips)
 
