@@ -39,6 +39,8 @@ This versatile experimental setup allows for the continuous manipulation of mult
 
 ## 2. External Physical Specifications
 
+### 2.1 Chassis Dimensions and Materials
+
 The Apparatus is constructed within a solid, custom made wood case designed specifically for desktop laboratory deployment.
 
 
