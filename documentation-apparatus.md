@@ -53,6 +53,9 @@ The Apparatus housing and structural panels are custom crafted from precision cl
 
 ![](images/figure%200.png){width="100" height="80"}
 
+<img src="images/figure%200.png" width="300">
+
+
 ### 2.3 Component Layout Description
 
 At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame:
