@@ -51,7 +51,7 @@ The Apparatus housing and structural panels are custom crafted from precision cl
 
 ### 2.2 Figure 1: Full Frontal View of the Apparatus
 
-![](images/figure 0.png){width="487" height="402"}
+![](images/figure%200.png){width="487" height="402"}
 
 ### 2.3 Component Layout Description
 
