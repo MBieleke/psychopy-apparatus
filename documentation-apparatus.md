@@ -5,70 +5,84 @@ date: "2026-08-02"
 
 # Apparatus
 
-# 1. The Apparatus: Fundamentals
+## Table of Contents
+
+- **1. Device Introduction and Fundamentals**
+  - 1.1 System Purpose and High-Level Description
+  - 1.2 High-Level Architecture (USB Topology)
+- **2. External Physical Specifications**
+  - 2.1 Chassis Dimensions and Materials
+  - 2.2 Component Layout Description
+  - 2.3 Peripheral Inventory and Cable Interface
+- **3. Visual Component Log and Labels**
+  - 3.1 Figure 1: Front Panel Interface
+  - 3.2 Figure 2: Input Transducers (Handgrips)
+- **4. System Architecture & Hardware Foundations**
+  - 4.1 High-Level Architecture (USB Control)
+  - 4.2 Hardware Pinout & Component Mapping
+- **5. Software Installation & Environment Setup**
+  - 5.1 USB-to-Serial Driver Installation (CP210x)
+  - 5.2 PsychoPy Environment & Version Constraints
+  - 5.3 Serial Connection Mapping
+- **6. First-Time Operation Guide**
+  - 6.1 Step-by-Step Power-Up Sequence
+
+# 1. Introduction and Fundamentals
 
 **What is the Apparatus?**
 
-*#####Modifications in progress*
+The Apparatus is a rotating pegboard equipped with 20 holes featuring integrated LED light rings and magnetic sensors, controlled directly within the **PsychoPy** framework via a custom plugin. In addition to dynamic visual stimuli, the system delivers auditory feedback through a built-in internal speaker.
 
-***OLD:** The Apparatus is a rotating pegboard equipped with 20 holes featuring LED light rings and sensors, which can be controlled using the Pegboard software. In addition to visual stimuli, auditory stimuli can also be played back through a built-in speaker. The Apparatus was developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff and built by the scientific workshops at the University of Konstanz. The experimental setup allows for the continuous manipulation of various independent variables and can be programmed completely freely.*
-
-The Apparatus is a rotating pegboard equipped with 20 holes featuring integrated LED light rings and sensors, controlled directly within the PsychoPy framework via a custom plugin. In addition to dynamic visual stimuli, the system delivers auditory feedback through a built-in speaker.
-
-Developed in the Sports Psychology Laboratory by Dr. Ursula Fischer and Dr. Wanja Wolff, and precision-built by the scientific workshops at the University of Konstanz, this versatile experimental setup allows for the continuous manipulation of multiple independent variables. Operating within an open-source programming architecture, the entire ecosystem can be programmed completely freely to accommodate complex physical and cognitive effort protocols.
-
-# Apparatus Technical Manual and Specifications
-
-## 1. Physical Specifications and Device Structure
-
-### 1.1 External Dimensions and Materials
-
-The Apparatus is constructed with a rigid, custom-milled university casing designed for desktop laboratory deployment.
-
-- **Total Width**: 90 cm
-- **Total Length**: 90 cm
-- **Chassis Depth**: 21 cm
-- **Primary Materials**: High-density polymer pegboard panel mounted on an aluminum and reinforced acrylic housing
-
-### 1.2 Component Layout Description
-
-At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame.
-
-- **The Pegboard**: Features exactly 20 precision-drilled holes arranged in a concentric circular matrix.
-
-- **Visual Feedback**: Every single hole is surrounded by an integrated, flush-mounted circular LED light ring containing programmable WS2812 addressable components.
-
-- **Physical Ingestion Points**: Two external handgrip dynamometers (color-coded as White and Blue) connect via dedicated port interfaces to the chassis base. These transducers measure linear grip force exerted by the participant.
-
-### 1.3 Silent Hardware Features
-
-The apparatus includes non-visual auxiliary components to support multi-sensory experimental protocols:
-
-- **Acoustic System**: A built-in internal audio speaker mounted within the chassis, capable of playing back auditory stimuli and error tones directly from the hardware layer.
-
-- **Mechanical Motion**: An internal motion rotator assembly that allows the centralized pegboard matrix to spin or adjust orientation continuously during experimental trial transitions.
+This versatile experimental setup allows for the continuous manipulation of multiple independent variables. Operating within an open-source programming architecture, the entire ecosystem can be programmed completely freely to accommodate complex physical and cognitive effort protocols.
 
 ------------------------------------------------------------------------
 
-## 2. Visual Component Log and Labels
+## 2. External Physical Specifications
 
-### 2.1 Front Panel Interface
+The Apparatus is constructed within a rigid, custom-milled university housing designed specifically for desktop laboratory deployment.
 
-*#####Images in progress*
+The Apparatus housing and structural panels are custom crafted from precision clear wood, specifically engineered for stable desktop laboratory setups.
 
-![Figure 1: Full Frontal View of the Apparatus](images/3.png){width="435"}
+- **Total Outer Panel Dimensions**: 90 cm x 90 cm
+- **Rotator Spin Diameter**: 70 cm
+- **Outer Hole Diameter**: 5 cm
+- **Built-In Speaker Diameter**: 10 cm
+- **Primary Materials**: Natural wood face panels integrated with internal mechanical components and flush mounted electrical sensor housings
 
-*####Labels to include in graphic:*
+### 2.2 Figure 1: Full Frontal View of the Apparatus
 
-Label A: 20-Hole Rotating Pegboard Matrix
+![](images/figure 0-2.png){width="464"}
 
-Label B: Flush-Mounted WS2812 LED Rings
+### 2.3 Component Layout Description
 
-Label C: Mechanical Motion Rotator Border
+At the macro level, the device consists of a centralized, mechanical rotating pegboard disk embedded within a square control frame:
 
-Label D: Built-In Speaker Grille Output
+- **The Rotating Pegboard**: Features exactly 20 precision-drilled holes arranged in a concentric circular matrix. The cylindrical pegs are constructed from lightweight balsa wood and feature an embedded magnet at one end to trigger the internal tracking sensors.
 
-### 2.2 Input Transducers (Handgrips)
+- **Visual Feedback**: Every single hole is surrounded by an integrated, flush-mounted circular LED light ring containing programmable WS2812 addressable components.
+
+- **Silent Hardware Features**:
+
+  - *Acoustic System*: A built-in internal audio speaker mounted within the chassis, capable of playing back auditory stimuli and error tones directly from the hardware layer.
+  - *Mechanical Motion*: An internal motion rotator assembly that allows the centralized pegboard matrix to spin or adjust orientation continuously during experimental trial transitions.
+
+### 2.4 Peripheral Inventory and Cable Interface
+
+Connection of external accessories is restricted to the dedicated outer ports of the housing:
+
+- **Main PC Data Link**: The system connects to the experimental workstation using a single standard Serial-over-USB data cable linked directly to the internal Server module.
+
+- **Handgrip Dynamometers**: The apparatus includes two custom-integrated Vernier handgrip dynamometers (color-coded as White and Blue). These isometric transducers measure linear grip force exerted by the participant.
+
+------------------------------------------------------------------------
+
+## 3. Visual Component Log and Labels
+
+### 3.1 Figure 2: Lateral View of the Apparatus
+
+![](images/figure 1.png){width="388"}
+
+### 3.2 Input Transducers (Handgrips)
 
 *#####Images in progress*
 
@@ -82,11 +96,11 @@ Label F: Blue Dynamometer (Device ID 1)
 
 Label G: Main Strain-Gauge Signal Cable Connection
 
-## 3. System Architecture & Hardware Foundations
+## 4. System Architecture & Hardware Foundations
 
 This section outlines the physical hardware design, microcontroller roles, and the pinout mapping configuration of the university-designed apparatus.
 
-## 3.1 High-Level Architecture (USB Control)
+## 4.1 High-Level Architecture (USB Control)
 
 The system operates under a streamlined Direct USB Control topology:
 
@@ -96,13 +110,13 @@ The system operates under a streamlined Direct USB Control topology:
 
 - PC Integration: The ESP32 Server establishes a direct Serial USB connection with the experimental computer. PsychoPy interacts exclusively with the Server via this serial interface to log data and dispatch high-level control commands.
 
-## 3.2 Hardware Pinout & Component Mapping
+## 4.2 Hardware Pinout & Component Mapping
 
 The following tables define the active physical pin connections (GPIO) and I2C addresses for both microcontrollers.
 
 *#####Images in progress* Figure 3: Main Circuit Board and ESP32 Microcontroller Interconnects.
 
-### 3.2.1 ESP32 Client Configuration
+### 4.2.1 ESP32 Client Configuration
 
 The Client microcontroller manages visual feedback (LEDs) and primary input sensors.
 
@@ -130,7 +144,7 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
-### 3.2.2 ESP32 Server Configuration
+### 4.2.2 ESP32 Server Configuration
 
 The Server microcontroller acts as the central hub, managing force transducers, magnetic loads, and PC communication.
 
@@ -153,13 +167,13 @@ The Server microcontroller acts as the central hub, managing force transducers, 
 
 *Safety Note: "Unused" components remain fully compiled in the firmware codebase. They represent available experimental hardware parameters but do not acquire or transmit data during the current cognitive/physical effort protocols.*
 
-# 4. Software Installation & Environment Setup
+# 5. Software Installation & Environment Setup
 
 *#####Modifications in progress*
 
 This section details the step-by-step configuration required to prepare a local Windows computer to recognize, interface with, and control the physical apparatus.
 
-## 4.1 USB-to-Serial Driver Installation (CP210x)
+## 5.1 USB-to-Serial Driver Installation (CP210x)
 
 The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART Bridge chip. Windows requires the specific hardware driver to map the device to a virtual COM port.
 
@@ -171,14 +185,14 @@ The ESP32 Server communicates with the PC via a Silicon Labs CP210x USB-to-UART 
     - Expand the Ports (COM & LPT) section.
     - Verify that "Silicon Labs CP210x USB to UART Bridge (COMx)" is listed without any yellow warning triangles. Note down the specific `COM` port number assigned (e.g., `COM3`).
 
-## 4.2 PsychoPy Environment
+## 5.2 PsychoPy Environment
 
 Due to a known upstream issue in the PsychoPy software framework, strict version control must be enforced to ensure plugin compatibility.
 
 - The PsychoPy Bug: As of late 2025, PsychoPy releases after version 2025.1.1 contain a critical Plugin Manager bug that prevents the university-designed apparatus components from loading correctly.
 - Required Version: The experimental setup must be deployed exclusively on PsychoPy 2025.1.1. Do not update the software past this release unless a patch is explicitly pushed to the main repository.
 
-### 4.2.1 Installing the Apparatus Plugin
+### 5.2.1 Installing the Apparatus Plugin
 
 Once PsychoPy 2025.1.1 is active on Windows:
 
@@ -188,11 +202,11 @@ Once PsychoPy 2025.1.1 is active on Windows:
 
 3.  Search for `psychopy-apparatus` or manual-load the local folder source to register the `ApparatusForce`, `ApparatusLED`, and `ApparatusReed` components into your experiment builder palette.
 
-## 4.3 Serial Connection
+## 5.3 Serial Connection
 
 The connection and raw data exchange between Windows and the physical hardware are managed by the core script `apparatusDevice.py`. This implementation wraps the `pySerial` library to build a non-blocking, multi-threaded serial interface.
 
-### 4.3.1 Port Initialization
+### 5.3.1 Port Initialization
 
 When an experiment initiates the `ApparatusDevice` class, the framework executes the following hardware initialization sequence:
 
@@ -202,7 +216,7 @@ When an experiment initiates the `ApparatusDevice` class, the framework executes
 
 3.  Buffer Flushing: Immediately following the delay, the system calls `reset_input_buffer()` and `reset_output_buffer()` to purge any electrical noise or boot-time garbage text generated during power-up, ensuring the protocol starts on a clean frame boundary.
 
-### 4.3.2 Multi-Threaded Ingestion Background Process
+### 5.3.2 Multi-Threaded Ingestion Background Process
 
 To ensure that high-frequency sensor tracking does not cause visual lag or frame drops in PsychoPy, serial monitoring is decoupled from the main thread:
 
@@ -210,7 +224,7 @@ To ensure that high-frequency sensor tracking does not cause visual lag or frame
 
 - Byte Asynchrony: This background routine constantly scans incoming binary traffic byte-by-byte. It intercepts raw data packets, checks for the `0x00` frame delimiter, and instantly pushes parsed metrics into a central asynchronous data queue (`_responses`).
 
-### 4.3.3 Object-Oriented Event Handling
+### 5.3.3 Object-Oriented Event Handling
 
 Every valid incoming signal is encapsulated into an `ApparatusResponse` object. The class exposes standardized high-level properties that map directly to physical behavioral sensors:
 
@@ -220,86 +234,8 @@ Every valid incoming signal is encapsulated into an `ApparatusResponse` object. 
 
 - `reed_bits` / `reed_holes`: Positional array tracking which specific pegboard holes are currently plugged or unplugged by the participant.
 
-*#####Modifications in progress - Extract from previous Documentation*
+## 6. First-Time Operation Guide
 
-***The Apparatus Interfaces - ESP32 Modules***
+### 6.1 Step-by-Step Power-Up Sequence
 
-*There are two microcontrollers built into the Apparatus. They communicate with each other, execute commands from the Raspberry Pi, and receive data from the sensors. One microcontroller is located directly underneath the turntable and is responsible for reading the data as well as controlling the LED light rings in the holes. It is powered by a power bank—also located underneath the turntable—and communicates with the second ESP32.*
-
-*The second microcontroller is located in the stationary housing. In addition to communicating with the turntable and the control laptop, it is responsible for controlling the motor, the speaker, and the LED control of the comparison hole. Just like the Raspberry Pi, it is powered by the wall power adapter (labeled/coded with 2 and 3).*
-
-\*\*
-
-***The Pegs & Sensors***
-
-*The cylindrical pegs are made of balsa wood and feature an embedded magnet at one end. In combination with the reed switch built into the holes, this magnet confirms when a peg has entered a hole. In addition to measurements using the reed sensors, there is also the option to use the built-in Hall sensors. (However, in practice, this highly sensitive and extremely accurate measurement methodology has proven impractical so far due to the massive volume of data generated.) At the other end of the peg, a metal plate is embedded, which is attracted by the electromagnet of the hand dynamometer.*
-
-\*\*
-
-***Hand Dynamometer***
-
-*In addition to the basic functions of the Apparatus, two connected hand dynamometers can be used. These are connected directly to the built-in ESP32 module via a British telephone jack connector and can be controlled in Node-Red. Attached to the Vernier hand dynamometer is an electromagnet that can be controlled via four threshold values: N & n, and F & f.*
-
-*The threshold values can be set separately for each hand dynamometer:*
-
-- *N determines the minimum force that must be applied for the magnet to activate.*
-
-- *If the force drops below n, the magnet is turned off again.*
-
-- *F determines the maximum force that can be applied before the magnet shuts off.*
-
-- *f (like n) defines the range of the hysteresis barrier.*
-
-*Furthermore, T defines the time in milliseconds \[ms\], which determines how long a force may be maintained within the hysteresis range before the electromagnet shuts off.*
-
-***System Overview and Communication Protocol***
-
-*The system operates using a dual-microcontroller architecture comprised of two ESP32 modules: a Server and a Client. These modules distribute the computational workload and communicate wirelessly via the ESP-NOW protocol (Wi-Fi).*
-
-*Data transmission between the Apparatus and the workstation running PsychoPy is handled exclusively through a standard Serial USB connection connected to the Server module.*
-
-*1. ESP32 Client Architecture (The Rotating Pegboard)*
-
-*The Client microcontroller is positioned beneath the rotating turntable. Its primary functions are to control the visual feedback array and to detect peg insertions within the 20-hole matrix.*
-
-***GPIO Pin Assignment***
-
-- ***GPIO 21 (I2C_SDA) & GPIO 22 (I2C_SCL):** These pins form the main I2C bus channel, serving as the primary data highway for the peripheral sensors on the turntable.*
-
-- ***GPIO 12 (REED_INT):** Configured as an input with an internal pull-up resistor. This pin acts as a hardware interrupt. When a peg is inserted, it immediately signals the microcontroller to process the sensor data.*
-
-- ***GPIO 2 (LED_PIN):** Dedicated data line for the main WS2812 addressable LED strip, which illuminates the light rings around the holes.*
-
-- ***GPIO 27 to 35 (GROUP_A to GROUP_F):** Initially designated for Hall effect sensor group selection. These pins are currently unused in the current experimental paradigm.*
-
-***I2C Bus Address Map***
-
-*Due to the high number of inputs required for the 20 holes, I2C port expanders are utilized to multiply the available inputs:*
-
-- ***Addresses 0x21, 0x23, 0x25:** Connected to the Reed/PCF8574 expander modules responsible for detecting the magnetic insertion of the balsa wood pegs.*
-
-- ***Addresses 0x0C and 0x20 to 0x26:** Associated with the Hall sensors and sub-hole selectors. These components are currently unused.*
-
-*2. ESP32 Server Architecture (The Stationary Base and Force Measurement)*
-
-*The Server microcontroller is located within the stationary housing of the apparatus. It interfaces directly with the computer via USB, manages the electromagnetic physical constraints, and processes force data.*
-
-***GPIO Pin Assignment***
-
-- ***GPIO 18 (MAGNET_RIGHT_PIN) & GPIO 19 (MAGNET_LEFT_PIN):** Digital outputs that control the left and right electromagnets attached to the hand dynamometer.*
-
-- ***GPIO 25 (FORCE_ADC_SDA_PIN) & GPIO 26 (FORCE_ADC_SCL_PIN):** I2C communication lines dedicated to the external ADS1115 Analog-to-Digital Converter (ADC).*
-
-- ***GPIO 21, 22, 23 (MOTOR_ENABLE, STEP, DIR):** Assigned to the stepper motor driver for automated turntable rotation. These are currently unused.*
-
-- ***GPIO 4 (LIGHT_SENSOR_PIN):** Digital input for the optical positioning system. This is currently unused.*
-
-- ***GPIO 32 & 33 (FORCE_SENSOR_RIGHT/LEFT):** Internal ADC channels for direct analog force readings. These are currently unused by the active backend.*
-
-***Server I2C Address Map***
-
-- ***Address 0x48:** Allocated to the external ADS1115 force ADC. This high-precision chip converts analog pressure from the hand dynamometer into digital values for PsychoPy, bypassing the internal ESP32 ADC pins.*
-
-*Functional Specification Note*
-
-*Components and firmware parameters marked as unused indicate that their corresponding physical hardware or software functions are dormant within the current experimental configuration. While the source code retains the foundational infrastructure for motor automation, light barriers, and Hall effect data streams, the active paradigm relies exclusively on manual turntable rotation, Reed switch peg detection, LED feedback illumination, and digital hand dynamometer force tracking.*
+To avoid port synchronization errors or packet drop during initialization, users must strictly follow this external deployment recipe: 1. **Peripheral Connection**: Connect both the White and Blue Vernier handgrips to their respective chassis sockets using the external British telephone jack interfaces before powering the unit. 2. **PC Data Link**: Connect the main Serial-USB data cable from the stationary base port to an active USB interface on the Windows workstation. 3. **Hardware Activation**: Toggle the primary power switch on the housing. 4. **Boot Wait-Time**: Wait a mandatory **4 seconds** without opening any software. This allows the ESP32 Server to stabilize its wireless ESP-NOW link with the Client and flush power-up transmission noise. 5. **Software Execution**: Open PsychoPy 2025.1.1 and launch your experimental protocol script.
