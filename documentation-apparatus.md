@@ -28,7 +28,7 @@ date: "2026-08-02"
 - **6. First-Time Operation Guide**
   - 6.1 Step-by-Step Power-Up Sequence
 
-# 1. Introduction and Fundamentals
+## 1. Introduction and Fundamentals
 
 **What is the Apparatus?**
 
