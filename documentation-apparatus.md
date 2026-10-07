@@ -44,7 +44,6 @@ This versatile experimental setup allows for the continuous manipulation of mult
 
 The Apparatus is constructed within a solid, custom made wood case designed specifically for desktop laboratory deployment.
 
-
 The panels and outer case are custom made from precision cut clear wood, creating a stable and solid frame designed to sit on a laboratory desk.
 
 - **Total Outer Panel Dimensions**: 90 cm x 90 cm
@@ -55,9 +54,7 @@ The panels and outer case are custom made from precision cut clear wood, creatin
 
 ### 2.2 Figure 1: Full Frontal View of the Apparatus
 
-
-<img src="images/figure%200.png" width="480">
-
+<img src="images/figure%200.png" width="480"/>
 
 ### 2.3 Component Layout Description
 
@@ -86,7 +83,7 @@ Connection of external accessories is restricted to the dedicated outer ports of
 
 ### 3.1 Figure 2: Lateral View of the Apparatus
 
-<img src="images/figure%201.png" width="480">
+<img src="images/figure%202.png" width="480"/>
 
 ### 3.2 Input Transducers (Handgrips)
 
@@ -244,9 +241,4 @@ Every valid incoming signal is encapsulated into an `ApparatusResponse` object. 
 
 ### 6.1 Step-by-Step Power-Up Sequence
 
-To avoid port synchronization errors or packet drop during initialization, users must strictly follow this external deployment recipe: 
-1. **Peripheral Connection**: Connect both the White and Blue Vernier handgrips to their respective chassis sockets using the external British telephone jack interfaces before powering the unit. 
-2. **PC Data Link**: Connect the main Serial-USB data cable from the stationary base port to an active USB interface on the Windows workstation. 
-3. **Hardware Activation**: Toggle the primary power switch on the housing. 
-4. **Boot Wait-Time**: Wait a mandatory **4 seconds** without opening any software. This allows the ESP32 Server to stabilize its wireless ESP-NOW link with the Client and flush power-up transmission noise. 
-5. **Software Execution**: Open PsychoPy 2025.1.1 and launch your experimental protocol script.
+To avoid port synchronization errors or packet drop during initialization, users must strictly follow this external deployment recipe: 1. **Peripheral Connection**: Connect both the White and Blue Vernier handgrips to their respective chassis sockets using the external British telephone jack interfaces before powering the unit. 2. **PC Data Link**: Connect the main Serial-USB data cable from the stationary base port to an active USB interface on the Windows workstation. 3. **Hardware Activation**: Toggle the primary power switch on the housing. 4. **Boot Wait-Time**: Wait a mandatory **4 seconds** without opening any software. This allows the ESP32 Server to stabilize its wireless ESP-NOW link with the Client and flush power-up transmission noise. 5. **Software Execution**: Open PsychoPy 2025.1.1 and launch your experimental protocol script.
