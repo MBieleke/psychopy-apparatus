@@ -52,7 +52,7 @@ The panels and outer case are custom made from precision cut clear wood, creatin
 - **Built-In Speaker Diameter**: 10 cm
 - **Primary Materials**: Natural wood face panels integrated with internal mechanical components and flush mounted electrical sensor housings
 
-### 2.2 Figure 1: Full Frontal View of the Apparatus
+### 2.2 Figure 1: Full Frontal View
 
 <img src="images/figure%200.png" width="480"/>
 
@@ -81,23 +81,17 @@ Connection of external accessories is restricted to the dedicated outer ports of
 
 ## 3. Visual Component Log and Labels
 
-### 3.1 Figure 2: Lateral View of the Apparatus
+### 3.1 Figure 2: Lateral View
 
-<img src="images/figure%202.png" width="480"/>
+<img src="images/Lateral-view%20Panel.png" width="480"/>
 
-### 3.2 Input Transducers (Handgrips)
+### 3.2 Figure 3: Input Transducers (Handgrips)
 
-*#####Images in progress*
+<img src="images/Grips.png" width="470"/>
 
-Figure 2: External Force Transducers.
+Figure 4: External Force Transducers
 
-Labels to include in graphic:
-
-Label E: White Dynamometer (Device ID 0)
-
-Label F: Blue Dynamometer (Device ID 1)
-
-Label G: Main Strain-Gauge Signal Cable Connection
+<img src="images/Single%20grip.png" width="470"/>
 
 ## 4. System Architecture & Hardware Foundations
 
@@ -124,7 +118,7 @@ The following tables define the active physical pin connections (GPIO) and I2C a
 The Client microcontroller manages visual feedback (LEDs) and primary input sensors.
 
 | ESP32 GPIO | Firmware Identifier | Physical Component / Purpose | Status |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **21** | `I2C_SDA` | Main Client I2C Data Line | **Active** |
 | **22** | `I2C_SCL` | Main Client I2C Clock Line | **Active** |
 | **2** | `LED_PIN` | Main WS2812 LED Strip Data Output | **Active** |
@@ -152,7 +146,7 @@ The Client microcontroller manages visual feedback (LEDs) and primary input sens
 The Server microcontroller acts as the central hub, managing force transducers, magnetic loads, and PC communication.
 
 | ESP32 GPIO | Firmware Identifier | Physical Component / Purpose | Status |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **25** | `FORCE_ADC_SDA_PIN` | ADS1115 I2C Data Line (Handgrip Force Data) | **Active** |
 | **26** | `FORCE_ADC_SCL_PIN` | ADS1115 I2C Clock Line (Handgrip Force Data) | **Active** |
 | **18** | `MAGNET_RIGHT_PIN` | Right Electromagnetic Load Output | **Active** |
