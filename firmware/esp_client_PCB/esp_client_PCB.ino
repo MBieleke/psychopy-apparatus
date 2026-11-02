@@ -1,4 +1,10 @@
-// PCB client: pegboard LEDs, reed switches, Hall sensors, and ESP-NOW pairing.
+#include "faulty_led_calibration.h"
+// ================================================
+// Client ESP32 firmware: pegboard sensor node
+// Routes commands from PC (via Server) and streams sensor data when enabled.
+// This firmware implements binary message protocol with checksum verification.
+// Client receives commands from PC (forwarded by Server) and sends ACK/DATA back to PC.
+// ================================================
 #include <esp_now.h>
 #include <WiFi.h>
 #include <esp_wifi.h>
@@ -22,7 +28,7 @@ Message types (CLIENT):
   0x11 CMD_LED_SHOW     payload: none
   0x12 CMD_HOLE_START   payload: hole(u8), mode(u8)
   0x13 CMD_HOLE_STOP    payload: none
-  0x14 CMD_REED_START   payload: period_us(u32)
+  0x14 CD_REED_START   payload: period_us(u32)
   0x15 CMD_REED_STOP    payload: none
   0x80 MSG_ACK          payload: optional
   0x81 MSG_NACK         payload: error_code(u8)
@@ -51,7 +57,10 @@ Error codes:
 #define GROUP_A 27
 
 // Hall sensor config
-#define HALL_SENSOR_ADDRESS 0x0C
+#define HALL_SENSOR_ADRESS 0x0C
+#define SENSOR_R1 254
+#define SENSOR_R2 253
+#define SENSOR_R3 251
 #define SENSOR_B  247
 
 // I2C sub-hole addresses
@@ -131,7 +140,7 @@ static const uint8_t ESPNOW_FIXED_CHANNEL = 1;
 static const size_t MAX_MSG_SIZE = 256;
 static const size_t ESPNOW_QUEUE_SIZE = 8;
 
-// Hole-to-group and I2C sub-address mappings for indices 0 through 20.
+// Hole mapping tables (20 holes indexed 0-19, plus 1 extra for safety)
 static const uint8_t hole_group_pins[] = {
   GROUP_F, GROUP_E, GROUP_E, GROUP_D, GROUP_C, GROUP_B, GROUP_B, GROUP_A,
   GROUP_F, GROUP_F, GROUP_E, GROUP_E, GROUP_D, GROUP_D, GROUP_C, GROUP_C,
@@ -598,8 +607,43 @@ static bool reed_read_byte(uint8_t address, uint8_t *value) {
   return true;
 }
 
+static void debug_i2c_scan(void) {
+  Serial.print("I2C devices:");
+  bool found = false;
+  for (uint8_t address = 1; address < 127; address++) {
+    Wire.beginTransmission(address);
+    if (Wire.endTransmission() == 0) {
+      Serial.printf(" 0x%02X", address);
+      found = true;
+    }
+  }
+  if (!found) {
+    Serial.print(" none");
+  }
+  Serial.println();
+}
+
+static void debug_reed_raw(const char *label) {
+  uint8_t raw0 = 0xFF;
+  uint8_t raw1 = 0xFF;
+  uint8_t raw2 = 0xFF;
+  bool ok0 = reed_read_byte(REED_0, &raw0);
+  bool ok1 = reed_read_byte(REED_1, &raw1);
+  bool ok2 = reed_read_byte(REED_2, &raw2);
+  Serial.printf("%s REED raw: 0x%02X=%s/0x%02X 0x%02X=%s/0x%02X 0x%02X=%s/0x%02X INT=%u bits=0x%06lX\n",
+                label,
+                REED_0, ok0 ? "OK" : "NO", raw0,
+                REED_1, ok1 ? "OK" : "NO", raw1,
+                REED_2, ok2 ? "OK" : "NO", raw2,
+                digitalRead(REED_INT),
+                (unsigned long)((((uint32_t)(~raw0)) & 0x7F) |
+                                ((((uint32_t)(~raw1)) & 0x7F) << 7) |
+                                ((((uint32_t)(~raw2)) & 0x7F) << 14)));
+}
+
 static void setup_reed(void) {
   pinMode(REED_INT, INPUT_PULLUP);
+  debug_i2c_scan();
   reed_expander_present[0] = reed_write_inputs_high(REED_0);
   reed_expander_present[1] = reed_write_inputs_high(REED_1);
   reed_expander_present[2] = reed_write_inputs_high(REED_2);
@@ -607,6 +651,7 @@ static void setup_reed(void) {
   if (!reed_expander_present[0]) Serial.printf("REED expander 0x%02X not responding\n", REED_0);
   if (!reed_expander_present[1]) Serial.printf("REED expander 0x%02X not responding\n", REED_1);
   if (!reed_expander_present[2]) Serial.printf("REED expander 0x%02X not responding\n", REED_2);
+  debug_reed_raw("setup");
 }
 
 static uint32_t read_reed(void) {
@@ -695,16 +740,16 @@ static void deselect_sensor(void) {
 }
 
 static void start_single_measurement(void) {
-  Wire.beginTransmission(HALL_SENSOR_ADDRESS);
+  Wire.beginTransmission(HALL_SENSOR_ADRESS);
   Wire.write(0x3E);
   Wire.endTransmission();
 }
 
 static void read_measurement(int16_t *x, int16_t *y, int16_t *z) {
-  Wire.beginTransmission(HALL_SENSOR_ADDRESS);
+  Wire.beginTransmission(HALL_SENSOR_ADRESS);
   Wire.write(0x4E);
   Wire.endTransmission();
-  Wire.requestFrom(HALL_SENSOR_ADDRESS, 9);
+  Wire.requestFrom(HALL_SENSOR_ADRESS, 9);
   if (Wire.available() >= 7) {
     Wire.read();  // status byte
     *x = Wire.read() << 8;
@@ -721,11 +766,19 @@ static void set_hole_color(uint8_t hole, uint8_t r, uint8_t g, uint8_t b) {
   if (hole >= NUMBER_OF_HOLES) {
     return;
   }
+#if FAULTY_LED_CALIBRATION
+  calibratedInputLimit(r, g, b);
+#endif
+  // The secondary LED strip is not the replaced eight-LED segment.
+  const uint8_t secondaryR=r, secondaryG=g, secondaryB=b;
+#if FAULTY_LED_CALIBRATION
+  if (hole == FAULTY_LED_HOLE) correctFaultyLed(r, g, b);
+#endif
   for (int i = hole * LEDS_PER_HOLE; i < (hole + 1) * LEDS_PER_HOLE; i++) {
     pixels.setPixelColor(i, pixels.Color(r, g, b));
   }
   for (int i = hole * LED2_LEDS_PER_HOLE; i < (hole + 1) * LED2_LEDS_PER_HOLE; i++) {
-    pixels2.setPixelColor(i, pixels2.Color(r, g, b));
+    pixels2.setPixelColor(i, pixels2.Color(secondaryR, secondaryG, secondaryB));
   }
 }
 
@@ -745,23 +798,23 @@ static void handle_cmd_led_set_n(uint32_t seq, const uint8_t *payload, uint16_t 
     if (ack_req) send_nack(seq, ERR_BAD_PAYLOAD);
     return;
   }
-
+  
   uint8_t count = payload[0];
   if (count == 0) {
     if (ack_req) send_nack(seq, ERR_BAD_PAYLOAD);
     return;
   }
-
+  
   // Auto-detect format by payload length
   uint16_t format_a_len = 1 + count + 3;  // count + holes[] + r + g + b
   uint16_t format_b_len = 1 + count * 4;  // count + [hole,r,g,b]×count
-
+  
   if (len == format_a_len) {
     // Format A: shared color for all holes
     uint8_t r = payload[1 + count];
     uint8_t g = payload[1 + count + 1];
     uint8_t b = payload[1 + count + 2];
-
+    
     for (uint8_t i = 0; i < count; i++) {
       uint8_t hole = payload[1 + i];
       set_hole_color(hole, r, g, b);
@@ -829,6 +882,7 @@ static void handle_cmd_reed_start(uint32_t seq, const uint8_t *payload, uint16_t
   reed_sample_period_us = period_us;
   reed_stream_enabled = true;
   next_reed_sample_us = micros();
+  debug_reed_raw("reed_start");
   last_reed_value = read_reed();
   if (ack_req) send_ack(seq, NULL, 0);
 }
@@ -922,7 +976,7 @@ static void handle_decoded_frame(const uint8_t *frame, size_t len) {
   }
 }
 
-// ----- ESP-NOW RX callback: queue packets for the main loop -----
+// ----- ESP-NOW RX callback (ISR context: queue only) -----
 static void IRAM_ATTR on_espnow_recv(const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
   const uint8_t *src_mac = NULL;
   if (recv_info != NULL) {
@@ -1117,3 +1171,5 @@ void loop() {
   handle_reed_stream();
   handle_hole_measurement();
 }
+
+
