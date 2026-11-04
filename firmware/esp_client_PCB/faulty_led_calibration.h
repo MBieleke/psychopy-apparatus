@@ -3,7 +3,7 @@
 
 // Enable ONLY on the unit with the replacement main LED strip at hole 6.
 #ifndef FAULTY_LED_CALIBRATION
-#define FAULTY_LED_CALIBRATION false
+#define FAULTY_LED_CALIBRATION true
 #endif
 
 #if FAULTY_LED_CALIBRATION
@@ -4926,17 +4926,11 @@ static const uint8_t faultyLedLut[4913][3] PROGMEM = {
   {107,115,160},
 };
 
-// Same common input-drive ceiling used during calibration, applied to ALL holes.
-static void calibratedInputLimit(uint8_t &r, uint8_t &g, uint8_t &b) {
-  uint16_t total = (uint16_t)r + g + b;
-  if (total > 384) {
-    r = (uint32_t)r * 384 / total;
-    g = (uint32_t)g * 384 / total;
-    b = (uint32_t)b * 384 / total;
-  }
-}
 static void correctFaultyLed(uint8_t &r, uint8_t &g, uint8_t &b) {
   if (!(r || g || b)) return; // Explicit off must always stay off.
+  // The measured lookup covers RGB sums up to 384. Outside that domain,
+  // preserve the requested color instead of applying its legacy capped entries.
+  if ((uint16_t)r + g + b > 384) return;
   uint8_t input[3] = {r,g,b}, lo[3];
   float t[3];
   for (uint8_t c=0;c<3;c++) {
@@ -4956,6 +4950,5 @@ static void correctFaultyLed(uint8_t &r, uint8_t &g, uint8_t &b) {
     output[c]=(uint8_t)constrain((int)value,0,255);
   }
   r=output[0];g=output[1];b=output[2];
-  calibratedInputLimit(r,g,b);
 }
 #endif

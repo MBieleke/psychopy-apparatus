@@ -766,9 +766,6 @@ static void set_hole_color(uint8_t hole, uint8_t r, uint8_t g, uint8_t b) {
   if (hole >= NUMBER_OF_HOLES) {
     return;
   }
-#if FAULTY_LED_CALIBRATION
-  calibratedInputLimit(r, g, b);
-#endif
   // The secondary LED strip is not the replaced eight-LED segment.
   const uint8_t secondaryR=r, secondaryG=g, secondaryB=b;
 #if FAULTY_LED_CALIBRATION
