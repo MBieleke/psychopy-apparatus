@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a problem with existing functionality
+title: "[Bug] "
+type: Bug
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Title:** Keep `[Bug]` at the beginning of the issue title. Do not delete it.
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview of the bug
+      description: Briefly describe the problem.
+      placeholder: |
+        Example:
+        The electromagnet component does not turn on when the force reaches XX N.
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Explain how the problem can be reproduced.
+      placeholder: |
+        Example:
+        1. Click "Connect".
+        2. Enter the device address.
+        3. The application displays an error.
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected result
+      description: Explain what you expected to happen instead.
+      placeholder: |
+        Example:
+        The application should connect to the device and display its input data.
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Error logs or screenshots
+      description: Include the complete command you ran and its full error output. You may also add screenshots or other useful context.
+      placeholder: |
+        Example:
+
+        Command:
+        python main.py
+
+        Complete output:
+        Traceback (most recent call last):
+          ...
+        Error: ...
