@@ -315,7 +315,7 @@ def main() -> int:
     start_attempts_left = 0 if args.no_start else max(1, args.start_retries)
     no_sample_deadline: Optional[float] = None
     saw_force_sample = False
-    start_payload = encode_force_start_payload(rate_hz=args.rate_hz, device=args.device)
+    start_payload = encode_force_start_payload(rate_hz=args.rate_hz, dynamometer=args.device)
 
     decoder = COBSFrameStream()
     t0 = time.monotonic()
