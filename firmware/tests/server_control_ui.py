@@ -313,7 +313,7 @@ class ServerControlUI:
 
         if msg_type == DATA_FORCE:
             sample = parse_force_data_payload(payload)
-            device = int(sample["device"])
+            device = int(sample["dynamometer"])
             value = float(sample["value"])
             name = FORCE_DEVICE_NAMES.get(device, f"device={device}")
             if device == 0:
