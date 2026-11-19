@@ -514,6 +514,7 @@ Tests Format A and Format B of CMD_LED_SET_N command.
         nargs='+',
         help='Multiple RGB colors, one per hole (e.g., 255,0,0 0,255,0)'
     )
+    parser.add_argument("--baud", type=int, default=115200)
     
     args = parser.parse_args()
     
