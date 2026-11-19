@@ -519,7 +519,7 @@ Tests Format A and Format B of CMD_LED_SET_N command.
     args = parser.parse_args()
     
     port = args.port
-    baudrate = 115200
+    baudrate = args.baud
     
     print("="*60)
     print("CLIENT LED CONTROL TEST (via Server Relay)")
